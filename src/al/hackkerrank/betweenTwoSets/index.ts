@@ -1,1 +1,1 @@
-export * from './betweenTwoSetsMath'
+export * from './betweenTwoSetsMath';
