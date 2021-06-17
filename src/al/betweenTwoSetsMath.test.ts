@@ -1,4 +1,4 @@
-import { betweenTwoSetsMath } from '.';
+import { betweenTwoSetsMath } from './betweenTwoSetsMath';
 
 describe('betweenTwoSetsMath solution', () => {
   it('should work', () => {
