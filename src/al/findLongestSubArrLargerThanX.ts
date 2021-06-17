@@ -6,7 +6,7 @@
 // - Streak must not contains more than 4 number zero (0) consecutively
 //   [1, 2, 3, 0, 0, 0, 0, 4, 4, 2] with x = 3 => longest streak = [4, 4]
 //   [1, 2, 3, 3, 4, 0, 0, 0, 0, 0, 4, 4, 2] with x = 3 => longest streak = [3, 3, 4]
-//   [1, 2, 3, 4, 0, 2, 5, 6, 7, 8] with x = 3 => [3,4]
+//   [1, 2, 3, 4, 0, 2, 5, 6, 7, 8] with x = 3 => [3, 4, 0]
 
 export function findLongestSubArrLargerThanX(
   arr: number[],
