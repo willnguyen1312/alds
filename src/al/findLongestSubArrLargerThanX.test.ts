@@ -1,6 +1,6 @@
 import { findLongestSubArrLargerThanX } from './findLongestSubArrLargerThanX';
 
-const cases: any[] = [
+const cases: [number[], number, number[]][] = [
   [[1, 2, 3, 4, 4, 2], 3, [3, 4, 4]],
   [[1, 2, 3, 0, 4, 4, 2], 3, [3, 0, 4, 4]],
   [[1, 2, 3, 0, 0, 0, 0, 4, 4, 2], 3, [4, 4]],
