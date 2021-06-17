@@ -9,7 +9,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "t": "tsdx test",
+    "test": "tsdx test",
     "t:w": "tsdx test --watch",
     "lint": "tsdx lint src",
     "prepare": "tsdx build"

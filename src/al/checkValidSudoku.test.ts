@@ -1,6 +1,6 @@
 import { checkValidSudoku } from './checkValidSudoku';
 
-test('checkValidSudoku should work as expected', () => {
+test('checkValidSudoku should work', () => {
   const input = [
     ['5', '3', '.', '.', '7', '.', '.', '.', '.'],
     ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
