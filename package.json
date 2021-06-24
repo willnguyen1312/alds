@@ -11,13 +11,13 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "t:w": "tsdx test --watch",
-    "lint": "tsdx lint src",
+    "lint": "tsdx lint src --fix",
     "prepare": "tsdx build"
   },
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint src --fix"
     }
   },
   "prettier": {

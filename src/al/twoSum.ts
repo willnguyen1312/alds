@@ -6,7 +6,7 @@ export function twoSum(nums: number[], target: number): number[] {
     const element = nums[index];
     const remainder = target - element;
 
-    if (typeof lookupNumb[remainder] === "number") {
+    if (typeof lookupNumb[remainder] === 'number') {
       result[0] = lookupNumb[remainder];
       result[1] = index;
     }
