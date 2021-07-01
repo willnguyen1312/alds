@@ -1,8 +1,8 @@
 export function merge(
   nums1: number[],
-  m: number,
+  _: number,
   nums2: number[],
-  n: number
+  __: number
 ): void {
   let counter = nums1.length - 1;
   let c1 = nums1.length - nums2.length - 1;
