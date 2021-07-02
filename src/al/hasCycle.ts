@@ -15,7 +15,7 @@ function hasCycle(head: ListNode | null): boolean {
   while (slow_p !== null && fast_p !== null && fast_p.next !== null) {
     slow_p = slow_p.next;
     fast_p = fast_p.next.next;
-    if (slow_p == fast_p) {
+    if (slow_p === fast_p) {
       flag = 1;
       break;
     }
