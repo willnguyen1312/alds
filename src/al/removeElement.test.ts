@@ -1,6 +1,6 @@
 import { removeElement } from './removeElement';
 
-describe('removeElement', () => {
+describe.only('removeElement', () => {
   it('should work for the first case', () => {
     const input = [3, 2, 2, 3];
     const result = 2;
@@ -23,5 +23,13 @@ describe('removeElement', () => {
 
     expect(removeElement(input, 4)).toBe(result);
     expect(input.slice(0, result)).toEqual([0, 0, 0, 2]);
+  });
+
+  it('should work for the fourth case', () => {
+    const input = [1, 1, 2];
+    const result = 1;
+
+    expect(removeElement(input, 1)).toBe(result);
+    expect(input.slice(0, result)).toEqual([2]);
   });
 });
