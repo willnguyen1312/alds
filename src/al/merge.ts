@@ -1,35 +1,30 @@
 export function merge(
   nums1: number[],
-  _: number,
+  m: number,
   nums2: number[],
-  __: number
+  n: number
 ): void {
-  let counter = nums1.length - 1;
-  let c1 = nums1.length - nums2.length - 1;
-  let c2 = nums2.length - 1;
+  // let i = m - 1;
+  // let j = n - 1;
+  // let k = m + n - 1;
 
-  while (c1 >= 0 && c2 >= 0 && counter >= 0) {
-    let n1 = nums1[c1];
-    let n2 = nums2[c2];
-    if (n2 > n1) {
-      nums1[counter] = n2;
-      c2 -= 1;
+  // while (k >= 0) {
+  //   if (j < 0 || (i >= 0 && nums1[i] > nums2[j])) nums1[k--] = nums1[i--];
+  //   else nums1[k--] = nums2[j--];
+  // }
+
+  while (m > 0 && n > 0) {
+    if (nums1[m - 1] > nums2[n - 1]) {
+      nums1[m + n - 1] = nums1[m - 1];
+      m--;
     } else {
-      nums1[counter] = n1;
-      c1 -= 1;
+      nums1[m + n - 1] = nums2[n - 1];
+      n--;
     }
-    counter -= 1;
   }
 
-  while (c2 >= 0) {
-    nums1[counter] = nums2[c2];
-    c2 -= 1;
-    counter -= 1;
-  }
-
-  while (c1 >= 0) {
-    nums1[counter] = nums1[c1];
-    c1 -= 1;
-    counter -= 1;
+  while (n > 0) {
+    nums1[m + n - 1] = nums2[n - 1];
+    n--;
   }
 }
