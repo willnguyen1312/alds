@@ -1,3 +1,18 @@
 export function sortedSquares(nums: number[]): number[] {
-  return nums.map((num) => Math.pow(num, 2)).sort((a, b) => a - b);
+  let n = nums.length;
+  let left = 0;
+  let right = n - 1;
+  const result = new Array(n);
+
+  for (let index = n - 1; index >= 0; index--) {
+    if (Math.abs(nums[left]) > nums[right]) {
+      result[index] = nums[left] * nums[left];
+      left++;
+    } else {
+      result[index] = nums[right] * nums[right];
+      right--;
+    }
+  }
+
+  return result;
 }
