@@ -13,7 +13,7 @@ function getKth(k: number, nums: number[], start: number, end: number): number {
       right--;
     }
 
-    if (left == right) {
+    if (left === right) {
       break;
     }
 
@@ -22,7 +22,7 @@ function getKth(k: number, nums: number[], start: number, end: number): number {
 
   [nums[end], nums[left]] = [nums[left], nums[end]];
 
-  if (k == left + 1) {
+  if (k === left + 1) {
     return pivot;
   } else if (k < left + 1) {
     return getKth(k, nums, start, left - 1);
@@ -32,7 +32,7 @@ function getKth(k: number, nums: number[], start: number, end: number): number {
 }
 
 export function findKthLargest(nums: number[], k: number) {
-  if (k < 1 || nums == null) {
+  if (k < 1 || nums === null) {
     return 0;
   }
 
