@@ -1,34 +1,28 @@
-// https://www.techiedelight.com/count-subtrees-value-nodes-binary-tree/
-function countSubtrees(root: any, count = 0): any {
-  if (!null) {
-    return [-Infinity, count];
+// https://www.dailycodingproblem.com/blog/unival-trees/
+function countUnivalSubtrees(root: any) {
+  let [count, _] = helper(root);
+  return count;
+}
+
+// # Also returns number of unival subtrees, and whether it is itself a unival subtree.
+function helper(root: any): any {
+  if (!root) {
+    return [0, true];
   }
 
-  // # if the root is a leaf node, increase the count and return root node data
-  if (!root.left && !root.right) {
-    count = count + 1;
-    return [root.data, count];
+  let [left_count, is_left_unival] = helper(root.left);
+  let [right_count, is_right_unival] = helper(root.right);
+  let total_count = left_count + right_count;
+
+  if (is_left_unival && is_right_unival) {
+    if (root.left && root.value !== root.left.value) {
+      return [total_count, false];
+    }
+
+    if (root.right && root.value !== root.right.value) {
+      return [total_count, false];
+    }
+    return [total_count + 1, true];
   }
-
-  let left, right;
-
-  // # recur for the left and right subtree
-  [left, count] = countSubtrees(root.left, count);
-  [right, count] = countSubtrees(root.right, count);
-
-  // # 1. The left subtree is empty, and the right subtree data matches the root
-  // # 2. The right subtree is empty, and the left subtree data matches the root
-  // # 3. Both left and right subtrees are non-empty, and their data matches the root
-  if (
-    (left === -Infinity && right === root.data) ||
-    (right == -Infinity && left === root.data) ||
-    (left === right && left == root.data)
-  ) {
-    // # increase the count and return root node data
-    count = count + 1;
-    return root.data, count;
-  }
-
-  // # return infinity if root's data doesn't match with left or right subtree
-  return [-Infinity, count];
+  return [total_count, false];
 }
