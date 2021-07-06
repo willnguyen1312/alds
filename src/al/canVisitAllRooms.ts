@@ -4,7 +4,7 @@
 
 // We can add a check in the beginning for the edge cases where the total number of rooms is only 1, or the zeroth room has no keys (rooms[0].length == 0)) in which case we should return the appropriate result.
 
-https: function canVisitAllRooms(rooms: number[][]): boolean {
+function canVisitAllRooms(rooms: number[][]): boolean {
   function dfs(current: number[]) {
     current.forEach((node) => {
       if (!visited.has(node)) {
@@ -15,7 +15,7 @@ https: function canVisitAllRooms(rooms: number[][]): boolean {
     });
   }
 
-  let visited = new Set();
+  const visited = new Set();
   visited.add(0);
   let total = 0;
 
