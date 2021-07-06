@@ -20,5 +20,5 @@ function canVisitAllRooms(rooms: number[][]): boolean {
   let total = 0;
 
   dfs(rooms[0]);
-  return total == rooms.length - 1 ? true : false;
+  return total === rooms.length - 1 ? true : false;
 }
