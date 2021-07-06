@@ -8,6 +8,7 @@ function DFS(node: GraphNode, target: GraphNode) {
     if (cur.value === target.value) {
       return true;
     }
+
     for (const item of cur.children) {
       if (!visited.has(item)) {
         visited.add(item);
@@ -15,6 +16,7 @@ function DFS(node: GraphNode, target: GraphNode) {
       }
     }
   }
+
   return false;
 }
 
