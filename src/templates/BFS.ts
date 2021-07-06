@@ -1,6 +1,10 @@
-interface GraphNode {
-  value: number;
-  children: GraphNode[];
+class GraphNode {
+  val: number;
+  neighbors: GraphNode[] = [];
+  constructor(val?: number, neighbors?: GraphNode[]) {
+    this.val = val === undefined ? 0 : val;
+    this.neighbors = neighbors === undefined ? [] : neighbors;
+  }
 }
 
 function BFS(node: GraphNode, target: GraphNode) {
@@ -15,11 +19,11 @@ function BFS(node: GraphNode, target: GraphNode) {
     for (let index = 0; index < length; index++) {
       const element = queue[index];
 
-      if (element.value === target.value) {
+      if (element.val === target.val) {
         return step;
       }
 
-      element.children.forEach((child) => {
+      element.neighbors.forEach((child) => {
         queue.push(child);
       });
 
@@ -42,11 +46,11 @@ function BFSWithCache(node: GraphNode, target: GraphNode) {
     for (let index = 0; index < length; index++) {
       const element = queue[index];
 
-      if (element.value === target.value) {
+      if (element.val === target.val) {
         return step;
       }
 
-      element.children.forEach((child) => {
+      element.neighbors.forEach((child) => {
         if (!visitedSet.has(child)) {
           queue.push(child);
         }
