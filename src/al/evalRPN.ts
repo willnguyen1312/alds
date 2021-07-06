@@ -21,3 +21,7 @@ const evaluate = (n1: number, n2: number, operand: string): any => {
   if (operand === '*') return n1 * n2;
   if (operand === '/') return n1 / n2;
 };
+
+// Input: tokens = ["2","1","+","3","*"]
+// Output: 9
+// Explanation: ((2 + 1) * 3) = 9
