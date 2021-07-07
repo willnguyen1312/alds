@@ -6,17 +6,17 @@ function generateTrees(n: number): Array<TreeNode | null> {
   return helper(1, n);
 }
 
-function helper(m: number, n: number): Array<TreeNode | null> {
+function helper(low: number, high: number): Array<TreeNode | null> {
   const result: Array<TreeNode | null> = [];
 
-  if (m > n) {
+  if (low > high) {
     result.push(null);
     return result;
   }
 
-  for (let i = m; i <= n; i++) {
-    const ls = helper(m, i - 1);
-    const rs = helper(i + 1, n);
+  for (let i = low; i <= high; i++) {
+    const ls = helper(low, i - 1);
+    const rs = helper(i + 1, high);
     for (const l of ls) {
       for (const r of rs) {
         const curr = new TreeNode(i);
