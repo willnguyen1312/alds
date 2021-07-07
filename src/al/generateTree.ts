@@ -15,10 +15,10 @@ function helper(low: number, high: number): Array<TreeNode | null> {
   }
 
   for (let i = low; i <= high; i++) {
-    const ls = helper(low, i - 1);
-    const rs = helper(i + 1, high);
-    for (const l of ls) {
-      for (const r of rs) {
+    const leftTrees = helper(low, i - 1);
+    const rightTrees = helper(i + 1, high);
+    for (const l of leftTrees) {
+      for (const r of rightTrees) {
         const curr = new TreeNode(i);
         curr.left = l;
         curr.right = r;
