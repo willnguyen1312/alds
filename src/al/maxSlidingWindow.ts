@@ -1,7 +1,7 @@
 function maxSlidingWindow(nums: number[], k: number): number[] {
   let result: number[] = [];
   const queue: number[] = [];
-  //   Used to keep track of sliding size
+  //   Used to remove max value at the beginning of queue when out of range
   let i = 0;
   //   Index of looping nums
   let j = 0;
@@ -19,8 +19,9 @@ function maxSlidingWindow(nums: number[], k: number): number[] {
       result[x] = queue[0];
       ++x;
 
-      //   Remove max at the beginning if equal current number to avoid duplication
+      //   Remove max at the beginning if equal to i
       if (queue[0] === nums[i]) queue.shift();
+
       ++i;
     }
     ++j;
@@ -40,3 +41,5 @@ function maxSlidingWindow(nums: number[], k: number): number[] {
 //  1  3  -1 [-3  5  3] 6  7       5
 //  1  3  -1  -3 [5  3  6] 7       6
 //  1  3  -1  -3  5 [3  6  7]      7
+
+// console.log(maxSlidingWindow([1, 3, -1, -3, -2, 5, 3, 6, 7], 3));
