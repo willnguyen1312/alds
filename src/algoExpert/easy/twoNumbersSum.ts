@@ -33,3 +33,18 @@ export function twoNumbersSum2(arrNums: number[], target: number): number[] {
 
   return [];
 }
+
+export function twoNumbersSum3(arrNums: number[], target: number): number[] {
+  for (let index = 0; index < arrNums.length; index++) {
+    const num1 = arrNums[index];
+
+    for (let jndex = index + 1; jndex < arrNums.length; jndex++) {
+      const num2 = arrNums[jndex];
+      if (num1 + num2 === target) {
+        return [num1, num2];
+      }
+    }
+  }
+
+  return [];
+}
