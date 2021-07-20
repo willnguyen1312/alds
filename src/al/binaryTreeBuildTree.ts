@@ -1,3 +1,4 @@
+// @ts-ignore
 class TreeNode {
   val: number;
   left: TreeNode | null;
@@ -6,6 +7,22 @@ class TreeNode {
     this.val = val === undefined ? 0 : val;
     this.left = left === undefined ? null : left;
     this.right = right === undefined ? null : right;
+  }
+
+  insert(value: number) {
+    if (value < this.val) {
+      if (this.left === null) {
+        this.left = new TreeNode(value);
+      } else {
+        this.left.insert(value);
+      }
+    } else {
+      if (this.right === null) {
+        this.right = new TreeNode(value);
+      } else {
+        this.right.insert(value);
+      }
+    }
   }
 }
 
@@ -57,7 +74,7 @@ function build2(
   inorder: number[],
   inLo: number,
   inHi: number,
-  map
+  map: any
 ) {
   if (inLo > inHi) return null;
   if (inLo === inHi) return new TreeNode(preorder[pLo]);
