@@ -6,12 +6,13 @@ export function balancedBrackets(string: string) {
     ']': '[',
     '}': '{',
   };
-  const stack = [];
+  const stack: string[] = [];
+
   for (const char of string) {
     if (openingBrackets.includes(char)) {
       stack.push(char);
     } else if (closingBrackets.includes(char)) {
-      if (stack.length == 0) {
+      if (stack.length === 0) {
         return false;
       }
       if (stack[stack.length - 1] === matchingBrackets[char]) {
@@ -21,5 +22,6 @@ export function balancedBrackets(string: string) {
       }
     }
   }
+
   return stack.length === 0;
 }
