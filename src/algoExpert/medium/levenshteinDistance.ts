@@ -37,6 +37,7 @@ function levenshteinDistance(str1: string, str2: string) {
 
 function levenshteinDistanceSimpler(str1: string, str2: string) {
   const edits = [];
+
   for (let i = 0; i < str2.length + 1; i++) {
     const row = [];
     for (let j = 0; j < str1.length + 1; j++) {
@@ -45,6 +46,7 @@ function levenshteinDistanceSimpler(str1: string, str2: string) {
     row[0] = i;
     edits.push(row);
   }
+
   for (let i = 1; i < str2.length + 1; i++) {
     for (let j = 1; j < str1.length + 1; j++) {
       if (str2[i - 1] === str1[j - 1]) {
