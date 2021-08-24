@@ -29,7 +29,7 @@ export function binarySearch(arr: number[], target: number) {
   let left = 0;
   let right = arr.length - 1;
 
-  while (left < right) {
+  while (left <= right) {
     const middle = Math.floor((left + right) / 2);
 
     if (arr[middle] === target) {

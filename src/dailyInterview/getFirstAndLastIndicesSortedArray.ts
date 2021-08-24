@@ -21,7 +21,7 @@ export function getFirstAndLastIndicesSortedArray(
   let left = 0;
   let right = nums.length - 1;
 
-  while (left < right) {
+  while (left <= right) {
     const middle = Math.floor((right + left) / 2);
     const current = nums[middle];
 
