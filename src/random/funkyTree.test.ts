@@ -37,7 +37,6 @@ const dfsIter = (treeNode: TreeNode) => {
 
   while (stack.length) {
     const current = stack.pop();
-    console.log(current?.label);
     current?.children?.forEach((node) => stack.push(node));
   }
 };
@@ -47,7 +46,6 @@ const bfs = (treeNode: TreeNode) => {
 
   while (queue.length) {
     queue.forEach((item) => {
-      console.log(item.label);
       queue.push(...(item.children || []));
       queue.shift();
     });

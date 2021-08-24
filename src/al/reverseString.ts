@@ -9,9 +9,5 @@ function reverseString(s: string[]): void {
 
 let a = ['H', 'a', 'n', 'n', 'a', 'h'];
 
-reverseString(a);
-
-console.log(a);
-
 // Input: s = ["h","e","l","l","o"]
 // Output: ["o","l","l","e","h"]
