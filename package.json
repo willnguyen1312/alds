@@ -1,42 +1,26 @@
 {
   "version": "0.1.0",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "t:w": "tsdx test --watch",
-    "lint": "tsdx lint src --fix",
-    "prepare": "tsdx build"
+    "test": "jest test",
+    "test:w": "jest --watch",
+    "test:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint src --fix"
-    }
+  "name": "alds",
+  "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6",
+    "lodash": "^4.17.21"
   },
   "prettier": {
     "printWidth": 80,
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "name": "alds",
-  "author": "Nam Nguyen",
-  "module": "dist/alds.esm.js",
-  "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "@types/lodash": "^4.14.172",
-    "husky": "^7.0.1",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
   }
 }
