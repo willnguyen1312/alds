@@ -7,7 +7,6 @@ specifiers:
   '@types/jest': ^27.0.1
   babel-jest: ^27.0.6
   jest: ^27.0.6
-  lodash: ^4.17.21
 
 dependencies:
   '@babel/core': 7.15.0
@@ -16,7 +15,6 @@ dependencies:
   '@types/jest': 27.0.1
   babel-jest: 27.0.6_@babel+core@7.15.0
   jest: 27.0.6
-  lodash: 4.17.21
 
 packages:
 

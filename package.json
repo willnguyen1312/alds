@@ -14,8 +14,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@types/jest": "^27.0.1",
     "babel-jest": "^27.0.6",
-    "jest": "^27.0.6",
-    "lodash": "^4.17.21"
+    "jest": "^27.0.6"
   },
   "prettier": {
     "printWidth": 80,

@@ -1,5 +1,3 @@
-import { cloneDeep } from 'lodash';
-
 export type TreeNodeWithoutParentLink = {
   label: string;
   children?: TreeNodeWithoutParentLink[];
@@ -14,7 +12,7 @@ export type TreeNodeWithParentLink = {
 export const addParentLinkToTreeNode = (
   tree: TreeNodeWithParentLink[]
 ): TreeNodeWithParentLink[] => {
-  const clonedTree = cloneDeep(tree);
+  const clonedTree = JSON.parse(JSON.stringify(tree));
   clonedTree.forEach((node) => dfs(node));
 
   return clonedTree;
