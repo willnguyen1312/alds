@@ -3,7 +3,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest test",
-    "test:w": "jest --watch"
+    "test:w": "jest --watch",
+    "test:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman"
   },
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
@@ -11,6 +12,7 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
     "babel-jest": "^27.0.6",
     "jest": "^27.0.6",
     "lodash": "^4.17.21"
