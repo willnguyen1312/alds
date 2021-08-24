@@ -3,7 +3,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest test",
-    "test:w": "jest test --watch"
+    "test:w": "jest --watch"
   },
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
