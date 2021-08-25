@@ -3,8 +3,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest test",
-    "test:w": "jest --watch",
-    "test:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman"
+    "t:w": "jest --watch",
+    "t:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman"
   },
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
