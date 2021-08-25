@@ -40,5 +40,5 @@ export function minimumSizeSubarraySum(numbs: number[], x: number) {
     }
   }
 
-  return result;
+  return result === Infinity ? 0 : result;
 }
