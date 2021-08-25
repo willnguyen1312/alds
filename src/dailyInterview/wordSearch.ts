@@ -17,11 +17,11 @@ Given this matrix, and the target word FOAM, you should return true, as it can b
 let numberOfRows = 0;
 let numberOfColumns = 0;
 
-// For searching in all 8 direction
+// For searching in all 8 directions
 // let x = [-1, -1, -1, 0, 0, 1, 1, 1];
 // let y = [-1, 0, 1, -1, 1, -1, 0, 1];
 
-// For searching in all 2 direction as per description
+// For searching in all 2 directions as per description
 let x = [0, 1];
 let y = [1, 0];
 
@@ -51,9 +51,7 @@ function search2D(grid: string[][], row: number, col: number, word: string) {
       columnDirection += y[direction];
     }
 
-    // If all character matched,
-    // then value must
-    // be equal to length of word
+    // If all character matched, then value must, be equal to length of word
     if (k === length) return true;
   }
 
