@@ -1,4 +1,4 @@
-# My collection of Algorithm and Data Structure 🎉
+# 🍁 My collection of Algorithm and Data Structure 🎉
 
 ## Github Workflow Status
 
