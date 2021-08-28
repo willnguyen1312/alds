@@ -47,8 +47,14 @@ const dfsIter = (treeNode: TreeNode) => {
   while (stack.length) {
     const current = stack.pop();
     result.push(current.label);
-    current?.children?.reverse().forEach((node) => stack.push(node));
-    current?.children?.reverse();
+
+    const toQueue =
+      current?.children?.reduceRight((acc, cur) => {
+        acc.push(cur);
+        return acc;
+      }, []) || [];
+
+    stack.push(...toQueue);
   }
 
   return result;
