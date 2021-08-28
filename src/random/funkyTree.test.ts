@@ -27,15 +27,7 @@ const sampleTree: TreeNode[] = [
           },
         ],
       },
-    ].sort((a, b) => {
-      if (a.label < b.label) {
-        return 1;
-      } else if (a.label > b.label) {
-        return -1;
-      } else {
-        return 0;
-      }
-    }),
+    ],
   },
 ];
 
@@ -56,6 +48,7 @@ const dfsIter = (treeNode: TreeNode) => {
     const current = stack.pop();
     result.push(current.label);
     current?.children?.reverse().forEach((node) => stack.push(node));
+    current?.children?.reverse();
   }
 
   return result;
@@ -101,22 +94,22 @@ describe('funkyTree functions', () => {
     expect(bfs(sampleTree[0])).toMatchInlineSnapshot(`
 Array [
   "1",
-  "1.3",
-  "1.2",
   "1.1",
-  "1.3.1",
+  "1.2",
+  "1.3",
   "1.1.1",
+  "1.3.1",
 ]
 `);
 
     expect(dfsIter(sampleTree[0])).toMatchInlineSnapshot(`
 Array [
   "1",
-  "1.3",
-  "1.3.1",
-  "1.2",
   "1.1",
   "1.1.1",
+  "1.2",
+  "1.3",
+  "1.3.1",
 ]
 `);
 
