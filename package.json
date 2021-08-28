@@ -4,7 +4,8 @@
   "scripts": {
     "test": "jest test",
     "t:w": "jest --watch",
-    "t:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman"
+    "t:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman",
+    "build": "jest test --coverage"
   },
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
