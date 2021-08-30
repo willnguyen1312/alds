@@ -1,7 +1,13 @@
-function mergeTwoLists(
-  l1: ListNode | null,
-  l2: ListNode | null
-): ListNode | null {
+export class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}
+
+function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | null {
   let dummy = new ListNode(0);
   let cur = dummy;
   while (l1 !== null || l2 !== null) {
@@ -42,10 +48,10 @@ function mergeTwoListsRecursive(l1: ListNode, l2: ListNode) {
 
   if (l1.val <= l2.val) {
     head = l1;
-    head.next = mergeTwoLists(l1.next, l2);
+    head.next = mergeTwoListsRecursive(l1.next, l2);
   } else {
     head = l2;
-    head.next = mergeTwoLists(l1, l2.next);
+    head.next = mergeTwoListsRecursive(l1, l2.next);
   }
 
   return head;
