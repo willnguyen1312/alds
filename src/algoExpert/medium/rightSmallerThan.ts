@@ -22,24 +22,14 @@ class SpecialBST2 {
     this.right = null;
   }
 
-  insert(
-    value: number,
-    idx: number,
-    rightSmallerCounts: number[],
-    numSmallerAtInsertTime = 0
-  ) {
+  insert(value: number, idx: number, rightSmallerCounts: number[], numSmallerAtInsertTime = 0) {
     if (value < this.value) {
       this.leftSubTreeSize++;
       if (this.left === null) {
         this.left = new SpecialBST2(value);
         rightSmallerCounts[idx] = numSmallerAtInsertTime;
       } else {
-        this.left.insert(
-          value,
-          idx,
-          rightSmallerCounts,
-          numSmallerAtInsertTime
-        );
+        this.left.insert(value, idx, rightSmallerCounts, numSmallerAtInsertTime);
       }
     } else {
       numSmallerAtInsertTime += this.leftSubTreeSize;
@@ -48,12 +38,7 @@ class SpecialBST2 {
         this.right = new SpecialBST2(value);
         rightSmallerCounts[idx] = numSmallerAtInsertTime;
       } else {
-        this.right.insert(
-          value,
-          idx,
-          rightSmallerCounts,
-          numSmallerAtInsertTime
-        );
+        this.right.insert(value, idx, rightSmallerCounts, numSmallerAtInsertTime);
       }
     }
   }

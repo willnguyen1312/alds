@@ -14,10 +14,7 @@ Input: A = [1,2,3,4,5,6,10], target = 9
 Output: [-1, -1]
 */
 
-export function getFirstAndLastIndicesSortedArray(
-  nums: number[],
-  target: number
-): number[] {
+export function getFirstAndLastIndicesSortedArray(nums: number[], target: number): number[] {
   let left = 0;
   let right = nums.length - 1;
 

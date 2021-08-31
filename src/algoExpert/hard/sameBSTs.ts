@@ -46,43 +46,17 @@ function areSameBsts2(
 
   const leftRootIdxOne = getIdxOfFirstSmaller(arrayOne, rootIdxOne, minVal);
   const leftRootIdxTwo = getIdxOfFirstSmaller(arrayTwo, rootIdxTwo, minVal);
-  const rightRootIdxOne = getIdxOfFirstBiggerOrEqual(
-    arrayOne,
-    rootIdxOne,
-    maxVal
-  );
-  const rightRootIdxTwo = getIdxOfFirstBiggerOrEqual(
-    arrayTwo,
-    rootIdxTwo,
-    maxVal
-  );
+  const rightRootIdxOne = getIdxOfFirstBiggerOrEqual(arrayOne, rootIdxOne, maxVal);
+  const rightRootIdxTwo = getIdxOfFirstBiggerOrEqual(arrayTwo, rootIdxTwo, maxVal);
 
   const currentValue = arrayOne[rootIdxOne];
-  const leftAreSame = areSameBsts2(
-    arrayOne,
-    arrayTwo,
-    leftRootIdxOne,
-    leftRootIdxTwo,
-    minVal,
-    currentValue
-  );
-  const rightAreSame = areSameBsts2(
-    arrayOne,
-    arrayTwo,
-    rightRootIdxOne,
-    rightRootIdxTwo,
-    currentValue,
-    maxVal
-  );
+  const leftAreSame = areSameBsts2(arrayOne, arrayTwo, leftRootIdxOne, leftRootIdxTwo, minVal, currentValue);
+  const rightAreSame = areSameBsts2(arrayOne, arrayTwo, rightRootIdxOne, rightRootIdxTwo, currentValue, maxVal);
 
   return leftAreSame && rightAreSame;
 }
 
-function getIdxOfFirstSmaller(
-  array: number[],
-  startingIdx: number,
-  minVal: number
-) {
+function getIdxOfFirstSmaller(array: number[], startingIdx: number, minVal: number) {
   // Find the index of the first smaller value after the startingIdx.
   // Make sure that this value is greater than or equal to the minVal,
   // which is the value of the previous parent node in the BST. If it
@@ -94,11 +68,7 @@ function getIdxOfFirstSmaller(
   return -1;
 }
 
-function getIdxOfFirstBiggerOrEqual(
-  array: number[],
-  startingIdx: number,
-  maxVal: number
-) {
+function getIdxOfFirstBiggerOrEqual(array: number[], startingIdx: number, maxVal: number) {
   // Find the index of the first bigger/equal value after the startingIdx.
   // Make sure that this value is smaller than maxVal, which is the value
   // of the previous parent node in the BST. If it isn't, then that value

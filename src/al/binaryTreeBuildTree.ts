@@ -32,24 +32,10 @@ function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
   for (let i = 0; i < inorder.length; i++) {
     map.set(inorder[i], i);
   }
-  return build(
-    inorder,
-    0,
-    inorder.length - 1,
-    postorder,
-    postorder.length - 1,
-    map
-  );
+  return build(inorder, 0, inorder.length - 1, postorder, postorder.length - 1, map);
 }
 
-function build(
-  inorder: number[],
-  iLo: number,
-  iHi: number,
-  postorder: number[],
-  pHi: number,
-  map: any
-) {
+function build(inorder: number[], iLo: number, iHi: number, postorder: number[], pHi: number, map: any) {
   if (iLo > iHi) return null;
   if (iLo === iHi) return new TreeNode(inorder[iLo]);
   let root = new TreeNode(postorder[pHi]);
@@ -68,26 +54,12 @@ function buildTree2(preorder: number[], inorder: number[]): any {
   return build2(preorder, 0, inorder, 0, inorder.length - 1, map);
 }
 
-function build2(
-  preorder: number[],
-  pLo: number,
-  inorder: number[],
-  inLo: number,
-  inHi: number,
-  map: any
-) {
+function build2(preorder: number[], pLo: number, inorder: number[], inLo: number, inHi: number, map: any) {
   if (inLo > inHi) return null;
   if (inLo === inHi) return new TreeNode(preorder[pLo]);
   let root = new TreeNode(preorder[pLo]);
   let inId = map.get(root.val);
   root.left = build2(preorder, pLo + 1, inorder, inLo, inId - 1, map);
-  root.right = build2(
-    preorder,
-    pLo + inId - inLo + 1,
-    inorder,
-    inId + 1,
-    inHi,
-    map
-  );
+  root.right = build2(preorder, pLo + inId - inLo + 1, inorder, inId + 1, inHi, map);
   return root;
 }

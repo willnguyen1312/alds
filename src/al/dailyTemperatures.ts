@@ -4,10 +4,7 @@ const dailyTemperatures = function (temperatures: number[]) {
   daysUntilWarmer.fill(0);
 
   for (let day = temperatures.length - 2; day >= 0; day--) {
-    while (
-      tempStack.length > 0 &&
-      temperatures[day] >= temperatures[tempStack[tempStack.length - 1]]
-    ) {
+    while (tempStack.length > 0 && temperatures[day] >= temperatures[tempStack[tempStack.length - 1]]) {
       tempStack.pop();
     }
 

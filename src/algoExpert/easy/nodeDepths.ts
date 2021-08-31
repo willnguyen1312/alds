@@ -3,11 +3,7 @@ export function nodeDepthsRecur(root: TreeNode | null, depth = 0): number {
     return 0;
   }
 
-  return (
-    depth +
-    nodeDepthsRecur(root.left, depth + 1) +
-    nodeDepthsRecur(root.right, depth + 1)
-  );
+  return depth + nodeDepthsRecur(root.left, depth + 1) + nodeDepthsRecur(root.right, depth + 1);
 }
 
 export function nodeDepths(root: TreeNode) {

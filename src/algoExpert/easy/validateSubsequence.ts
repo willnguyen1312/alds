@@ -1,7 +1,4 @@
-export function validateSubsequence(
-  arr: number[],
-  sequence: number[]
-): boolean {
+export function validateSubsequence(arr: number[], sequence: number[]): boolean {
   let arrIndex = 0;
   let seqIndex = 0;
 

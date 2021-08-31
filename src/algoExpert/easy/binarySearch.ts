@@ -2,12 +2,7 @@ export function binarySearchRecur(arr: number[], target: number) {
   return binarySearchRecurHelper(0, arr.length - 1, arr, target);
 }
 
-function binarySearchRecurHelper(
-  left: number,
-  right: number,
-  arr: number[],
-  target: number
-): number {
+function binarySearchRecurHelper(left: number, right: number, arr: number[], target: number): number {
   if (left > right) {
     return -1;
   }

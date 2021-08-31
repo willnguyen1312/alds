@@ -20,11 +20,7 @@ function DFS(node: GraphNode, target: GraphNode) {
   return false;
 }
 
-function DFSRecur(
-  cur: GraphNode,
-  target: GraphNode,
-  visited: Set<GraphNode> = new Set<GraphNode>()
-) {
+function DFSRecur(cur: GraphNode, target: GraphNode, visited: Set<GraphNode> = new Set<GraphNode>()) {
   if (cur.val === target.val) {
     return true;
   }

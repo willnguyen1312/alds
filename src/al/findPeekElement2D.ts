@@ -1,9 +1,4 @@
-function findMax(
-  arr: number[][],
-  rows: number,
-  mid: number,
-  max: number
-): number {
+function findMax(arr: number[][], rows: number, mid: number, max: number): number {
   let max_index = 0;
   for (let i = 0; i < rows; i++) {
     if (max < arr[i][mid]) {
@@ -29,12 +24,7 @@ function Max(arr: number[][], rows: number, mid: number, max: number) {
 }
 
 // Function to find a peak element
-function findPeakRec(
-  arr: number[][],
-  rows: number,
-  columns: number,
-  mid: number
-): number {
+function findPeakRec(arr: number[][], rows: number, columns: number, mid: number): number {
   // Evaluating maximum of mid column.
   // Note max is passed by value.
   let max = 0;
@@ -46,12 +36,10 @@ function findPeakRec(
   if (mid === 0 || mid === columns - 1) return max;
 
   // If mid column maximum is also peak
-  if (max >= arr[max_index][mid - 1] && max >= arr[max_index][mid + 1])
-    return max;
+  if (max >= arr[max_index][mid - 1] && max >= arr[max_index][mid + 1]) return max;
 
   // If max is less than its left
-  if (max < arr[max_index][mid - 1])
-    return findPeakRec(arr, rows, columns, mid - Math.ceil(mid / 2));
+  if (max < arr[max_index][mid - 1]) return findPeakRec(arr, rows, columns, mid - Math.ceil(mid / 2));
 
   // If max is less than its left
   // if (max < arr[max_index][mid+1])

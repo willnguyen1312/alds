@@ -14,18 +14,12 @@ function knapsackProblem(items: number[][], capacity: number) {
       if (currentWeight > c) {
         knapsackValues[i][c] = knapsackValues[i - 1][c];
       } else {
-        knapsackValues[i][c] = Math.max(
-          knapsackValues[i - 1][c],
-          knapsackValues[i - 1][c - currentWeight] + currentValue
-        );
+        knapsackValues[i][c] = Math.max(knapsackValues[i - 1][c], knapsackValues[i - 1][c - currentWeight] + currentValue);
       }
     }
   }
 
-  return [
-    knapsackValues[items.length][capacity],
-    getKnapsackItems(knapsackValues, items),
-  ];
+  return [knapsackValues[items.length][capacity], getKnapsackItems(knapsackValues, items)];
 }
 
 function getKnapsackItems(knapsackValues: number[][], items: number[][]) {

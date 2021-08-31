@@ -2,11 +2,7 @@ export function validateBST(node: TreeNode): boolean {
   return validateBstHelper(node, -Infinity, Infinity);
 }
 
-function validateBstHelper(
-  tree: TreeNode | null,
-  minValue: number,
-  maxValue: number
-): boolean {
+function validateBstHelper(tree: TreeNode | null, minValue: number, maxValue: number): boolean {
   if (!tree) return true;
 
   if (tree.val < minValue || tree.val > maxValue) return false;

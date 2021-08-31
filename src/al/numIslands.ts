@@ -16,15 +16,8 @@ let numIslands = function (grid: any) {
   return countIslands;
 };
 
-let colorIsland = function (
-  grid: any,
-  i: number,
-  j: number,
-  rowsCount: number,
-  columnsCount: number
-) {
-  if (i < 0 || j < 0 || i >= rowsCount || j >= columnsCount || grid[i][j] == 0)
-    return;
+let colorIsland = function (grid: any, i: number, j: number, rowsCount: number, columnsCount: number) {
+  if (i < 0 || j < 0 || i >= rowsCount || j >= columnsCount || grid[i][j] == 0) return;
 
   grid[i][j] = 0;
 

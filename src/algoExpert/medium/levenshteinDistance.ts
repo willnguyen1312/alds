@@ -23,16 +23,12 @@ function levenshteinDistance(str1: string, str2: string) {
       if (big[i - 1] === small[j - 1]) {
         currentEdits[j] = previousEdits[j - 1];
       } else {
-        currentEdits[j] =
-          1 +
-          Math.min(previousEdits[j - 1], previousEdits[j], currentEdits[j - 1]);
+        currentEdits[j] = 1 + Math.min(previousEdits[j - 1], previousEdits[j], currentEdits[j - 1]);
       }
     }
   }
 
-  return big.length % 2 === 0
-    ? evenEdits[small.length]
-    : oddEdits[small.length];
+  return big.length % 2 === 0 ? evenEdits[small.length] : oddEdits[small.length];
 }
 
 function levenshteinDistanceSimpler(str1: string, str2: string) {
@@ -52,8 +48,7 @@ function levenshteinDistanceSimpler(str1: string, str2: string) {
       if (str2[i - 1] === str1[j - 1]) {
         edits[i][j] = edits[i - 1][j - 1];
       } else {
-        edits[i][j] =
-          1 + Math.min(edits[i - 1][j - 1], edits[i - 1][j], edits[i - 1][j]);
+        edits[i][j] = 1 + Math.min(edits[i - 1][j - 1], edits[i - 1][j], edits[i - 1][j]);
       }
     }
   }

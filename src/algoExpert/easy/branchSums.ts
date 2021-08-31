@@ -4,11 +4,7 @@ export function branchSums(root: TreeNode): number[] {
   return result;
 }
 
-function calculateBranchSum(
-  node: TreeNode,
-  currentSum: number,
-  sums: number[]
-) {
+function calculateBranchSum(node: TreeNode, currentSum: number, sums: number[]) {
   const newSum = currentSum + node.val;
   if (!node.left && !node.right) {
     sums.push(newSum);

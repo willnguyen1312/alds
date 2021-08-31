@@ -45,11 +45,7 @@ function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
 
 function hasPathSumRecur(root: TreeNode, sum: number): boolean {
   if (root === null) return false;
-  if (root.val === sum && root.left === null && root.right === null)
-    return true;
+  if (root.val === sum && root.left === null && root.right === null) return true;
 
-  return (
-    hasPathSum(root.left, sum - root.val) ||
-    hasPathSum(root.right, sum - root.val)
-  );
+  return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
 }

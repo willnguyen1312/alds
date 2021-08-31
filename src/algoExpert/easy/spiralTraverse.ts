@@ -39,14 +39,7 @@ function spiralTraverseRecur(array: number[][]) {
   return result;
 }
 
-function spiralFill(
-  array: number[][],
-  startRow: number,
-  endRow: number,
-  startCol: number,
-  endCol: number,
-  result: number[]
-) {
+function spiralFill(array: number[][], startRow: number, endRow: number, startCol: number, endCol: number, result: number[]) {
   if (startRow > endRow || startCol > endCol) return;
 
   for (let col = startCol; col <= endCol; col++) {

@@ -1,7 +1,4 @@
-export function inOrderTraverse(
-  tree: TreeNode | null,
-  array: number[] = []
-): void | number[] {
+export function inOrderTraverse(tree: TreeNode | null, array: number[] = []): void | number[] {
   if (tree) {
     inOrderTraverse(tree.left, array);
     array.push(tree.val);
@@ -10,10 +7,7 @@ export function inOrderTraverse(
   }
 }
 
-export function preOrderTraverse(
-  tree: TreeNode | null,
-  array: number[] = []
-): void | number[] {
+export function preOrderTraverse(tree: TreeNode | null, array: number[] = []): void | number[] {
   if (tree) {
     array.push(tree.val);
     preOrderTraverse(tree.left, array);
@@ -22,10 +16,7 @@ export function preOrderTraverse(
   return array;
 }
 
-export function postOrderTraverse(
-  tree: TreeNode | null,
-  array: number[] = []
-): void | number[] {
+export function postOrderTraverse(tree: TreeNode | null, array: number[] = []): void | number[] {
   if (tree) {
     postOrderTraverse(tree.left, array);
     postOrderTraverse(tree.right, array);

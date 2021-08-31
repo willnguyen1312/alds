@@ -1,7 +1,4 @@
-export function searchInSortedMatrix(
-  matrix: number[][],
-  target: number
-): [number, number] {
+export function searchInSortedMatrix(matrix: number[][], target: number): [number, number] {
   let row = 0;
   let col = matrix[0].length - 1;
 
