@@ -31,7 +31,9 @@ export class BinaryTreeNode {
   }
 }
 
-export function invertBinaryTree(binaryTree: BinaryTreeNode | null | undefined) {
+export function invertBinaryTree(
+  binaryTree: BinaryTreeNode | null | undefined
+) {
   if (!binaryTree) return;
 
   invertBinaryTree(binaryTree.left);

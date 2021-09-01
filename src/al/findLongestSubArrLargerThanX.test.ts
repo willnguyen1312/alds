@@ -8,6 +8,9 @@ const cases: [number[], number, number[]][] = [
   [[1, 2, 3, 4, 0, 2, 5, 6, 7, 8], 3, [3, 4, 0]],
 ];
 
-test.each(cases)('findLongestSubArrLargerThanX(%s, %s) should be %s', (first, second, expected) => {
-  expect(findLongestSubArrLargerThanX(first, second)).toEqual(expected);
-});
+test.each(cases)(
+  'findLongestSubArrLargerThanX(%s, %s) should be %s',
+  (first, second, expected) => {
+    expect(findLongestSubArrLargerThanX(first, second)).toEqual(expected);
+  }
+);

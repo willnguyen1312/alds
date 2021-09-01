@@ -29,7 +29,8 @@ export function calculate(s: string): number {
     }
 
     if (s[i] === '-' || s[i] === '+') {
-      if (stack.length === 0 || stack[stack.length - 1] === '(') stack.push('0');
+      if (stack.length === 0 || stack[stack.length - 1] === '(')
+        stack.push('0');
     }
 
     stack.push(s[i]);

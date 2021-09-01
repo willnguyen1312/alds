@@ -1,4 +1,7 @@
-function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+function addTwoNumbers(
+  l1: ListNode | null,
+  l2: ListNode | null
+): ListNode | null {
   let dummy = new ListNode(-1);
   let cur = dummy;
   let sum = 0;

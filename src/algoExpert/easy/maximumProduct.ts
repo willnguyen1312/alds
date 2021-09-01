@@ -11,7 +11,8 @@ Example:
 export function maximumProduct(nums: number[]): number {
   const max = nums.sort((a, b) => a - b);
   const product1 = max[0] * max[1] * max[nums.length - 1];
-  const product2 = max[nums.length - 1] * max[nums.length - 2] * max[nums.length - 3];
+  const product2 =
+    max[nums.length - 1] * max[nums.length - 2] * max[nums.length - 3];
   return Math.max(product1, product2);
 }
 

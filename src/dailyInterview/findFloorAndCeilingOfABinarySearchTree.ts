@@ -16,7 +16,10 @@ export class BinaryTreeNode {
   }
 }
 
-export function findFloorAndCeilingOfABinarySearchTree(root: BinaryTreeNode, target: number): number[] {
+export function findFloorAndCeilingOfABinarySearchTree(
+  root: BinaryTreeNode,
+  target: number
+): number[] {
   let floor = -1;
   let ceil = -1;
 

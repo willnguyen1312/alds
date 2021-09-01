@@ -29,7 +29,10 @@ export class BinaryTreeNode {
   }
 }
 
-export function reconstructTree(preorder: string[], inorder: string[]): BinaryTreeNode {
+export function reconstructTree(
+  preorder: string[],
+  inorder: string[]
+): BinaryTreeNode {
   let root: BinaryTreeNode = null;
   const set = new Set();
   const stack = [];
@@ -54,7 +57,11 @@ export function reconstructTree(preorder: string[], inorder: string[]): BinaryTr
     } while (preorder[pre++] !== inorder[In] && pre < preorder.length);
 
     node = null;
-    while (stack.length !== 0 && In < inorder.length && stack[stack.length - 1].val === inorder[In]) {
+    while (
+      stack.length !== 0 &&
+      In < inorder.length &&
+      stack[stack.length - 1].val === inorder[In]
+    ) {
       node = stack.pop();
       In++;
     }

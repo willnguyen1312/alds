@@ -14,7 +14,10 @@ export class BinaryTreeNode {
   }
 }
 
-export function getValuesAtHeight(root: BinaryTreeNode, height: number): number[] {
+export function getValuesAtHeight(
+  root: BinaryTreeNode,
+  height: number
+): number[] {
   const result: number[] = [];
 
   function collect(node: BinaryTreeNode | null, currentHeight: number = 0) {

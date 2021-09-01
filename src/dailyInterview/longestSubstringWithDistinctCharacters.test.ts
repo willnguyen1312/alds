@@ -2,6 +2,8 @@ import { longestSubstringWithDistinctCharacters } from './longestSubstringWithDi
 
 describe('longestSubstringWithDistinctCharacters function', () => {
   it('should work', () => {
-    expect(longestSubstringWithDistinctCharacters('aabcdefff', 3)).toBe('defff');
+    expect(longestSubstringWithDistinctCharacters('aabcdefff', 3)).toBe(
+      'defff'
+    );
   });
 });

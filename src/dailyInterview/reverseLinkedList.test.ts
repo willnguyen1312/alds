@@ -1,4 +1,8 @@
-import { reverseLinkedListRecur, reverseLinkedListIter, LinkedListNode } from './reverseLinkedList';
+import {
+  reverseLinkedListRecur,
+  reverseLinkedListIter,
+  LinkedListNode,
+} from './reverseLinkedList';
 
 describe('reverseLinkedListRecur function', () => {
   it('should work', () => {

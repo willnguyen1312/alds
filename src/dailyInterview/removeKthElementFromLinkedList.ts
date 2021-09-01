@@ -15,7 +15,10 @@ export class LinkedListNode {
   }
 }
 
-export function removeKthElementFromLinkedList(head: LinkedListNode, k: number) {
+export function removeKthElementFromLinkedList(
+  head: LinkedListNode,
+  k: number
+) {
   let length = 0;
   let currentNode = head;
 

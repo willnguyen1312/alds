@@ -41,7 +41,13 @@ function search2D(grid: string[][], row: number, col: number, word: string) {
     // match remaining characters
     for (k = 1; k < length; k++) {
       // If out of bound break
-      if (rowDirection >= numberOfRows || rowDirection < 0 || columnDirection >= numberOfColumns || columnDirection < 0) break;
+      if (
+        rowDirection >= numberOfRows ||
+        rowDirection < 0 ||
+        columnDirection >= numberOfColumns ||
+        columnDirection < 0
+      )
+        break;
 
       // If not matched, break
       if (grid[rowDirection][columnDirection] !== word[k]) break;

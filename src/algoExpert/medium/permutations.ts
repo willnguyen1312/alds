@@ -4,7 +4,11 @@ export function getPermutations(array: number[]) {
   return permutations;
 }
 
-function permutationsHelper(array: number[], currentPermutation: number[], permutations: number[][]) {
+function permutationsHelper(
+  array: number[],
+  currentPermutation: number[],
+  permutations: number[][]
+) {
   if (!array.length && currentPermutation.length) {
     permutations.push(currentPermutation);
   } else {
@@ -22,7 +26,11 @@ export function getPermutations2(array: number[]) {
   return permutations;
 }
 
-function permutationsHelper2(i: number, array: number[], permutations: number[][]) {
+function permutationsHelper2(
+  i: number,
+  array: number[],
+  permutations: number[][]
+) {
   if (i === array.length - 1) {
     permutations.push(array.slice());
   } else {

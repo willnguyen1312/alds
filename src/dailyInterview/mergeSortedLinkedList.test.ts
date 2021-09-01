@@ -1,9 +1,19 @@
-import { LinkedListNode, mergeSortedLinkedListIter, mergeSortedLinkedListRecur } from './mergeSortedLinkedList';
+import {
+  LinkedListNode,
+  mergeSortedLinkedListIter,
+  mergeSortedLinkedListRecur,
+} from './mergeSortedLinkedList';
 
 describe('mergeSortedLinkedList function', () => {
   it('should work', () => {
-    const a = new LinkedListNode(1, new LinkedListNode(3, new LinkedListNode(5)));
-    const b = new LinkedListNode(2, new LinkedListNode(4, new LinkedListNode(6)));
+    const a = new LinkedListNode(
+      1,
+      new LinkedListNode(3, new LinkedListNode(5))
+    );
+    const b = new LinkedListNode(
+      2,
+      new LinkedListNode(4, new LinkedListNode(6))
+    );
     const actual = mergeSortedLinkedListIter(a, b);
     expect(actual).toMatchInlineSnapshot(`
 LinkedListNode {

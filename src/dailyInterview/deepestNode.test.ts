@@ -1,4 +1,9 @@
-import { BinaryTreeNode, deepestNode, deepestNode2, deepestNode3 } from './deepestNode';
+import {
+  BinaryTreeNode,
+  deepestNode,
+  deepestNode2,
+  deepestNode3,
+} from './deepestNode';
 
 describe('deepestNode function', () => {
   it('should work', () => {

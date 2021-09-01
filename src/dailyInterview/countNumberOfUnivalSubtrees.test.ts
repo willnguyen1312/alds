@@ -1,4 +1,7 @@
-import { BinaryTreeNode, countNumberOfUnivalSubtrees } from './countNumberOfUnivalSubtrees';
+import {
+  BinaryTreeNode,
+  countNumberOfUnivalSubtrees,
+} from './countNumberOfUnivalSubtrees';
 
 describe('countNumberOfUnivalSubtrees function', () => {
   it('should work', () => {

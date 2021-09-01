@@ -2,7 +2,12 @@ import { reconstructTree } from './reconstructTree';
 
 describe('Name of the group', () => {
   it('should work', () => {
-    expect(reconstructTree(['a', 'b', 'd', 'e', 'c', 'f', 'g'], ['d', 'b', 'e', 'a', 'f', 'c', 'g'])).toMatchInlineSnapshot(`
+    expect(
+      reconstructTree(
+        ['a', 'b', 'd', 'e', 'c', 'f', 'g'],
+        ['d', 'b', 'e', 'a', 'f', 'c', 'g']
+      )
+    ).toMatchInlineSnapshot(`
 BinaryTreeNode {
   "left": BinaryTreeNode {
     "left": BinaryTreeNode {

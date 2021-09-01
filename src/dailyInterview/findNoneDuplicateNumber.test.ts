@@ -1,4 +1,7 @@
-import { findNoneDuplicateNumber, findNoneDuplicateNumberExtra } from './findNoneDuplicateNumber';
+import {
+  findNoneDuplicateNumber,
+  findNoneDuplicateNumberExtra,
+} from './findNoneDuplicateNumber';
 
 describe('findNoneDuplicateNumber function', () => {
   it('should work', () => {

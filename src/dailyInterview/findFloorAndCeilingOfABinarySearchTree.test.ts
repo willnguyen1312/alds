@@ -1,4 +1,9 @@
-import { findCeil, findFloor, findFloorAndCeilingOfABinarySearchTree, BinaryTreeNode } from './findFloorAndCeilingOfABinarySearchTree';
+import {
+  findCeil,
+  findFloor,
+  findFloorAndCeilingOfABinarySearchTree,
+  BinaryTreeNode,
+} from './findFloorAndCeilingOfABinarySearchTree';
 
 describe('findFloorAndCeilingOfABinarySearchTree function', () => {
   it('should work', () => {

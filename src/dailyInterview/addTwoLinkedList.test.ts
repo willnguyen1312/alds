@@ -1,4 +1,9 @@
-import { addTwoLinkedList, reverseLinkedList, reverseLinkedListIter, LinkedListNode } from './addTwoLinkedList';
+import {
+  addTwoLinkedList,
+  reverseLinkedList,
+  reverseLinkedListIter,
+  LinkedListNode,
+} from './addTwoLinkedList';
 
 describe('addTwoLinkedList', () => {
   it('should reverseLinkedList correctly', () => {

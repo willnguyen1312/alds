@@ -34,7 +34,10 @@ export function reverseLinkedListRecur(node: LinkedListNode) {
   return reverseLinkedListFromHead(node, null);
 }
 
-function reverseLinkedListFromHead(head: LinkedListNode | null, tail: LinkedListNode | null) {
+function reverseLinkedListFromHead(
+  head: LinkedListNode | null,
+  tail: LinkedListNode | null
+) {
   if (head === null) {
     return tail;
   }

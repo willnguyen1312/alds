@@ -15,7 +15,11 @@ export class BinaryTreeNode {
   }
 }
 
-export function createBalancedBST(numbs: number[], left = 0, right = numbs.length - 1): BinaryTreeNode {
+export function createBalancedBST(
+  numbs: number[],
+  left = 0,
+  right = numbs.length - 1
+): BinaryTreeNode {
   if (left > right) {
     return null;
   }

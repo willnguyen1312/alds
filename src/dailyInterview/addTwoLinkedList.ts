@@ -38,14 +38,20 @@ export function reverseLinkedList(node: LinkedListNode) {
   return reverseFromHead(node, null);
 }
 
-export function reverseFromHead(head: null | LinkedListNode, tail: null | LinkedListNode): LinkedListNode | null {
+export function reverseFromHead(
+  head: null | LinkedListNode,
+  tail: null | LinkedListNode
+): LinkedListNode | null {
   if (head === null) return tail;
   const nextNode = head.next;
   head.next = tail;
   return reverseFromHead(nextNode, head);
 }
 
-export function addTwoLinkedList(l1: LinkedListNode | null, l2: LinkedListNode | null) {
+export function addTwoLinkedList(
+  l1: LinkedListNode | null,
+  l2: LinkedListNode | null
+) {
   let list = new LinkedListNode(0);
   let currentNode = list;
 

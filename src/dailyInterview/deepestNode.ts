@@ -31,7 +31,11 @@ export function deepestNode(root: BinaryTreeNode): [BinaryTreeNode, number] {
   return left[1] > right[1] ? left : right;
 }
 
-function deepestNodeHelper(node: BinaryTreeNode | null, parent: BinaryTreeNode, depth: number = 0) {
+function deepestNodeHelper(
+  node: BinaryTreeNode | null,
+  parent: BinaryTreeNode,
+  depth: number = 0
+) {
   if (!node) {
     return [parent, depth];
   }

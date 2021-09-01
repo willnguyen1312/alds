@@ -19,7 +19,11 @@ function maxSumIncreasingSubsequence(array: number[]) {
   return [sums[maxSumIdx], buildSequence(array, sequences, maxSumIdx)];
 }
 
-function buildSequence(array: number[], sequences: number[], currentIdx: number) {
+function buildSequence(
+  array: number[],
+  sequences: number[],
+  currentIdx: number
+) {
   const sequence = [];
   while (currentIdx !== undefined) {
     sequence.unshift(array[currentIdx]);

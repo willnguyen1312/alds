@@ -18,9 +18,11 @@ export function checkPythagoreanTriplets(numbs: number[]) {
     let right = index - 1;
 
     while (left < right) {
-      if (squaredNumbs[left] + squaredNumbs[right] == squaredNumbs[index]) return true;
+      if (squaredNumbs[left] + squaredNumbs[right] == squaredNumbs[index])
+        return true;
 
-      if (squaredNumbs[left] + squaredNumbs[right] < squaredNumbs[index]) left++;
+      if (squaredNumbs[left] + squaredNumbs[right] < squaredNumbs[index])
+        left++;
       else right--;
     }
   }

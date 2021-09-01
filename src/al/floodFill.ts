@@ -1,4 +1,9 @@
-function floodFill(image: number[][], sr: number, sc: number, newColor: number): number[][] {
+function floodFill(
+  image: number[][],
+  sr: number,
+  sc: number,
+  newColor: number
+): number[][] {
   const startingColor = image[sr][sc];
   image[sr][sc] = newColor;
   const DIR = [

@@ -33,13 +33,20 @@ function longestPalindromicSubstring2(string: string) {
 
     const longest = odd[1] - odd[0] > even[1] - even[0] ? odd : even;
 
-    currentLongest = currentLongest[1] - currentLongest[0] > longest[1] - longest[0] ? currentLongest : longest;
+    currentLongest =
+      currentLongest[1] - currentLongest[0] > longest[1] - longest[0]
+        ? currentLongest
+        : longest;
   }
 
   return string.slice(currentLongest[0], currentLongest[1]);
 }
 
-function getLongestPalindromeFrom2(string: string, leftIdx: number, rightIdx: number) {
+function getLongestPalindromeFrom2(
+  string: string,
+  leftIdx: number,
+  rightIdx: number
+) {
   while (leftIdx >= 0 && rightIdx < string.length) {
     if (string[leftIdx] !== string[rightIdx]) break;
     leftIdx--;

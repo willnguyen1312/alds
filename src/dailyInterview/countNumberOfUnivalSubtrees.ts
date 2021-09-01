@@ -38,7 +38,12 @@ export function countNumberOfUnivalSubtrees(root: BinaryTreeNode): number {
       return true;
     }
 
-    if (count(node.left) && count(node.right) && node.val === node.left?.val && node.val === node.right?.val) {
+    if (
+      count(node.left) &&
+      count(node.right) &&
+      node.val === node.left?.val &&
+      node.val === node.right?.val
+    ) {
       result++;
       return true;
     }

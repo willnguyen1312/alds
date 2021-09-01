@@ -45,5 +45,9 @@ export function buddyStrings(first: string, second: string): boolean {
     }
   }
 
-  return diff.length === 2 && first[diff[0]] === second[diff[1]] && first[diff[1]] === second[diff[0]];
+  return (
+    diff.length === 2 &&
+    first[diff[0]] === second[diff[1]] &&
+    first[diff[1]] === second[diff[0]]
+  );
 }

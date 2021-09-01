@@ -12,7 +12,9 @@ Example:
 [13, 4, 1] however, should return false, since there is no way to modify just one element to make the array non-decreasing.
 */
 
-export function nonDecreasingArrayWithSingleModification(numbs: number[]): boolean {
+export function nonDecreasingArrayWithSingleModification(
+  numbs: number[]
+): boolean {
   let count = 0;
 
   for (let i = 0; i < numbs.length - 1; i++) {

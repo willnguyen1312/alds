@@ -19,7 +19,10 @@ export class LinkedListNode {
   }
 }
 
-export function getIntersectionOfLinkedList(nodeA: LinkedListNode, nodeB: LinkedListNode) {
+export function getIntersectionOfLinkedList(
+  nodeA: LinkedListNode,
+  nodeB: LinkedListNode
+) {
   let headA = nodeA;
   let headB = nodeB;
 

@@ -6,7 +6,10 @@ You can either climb 1 or 2 steps at a time. Write a function that returns the n
 to climb the stairs.
 */
 
-export function climbStairsRecur(n: number, cache = new Map<number, number>()): number {
+export function climbStairsRecur(
+  n: number,
+  cache = new Map<number, number>()
+): number {
   if (n <= 2) {
     return n;
   }
@@ -17,7 +20,8 @@ export function climbStairsRecur(n: number, cache = new Map<number, number>()): 
     return cachedResult;
   }
 
-  const result = climbStairsRecur(n - 1, cache) + climbStairsRecur(n - 2, cache);
+  const result =
+    climbStairsRecur(n - 1, cache) + climbStairsRecur(n - 2, cache);
 
   cache.set(n, result);
   return result;

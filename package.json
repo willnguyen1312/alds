@@ -18,7 +18,6 @@
     "jest": "^27.1.0"
   },
   "prettier": {
-    "printWidth": 140,
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"

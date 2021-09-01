@@ -12,7 +12,10 @@ Down, right.
 */
 
 export function waysToTraverseAGrid(row: number, column: number): number {
-  const count: number[][] = Array.from({ length: row }, () => new Array(column));
+  const count: number[][] = Array.from(
+    { length: row },
+    () => new Array(column)
+  );
 
   for (let index = 0; index < row; index++) {
     count[0][index] = 1;

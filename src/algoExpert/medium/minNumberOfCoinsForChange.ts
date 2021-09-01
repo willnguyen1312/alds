@@ -5,7 +5,10 @@ export function minNumberOfCoinsForChange(n: number, denoms: number[]) {
   for (const denom of denoms) {
     for (let amount = 0; amount < numOfCoins.length; amount++) {
       if (denom <= amount) {
-        numOfCoins[amount] = Math.min(numOfCoins[amount], 1 + numOfCoins[amount - denom]);
+        numOfCoins[amount] = Math.min(
+          numOfCoins[amount],
+          1 + numOfCoins[amount - denom]
+        );
       }
     }
   }

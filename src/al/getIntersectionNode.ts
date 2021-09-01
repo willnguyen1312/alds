@@ -1,4 +1,7 @@
-function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
+function getIntersectionNode(
+  headA: ListNode | null,
+  headB: ListNode | null
+): ListNode | null {
   if (headA === null || headB === null) {
     return null;
   }

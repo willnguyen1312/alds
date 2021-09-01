@@ -27,8 +27,15 @@ export function numberOfIslands(grid: number[][]): number {
   return countIslands;
 }
 
-function markDownIsland(grid: number[][], i: number, j: number, rowsCount: number, columnsCount: number) {
-  if (i < 0 || j < 0 || i >= rowsCount || j >= columnsCount || grid[i][j] === 0) return;
+function markDownIsland(
+  grid: number[][],
+  i: number,
+  j: number,
+  rowsCount: number,
+  columnsCount: number
+) {
+  if (i < 0 || j < 0 || i >= rowsCount || j >= columnsCount || grid[i][j] === 0)
+    return;
 
   grid[i][j] = 0;
 

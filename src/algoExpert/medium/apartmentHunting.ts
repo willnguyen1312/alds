@@ -1,7 +1,12 @@
 function apartmentHunting(blocks: Record<string, boolean>[], reqs: string[]) {
-  const minDistancesFromBlocks = reqs.map((req) => getMinDistances(blocks, req));
+  const minDistancesFromBlocks = reqs.map((req) =>
+    getMinDistances(blocks, req)
+  );
 
-  const maxDistancesAtBlocks = getMaxDistancesAtBlocks(blocks, minDistancesFromBlocks);
+  const maxDistancesAtBlocks = getMaxDistancesAtBlocks(
+    blocks,
+    minDistancesFromBlocks
+  );
 
   return getIdxAtMinValue(maxDistancesAtBlocks);
 }
@@ -17,17 +22,25 @@ function getMinDistances(blocks: Record<string, boolean>[], req: string) {
 
   for (let i = blocks.length - 1; i >= 0; i--) {
     if (blocks[i][req]) closestReqIdx = i;
-    minDistances[i] = Math.min(minDistances[i], distanceBetween(i, closestReqIdx));
+    minDistances[i] = Math.min(
+      minDistances[i],
+      distanceBetween(i, closestReqIdx)
+    );
   }
 
   return minDistances;
 }
 
-function getMaxDistancesAtBlocks(blocks: Record<string, boolean>[], minDistancesFromBlocks: number[][]) {
+function getMaxDistancesAtBlocks(
+  blocks: Record<string, boolean>[],
+  minDistancesFromBlocks: number[][]
+) {
   const maxDistancesAtBlocks: number[] = new Array(blocks.length);
 
   for (let i = 0; i < blocks.length; i++) {
-    const minDistancesAtBlock = minDistancesFromBlocks.map((distances) => distances[i]);
+    const minDistancesAtBlock = minDistancesFromBlocks.map(
+      (distances) => distances[i]
+    );
     maxDistancesAtBlocks[i] = Math.max(...minDistancesAtBlock);
   }
   return maxDistancesAtBlocks;

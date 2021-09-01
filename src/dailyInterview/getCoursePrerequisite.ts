@@ -16,10 +16,15 @@ This input should return the order that we need to take these courses:
  ['CSC100', 'CSC200', 'CSC300']
 */
 
-export function getCoursePrerequisite(courseMap: Record<string, string[]>): string[] {
+export function getCoursePrerequisite(
+  courseMap: Record<string, string[]>
+): string[] {
   const completedCourses: Set<string> = new Set();
 
-  const checkCanCompleteCourse = (course: string, currentPrerequisites: Set<string> = new Set()): boolean => {
+  const checkCanCompleteCourse = (
+    course: string,
+    currentPrerequisites: Set<string> = new Set()
+  ): boolean => {
     // Detect cyclic dependencies
     if (currentPrerequisites.has(course)) {
       return false;
@@ -44,7 +49,10 @@ export function getCoursePrerequisite(courseMap: Record<string, string[]>): stri
     // Loop through all prerequisites
     for (const prerequisite of courseMap[course]) {
       if (!completedCourses.has(prerequisite)) {
-        const canCompleteCourse = checkCanCompleteCourse(prerequisite, currentPrerequisites.add(course));
+        const canCompleteCourse = checkCanCompleteCourse(
+          prerequisite,
+          currentPrerequisites.add(course)
+        );
 
         if (canCompleteCourse) {
           completedCourses.add(prerequisite);

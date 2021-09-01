@@ -1,4 +1,7 @@
-import { LinkedListNode, removeKthElementFromLinkedList } from './removeKthElementFromLinkedList';
+import {
+  LinkedListNode,
+  removeKthElementFromLinkedList,
+} from './removeKthElementFromLinkedList';
 
 describe('removeKthElementFromLinkedList function', () => {
   it('should work', () => {

@@ -1,4 +1,7 @@
-import { LinkedListNode, getIntersectionOfLinkedList } from './getIntersectionOfLinkedList';
+import {
+  LinkedListNode,
+  getIntersectionOfLinkedList,
+} from './getIntersectionOfLinkedList';
 
 describe('getIntersectionOfLinkedList function', () => {
   it('should work', () => {

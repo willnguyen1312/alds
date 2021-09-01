@@ -1,4 +1,6 @@
-function copyRandomList(head: ListNode | null | undefined): ListNode | null | undefined {
+function copyRandomList(
+  head: ListNode | null | undefined
+): ListNode | null | undefined {
   const map = new Map<ListNode, ListNode>();
   return buildRecur(head, map);
 }

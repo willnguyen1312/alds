@@ -14,7 +14,10 @@ export class LinkedListNode {
   }
 }
 
-export function mergeSortedLinkedListIter(first: LinkedListNode, second: LinkedListNode) {
+export function mergeSortedLinkedListIter(
+  first: LinkedListNode,
+  second: LinkedListNode
+) {
   const dumpNode = new LinkedListNode(0);
   let cur = dumpNode;
 
@@ -51,7 +54,10 @@ export function mergeSortedLinkedListIter(first: LinkedListNode, second: LinkedL
   return dumpNode.next;
 }
 
-export function mergeSortedLinkedListRecur(first: LinkedListNode, second: LinkedListNode) {
+export function mergeSortedLinkedListRecur(
+  first: LinkedListNode,
+  second: LinkedListNode
+) {
   if (!first) return second;
   if (!second) return first;
   let head = null;

@@ -23,11 +23,13 @@ Explanation: 'e' comes before 'a' so 'efgh' should come before 'abcd'
 */
 
 export function wordOrdering(words: string[], order: string): boolean {
-  const lookup = order.split('').reduce((acc: Record<string, number>, cur, index) => {
-    return Object.assign(acc, {
-      [cur]: index,
-    });
-  }, {});
+  const lookup = order
+    .split('')
+    .reduce((acc: Record<string, number>, cur, index) => {
+      return Object.assign(acc, {
+        [cur]: index,
+      });
+    }, {});
 
   for (let i = 1; i < words.length; i++) {
     const cur = words[i];

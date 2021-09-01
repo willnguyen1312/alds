@@ -1,4 +1,8 @@
-import { BinaryTreeNode, checkIdenticalTreesIter, checkIdenticalTreesRecur } from './checkIdenticalTrees';
+import {
+  BinaryTreeNode,
+  checkIdenticalTreesIter,
+  checkIdenticalTreesRecur,
+} from './checkIdenticalTrees';
 
 describe('checkIdenticalTrees function', () => {
   it('should work', () => {

@@ -47,7 +47,10 @@ export class BinaryTreeNode {
   }
 }
 
-export function checkIdenticalTreesIter(first: BinaryTreeNode, second: BinaryTreeNode): boolean {
+export function checkIdenticalTreesIter(
+  first: BinaryTreeNode,
+  second: BinaryTreeNode
+): boolean {
   const stackA: BinaryTreeNode[] = [first];
   const stackB: BinaryTreeNode[] = [second];
 
@@ -55,7 +58,11 @@ export function checkIdenticalTreesIter(first: BinaryTreeNode, second: BinaryTre
     const a = stackA.pop();
     const b = stackB.pop();
 
-    if (a.val !== b.val || a.left?.val !== b.left?.val || a.right?.val !== b.right?.val) {
+    if (
+      a.val !== b.val ||
+      a.left?.val !== b.left?.val ||
+      a.right?.val !== b.right?.val
+    ) {
       return false;
     }
 
@@ -79,12 +86,17 @@ export function checkIdenticalTreesIter(first: BinaryTreeNode, second: BinaryTre
   return true;
 }
 
-export function checkIdenticalTreesRecur(first: BinaryTreeNode, second: BinaryTreeNode): boolean {
+export function checkIdenticalTreesRecur(
+  first: BinaryTreeNode,
+  second: BinaryTreeNode
+): boolean {
   if (!first && !second) return true;
 
   if (first && second)
     return (
-      first.val === second.val && checkIdenticalTreesRecur(first.left, second.left) && checkIdenticalTreesRecur(first.right, second.right)
+      first.val === second.val &&
+      checkIdenticalTreesRecur(first.left, second.left) &&
+      checkIdenticalTreesRecur(first.right, second.right)
     );
 
   return false;

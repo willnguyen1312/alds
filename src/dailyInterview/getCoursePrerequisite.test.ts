@@ -8,7 +8,11 @@ describe('getCoursePrerequisite function', () => {
       CSC300: ['CSC100', 'CSC200'],
     };
 
-    expect(getCoursePrerequisite(courseMap)).toEqual(['CSC100', 'CSC200', 'CSC300']);
+    expect(getCoursePrerequisite(courseMap)).toEqual([
+      'CSC100',
+      'CSC200',
+      'CSC300',
+    ]);
   });
 
   it('should work for the second case - not existed course', () => {
