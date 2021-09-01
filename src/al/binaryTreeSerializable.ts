@@ -1,3 +1,13 @@
+export class TreeNode {
+  val: number;
+  left: TreeNode | null;
+  right: TreeNode | null;
+
+  constructor(val: number) {
+    this.val = val;
+  }
+}
+
 const serialize = (root: TreeNode | null) => {
   if (!root) {
     return null;
@@ -35,6 +45,7 @@ const deserialize = (data: any) => {
   } catch (e) {
     return null;
   }
+
   if (!(data instanceof Array) || data.length === 0) {
     return null;
   }
