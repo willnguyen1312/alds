@@ -72,3 +72,49 @@ export function reArrangeString(str: string): string {
 
   return result.join('');
 }
+
+export function reArrangeString2(str: string): string {
+  const countMap: Map<string, number> = new Map();
+  let currentMax = 0;
+  let currentMaxChar = '';
+
+  for (const char of str) {
+    if (countMap.has(char)) {
+      countMap.set(char, countMap.get(char) + 1);
+      currentMax = Math.max(countMap.get(char), currentMax);
+
+      if (countMap.get(char) >= currentMax) {
+        currentMaxChar = char;
+      }
+    } else {
+      countMap.set(char, 1);
+      currentMax = Math.max(countMap.get(char), currentMax);
+    }
+  }
+
+  if (currentMax > str.length - currentMax + 1) {
+    return '';
+  }
+
+  const result: string[] = Array.from({ length: str.length });
+  let index = 0;
+  while (currentMax) {
+    result[index] = currentMaxChar;
+    index += 2;
+    currentMax--;
+  }
+
+  countMap.delete(currentMaxChar);
+
+  for (const item of countMap) {
+    let [char, charCount] = item;
+    while (charCount) {
+      index = index >= str.length ? 1 : index;
+      result[index] = char;
+      index += 2;
+      charCount--;
+    }
+  }
+
+  return result.join('');
+}
