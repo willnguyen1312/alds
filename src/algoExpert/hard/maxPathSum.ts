@@ -1,9 +1,19 @@
-function maxPathSum(tree: TreeNode) {
+export class TreeNode {
+  val: number;
+  left: TreeNode | null;
+  right: TreeNode | null;
+
+  constructor(val: number) {
+    this.val = val;
+  }
+}
+
+export function maxPathSum(tree: TreeNode) {
   const [_, maxSum] = [...findMaxSum(tree)];
   return maxSum;
 }
 
-function findMaxSum(tree: TreeNode | null) {
+export function findMaxSum(tree: TreeNode | null) {
   if (tree === null) return [0, 0];
 
   const [leftMaxSumAsBranch, leftMaxPathSum] = findMaxSum(tree.left);
