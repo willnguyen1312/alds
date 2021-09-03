@@ -12,6 +12,16 @@
  * }
  */
 
+export class TreeNode {
+  val: number;
+  left: TreeNode | null;
+  right: TreeNode | null;
+
+  constructor(val: number) {
+    this.val = val;
+  }
+}
+
 function lowestCommonAncestor(
   root: TreeNode | null,
   p: TreeNode | null,
