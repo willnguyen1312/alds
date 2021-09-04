@@ -7,8 +7,8 @@ You can assume there will be no duplicate numbers in the list.
 
 export class BinaryTreeNode {
   val: number;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  left?: BinaryTreeNode | null;
+  right?: BinaryTreeNode | null;
 
   constructor(val: number) {
     this.val = val;
