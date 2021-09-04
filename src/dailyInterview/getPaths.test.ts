@@ -1,6 +1,6 @@
 import { getPaths } from './getPaths';
 
-describe('getPaths', () => {
+describe.only('getPaths', () => {
   it('should work', () => {
     const input = {
       foo: 'bar',
@@ -17,9 +17,9 @@ describe('getPaths', () => {
       ],
     };
     expect(getPaths(input, (prop) => prop === 'x')).toEqual([
-      '.propA',
-      '.propB.0',
-      '.propB.1.propC',
+      'propA',
+      'propB.0',
+      'propB.1.propC',
     ]);
   });
 });
