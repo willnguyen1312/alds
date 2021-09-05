@@ -6,13 +6,11 @@ You can assume there will be no duplicate numbers in the list.
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left?: BinaryTreeNode | null;
-  right?: BinaryTreeNode | null;
-
-  constructor(val: number) {
-    this.val = val;
-  }
+  constructor(
+    public val: number,
+    public left?: BinaryTreeNode,
+    public right?: BinaryTreeNode
+  ) {}
 }
 
 export function createBalancedBST(
