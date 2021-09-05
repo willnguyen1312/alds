@@ -6,33 +6,33 @@ describe('createBalancedBST function', () => {
 
     expect(createBalancedBST(input)).toMatchInlineSnapshot(`
 BinaryTreeNode {
+  "data": 4,
   "left": BinaryTreeNode {
+    "data": 2,
     "left": BinaryTreeNode {
+      "data": 1,
       "left": null,
       "right": null,
-      "val": 1,
     },
     "right": BinaryTreeNode {
+      "data": 3,
       "left": null,
       "right": null,
-      "val": 3,
     },
-    "val": 2,
   },
   "right": BinaryTreeNode {
+    "data": 6,
     "left": BinaryTreeNode {
+      "data": 5,
       "left": null,
       "right": null,
-      "val": 5,
     },
     "right": BinaryTreeNode {
+      "data": 7,
       "left": null,
       "right": null,
-      "val": 7,
     },
-    "val": 6,
   },
-  "val": 4,
 }
 `);
   });

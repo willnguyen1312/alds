@@ -7,7 +7,7 @@ You can assume there will be no duplicate numbers in the list.
 
 export class BinaryTreeNode {
   constructor(
-    public val: number,
+    public data: number,
     public left?: BinaryTreeNode,
     public right?: BinaryTreeNode
   ) {}
