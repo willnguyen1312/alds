@@ -1,17 +1,17 @@
-export class ListNode {
-  constructor(public val: number, public next?: ListNode) {}
+export class LinkedListNode {
+  constructor(public data: number, public next?: LinkedListNode) {}
 }
 
 function mergeTwoLists(
-  l1: ListNode | null,
-  l2: ListNode | null
-): ListNode | null {
-  let dummy = new ListNode(0);
+  l1: LinkedListNode | null,
+  l2: LinkedListNode | null
+): LinkedListNode | null {
+  let dummy = new LinkedListNode(0);
   let cur = dummy;
   while (l1 !== null || l2 !== null) {
     if (l1 === null) {
       while (l2 !== null) {
-        cur.next = new ListNode(l2.val);
+        cur.next = new LinkedListNode(l2.data);
         l2 = l2.next;
         cur = cur.next;
       }
@@ -20,18 +20,18 @@ function mergeTwoLists(
 
     if (l2 === null) {
       while (l1 !== null) {
-        cur.next = new ListNode(l1.val);
+        cur.next = new LinkedListNode(l1.data);
         l1 = l1.next;
         cur = cur.next;
       }
       break;
     }
 
-    if (l1.val <= l2.val) {
-      cur.next = new ListNode(l1.val);
+    if (l1.data <= l2.data) {
+      cur.next = new LinkedListNode(l1.data);
       l1 = l1.next;
     } else {
-      cur.next = new ListNode(l2.val);
+      cur.next = new LinkedListNode(l2.data);
       l2 = l2.next;
     }
     cur = cur.next;
@@ -39,12 +39,12 @@ function mergeTwoLists(
   return dummy.next;
 }
 
-function mergeTwoListsRecursive(l1: ListNode, l2: ListNode) {
+function mergeTwoListsRecursive(l1: LinkedListNode, l2: LinkedListNode) {
   if (l1 === null) return l2;
   if (l2 === null) return l1;
   let head = null;
 
-  if (l1.val <= l2.val) {
+  if (l1.data <= l2.data) {
     head = l1;
     head.next = mergeTwoListsRecursive(l1.next, l2);
   } else {
