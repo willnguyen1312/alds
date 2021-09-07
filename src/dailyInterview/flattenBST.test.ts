@@ -8,6 +8,28 @@ describe('flattenBST function', () => {
     const n2 = new BinaryTreeNode(2, n5);
     const n1 = new BinaryTreeNode(1, n2, n3);
     flattenBST(n1);
-    console.log(n1);
+    expect(n1).toMatchInlineSnapshot(`
+BinaryTreeNode {
+  "data": 1,
+  "left": null,
+  "right": BinaryTreeNode {
+    "data": 2,
+    "left": null,
+    "right": BinaryTreeNode {
+      "data": 5,
+      "left": undefined,
+      "right": BinaryTreeNode {
+        "data": 3,
+        "left": null,
+        "right": BinaryTreeNode {
+          "data": 4,
+          "left": undefined,
+          "right": undefined,
+        },
+      },
+    },
+  },
+}
+`);
   });
 });
