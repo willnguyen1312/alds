@@ -1,21 +1,18 @@
 /*
-Hi, here's your problem today. This problem was recently asked by Apple:
+This problem was asked by Microsoft.
 
-You are given a binary tree representation of an arithmetic expression.
-In this tree, each leaf is an integer value,, and a non-leaf node is one of
-the four operations: '+', '-', '*', or '/'.
+Suppose an arithmetic expression is given as a binary tree. Each leaf is an integer and each internal node is one of '+', '−', '∗', or '/'.
 
-Write a function that takes this tree and evaluates the expression.
+Given the root to such a tree, write a function to evaluate it.
 
-Example:
+For example, given the following tree:
 
     *
    / \
   +    +
  / \  / \
 3  2  4  5
-
-This is a representation of the expression (3 + 2) * (4 + 5), and should return 45.
+You should return 45, as it is (3 + 2) * (4 + 5).
 */
 
 export const enum Action {
