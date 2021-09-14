@@ -15,26 +15,23 @@ export function collectAllKeysBST(
   function collectAllKeysBSTHelper(node: BinaryTreeNode): boolean {
     let found = false;
     if (predicate(node.data)) {
-      result.add(node.data);
       found = true;
     }
 
     if (node.left) {
-      result.add(node.data);
       if (collectAllKeysBSTHelper(node.left)) {
         found = true;
       }
     }
 
     if (node.right) {
-      result.add(node.data);
       if (collectAllKeysBSTHelper(node.right)) {
         found = true;
       }
     }
 
-    if (!found) {
-      result.delete(node.data);
+    if (found) {
+      result.add(node.data);
     }
 
     return found;

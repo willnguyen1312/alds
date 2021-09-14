@@ -13,13 +13,13 @@ describe.only('collectAllKeysBST', () => {
     const actual = collectAllKeysBST(node, (value) => value < 3);
     expect(actual).toMatchInlineSnapshot(`
 Set {
-  5,
-  3,
   1,
   2,
-  7,
+  3,
   1.5,
   2.5,
+  7,
+  5,
 }
 `);
   });
