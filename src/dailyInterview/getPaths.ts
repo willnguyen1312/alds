@@ -15,8 +15,8 @@ export function getPaths(thing: any, predicate: (value: any) => boolean) {
           currentPath ? currentPath + '.' + i : i.toString()
         );
       }
-    } else if (thing === Object(thing)) {
-      for (let key in thing) {
+    } else if (typeof thing === 'object') {
+      for (const key in thing) {
         getPathHelper(thing[key], currentPath ? currentPath + '.' + key : key);
       }
     }
