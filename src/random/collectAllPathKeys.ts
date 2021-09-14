@@ -5,10 +5,7 @@ export function collectAllPathKeys(
   const paths = [];
   collectAllPathKeysHelper(thing);
 
-  function collectAllPathKeysHelper(
-    thing: any,
-    currentPath: string = ''
-  ): boolean {
+  function collectAllPathKeysHelper(thing: any): boolean {
     if (predicate(thing)) {
       return true;
     }
@@ -18,12 +15,7 @@ export function collectAllPathKeys(
     if (Array.isArray(thing)) {
       for (let i = 0; i < thing.length; i++) {
         paths.push(i);
-        if (
-          collectAllPathKeysHelper(
-            thing[i],
-            currentPath ? currentPath + '.' + i : i.toString()
-          )
-        ) {
+        if (collectAllPathKeysHelper(thing[i])) {
           result = true;
           continue;
         }
@@ -33,12 +25,7 @@ export function collectAllPathKeys(
     } else if (typeof thing === 'object') {
       for (const key in thing) {
         paths.push(key);
-        if (
-          collectAllPathKeysHelper(
-            thing[key],
-            currentPath ? currentPath + '.' + key : key
-          )
-        ) {
+        if (collectAllPathKeysHelper(thing[key])) {
           result = true;
           continue;
         }
