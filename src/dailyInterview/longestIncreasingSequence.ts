@@ -13,7 +13,6 @@ The following input should return 6 since the longest increasing subsequence is 
 export function longestIncreasingSequence(numbs: number[]): number {
   const length = numbs.length;
   const memoizedList = Array(length).fill(0);
-  let max = 0;
 
   // Initialize values for all indexes
   for (let i = 0; i < length; i++) {
