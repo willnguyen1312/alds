@@ -10,7 +10,6 @@ export function generateParenthesis(n: number): string[] {
   function dfs(str: string, left: number, right: number, n: number) {
     if (str.length === 2 * n) {
       res.push(str);
-      return;
     }
 
     if (left < n) {
