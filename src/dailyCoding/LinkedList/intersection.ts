@@ -1,15 +1,15 @@
-export class ListNode {
+export class LinkedListNode {
   val: number;
-  next: null | ListNode = null;
+  next: null | LinkedListNode = null;
   constructor(val: number) {
     this.val = val;
   }
 }
 
-function getIntersectionNode(
-  headA: ListNode | null,
-  headB: ListNode | null
-): ListNode | null {
+export function getIntersectionNode(
+  headA: LinkedListNode | null,
+  headB: LinkedListNode | null
+): LinkedListNode | null {
   if (headA === null || headB === null) {
     return null;
   }
