@@ -1,6 +1,6 @@
 import { reconstructTree } from './reconstructTree';
 
-describe('Name of the group', () => {
+describe('reconstructTree function', () => {
   it('should work', () => {
     expect(
       reconstructTree(
