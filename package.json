@@ -5,7 +5,9 @@
     "test": "jest test",
     "t:w": "jest --watch",
     "t:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman",
-    "build": "jest test --coverage"
+    "build": "jest test --coverage",
+    "go": "netlify deploy --prod --dir coverage/lcov-report",
+    "deploy": "npm run build && npm run go"
   },
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
@@ -14,12 +16,15 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-typescript": "^7.15.0",
     "@types/jest": "^27.0.2",
-    "babel-jest": "^27.2.4",
-    "jest": "^27.2.4"
+    "babel-jest": "^27.2.5",
+    "jest": "^27.2.5"
   },
   "prettier": {
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "netlify-cli": "^6.10.4"
   }
 }
