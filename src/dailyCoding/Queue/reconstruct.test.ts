@@ -3,6 +3,6 @@ import { reconstruct } from './reconstruct';
 describe('reconstruct function', () => {
   it('should work', () => {
     const actual = reconstruct(['+', '+', '+', '-', '+']);
-    console.log(actual);
+    expect(actual).toEqual([0, 1, 3, 2, 4]);
   });
 });
