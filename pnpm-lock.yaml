@@ -7,7 +7,7 @@ specifiers:
   '@types/jest': ^27.0.2
   babel-jest: ^27.2.5
   jest: ^27.2.5
-  netlify-cli: ^6.10.4
+  netlify-cli: ^6.12.1
 
 dependencies:
   '@babel/core': 7.15.8
@@ -18,7 +18,7 @@ dependencies:
   jest: 27.2.5
 
 devDependencies:
-  netlify-cli: 6.10.4
+  netlify-cli: 6.12.1
 
 packages:
 
@@ -1929,7 +1929,7 @@ packages:
       '@netlify/plugin-edge-handlers': 1.11.22_supports-color@8.1.1
       '@netlify/plugins-list': 4.0.0
       '@netlify/run-utils': 2.0.1
-      '@netlify/zip-it-and-ship-it': 4.23.6_supports-color@8.1.1
+      '@netlify/zip-it-and-ship-it': 4.24.0_supports-color@8.1.1
       '@sindresorhus/slugify': 1.1.2
       '@ungap/from-entries': 0.2.1
       ansi-escapes: 4.3.2
@@ -2034,8 +2034,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@netlify/framework-info/5.9.2:
-    resolution: {integrity: sha512-2mzH9iOc57rUx698oIjOvw5wLRJJBHTgNBqLU6ZhUSn14Nj02jej5F2POeH4Zwi48u45YpTnJ0nnSIUjNExNWg==}
+  /@netlify/framework-info/5.11.0:
+    resolution: {integrity: sha512-B6MW05c8vUuakO8x/ucp99ocpdYeikusCzPANqD0O1JamdLyDsDbhL7Z3j0QUhZjpY+bm+4g91Gaq7ynpX0ICg==}
     engines: {node: '>=10.18.0'}
     dependencies:
       ajv: 8.6.3
@@ -2052,7 +2052,7 @@ packages:
     resolution: {integrity: sha512-mQI0NX0QPNVcYb2TQF5cpxO350BR9309r7vSOSvfn0DHkPWUea1kl3iiLXi1mm/dUC6pd3p5ctc0UboW0u+iVQ==}
     engines: {node: '>=10.18.0'}
     dependencies:
-      '@netlify/zip-it-and-ship-it': 4.23.6_supports-color@8.1.1
+      '@netlify/zip-it-and-ship-it': 4.24.0_supports-color@8.1.1
       cpy: 8.1.2
       path-exists: 4.0.0
     transitivePeerDependencies:
@@ -2308,8 +2308,8 @@ packages:
       execa: 5.1.1
     dev: true
 
-  /@netlify/zip-it-and-ship-it/4.23.6:
-    resolution: {integrity: sha512-b4LqjSKrCxWZPVdUVuOXj6Y92fh6X6XXuGw5cr11EzNbqEl7ZPzxsRABkekDD93FOa0Pxi0gI1+ployXK0PQdQ==}
+  /@netlify/zip-it-and-ship-it/4.24.0:
+    resolution: {integrity: sha512-I+tdK6aldEPeUFW/XJswFBXvEyQyru+WS/GAJpNiWoDdhO0qG9uYejadPnt9m8AEyXdy+9l4gUftK46TfX7whQ==}
     engines: {node: '>=10.18.0'}
     hasBin: true
     dependencies:
@@ -2350,8 +2350,8 @@ packages:
       - supports-color
     dev: true
 
-  /@netlify/zip-it-and-ship-it/4.23.6_supports-color@8.1.1:
-    resolution: {integrity: sha512-b4LqjSKrCxWZPVdUVuOXj6Y92fh6X6XXuGw5cr11EzNbqEl7ZPzxsRABkekDD93FOa0Pxi0gI1+ployXK0PQdQ==}
+  /@netlify/zip-it-and-ship-it/4.24.0_supports-color@8.1.1:
+    resolution: {integrity: sha512-I+tdK6aldEPeUFW/XJswFBXvEyQyru+WS/GAJpNiWoDdhO0qG9uYejadPnt9m8AEyXdy+9l4gUftK46TfX7whQ==}
     engines: {node: '>=10.18.0'}
     hasBin: true
     dependencies:
@@ -7665,20 +7665,20 @@ packages:
     resolution: {integrity: sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==}
     dev: true
 
-  /netlify-cli/6.10.4:
-    resolution: {integrity: sha512-gJwCgAkYzORuAaUUr42VOfCWGiA8UPO83myTTb4h5AC6Kp1ieD/Hj0PmRZ8SjDiAuKMFPSGt1ScbNpMAK6PwKQ==}
+  /netlify-cli/6.12.1:
+    resolution: {integrity: sha512-ym39vLo4pgdZeHgtfTk8yA0Nz0hu+arWuOPmJsDQm25TFkOho/A9msrcJhoa9uX89qQVWy7aO7BtAivfV+SJIw==}
     engines: {node: '>=10.18.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@netlify/build': 18.13.11
       '@netlify/config': 15.6.6
-      '@netlify/framework-info': 5.9.2
+      '@netlify/framework-info': 5.11.0
       '@netlify/local-functions-proxy': 1.1.1
       '@netlify/plugin-edge-handlers': 1.11.22
       '@netlify/plugins-list': 4.0.0
       '@netlify/routing-local-proxy': 0.33.2
-      '@netlify/zip-it-and-ship-it': 4.23.6
+      '@netlify/zip-it-and-ship-it': 4.24.0
       '@oclif/command': 1.8.0
       '@oclif/config': 1.17.0
       '@oclif/errors': 1.3.5
@@ -7769,7 +7769,7 @@ packages:
       raw-body: 2.4.1
       resolve: 1.20.0
       semver: 7.3.5
-      source-map-support: 0.5.19
+      source-map-support: 0.5.20
       static-server: 2.2.1
       strip-ansi-control-characters: 2.0.0
       tempy: 1.0.1
@@ -9234,13 +9234,6 @@ packages:
       resolve-url: 0.2.1
       source-map-url: 0.4.1
       urix: 0.1.0
-    dev: true
-
-  /source-map-support/0.5.19:
-    resolution: {integrity: sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==}
-    dependencies:
-      buffer-from: 1.1.2
-      source-map: 0.6.1
     dev: true
 
   /source-map-support/0.5.20:
