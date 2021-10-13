@@ -25,6 +25,6 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "netlify-cli": "^6.12.1"
+    "netlify-cli": "^6.12.3"
   }
 }
