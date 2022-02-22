@@ -12,12 +12,12 @@
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "dependencies": {
-    "@babel/core": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
-    "@babel/preset-typescript": "^7.16.5",
-    "@types/jest": "^27.0.3",
-    "babel-jest": "^27.4.5",
-    "jest": "^27.4.5"
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1"
   },
   "prettier": {
     "semi": true,
@@ -25,6 +25,6 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "netlify-cli": "^8.1.8"
+    "netlify-cli": "^9.6.10"
   }
 }
