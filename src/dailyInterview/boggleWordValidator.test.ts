@@ -12,4 +12,16 @@ describe('boggleWordValidator function', () => {
     const guess = 'BINGO';
     expect(boggleWordValidator(board, guess)).toBe(true);
   });
+
+  it('should work too', () => {
+    const board = [
+      ['E', 'A', 'R', 'A'],
+      ['N', 'L', 'E', 'C'],
+      ['I', 'A', 'I', 'S'],
+      ['B', 'Y', 'O', 'R'],
+    ];
+
+    const guess = 'RSCAREIOYBAILNEA';
+    expect(boggleWordValidator(board, guess)).toBe(true);
+  });
 });
