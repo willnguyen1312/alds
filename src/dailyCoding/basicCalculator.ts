@@ -3,12 +3,12 @@
  * @return {number}
  */
 export function calculate(s: string): number {
-  if (s.length === 0) return;
+  let result = 0;
+  if (s.length === 0) return result;
 
   let stack = [];
-  let operation = 1;
   let currentNum = 0;
-  let result = 0;
+  let operation = 1;
 
   for (let i = 0; i < s.length; i++) {
     let currentChar = s[i];
