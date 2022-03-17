@@ -20,7 +20,7 @@ export function calculate(s: string): number {
         num = num * 10 + +s[++i];
       }
 
-      l2 = o2 == 1 ? l2 * num : l2 / num;
+      l2 = o2 === 1 ? l2 * num : l2 / num;
     } else if (char === '(') {
       // First preserve current calculation status
       stack.push(l1);
@@ -43,12 +43,12 @@ export function calculate(s: string): number {
       o1 = stack.pop();
       l1 = stack.pop();
       // Previous calculation status is now in effect
-      l2 = o2 == 1 ? l2 * num : l2 / num;
-    } else if (char === '*' || char == '/') {
+      l2 = o2 === 1 ? l2 * num : l2 / num;
+    } else if (char === '*' || char === '/') {
       o2 = char === '*' ? 1 : -1;
-    } else if (char == '+' || char == '-') {
+    } else if (char === '+' || char === '-') {
       l1 = l1 + o1 * l2;
-      o1 = char == '+' ? 1 : -1;
+      o1 = char === '+' ? 1 : -1;
       l2 = 1;
       o2 = 1;
     }
