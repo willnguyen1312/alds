@@ -12,7 +12,7 @@
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "dependencies": {
-    "@babel/core": "^7.17.7",
+    "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.4.1",
@@ -25,6 +25,6 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "netlify-cli": "^9.13.2"
+    "netlify-cli": "^9.16.3"
   }
 }
