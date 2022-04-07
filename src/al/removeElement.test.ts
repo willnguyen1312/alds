@@ -1,6 +1,6 @@
 import { removeElement } from './removeElement';
 
-describe.only('removeElement', () => {
+describe('removeElement', () => {
   it('should work for the first case', () => {
     const input = [3, 2, 2, 3];
     const result = 2;

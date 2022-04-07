@@ -1,6 +1,6 @@
 import { collectAllPathKeys } from './collectAllPathKeys';
 
-describe.only('collectAllPathKeys', () => {
+describe('collectAllPathKeys', () => {
   it('should work', () => {
     const input = {
       foo: 'bar',

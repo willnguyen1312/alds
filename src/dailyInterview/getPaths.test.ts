@@ -1,6 +1,6 @@
 import { getPaths } from './getPaths';
 
-describe.only('getPaths', () => {
+describe('getPaths', () => {
   it('should work', () => {
     const input = {
       foo: 'bar',

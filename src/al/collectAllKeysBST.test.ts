@@ -1,6 +1,6 @@
 import { BinaryTreeNode, collectAllKeysBST } from './collectAllKeysBST';
 
-describe.only('collectAllKeysBST', () => {
+describe('collectAllKeysBST', () => {
   it('should work', () => {
     const node = new BinaryTreeNode(5);
     node.left = new BinaryTreeNode(3);
