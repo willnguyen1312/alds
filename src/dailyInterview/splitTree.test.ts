@@ -11,30 +11,30 @@ describe('splitTree function', () => {
     const actual = splitTree(root, 2);
 
     expect(actual).toMatchInlineSnapshot(`
-Array [
-  BinaryTreeNode {
-    "data": 1,
-    "left": undefined,
-    "right": BinaryTreeNode {
-      "data": 2,
-      "left": undefined,
-      "right": undefined,
-    },
-  },
-  BinaryTreeNode {
-    "data": 3,
-    "left": undefined,
-    "right": BinaryTreeNode {
-      "data": 4,
-      "left": undefined,
-      "right": BinaryTreeNode {
-        "data": 5,
-        "left": undefined,
-        "right": undefined,
-      },
-    },
-  },
-]
-`);
+      [
+        BinaryTreeNode {
+          "data": 1,
+          "left": undefined,
+          "right": BinaryTreeNode {
+            "data": 2,
+            "left": undefined,
+            "right": undefined,
+          },
+        },
+        BinaryTreeNode {
+          "data": 3,
+          "left": undefined,
+          "right": BinaryTreeNode {
+            "data": 4,
+            "left": undefined,
+            "right": BinaryTreeNode {
+              "data": 5,
+              "left": undefined,
+              "right": undefined,
+            },
+          },
+        },
+      ]
+    `);
   });
 });

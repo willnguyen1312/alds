@@ -7,42 +7,42 @@ describe('PrefixMapSum class', () => {
     prefixMapSum.insert('bath', 5);
 
     expect(prefixMapSum).toMatchInlineSnapshot(`
-PrefixMapSum {
-  "insert": [Function],
-  "map": Object {
-    "bag": 4,
-    "bath": 5,
-  },
-  "sum": [Function],
-  "trie": TrieNode {
-    "letters": Object {
-      "b": TrieNode {
-        "letters": Object {
-          "a": TrieNode {
-            "letters": Object {
-              "g": TrieNode {
-                "letters": Object {},
-                "total": 4,
-              },
-              "t": TrieNode {
-                "letters": Object {
-                  "h": TrieNode {
-                    "letters": Object {},
-                    "total": 5,
-                  },
-                },
-                "total": 5,
-              },
-            },
-            "total": 9,
-          },
+      PrefixMapSum {
+        "insert": [Function],
+        "map": {
+          "bag": 4,
+          "bath": 5,
         },
-        "total": 9,
-      },
-    },
-    "total": 0,
-  },
-}
-`);
+        "sum": [Function],
+        "trie": TrieNode {
+          "letters": {
+            "b": TrieNode {
+              "letters": {
+                "a": TrieNode {
+                  "letters": {
+                    "g": TrieNode {
+                      "letters": {},
+                      "total": 4,
+                    },
+                    "t": TrieNode {
+                      "letters": {
+                        "h": TrieNode {
+                          "letters": {},
+                          "total": 5,
+                        },
+                      },
+                      "total": 5,
+                    },
+                  },
+                  "total": 9,
+                },
+              },
+              "total": 9,
+            },
+          },
+          "total": 0,
+        },
+      }
+    `);
   });
 });

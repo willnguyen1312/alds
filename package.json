@@ -2,29 +2,23 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "test": "jest test",
-    "t:w": "jest --watch",
-    "t:d": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --watch --no-cache --no-watchman",
-    "build": "jest test --coverage",
-    "go": "netlify deploy --prod --dir coverage/lcov-report",
-    "deploy": "npm run build && npm run go"
+    "test": "vitest",
+    "t:c": "vitest --changed",
+    "build": "vitest run --coverage",
+    "go": "netlify deploy --prod --dir coverage",
+    "deploy": "pnpm run build && pnpm run go"
   },
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
-  "dependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-typescript": "^7.16.7",
-    "@types/jest": "^27.4.1",
-    "babel-jest": "^27.5.1",
-    "jest": "^27.5.1"
+  "devDependencies": {
+    "c8": "^7.11.0",
+    "netlify-cli": "^9.16.3",
+    "vite": "^2.9.1",
+    "vitest": "^0.9.0"
   },
   "prettier": {
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "devDependencies": {
-    "netlify-cli": "^9.16.3"
   }
 }

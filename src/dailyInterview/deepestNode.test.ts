@@ -13,22 +13,22 @@ describe('deepestNode function', () => {
     root.right = new BinaryTreeNode('c');
 
     expect(deepestNode(root)).toMatchInlineSnapshot(`
-Array [
-  BinaryTreeNode {
-    "val": "d",
-  },
-  3,
-]
-`);
+      [
+        BinaryTreeNode {
+          "val": "d",
+        },
+        3,
+      ]
+    `);
 
     expect(deepestNode2(root)).toMatchInlineSnapshot(`
-Array [
-  BinaryTreeNode {
-    "val": "d",
-  },
-  3,
-]
-`);
+      [
+        BinaryTreeNode {
+          "val": "d",
+        },
+        3,
+      ]
+    `);
     expect(deepestNode3(root)).toMatchInlineSnapshot(`
 BinaryTreeNode {
   "val": "d",

@@ -13,33 +13,33 @@ describe('cloneGraph function', () => {
 
     const actual = cloneGraph(n1);
     expect(actual).toMatchInlineSnapshot(`
-GraphNode {
-  "neighbors": Array [
-    GraphNode {
-      "neighbors": Array [
-        GraphNode {
-          "neighbors": Array [
-            GraphNode {
-              "neighbors": Array [
-                [Circular],
-                GraphNode {
-                  "neighbors": Array [
-                    [Circular],
-                  ],
-                  "val": 2,
-                },
-              ],
-              "val": 4,
-            },
-          ],
-          "val": 3,
-        },
-      ],
-      "val": 5,
-    },
-  ],
-  "val": 1,
-}
-`);
+      GraphNode {
+        "neighbors": [
+          GraphNode {
+            "neighbors": [
+              GraphNode {
+                "neighbors": [
+                  GraphNode {
+                    "neighbors": [
+                      [Circular],
+                      GraphNode {
+                        "neighbors": [
+                          [Circular],
+                        ],
+                        "val": 2,
+                      },
+                    ],
+                    "val": 4,
+                  },
+                ],
+                "val": 3,
+              },
+            ],
+            "val": 5,
+          },
+        ],
+        "val": 1,
+      }
+    `);
   });
 });

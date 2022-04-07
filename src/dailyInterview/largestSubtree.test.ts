@@ -13,30 +13,30 @@ describe('largestSubtree function', () => {
 
     const actual = largestSubtree(node);
     expect(actual).toMatchInlineSnapshot(`
-Array [
-  5,
-  BinaryTreeNode {
-    "data": 5,
-    "left": BinaryTreeNode {
-      "data": 3,
-      "left": BinaryTreeNode {
-        "data": 2,
-        "left": undefined,
-        "right": undefined,
-      },
-      "right": BinaryTreeNode {
-        "data": 4,
-        "left": undefined,
-        "right": BinaryTreeNode {
-          "data": 4.5,
-          "left": undefined,
-          "right": undefined,
+      [
+        5,
+        BinaryTreeNode {
+          "data": 5,
+          "left": BinaryTreeNode {
+            "data": 3,
+            "left": BinaryTreeNode {
+              "data": 2,
+              "left": undefined,
+              "right": undefined,
+            },
+            "right": BinaryTreeNode {
+              "data": 4,
+              "left": undefined,
+              "right": BinaryTreeNode {
+                "data": 4.5,
+                "left": undefined,
+                "right": undefined,
+              },
+            },
+          },
+          "right": null,
         },
-      },
-    },
-    "right": null,
-  },
-]
-`);
+      ]
+    `);
   });
 });

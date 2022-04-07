@@ -19,13 +19,13 @@ describe.only('collectAllPathKeys', () => {
 
     const actual = collectAllPathKeys(input, (prop) => prop === 'x');
     expect(actual).toMatchInlineSnapshot(`
-Array [
-  "propA",
-  "propB",
-  0,
-  1,
-  "propC",
-]
-`);
+      [
+        "propA",
+        "propB",
+        0,
+        1,
+        "propC",
+      ]
+    `);
   });
 });

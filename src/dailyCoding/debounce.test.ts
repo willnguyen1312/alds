@@ -2,7 +2,7 @@ import { debounce } from './debounce';
 
 describe('debounce function', () => {
   it('should work', async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     let value = 0;
     const increment = () => {
       value++;
@@ -13,9 +13,9 @@ describe('debounce function', () => {
     debouncedIncrement();
     debouncedIncrement();
 
-    jest.runAllTimers();
+    vi.runAllTimers();
     expect(value).toBe(1);
 
-    jest.useRealTimers();
+    vi.useRealTimers();
   });
 });
