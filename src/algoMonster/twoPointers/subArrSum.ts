@@ -31,5 +31,6 @@ export function subarraySumTotal(arr: number[], target: number): number {
       prefixSums.set(curSum, 1);
     }
   }
+
   return count;
 }
