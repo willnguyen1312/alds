@@ -1,5 +1,5 @@
 function quickSortInternal(arr: number[], start: number, end: number) {
-  if (end - start <= 1) {
+  if (start >= end) {
     return;
   }
 
