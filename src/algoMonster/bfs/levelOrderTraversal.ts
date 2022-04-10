@@ -10,23 +10,23 @@ export class TreeNode {
   }
 }
 
-export function levelOrderTraversal(root: TreeNode): number[] {
-  const res: number[] = [];
+export function levelOrderTraversal(root: TreeNode): number[][] {
+  const res: number[][] = [];
   const queue = [root];
 
   while (queue.length > 0) {
     const n = queue.length;
-    const new_level = [];
+    const newLevel = [];
     for (let i = 0; i < n; i++) {
       const node = queue.shift();
-      new_level.push(node.val);
+      newLevel.push(node.val);
 
       for (const child of [node.left, node.right]) {
         if (child) queue.push(child);
       }
     }
 
-    res.push(...new_level);
+    res.push(newLevel);
   }
 
   return res;
