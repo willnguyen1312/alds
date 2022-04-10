@@ -7,7 +7,7 @@ export function squareRoot(n: number): number {
   let result = -1;
 
   while (left <= right) {
-    const mid = left + Math.trunc((right - left) / 2);
+    const mid = Math.floor((right + left) / 2);
 
     if (mid * mid <= n) {
       left = mid + 1;
