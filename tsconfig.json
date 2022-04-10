@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "types": ["vite/client", "vitest/globals"],
-    "target": "ES6"
+    "target": "ES6",
+    "moduleResolution": "Node"
   }
 }

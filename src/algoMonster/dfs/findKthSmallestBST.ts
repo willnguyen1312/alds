@@ -34,22 +34,22 @@ export function findKthSmallestBSTIter(
   return null;
 }
 
-let count = 0;
+export function findKthSmallestBSTRecur(root: TreeNode, k: number) {
+  let count = 0;
 
-export function findKthSmallestBSTRecur(
-  root: TreeNode,
-  k: number
-): TreeNode | null {
-  if (!root) return null;
+  function findKthSmallestBSTRecurHelper(node: TreeNode): TreeNode | null {
+    if (!node) return null;
 
-  const left = findKthSmallestBSTRecur(root.left, k);
+    const left = findKthSmallestBSTRecurHelper(node.left);
+    if (left) return left;
 
-  if (left) return left;
+    count++;
+    if (count === k) {
+      return node;
+    }
 
-  count++;
-  if (count === k) {
-    return root;
+    return findKthSmallestBSTRecurHelper(node.right);
   }
 
-  return findKthSmallestBSTRecur(root.right, k);
+  return findKthSmallestBSTRecurHelper(root);
 }
