@@ -1,5 +1,5 @@
 export function subArrSum(arr: number[], target: number): number[] {
-  const prefixSums = new Map();
+  const prefixSums = new Map([[0, 0]]);
 
   let curSum = 0;
   for (let i = 0; i < arr.length; i++) {
