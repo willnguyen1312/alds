@@ -34,3 +34,26 @@ export function subarraySumTotal(arr: number[], target: number): number {
 
   return count;
 }
+
+export function subarraySumDivisible(numbs: number[], k: number): number {
+  const remainders = new Map([[0, 1]]);
+  let cur_sum = 0;
+  let count = 0;
+
+  for (let i = 0; i < numbs.length; i++) {
+    const num = numbs[i];
+    cur_sum += num;
+    const remainder = cur_sum % k;
+    const complement = (k - remainder) % k;
+    if (remainders.has(complement)) {
+      count += remainders.get(complement);
+    }
+    if (remainders.has(complement)) {
+      remainders.set(complement, remainders.get(complement) + 1);
+    } else {
+      remainders.set(complement, 1);
+    }
+  }
+
+  return count;
+}
