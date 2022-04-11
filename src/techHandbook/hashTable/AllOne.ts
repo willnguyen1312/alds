@@ -1,9 +1,11 @@
 // https://leetcode.com/problems/all-oone-data-structure/
-const stmvalue_in = (m) => new Map([...m].sort((x, y) => x[1] - y[1]));
-const stmvalue_de = (m) => new Map([...m].sort((x, y) => y[1] - x[1]));
+const getMinValueMap = (m: Map<string, number>) =>
+  new Map([...m].sort((x, y) => x[1] - y[1]));
+const getMaxValueMap = (m: Map<string, number>) =>
+  new Map([...m].sort((x, y) => y[1] - x[1]));
 
-function AllOne() {
-  let m = new Map();
+export function AllOne() {
+  let m: Map<string, number> = new Map();
   let preOp: 'start' | 'min' | 'max' | 'inc' | 'dec' = 'start';
   return { inc, dec, getMaxKey, getMinKey };
   function inc(k: string) {
@@ -16,12 +18,12 @@ function AllOne() {
     preOp = 'dec';
   }
   function getMaxKey() {
-    if (preOp !== 'max') m = stmvalue_de(m);
+    if (preOp !== 'max') m = getMaxValueMap(m);
     preOp = 'max';
     return m.keys().next().value || '';
   }
   function getMinKey() {
-    if (preOp !== 'min') m = stmvalue_in(m);
+    if (preOp !== 'min') m = getMinValueMap(m);
     preOp = 'min';
     return m.keys().next().value || '';
   }
