@@ -19,3 +19,28 @@ function search(nums: number[], target: number): number {
 
   return -1;
 }
+
+export function searchInRotateSortedArr(
+  arr: number[],
+  low = 0,
+  high = arr.length - 1,
+  key: number
+): number {
+  if (low > high) return -1;
+
+  const mid = Math.floor((low + high) / 2);
+  if (arr[mid] === key) return mid;
+
+  if (arr[low] <= arr[mid]) {
+    if (key >= arr[low] && key <= arr[mid]) {
+      return searchInRotateSortedArr(arr, low, mid - 1, key);
+    }
+    return searchInRotateSortedArr(arr, mid + 1, high, key);
+  }
+
+  if (key >= arr[mid] && key <= arr[high]) {
+    return searchInRotateSortedArr(arr, mid + 1, high, key);
+  }
+
+  return searchInRotateSortedArr(arr, low, mid - 1, key);
+}
