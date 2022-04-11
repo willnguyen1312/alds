@@ -1,6 +1,6 @@
 export function maxSubArr(numbs: number[]): number {
-  let maxSoFar = 0;
-  let maxEndingHere = 0;
+  let maxSoFar = Number.NEGATIVE_INFINITY;
+  let maxEndingHere = Number.NEGATIVE_INFINITY;
 
   for (const numb of numbs) {
     maxEndingHere = Math.max(numb, maxEndingHere + numb);
