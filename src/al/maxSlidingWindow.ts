@@ -1,4 +1,4 @@
-function maxSlidingWindow(nums: number[], k: number): number[] {
+export function maxSlidingWindow(nums: number[], k: number): number[] {
   let result: number[] = [];
   const queue: number[] = [];
   //   Used to remove max value at the beginning of queue when out of range
