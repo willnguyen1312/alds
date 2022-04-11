@@ -13,7 +13,7 @@ export function longestSubstringWithoutRepeatingCharacters(s: string): number {
       window.delete(s.charAt(l));
       l++;
     }
-    longest = Math.max(longest, r - l);
+    longest = Math.max(longest, window.size);
   }
 
   return longest;
