@@ -3,7 +3,7 @@ export function tripletToZero(arr: number[]): number[][] {
   const result: number[][] = [];
   arr.sort((a, b) => a - b);
 
-  for (let i = 0; i < n - 1; i++) {
+  for (let i = 0; i < n - 2; i++) {
     let l = i + 1;
     let r = n - 1;
     let x = arr[i];

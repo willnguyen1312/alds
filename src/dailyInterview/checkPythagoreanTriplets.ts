@@ -13,7 +13,7 @@ export function checkPythagoreanTriplets(numbs: number[]) {
   const squaredNumbs = numbs.map((numb) => Math.pow(numb, 2));
   squaredNumbs.sort((a, b) => a - b);
 
-  for (let index = squaredNumbs.length - 1; index >= 2; index--) {
+  for (let index = squaredNumbs.length - 1; index > 1; index--) {
     let left = 0;
     let right = index - 1;
 
