@@ -12,8 +12,8 @@ devDependencies:
     specifier: ^8.0.0
     version: 8.0.0
   netlify-cli:
-    specifier: ^15.6.0
-    version: 15.6.0(@types/node@18.15.11)
+    specifier: ^15.7.0
+    version: 15.7.0(@types/node@18.15.11)
   vite:
     specifier: ^4.3.9
     version: 4.3.9(@types/node@18.15.11)
@@ -482,7 +482,7 @@ packages:
       nopt: 5.0.0
       npmlog: 5.0.1
       rimraf: 3.0.2
-      semver: 7.5.1
+      semver: 7.5.3
       tar: 6.1.13
     transitivePeerDependencies:
       - encoding
@@ -493,8 +493,8 @@ packages:
     resolution: {integrity: sha512-4wMPu9iN3/HL97QblBsBay3E1etIciR84izI3U+4iALY+JHCrI+a2jO0qbAZ/nxKoegypYEaiiqWXylm+/zfrw==}
     dev: true
 
-  /@netlify/build-info@7.0.7:
-    resolution: {integrity: sha512-DAGbkrs+h0s8+1K7+INBWMrF80fkHzEAUrGzZdZ1q3HSNXKuP4wiBfnbdn7Ls0FLAwldS2edqVpBA7dy66KatQ==}
+  /@netlify/build-info@7.0.8:
+    resolution: {integrity: sha512-VbasUPF4WcvFdq0B58+cM5/Jf6SUjYympgwz6B4IA5PQom/Ptkj5OMzRVclHclIhyDiiuwhIpCeeA0R6ru6XdA==}
     engines: {node: ^14.16.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -503,13 +503,13 @@ packages:
       find-up: 6.3.0
       minimatch: 9.0.1
       read-pkg: 7.1.0
-      semver: 7.5.1
+      semver: 7.5.3
       yaml: 2.3.1
       yargs: 17.7.1
     dev: true
 
-  /@netlify/build@29.12.6(@types/node@18.15.11):
-    resolution: {integrity: sha512-qTeitoi5KOxjuta5/qPyUC7d5NfqTmc6xT+EohAZKOzgz8C5Bto/hfh+jbmAlfoNnyL20MVngn1wNXKJRZVRAA==}
+  /@netlify/build@29.12.8(@types/node@18.15.11):
+    resolution: {integrity: sha512-es3nRMmb5zEpvON3qRKCGMqpfcqPvVYKR6ulQe+LP6+U2Nw9oAHr7+nBgiMvo0moJBC7t+lYFSphLjpn4G1M1Q==}
     engines: {node: ^14.16.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -518,11 +518,11 @@ packages:
       '@netlify/config': 20.5.1
       '@netlify/edge-bundler': 8.16.2
       '@netlify/framework-info': 9.8.10
-      '@netlify/functions-utils': 5.2.12(supports-color@9.3.1)
+      '@netlify/functions-utils': 5.2.13(supports-color@9.3.1)
       '@netlify/git-utils': 5.1.1
       '@netlify/plugins-list': 6.68.0
       '@netlify/run-utils': 5.1.1
-      '@netlify/zip-it-and-ship-it': 9.9.1(supports-color@9.3.1)
+      '@netlify/zip-it-and-ship-it': 9.10.0(supports-color@9.3.1)
       '@sindresorhus/slugify': 2.2.0
       ansi-escapes: 6.2.0
       chalk: 5.2.0
@@ -530,7 +530,7 @@ packages:
       execa: 6.1.0
       figures: 5.0.0
       filter-obj: 5.1.0
-      got: 12.6.0
+      got: 12.6.1
       hot-shots: 10.0.0
       indent-string: 5.0.0
       is-plain-obj: 4.1.0
@@ -556,12 +556,11 @@ packages:
       resolve: 2.0.0-next.4
       rfdc: 1.3.0
       safe-json-stringify: 1.2.0
-      semver: 7.5.1
+      semver: 7.5.3
       string-width: 5.1.2
       strip-ansi: 7.0.1
       supports-color: 9.3.1
       terminal-link: 3.0.0
-      tmp-promise: 3.0.3
       ts-node: 10.9.1(@types/node@18.15.11)(typescript@5.0.4)
       typescript: 5.0.4
       uuid: 9.0.0
@@ -639,7 +638,7 @@ packages:
       p-wait-for: 4.1.0
       path-key: 4.0.0
       regexp-tree: 0.1.24
-      semver: 7.5.1
+      semver: 7.5.3
       tmp-promise: 3.0.3
       uuid: 9.0.0
     dev: true
@@ -865,14 +864,14 @@ packages:
       p-locate: 6.0.0
       process: 0.11.10
       read-pkg-up: 9.1.0
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
-  /@netlify/functions-utils@5.2.12(supports-color@9.3.1):
-    resolution: {integrity: sha512-BgyPyz/aXOzzx0dKom8qEws5YqsTDGCuwLJpDWjGJsxGn6duSzTuXQZyOys6vz9N1TXfwC6TAOGjt+Y0yT/8VQ==}
+  /@netlify/functions-utils@5.2.13(supports-color@9.3.1):
+    resolution: {integrity: sha512-j8jLlXC5tU7BbbmLLhsmCsJvS7DItEz4GAF3qIDfNFKvTfplk6MUGIuHUpezeBWr3UlNqCEn9UbvJym/CT2iLQ==}
     engines: {node: ^14.16.0 || >=16.0.0}
     dependencies:
-      '@netlify/zip-it-and-ship-it': 9.9.1(supports-color@9.3.1)
+      '@netlify/zip-it-and-ship-it': 9.10.0(supports-color@9.3.1)
       cpy: 9.0.1
       path-exists: 5.0.0
     transitivePeerDependencies:
@@ -1037,8 +1036,8 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@netlify/zip-it-and-ship-it@9.9.1(supports-color@9.3.1):
-    resolution: {integrity: sha512-CRxADifrq23LnPvuOnPza/QGln/HDB/rhWsHGyLbXzpaEaJu41CQI2nsBLDF+G/K621S7W9UcCatOr9TDgvaOg==}
+  /@netlify/zip-it-and-ship-it@9.10.0(supports-color@9.3.1):
+    resolution: {integrity: sha512-E9Hh4MQdhWDeDn3YjDNIpYvqUdLBMx7ghxfShFXv73/KyDns7tS/BpyakuObL/89JDV76CG/jtIx/cPPfxmg9w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -1067,7 +1066,7 @@ packages:
       precinct: 11.0.5(supports-color@9.3.1)
       require-package-name: 2.0.1
       resolve: 2.0.0-next.4
-      semver: 7.5.1
+      semver: 7.5.3
       tmp-promise: 3.0.3
       toml: 3.0.0
       unixify: 1.0.0
@@ -1197,8 +1196,8 @@ packages:
       - encoding
     dev: true
 
-  /@octokit/rest@19.0.11:
-    resolution: {integrity: sha512-m2a9VhaP5/tUw8FwfnW2ICXlXpLPIqxtg3XcAiGMLj/Xhw3RSBfZ8le/466ktO1Gcjr8oXudGnHhxV1TXJgFxw==}
+  /@octokit/rest@19.0.13:
+    resolution: {integrity: sha512-/EzVox5V9gYGdbAI+ovYj3nXQT1TtTHRT+0eZPcuC05UFSWO3mdO9UY1C0i2eLF9Un1ONJkAk+IEtYGAC+TahA==}
     engines: {node: '>= 14'}
     dependencies:
       '@octokit/core': 4.2.1
@@ -1412,7 +1411,7 @@ packages:
       debug: 4.3.4(supports-color@9.3.1)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.1
+      semver: 7.5.3
       tsutils: 3.21.0(typescript@5.0.4)
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -1663,7 +1662,7 @@ packages:
       global-cache-dir: 4.4.0
       is-plain-obj: 4.1.0
       path-exists: 5.0.0
-      semver: 7.5.1
+      semver: 7.5.3
       write-file-atomic: 4.0.2
     dev: true
 
@@ -2116,7 +2115,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /byline@5.0.0:
@@ -2735,8 +2734,8 @@ packages:
       supports-color: 9.3.1
     dev: true
 
-  /decache@4.6.1:
-    resolution: {integrity: sha512-ohApBM8u9ygepJCjgBrEZSSxPjc0T/PJkD+uNyxXPkqudyUpdXpwJYp0VISm2WrPVzASU6DZyIi6BWdyw7uJ2Q==}
+  /decache@4.6.2:
+    resolution: {integrity: sha512-2LPqkLeu8XWHU8qNCS3kcF6sCcb5zIzvWaAHYSvPfwhdd7mHuah29NssMzrTYyHN4F5oFy2ko9OBYxegtU0FEw==}
     dependencies:
       callsite: 1.0.0
     dev: true
@@ -3383,7 +3382,7 @@ packages:
       proxy-addr: 2.0.7
       rfdc: 1.3.0
       secure-json-parse: 2.7.0
-      semver: 7.5.1
+      semver: 7.5.3
       tiny-lru: 11.0.1
     transitivePeerDependencies:
       - supports-color
@@ -3745,7 +3744,7 @@ packages:
     dependencies:
       '@xhmikosr/downloader': 12.0.0
       node-fetch: 3.3.1
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /git-repo-info@2.1.1:
@@ -3836,23 +3835,6 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.8
-    dev: true
-
-  /got@12.6.0:
-    resolution: {integrity: sha512-WTcaQ963xV97MN3x0/CbAriXFZcXCfgxVp91I+Ze6pawQOa7SgzwSx2zIJJsX+kTajMnVs0xcFD1TxZKFqhdnQ==}
-    engines: {node: '>=14.16'}
-    dependencies:
-      '@sindresorhus/is': 5.3.0
-      '@szmarczak/http-timer': 5.0.1
-      cacheable-lookup: 7.0.0
-      cacheable-request: 10.2.9
-      decompress-response: 6.0.0
-      form-data-encoder: 2.1.4
-      get-stream: 6.0.1
-      http2-wrapper: 2.2.0
-      lowercase-keys: 3.0.0
-      p-cancelable: 3.0.0
-      responselike: 3.0.0
     dev: true
 
   /got@12.6.1:
@@ -4558,7 +4540,7 @@ packages:
       jws: 3.2.2
       lodash: 4.17.21
       ms: 2.1.3
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /junk@4.0.0:
@@ -4780,7 +4762,7 @@ packages:
       jest-validate: 27.5.1
       map-obj: 5.0.2
       moize: 6.1.5
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /log-symbols@1.0.2:
@@ -5193,22 +5175,23 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /netlify-cli@15.6.0(@types/node@18.15.11):
-    resolution: {integrity: sha512-yJ6Q8J2HtOyO3bjJRZS8OrNe3gsT/Ztsvp6kjJrUj9RFfdNkyt0BXb5i4hRXRpYsz8DXncQKZn2JeWFFawtUXQ==}
+  /netlify-cli@15.7.0(@types/node@18.15.11):
+    resolution: {integrity: sha512-qn8XpqyNBKD/LV/TpJRPYYDqecuKPVzlJsAQj0aP28gZfgaru3rmH8bpeZlCtEPg64i9/dlq2RztH/qWgs08Ow==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@bugsnag/js': 7.20.2
       '@fastify/static': 6.10.2
-      '@netlify/build': 29.12.6(@types/node@18.15.11)
-      '@netlify/build-info': 7.0.7
+      '@netlify/build': 29.12.8(@types/node@18.15.11)
+      '@netlify/build-info': 7.0.8
       '@netlify/config': 20.5.1
       '@netlify/edge-bundler': 8.16.2
       '@netlify/framework-info': 9.8.10
       '@netlify/local-functions-proxy': 1.1.1
-      '@netlify/zip-it-and-ship-it': 9.9.1(supports-color@9.3.1)
-      '@octokit/rest': 19.0.11
+      '@netlify/serverless-functions-api': 1.5.1
+      '@netlify/zip-it-and-ship-it': 9.10.0(supports-color@9.3.1)
+      '@octokit/rest': 19.0.13
       '@skn0tt/lambda-local': 2.0.3
       ansi-escapes: 6.2.0
       ansi-styles: 6.2.1
@@ -5230,7 +5213,7 @@ packages:
       copy-template-dir: 1.4.0
       cron-parser: 4.8.1
       debug: 4.3.4(supports-color@9.3.1)
-      decache: 4.6.1
+      decache: 4.6.2
       dot-prop: 7.2.0
       dotenv: 16.0.3
       env-paths: 3.0.0
@@ -5289,7 +5272,7 @@ packages:
       pump: 3.0.0
       raw-body: 2.5.2
       read-pkg-up: 9.1.0
-      semver: 7.5.1
+      semver: 7.5.3
       source-map-support: 0.5.21
       strip-ansi-control-characters: 2.0.0
       tabtab: 3.0.2
@@ -5409,7 +5392,7 @@ packages:
       is-plain-obj: 4.1.0
       normalize-node-version: 12.4.0
       path-exists: 5.0.0
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /noop2@2.0.0:
@@ -5430,7 +5413,7 @@ packages:
     dependencies:
       all-node-versions: 11.3.0
       filter-obj: 5.1.0
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /normalize-package-data@3.0.3:
@@ -5439,7 +5422,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.12.0
-      semver: 7.5.1
+      semver: 7.5.3
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -5751,7 +5734,7 @@ packages:
       got: 12.6.1
       registry-auth-token: 5.0.2
       registry-url: 6.0.1
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /parallel-transform@1.2.0:
@@ -6418,7 +6401,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.3
     dev: true
 
   /semver@6.3.0:
@@ -6428,6 +6411,14 @@ packages:
 
   /semver@7.5.1:
     resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
+  /semver@7.5.3:
+    resolution: {integrity: sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -7318,7 +7309,7 @@ packages:
       is-yarn-global: 0.4.1
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.5.1
+      semver: 7.5.3
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
     dev: true
