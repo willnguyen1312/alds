@@ -11,15 +11,10 @@
   "name": "alds",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "devDependencies": {
-    "@vitest/coverage-c8": "^0.32.2",
+    "@vitest/coverage-c8": "^0.32.4",
     "c8": "^8.0.0",
-    "netlify-cli": "^15.8.0",
-    "vite": "^4.3.9",
-    "vitest": "^0.32.2"
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "netlify-cli": "^15.8.1",
+    "vite": "^4.4.2",
+    "vitest": "^0.32.4"
   }
 }
