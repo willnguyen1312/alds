@@ -10,23 +10,23 @@ Your algorithm should run in O(n) complexity.
 */
 
 export function longestConsecutiveSubSequence(arr: number[]) {
-  const length = arr.length;
-  let set = new Set();
-  let result = 0;
+  const length = arr.length
+  let set = new Set()
+  let result = 0
 
   for (let i = 0; i < length; i++) {
-    set.add(arr[i]);
+    set.add(arr[i])
   }
 
   for (let i = 0; i < length; i++) {
     // if current element is the starting element of a sequence
     if (!set.has(arr[i] - 1)) {
-      let current = arr[i];
-      while (set.has(current)) current++;
+      let current = arr[i]
+      while (set.has(current)) current++
 
-      result = Math.max(result, current - arr[i]);
+      result = Math.max(result, current - arr[i])
     }
   }
 
-  return result;
+  return result
 }

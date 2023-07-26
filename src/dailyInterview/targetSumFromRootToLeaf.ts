@@ -9,24 +9,24 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function targetSumFromRootToLeaf(
   root: BinaryTreeNode,
-  target: number
+  target: number,
 ): boolean {
   if (!root) {
-    return false;
+    return false
   }
 
   if (root.data === target && !root.left && !root.right) {
-    return true;
+    return true
   }
 
   return (
     targetSumFromRootToLeaf(root.left, target - root.data) ||
     targetSumFromRootToLeaf(root.right, target - root.data)
-  );
+  )
 }

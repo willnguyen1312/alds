@@ -12,33 +12,33 @@ should return ['CSC100', 'CSC200', 'CSCS300'].
 */
 
 export function checkCoursePrerequisite(
-  courseMap: Record<string, string[]>
+  courseMap: Record<string, string[]>,
 ): string[] {
-  const completedCourses: Set<string> = new Set();
+  const completedCourses: Set<string> = new Set()
 
   const checkCanCompleteCourse = (
     course: string,
-    currentPrerequisites: Set<string> = new Set()
+    currentPrerequisites: Set<string> = new Set(),
   ): boolean => {
     // Detect cyclic dependencies
     if (currentPrerequisites.has(course)) {
-      return false;
+      return false
     }
 
     // Course does not exist
     if (!courseMap[course]) {
-      return false;
+      return false
     }
 
     // Already completed course
     if (completedCourses.has(course)) {
-      return true;
+      return true
     }
 
     // Zero dependency
     if (courseMap[course].length === 0) {
-      completedCourses.add(course);
-      return true;
+      completedCourses.add(course)
+      return true
     }
 
     // Loop through all prerequisites
@@ -46,26 +46,26 @@ export function checkCoursePrerequisite(
       if (!completedCourses.has(prerequisite)) {
         const canCompleteCourse = checkCanCompleteCourse(
           prerequisite,
-          currentPrerequisites.add(course)
-        );
+          currentPrerequisites.add(course),
+        )
 
         if (canCompleteCourse) {
-          completedCourses.add(prerequisite);
+          completedCourses.add(prerequisite)
         } else {
-          return false;
+          return false
         }
       }
     }
 
-    completedCourses.add(course);
-    return true;
-  };
+    completedCourses.add(course)
+    return true
+  }
 
   for (const courseKey in courseMap) {
     if (!checkCanCompleteCourse(courseKey)) {
-      return null;
+      return null
     }
   }
 
-  return Array.from(completedCourses);
+  return Array.from(completedCourses)
 }

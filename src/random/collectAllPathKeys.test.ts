@@ -1,23 +1,23 @@
-import { collectAllPathKeys } from './collectAllPathKeys';
+import { collectAllPathKeys } from "./collectAllPathKeys"
 
-describe('collectAllPathKeys', () => {
-  it('should work', () => {
+describe("collectAllPathKeys", () => {
+  it("should work", () => {
     const input = {
-      foo: 'bar',
-      propA: 'x',
+      foo: "bar",
+      propA: "x",
       propB: [
-        'x',
+        "x",
         {
-          propC: 'x',
-          propD: 'bar',
+          propC: "x",
+          propD: "bar",
         },
         {
-          propE: 'baz',
+          propE: "baz",
         },
       ],
-    };
+    }
 
-    const actual = collectAllPathKeys(input, (prop) => prop === 'x');
+    const actual = collectAllPathKeys(input, (prop) => prop === "x")
     expect(actual).toMatchInlineSnapshot(`
       [
         "propA",
@@ -26,6 +26,6 @@ describe('collectAllPathKeys', () => {
         1,
         "propC",
       ]
-    `);
-  });
-});
+    `)
+  })
+})

@@ -24,48 +24,48 @@ function findMatch(
   y: number,
   row: number,
   column: number,
-  level: number
+  level: number,
 ): boolean {
-  const length = pat.length;
+  const length = pat.length
 
-  if (level === length) return true;
+  if (level === length) return true
 
-  if (x < 0 || y < 0 || x >= row || y >= column) return false;
+  if (x < 0 || y < 0 || x >= row || y >= column) return false
 
   if (mat[x][y] === pat[level]) {
-    const original = mat[x][y];
-    mat[x][y] = '*';
+    const original = mat[x][y]
+    mat[x][y] = "*"
 
     const res =
       findMatch(mat, pat, x - 1, y, row, column, level + 1) ||
       findMatch(mat, pat, x + 1, y, row, column, level + 1) ||
       findMatch(mat, pat, x, y - 1, row, column, level + 1) ||
-      findMatch(mat, pat, x, y + 1, row, column, level + 1);
+      findMatch(mat, pat, x, y + 1, row, column, level + 1)
 
-    mat[x][y] = original;
-    return res;
+    mat[x][y] = original
+    return res
   }
 
-  return false;
+  return false
 }
 
 export function wordSearchInGrid(
   grid: string[][],
   word: string,
   row = grid.length,
-  column = grid[0].length
+  column = grid[0].length,
 ) {
-  const length = word.length;
+  const length = word.length
 
-  if (length > row * column) return false;
+  if (length > row * column) return false
 
   for (let i = 0; i < row; i++) {
     for (let j = 0; j < column; j++) {
       if (grid[i][j] === word[0])
         if (findMatch(grid, word, i, j, row, column, 0)) {
-          return true;
+          return true
         }
     }
   }
-  return false;
+  return false
 }

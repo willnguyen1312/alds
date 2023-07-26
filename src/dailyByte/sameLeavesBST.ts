@@ -37,33 +37,33 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 function getLeavesPath(node: BinaryTreeNode): string {
-  const numbs: number[] = [];
+  const numbs: number[] = []
 
   function getLeavesPathHelper(node: BinaryTreeNode) {
     if (!node) {
-      return;
+      return
     }
 
     if (!node.left && !node.right) {
-      numbs.push(node.data);
+      numbs.push(node.data)
     }
 
-    getLeavesPathHelper(node.left);
-    getLeavesPathHelper(node.right);
+    getLeavesPathHelper(node.left)
+    getLeavesPathHelper(node.right)
   }
 
-  getLeavesPathHelper(node);
-  return numbs.join('');
+  getLeavesPathHelper(node)
+  return numbs.join("")
 }
 
 export function sameLeavesBST(
   first: BinaryTreeNode,
-  second: BinaryTreeNode
+  second: BinaryTreeNode,
 ): boolean {
-  return getLeavesPath(first) === getLeavesPath(second);
+  return getLeavesPath(first) === getLeavesPath(second)
 }

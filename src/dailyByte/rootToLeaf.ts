@@ -21,33 +21,33 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function rootToLeaf(root: BinaryTreeNode): number[][] {
-  const result: number[][] = [];
+  const result: number[][] = []
 
   function collect(node: BinaryTreeNode, path: number[]) {
     if (!node.left && !node.right) {
-      result.push(path.slice());
-      return;
+      result.push(path.slice())
+      return
     }
 
     if (node.left) {
-      path.push(node.left.data);
-      collect(node.left, path);
-      path.pop();
+      path.push(node.left.data)
+      collect(node.left, path)
+      path.pop()
     }
 
     if (node.right) {
-      path.push(node.right.data);
-      collect(node.right, path);
-      path.pop();
+      path.push(node.right.data)
+      collect(node.right, path)
+      path.pop()
     }
   }
 
-  collect(root, [root.data]);
+  collect(root, [root.data])
 
-  return result;
+  return result
 }

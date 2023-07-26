@@ -11,16 +11,16 @@ Minimize the total number of operations.
 */
 
 export function moveZeros(numbs: number[]) {
-  let i = 0;
-  let j = 0;
+  let i = 0
+  let j = 0
 
   while (i < numbs.length) {
     if (numbs[i] !== 0) {
-      [numbs[j], numbs[i]] = [numbs[i], numbs[j]];
-      j++;
+      ;[numbs[j], numbs[i]] = [numbs[i], numbs[j]]
+      j++
     }
-    i++;
+    i++
   }
 
-  return numbs;
+  return numbs
 }

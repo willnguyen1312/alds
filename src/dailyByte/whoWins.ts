@@ -21,35 +21,35 @@ Player one takes 1
 */
 
 export function whoWins(input: number[]): number {
-  let turn: 'p1' | 'p2' = 'p1';
-  let sum1 = 0;
-  let sum2 = 0;
+  let turn: "p1" | "p2" = "p1"
+  let sum1 = 0
+  let sum2 = 0
 
-  let i = 0;
-  let j = input.length - 1;
+  let i = 0
+  let j = input.length - 1
 
   while (i < j) {
-    const leftEnd = input[i];
-    const rightEnd = input[j];
+    const leftEnd = input[i]
+    const rightEnd = input[j]
 
     if (leftEnd > rightEnd) {
-      if (turn === 'p1') {
-        sum1 += leftEnd;
+      if (turn === "p1") {
+        sum1 += leftEnd
       } else {
-        sum2 += leftEnd;
+        sum2 += leftEnd
       }
-      i++;
+      i++
     } else {
-      if (turn === 'p1') {
-        sum1 += rightEnd;
+      if (turn === "p1") {
+        sum1 += rightEnd
       } else {
-        sum2 += rightEnd;
+        sum2 += rightEnd
       }
-      j--;
+      j--
     }
 
-    turn = turn === 'p1' ? 'p2' : 'p1';
+    turn = turn === "p1" ? "p2" : "p1"
   }
 
-  return sum1 > sum2 ? 1 : 2;
+  return sum1 > sum2 ? 1 : 2
 }

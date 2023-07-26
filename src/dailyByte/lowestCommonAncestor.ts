@@ -31,29 +31,29 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function lowestCommonAncestor(
   root: BinaryTreeNode,
   first: BinaryTreeNode,
-  second: BinaryTreeNode
+  second: BinaryTreeNode,
 ): BinaryTreeNode {
   if (!root) {
-    return root;
+    return root
   }
 
   if (root === first || root === second) {
-    return root;
+    return root
   }
 
-  const left = lowestCommonAncestor(root.left, first, second);
-  const right = lowestCommonAncestor(root.right, first, second);
+  const left = lowestCommonAncestor(root.left, first, second)
+  const right = lowestCommonAncestor(root.right, first, second)
 
   if (left && right) {
-    return root;
+    return root
   }
 
-  return left || right;
+  return left || right
 }

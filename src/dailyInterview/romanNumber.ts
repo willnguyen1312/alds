@@ -42,21 +42,21 @@ export const romanNumber = (str: string): number => {
     C: 100,
     D: 500,
     M: 1000,
-  };
-
-  let result = 0;
-  for (let index = 0; index < str.length; index++) {
-    const element = mapRoman[str[index]];
-    const nextElement = mapRoman[str[index + 1]];
-
-    if (nextElement > element) {
-      result += nextElement - element;
-      index++;
-      continue;
-    }
-
-    result += element;
   }
 
-  return result;
-};
+  let result = 0
+  for (let index = 0; index < str.length; index++) {
+    const element = mapRoman[str[index]]
+    const nextElement = mapRoman[str[index + 1]]
+
+    if (nextElement > element) {
+      result += nextElement - element
+      index++
+      continue
+    }
+
+    result += element
+  }
+
+  return result
+}

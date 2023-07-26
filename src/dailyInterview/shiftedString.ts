@@ -8,27 +8,27 @@ A = abc and B= acb should return false.
 */
 
 export function shiftedString(first: string, second: string): boolean {
-  let firstIdx = 0;
-  let secondIdx = 0;
+  let firstIdx = 0
+  let secondIdx = 0
 
   while (firstIdx < first.length && first[firstIdx] !== second[secondIdx]) {
-    firstIdx++;
+    firstIdx++
   }
 
   if (firstIdx === first.length) {
-    return false;
+    return false
   }
 
   while (secondIdx < second.length) {
-    firstIdx = firstIdx === first.length ? 0 : firstIdx;
+    firstIdx = firstIdx === first.length ? 0 : firstIdx
 
     if (first[firstIdx] !== second[secondIdx]) {
-      return false;
+      return false
     }
 
-    firstIdx++;
-    secondIdx++;
+    firstIdx++
+    secondIdx++
   }
 
-  return true;
+  return true
 }

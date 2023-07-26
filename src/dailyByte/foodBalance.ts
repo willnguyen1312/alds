@@ -21,23 +21,23 @@ items = "FDFFDFDD", return 2
 */
 
 export function foodBalance(items: string): number {
-  let result = 0;
-  let foodCount = 0;
-  let drinkCount = 0;
+  let result = 0
+  let foodCount = 0
+  let drinkCount = 0
 
   for (const item of items) {
-    if (item === 'F') {
-      foodCount++;
-    } else if (item === 'D') {
-      drinkCount++;
+    if (item === "F") {
+      foodCount++
+    } else if (item === "D") {
+      drinkCount++
     }
 
     if (foodCount === drinkCount && foodCount !== 0) {
-      result++;
-      foodCount = 0;
-      drinkCount = 0;
+      result++
+      foodCount = 0
+      drinkCount = 0
     }
   }
 
-  return result;
+  return result
 }

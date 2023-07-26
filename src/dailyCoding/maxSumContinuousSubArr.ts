@@ -11,13 +11,13 @@ since we would not take any elements.
 */
 
 export function maxSumContinuousSubArr(numbs: number[]): number {
-  let maxEndingHere = 0;
-  let maxSoFar = Number.MIN_VALUE;
+  let maxEndingHere = 0
+  let maxSoFar = Number.MIN_VALUE
 
   for (let i = 0; i < numbs.length; i++) {
-    maxEndingHere = Math.max(numbs[i], maxEndingHere + numbs[i]);
-    maxSoFar = Math.max(maxSoFar, maxEndingHere);
+    maxEndingHere = Math.max(numbs[i], maxEndingHere + numbs[i])
+    maxSoFar = Math.max(maxSoFar, maxEndingHere)
   }
 
-  return maxSoFar;
+  return maxSoFar
 }

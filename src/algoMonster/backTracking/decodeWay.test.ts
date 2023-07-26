@@ -1,7 +1,7 @@
-import { decodeWay } from './decodeWay';
+import { decodeWay } from "./decodeWay"
 
-describe('decodeWay function', () => {
-  it('should work', () => {
-    expect(decodeWay('123')).toEqual(3);
-  });
-});
+describe("decodeWay function", () => {
+  it("should work", () => {
+    expect(decodeWay("123")).toEqual(3)
+  })
+})

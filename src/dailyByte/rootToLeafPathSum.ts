@@ -25,46 +25,46 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 function getSum(numbs: number[]) {
-  return numbs.reduce((a, b) => a + b);
+  return numbs.reduce((a, b) => a + b)
 }
 
 export function rootToLeafPathSum(
   root: BinaryTreeNode,
-  target: number
+  target: number,
 ): boolean {
   function collect(node: BinaryTreeNode, path: number[]): boolean {
     if (!node.left && !node.right) {
-      const found = getSum(path) === target;
-      return found;
+      const found = getSum(path) === target
+      return found
     }
 
     if (node.left) {
-      path.push(node.left.data);
-      const found = collect(node.left, path);
-      path.pop();
+      path.push(node.left.data)
+      const found = collect(node.left, path)
+      path.pop()
 
       if (found) {
-        return true;
+        return true
       }
     }
 
     if (node.right) {
-      path.push(node.right.data);
-      const found = collect(node.right, path);
-      path.pop();
+      path.push(node.right.data)
+      const found = collect(node.right, path)
+      path.pop()
 
       if (found) {
-        return true;
+        return true
       }
     }
 
-    return false;
+    return false
   }
 
-  return collect(root, [root.data]);
+  return collect(root, [root.data])
 }

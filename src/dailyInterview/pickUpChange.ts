@@ -21,14 +21,14 @@ print(max_change(mat))
 export function pickUpChange(input: number[][]): number {
   function pickUpChangeUtil(arr: number[][], row: number, col: number) {
     if (row >= arr.length || col >= arr[0].length) {
-      return 0;
+      return 0
     }
 
-    const maxGoRight = arr[row][col] + pickUpChangeUtil(arr, row, col + 1);
-    const maxGoDown = arr[row][col] + pickUpChangeUtil(arr, row + 1, col);
+    const maxGoRight = arr[row][col] + pickUpChangeUtil(arr, row, col + 1)
+    const maxGoDown = arr[row][col] + pickUpChangeUtil(arr, row + 1, col)
 
-    return Math.max(maxGoRight, maxGoDown);
+    return Math.max(maxGoRight, maxGoDown)
   }
 
-  return pickUpChangeUtil(input, 0, 0);
+  return pickUpChangeUtil(input, 0, 0)
 }

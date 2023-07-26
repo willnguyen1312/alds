@@ -11,46 +11,46 @@
 export function findLongestSubArrLargerThanX(
   arr: number[],
   x: number,
-  maxConsecutiveZero = 4
+  maxConsecutiveZero = 4,
 ): number[] {
-  let start = -1;
-  let end = -1;
-  let maxStart = -1;
-  let maxEnd = -1;
-  let countZero = 0;
+  let start = -1
+  let end = -1
+  let maxStart = -1
+  let maxEnd = -1
+  let countZero = 0
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] >= x && start === -1) {
-      countZero = 0;
-      start = i;
+      countZero = 0
+      start = i
     } else if (arr[i] === 0) {
-      countZero++;
+      countZero++
       if (countZero === maxConsecutiveZero) {
-        let tempStart = start;
-        let tempEnd = i - maxConsecutiveZero;
+        let tempStart = start
+        let tempEnd = i - maxConsecutiveZero
         if (tempEnd - tempStart > maxEnd - maxStart) {
-          maxEnd = tempEnd;
-          maxStart = tempStart;
+          maxEnd = tempEnd
+          maxStart = tempStart
         }
-        start = -1;
-        end = -1;
+        start = -1
+        end = -1
       }
     } else if (arr[i] < x && start !== -1) {
-      end = i - 1;
+      end = i - 1
     }
   }
 
   if (start !== -1 && end === -1) {
-    end = arr.length - 1;
+    end = arr.length - 1
   }
 
   if (maxStart === -1 || end - start > maxEnd - maxStart) {
-    maxStart = start;
+    maxStart = start
   }
 
   if (maxEnd === -1 || end - start > maxEnd - maxStart) {
-    maxEnd = end;
+    maxEnd = end
   }
 
-  return arr.slice(maxStart, maxEnd + 1);
+  return arr.slice(maxStart, maxEnd + 1)
 }

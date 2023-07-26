@@ -9,16 +9,16 @@ You should optimize for the sum method.
 */
 
 export function optimizeListSum(numbs: number[]) {
-  const cacheSum: Record<number, number> = {};
-  let currentSum = 0;
+  const cacheSum: Record<number, number> = {}
+  let currentSum = 0
 
   for (let index = 0; index < numbs.length; index++) {
-    const element = numbs[index];
-    currentSum += element;
-    cacheSum[element] = currentSum;
+    const element = numbs[index]
+    currentSum += element
+    cacheSum[element] = currentSum
   }
 
   return function getSumFromRange(start: number, end: number) {
-    return cacheSum[end] - cacheSum[start];
-  };
+    return cacheSum[end] - cacheSum[start]
+  }
 }

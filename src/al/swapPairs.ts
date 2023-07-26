@@ -12,12 +12,12 @@
 
 function swapPairs(head: ListNode | null): ListNode | null {
   if (head === null || head.next === null) {
-    return head;
+    return head
   }
 
-  const nextNode = head.next;
-  head.next = head.next.next;
-  nextNode.next = head;
-  head.next = swapPairs(nextNode.next.next);
-  return nextNode;
+  const nextNode = head.next
+  head.next = head.next.next
+  nextNode.next = head
+  head.next = swapPairs(nextNode.next.next)
+  return nextNode
 }

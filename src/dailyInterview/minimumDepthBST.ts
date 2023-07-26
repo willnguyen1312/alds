@@ -9,14 +9,14 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function minimumDepthBST(root: BinaryTreeNode): number {
   if (!root) {
-    return 0;
+    return 0
   }
 
-  return Math.min(minimumDepthBST(root.left), minimumDepthBST(root.right)) + 1;
+  return Math.min(minimumDepthBST(root.left), minimumDepthBST(root.right)) + 1
 }

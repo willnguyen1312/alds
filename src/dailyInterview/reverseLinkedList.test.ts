@@ -2,13 +2,13 @@ import {
   reverseLinkedListRecur,
   reverseLinkedListIter,
   LinkedListNode,
-} from './reverseLinkedList';
+} from "./reverseLinkedList"
 
-describe('reverseLinkedListRecur function', () => {
-  it('should work', () => {
-    const headNode = new LinkedListNode(1);
-    headNode.next = new LinkedListNode(2);
-    headNode.next.next = new LinkedListNode(3);
+describe("reverseLinkedListRecur function", () => {
+  it("should work", () => {
+    const headNode = new LinkedListNode(1)
+    headNode.next = new LinkedListNode(2)
+    headNode.next.next = new LinkedListNode(3)
 
     expect(reverseLinkedListRecur(headNode)).toMatchInlineSnapshot(`
 LinkedListNode {
@@ -21,15 +21,15 @@ LinkedListNode {
   },
   "val": 3,
 }
-`);
-  });
-});
+`)
+  })
+})
 
-describe('reverseLinkedListIter function', () => {
-  it('should work', () => {
-    const headNode = new LinkedListNode(1);
-    headNode.next = new LinkedListNode(2);
-    headNode.next.next = new LinkedListNode(3);
+describe("reverseLinkedListIter function", () => {
+  it("should work", () => {
+    const headNode = new LinkedListNode(1)
+    headNode.next = new LinkedListNode(2)
+    headNode.next.next = new LinkedListNode(3)
 
     expect(reverseLinkedListIter(headNode)).toMatchInlineSnapshot(`
 LinkedListNode {
@@ -42,6 +42,6 @@ LinkedListNode {
   },
   "val": 3,
 }
-`);
-  });
-});
+`)
+  })
+})

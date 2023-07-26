@@ -13,20 +13,20 @@ that occurs in nums2 after 2 and no element is greater than 4.
 */
 
 export function greaterElement(first: number[], second: number[]): number[] {
-  const cacheResult: Record<string, number> = {};
+  const cacheResult: Record<string, number> = {}
 
-  let i = 0;
-  let j = 0;
+  let i = 0
+  let j = 0
 
   while (i < second.length) {
     while (second[i] >= second[j] && j < second.length) {
-      j++;
+      j++
     }
 
-    cacheResult[second[i]] = second[j] || -1;
-    i++;
-    j = i;
+    cacheResult[second[i]] = second[j] || -1
+    i++
+    j = i
   }
 
-  return first.map((numb) => cacheResult[numb]);
+  return first.map((numb) => cacheResult[numb])
 }

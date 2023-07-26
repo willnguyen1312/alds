@@ -7,17 +7,17 @@ A range should be represented by a tuple in the format of (lower, upper).
 */
 
 export function missingRange(numbs: number[]): number[][] {
-  const result: number[][] = [];
-  let nextNumber = numbs[0] + 1;
+  const result: number[][] = []
+  let nextNumber = numbs[0] + 1
 
   for (let index = 1; index < numbs.length; index++) {
-    const element = numbs[index];
+    const element = numbs[index]
 
     if (element - nextNumber >= 1) {
-      result.push([nextNumber, element - 1]);
+      result.push([nextNumber, element - 1])
     }
-    nextNumber = element + 1;
+    nextNumber = element + 1
   }
 
-  return result;
+  return result
 }

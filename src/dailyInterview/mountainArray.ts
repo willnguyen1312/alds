@@ -10,19 +10,19 @@ Like
 */
 
 export function mountainArray(numbs: number[]): boolean {
-  let increasing = true;
+  let increasing = true
 
-  if (numbs.length < 3 || numbs[0] >= numbs[1]) return false;
+  if (numbs.length < 3 || numbs[0] >= numbs[1]) return false
 
   for (let i = 2; i < numbs.length; i++) {
-    if (numbs[i - 1] === numbs[i]) return false;
+    if (numbs[i - 1] === numbs[i]) return false
 
     if (increasing && numbs[i - 1] > numbs[i]) {
-      increasing = false;
+      increasing = false
     } else if (!increasing && numbs[i - 1] < numbs[i]) {
-      return false;
+      return false
     }
   }
 
-  return increasing ? false : true;
+  return increasing ? false : true
 }

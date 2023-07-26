@@ -23,16 +23,16 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function calculateDepthBST(root: BinaryTreeNode) {
   if (!root) {
-    return 0;
+    return 0
   }
 
   return (
     Math.max(calculateDepthBST(root.left), calculateDepthBST(root.right)) + 1
-  );
+  )
 }

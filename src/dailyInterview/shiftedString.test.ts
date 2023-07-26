@@ -1,8 +1,8 @@
-import { shiftedString } from './shiftedString';
+import { shiftedString } from "./shiftedString"
 
-describe('shiftedString', () => {
-  it('should work', () => {
-    expect(shiftedString('abcde', 'cdeab')).toBe(true);
-    expect(shiftedString('abc', 'acb')).toBe(false);
-  });
-});
+describe("shiftedString", () => {
+  it("should work", () => {
+    expect(shiftedString("abcde", "cdeab")).toBe(true)
+    expect(shiftedString("abc", "acb")).toBe(false)
+  })
+})

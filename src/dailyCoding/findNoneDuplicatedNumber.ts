@@ -8,13 +8,13 @@ Given [13, 19, 13, 13], return 19.
 
 export function findNoneDuplicatedNumber(numbs: number[]): number {
   const countMap: Record<number, number> = numbs.reduce((acc, cur) => {
-    acc[cur] = (acc[cur] || 0) + 1;
-    return acc;
-  }, {});
+    acc[cur] = (acc[cur] || 0) + 1
+    return acc
+  }, {})
 
   for (const countKey in countMap) {
     if (countMap[countKey] === 1) {
-      return +countKey;
+      return +countKey
     }
   }
 }

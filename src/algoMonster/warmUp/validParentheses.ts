@@ -5,23 +5,23 @@
 
 export function validParentheses(input: string): boolean {
   const lookup: Map<string, string> = new Map([
-    [')', '('],
-    ['}', '{'],
-    [']', '['],
-  ]);
+    [")", "("],
+    ["}", "{"],
+    ["]", "["],
+  ])
 
-  const stack: string[] = [];
+  const stack: string[] = []
 
   for (const char of input) {
     if (lookup.has(char)) {
-      const last = stack.pop();
+      const last = stack.pop()
       if (last !== lookup.get(char)) {
-        return false;
+        return false
       }
     } else {
-      stack.push(char);
+      stack.push(char)
     }
   }
 
-  return stack.length === 0;
+  return stack.length === 0
 }

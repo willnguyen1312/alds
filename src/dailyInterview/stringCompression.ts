@@ -10,33 +10,33 @@ Output: ['a', '2', 'b', 'c', '3']
 */
 
 export function stringCompression(strs: string[]): string[] {
-  let result: string[] = [];
-  let count = 0;
-  let currentLetter = '';
+  let result: string[] = []
+  let count = 0
+  let currentLetter = ""
 
   function addToResult(str: string) {
     if (count > 0) {
-      result.push(currentLetter);
+      result.push(currentLetter)
     }
 
     if (count > 1) {
-      result.push(count.toString());
+      result.push(count.toString())
     }
   }
 
   for (const str of strs) {
     if (str !== currentLetter) {
-      addToResult(str);
+      addToResult(str)
 
-      currentLetter = str;
-      count = 1;
-      continue;
+      currentLetter = str
+      count = 1
+      continue
     }
 
-    count++;
+    count++
   }
 
-  addToResult(currentLetter);
+  addToResult(currentLetter)
 
-  return result;
+  return result
 }

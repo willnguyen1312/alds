@@ -13,33 +13,33 @@ The equivalent expression of the above reverse polish notation would be (1 - ((2
 */
 
 export function reversePolishNotationCalculator(
-  arr: (number | string)[]
+  arr: (number | string)[],
 ): number {
-  const stack: any[] = [];
+  const stack: any[] = []
 
   for (const item of arr) {
-    if (typeof item === 'number') {
-      stack.push(item);
-      continue;
+    if (typeof item === "number") {
+      stack.push(item)
+      continue
     }
 
-    if (typeof item === 'string') {
-      const second = stack.pop();
-      const first = stack.pop();
-      if (item === '+') {
-        stack.push(first + second);
+    if (typeof item === "string") {
+      const second = stack.pop()
+      const first = stack.pop()
+      if (item === "+") {
+        stack.push(first + second)
       }
-      if (item === '-') {
-        stack.push(first - second);
+      if (item === "-") {
+        stack.push(first - second)
       }
-      if (item === '*') {
-        stack.push(first * second);
+      if (item === "*") {
+        stack.push(first * second)
       }
-      if (item === '/') {
-        stack.push(first / second);
+      if (item === "/") {
+        stack.push(first / second)
       }
     }
   }
 
-  return stack[0] as number;
+  return stack[0] as number
 }

@@ -9,33 +9,33 @@ Output: 1
 */
 
 export function findNoneDuplicateNumber(numbs: number[]): number {
-  let result = 0;
+  let result = 0
 
   for (const numb of numbs) {
-    result ^= numb;
+    result ^= numb
   }
 
-  return result;
+  return result
 }
 
 export function findNoneDuplicateNumberExtra(numbs: number[]): number {
-  const cache: Map<number, number> = new Map();
+  const cache: Map<number, number> = new Map()
 
   for (const numb of numbs) {
-    const inCache = cache.has(numb);
+    const inCache = cache.has(numb)
 
     if (!inCache) {
-      cache.set(numb, 1);
+      cache.set(numb, 1)
     } else {
-      cache.set(numb, cache.get(numb) + 1);
+      cache.set(numb, cache.get(numb) + 1)
     }
   }
 
   for (const numb of numbs) {
     if (cache.get(numb) === 1) {
-      return numb;
+      return numb
     }
   }
 
-  return -1;
+  return -1
 }

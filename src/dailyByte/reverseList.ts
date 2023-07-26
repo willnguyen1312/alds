@@ -13,19 +13,22 @@ looks like the following: 1->null
 */
 
 export class LinkedListNode {
-  constructor(public data: number, public next?: LinkedListNode) {}
+  constructor(
+    public data: number,
+    public next?: LinkedListNode,
+  ) {}
 }
 
 export function reverseList(head: LinkedListNode) {
   function reverseListHelper(head: LinkedListNode, tail: LinkedListNode) {
     if (!head) {
-      return tail;
+      return tail
     }
-    const next = head.next;
-    head.next = tail;
+    const next = head.next
+    head.next = tail
 
-    return reverseListHelper(next, head);
+    return reverseListHelper(next, head)
   }
 
-  return reverseListHelper(head, null);
+  return reverseListHelper(head, null)
 }

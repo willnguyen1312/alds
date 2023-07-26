@@ -9,6 +9,6 @@ Output: 7
 
 export function findSingleElement(numbs: number[]): number {
   return numbs.reduce((acc, cur) => {
-    return acc ^ cur;
-  });
+    return acc ^ cur
+  })
 }

@@ -9,43 +9,43 @@ So, the answer here should be 7.
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: number
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 function getSum(numbs: BinaryTreeNode[]) {
-  return numbs.reduce((acc, cur) => acc + cur.val, 0);
+  return numbs.reduce((acc, cur) => acc + cur.val, 0)
 }
 
 export function levelWithMinimumSum(root: BinaryTreeNode): number {
-  let result = Number.MAX_VALUE;
-  const queue: BinaryTreeNode[] = [root];
+  let result = Number.MAX_VALUE
+  const queue: BinaryTreeNode[] = [root]
 
   while (queue.length) {
-    const toQueue: BinaryTreeNode[] = [];
+    const toQueue: BinaryTreeNode[] = []
 
-    const currentSum = getSum(queue);
-    result = Math.min(currentSum, result);
+    const currentSum = getSum(queue)
+    result = Math.min(currentSum, result)
 
     while (queue.length) {
-      const currentNode = queue.pop();
+      const currentNode = queue.pop()
 
       if (currentNode.left) {
-        toQueue.push(currentNode.left);
+        toQueue.push(currentNode.left)
       }
 
       if (currentNode.right) {
-        toQueue.push(currentNode.right);
+        toQueue.push(currentNode.right)
       }
     }
 
-    queue.push(...toQueue);
+    queue.push(...toQueue)
   }
 
-  return result;
+  return result
 }

@@ -1,25 +1,25 @@
-import { getPaths } from './getPaths';
+import { getPaths } from "./getPaths"
 
-describe('getPaths', () => {
-  it('should work', () => {
+describe("getPaths", () => {
+  it("should work", () => {
     const input = {
-      foo: 'bar',
-      propA: 'x',
+      foo: "bar",
+      propA: "x",
       propB: [
-        'x',
+        "x",
         {
-          propC: 'x',
-          propD: 'bar',
+          propC: "x",
+          propD: "bar",
         },
         {
-          propE: 'baz',
+          propE: "baz",
         },
       ],
-    };
-    expect(getPaths(input, (prop) => prop === 'x')).toEqual([
-      'propA',
-      'propB.0',
-      'propB.1.propC',
-    ]);
-  });
-});
+    }
+    expect(getPaths(input, (prop) => prop === "x")).toEqual([
+      "propA",
+      "propB.0",
+      "propB.1.propC",
+    ])
+  })
+})

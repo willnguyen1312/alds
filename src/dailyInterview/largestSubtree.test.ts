@@ -1,17 +1,17 @@
-import { BinaryTreeNode, largestSubtree } from './largestSubtree';
+import { BinaryTreeNode, largestSubtree } from "./largestSubtree"
 
-describe('largestSubtree function', () => {
-  it('should work', () => {
-    const node = new BinaryTreeNode(5);
-    node.left = new BinaryTreeNode(3);
-    node.left.left = new BinaryTreeNode(2);
-    node.left.right = new BinaryTreeNode(4);
-    node.left.right.right = new BinaryTreeNode(4.5);
+describe("largestSubtree function", () => {
+  it("should work", () => {
+    const node = new BinaryTreeNode(5)
+    node.left = new BinaryTreeNode(3)
+    node.left.left = new BinaryTreeNode(2)
+    node.left.right = new BinaryTreeNode(4)
+    node.left.right.right = new BinaryTreeNode(4.5)
 
-    node.right = new BinaryTreeNode(10);
-    node.right.right = new BinaryTreeNode(20);
+    node.right = new BinaryTreeNode(10)
+    node.right.right = new BinaryTreeNode(20)
 
-    const actual = largestSubtree(node);
+    const actual = largestSubtree(node)
     expect(actual).toMatchInlineSnapshot(`
       [
         5,
@@ -37,6 +37,6 @@ describe('largestSubtree function', () => {
           "right": null,
         },
       ]
-    `);
-  });
-});
+    `)
+  })
+})

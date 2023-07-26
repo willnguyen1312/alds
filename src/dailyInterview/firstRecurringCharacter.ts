@@ -13,15 +13,15 @@ Output: None
 */
 
 export function firstRecurringCharacter(str: string): string {
-  const charSet: Set<string> = new Set();
+  const charSet: Set<string> = new Set()
 
   for (const char of str) {
     if (charSet.has(char)) {
-      return char;
+      return char
     }
 
-    charSet.add(char);
+    charSet.add(char)
   }
 
-  return '';
+  return ""
 }

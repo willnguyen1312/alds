@@ -26,19 +26,19 @@ Output: AAB
 */
 
 export function spreadsheetColumnTitle(numb: number): string {
-  const result: string[] = [];
+  const result: string[] = []
 
   while (numb > 0) {
-    let rem = numb % 26;
+    let rem = numb % 26
 
     if (rem === 0) {
-      result.push('Z');
-      numb = Math.floor(numb / 26) - 1;
+      result.push("Z")
+      numb = Math.floor(numb / 26) - 1
     } else {
-      result.push(String.fromCharCode(rem - 1 + 'A'.charCodeAt(0)));
-      numb = Math.floor(numb / 26);
+      result.push(String.fromCharCode(rem - 1 + "A".charCodeAt(0)))
+      numb = Math.floor(numb / 26)
     }
   }
 
-  return result.reverse().join('');
+  return result.reverse().join("")
 }

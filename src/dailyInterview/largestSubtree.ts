@@ -10,36 +10,36 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function largestSubtree(root: BinaryTreeNode): [number, BinaryTreeNode] {
   function largestSubtreeHelper(
-    node: BinaryTreeNode
-  ): [number, BinaryTreeNode, 'left' | 'right' | ''] {
+    node: BinaryTreeNode,
+  ): [number, BinaryTreeNode, "left" | "right" | ""] {
     if (!node) {
-      return [0, null, ''];
+      return [0, null, ""]
     }
 
     if (!node.left && !node.right) {
-      return [1, node, ''];
+      return [1, node, ""]
     }
 
-    const left = largestSubtreeHelper(node.left);
-    const right = largestSubtreeHelper(node.right);
+    const left = largestSubtreeHelper(node.left)
+    const right = largestSubtreeHelper(node.right)
 
     return left[0] > right[0]
-      ? [left[0] + 1, node.left, 'left']
-      : [right[0] + 1, node.right, 'right'];
+      ? [left[0] + 1, node.left, "left"]
+      : [right[0] + 1, node.right, "right"]
   }
 
-  const [size, bigSubTree, direction] = largestSubtreeHelper(root);
+  const [size, bigSubTree, direction] = largestSubtreeHelper(root)
 
-  const another = direction === 'left' ? 'right' : 'left';
+  const another = direction === "left" ? "right" : "left"
 
-  root[another] = null;
-  root[direction] = bigSubTree;
+  root[another] = null
+  root[direction] = bigSubTree
 
-  return [size + 1, root];
+  return [size + 1, root]
 }

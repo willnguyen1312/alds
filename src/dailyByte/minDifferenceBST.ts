@@ -24,27 +24,27 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function minDifferenceBST(root: BinaryTreeNode): number {
-  let result: number = Number.MAX_VALUE;
-  let prev: BinaryTreeNode;
+  let result: number = Number.MAX_VALUE
+  let prev: BinaryTreeNode
 
   function inorder(curr: BinaryTreeNode) {
-    if (!curr) return;
+    if (!curr) return
 
-    inorder(curr.left);
+    inorder(curr.left)
 
     if (prev) {
-      result = Math.min(curr.data - prev.data, result);
+      result = Math.min(curr.data - prev.data, result)
     }
-    prev = curr;
+    prev = curr
 
-    inorder(curr.right);
+    inorder(curr.right)
   }
 
-  inorder(root);
-  return result;
+  inorder(root)
+  return result
 }

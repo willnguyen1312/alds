@@ -25,40 +25,40 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function findBSTMode(root: BinaryTreeNode): number {
-  const countMap: Map<number, number> = new Map();
-  let queue: BinaryTreeNode[] = [root];
+  const countMap: Map<number, number> = new Map()
+  let queue: BinaryTreeNode[] = [root]
 
   while (queue.length) {
-    const toQueue: BinaryTreeNode[] = [];
+    const toQueue: BinaryTreeNode[] = []
 
     for (const node of queue) {
-      countMap.set(node.data, (countMap.get(node.data) || 0) + 1);
+      countMap.set(node.data, (countMap.get(node.data) || 0) + 1)
       if (node.left) {
-        toQueue.push(node.left);
+        toQueue.push(node.left)
       }
 
       if (node.right) {
-        toQueue.push(node.right);
+        toQueue.push(node.right)
       }
     }
 
-    queue = toQueue;
+    queue = toQueue
   }
 
-  let result: number;
-  let max = Number.MIN_VALUE;
+  let result: number
+  let max = Number.MIN_VALUE
 
   for (const [key, value] of countMap) {
     if (value > max) {
-      max = value;
-      result = key;
+      max = value
+      result = key
     }
   }
 
-  return result;
+  return result
 }

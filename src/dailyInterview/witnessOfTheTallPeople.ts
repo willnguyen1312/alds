@@ -19,17 +19,17 @@ Explanation: Only [6, 4, 1] were able to see in front of them.
 */
 
 export function witnessOfTheTallPeople(numbs: number[]): number {
-  let currentMax = numbs[numbs.length - 1];
-  let result: number = 1;
+  let currentMax = numbs[numbs.length - 1]
+  let result: number = 1
 
   for (let index = numbs.length - 2; index > 0; index--) {
-    const element = numbs[index];
+    const element = numbs[index]
 
     if (element > currentMax) {
-      result++;
-      currentMax = element;
+      result++
+      currentMax = element
     }
   }
 
-  return result;
+  return result
 }

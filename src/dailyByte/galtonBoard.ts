@@ -14,23 +14,20 @@ M = 4, N = 3, return 10.
 */
 
 export function galtonBoard(row: number, column: number): number {
-  const count: number[][] = Array.from(
-    { length: row },
-    () => new Array(column)
-  );
+  const count: number[][] = Array.from({ length: row }, () => new Array(column))
 
   for (let index = 0; index < row; index++) {
-    count[0][index] = 1;
+    count[0][index] = 1
   }
 
   for (let index = 0; index < row; index++) {
-    count[index][0] = 1;
+    count[index][0] = 1
   }
 
   for (let i = 1; i < row; i++) {
     for (let j = 1; j < column; j++)
-      count[i][j] = count[i - 1][j] + count[i][j - 1];
+      count[i][j] = count[i - 1][j] + count[i][j - 1]
   }
 
-  return count[row - 1][column - 1];
+  return count[row - 1][column - 1]
 }

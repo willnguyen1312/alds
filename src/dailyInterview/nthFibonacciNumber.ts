@@ -19,18 +19,18 @@ Output: 13
 
 export function nthFibonacciNumber(n: number): number {
   if (n <= 2) {
-    return 1;
+    return 1
   }
 
-  let first = 1;
-  let second = 1;
-  let result = 0;
+  let first = 1
+  let second = 1
+  let result = 0
 
   for (let index = 2; index < n; index++) {
-    result = first + second;
-    first = second;
-    second = result;
+    result = first + second
+    first = second
+    second = result
   }
 
-  return second;
+  return second
 }

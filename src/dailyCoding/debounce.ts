@@ -8,15 +8,15 @@ f itself will not be called for N milliseconds.
 */
 
 export function debounce(func: Function, time: number) {
-  let debounceId;
+  let debounceId
 
   return (...args: any) => {
     if (debounceId) {
-      clearTimeout(debounceId);
+      clearTimeout(debounceId)
     }
 
     debounceId = setTimeout(() => {
-      func(...args);
-    }, time);
-  };
+      func(...args)
+    }, time)
+  }
 }

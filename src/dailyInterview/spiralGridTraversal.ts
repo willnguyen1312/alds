@@ -16,46 +16,46 @@ The clockwise spiral traversal of this array is:
 */
 
 export function spiralGridTraversal(arr: number[][]) {
-  const result: number[] = [];
+  const result: number[] = []
 
   // k - starting row index
-  let k = 0;
+  let k = 0
   //   l - starting column index
-  let l = 0;
+  let l = 0
   // m - ending row index
-  let m = arr.length;
+  let m = arr.length
   //   n - ending column index
-  let n = arr[0].length;
+  let n = arr[0].length
 
   while (k < m && l < n) {
     // print the first row from the remaining rows
     for (let i = l; i < n; ++i) {
-      result.push(arr[k][i]);
+      result.push(arr[k][i])
     }
-    k++;
+    k++
 
     // print the last column from the remaining columns
     for (let i = k; i < m; ++i) {
-      result.push(arr[i][n - 1]);
+      result.push(arr[i][n - 1])
     }
-    n--;
+    n--
 
     // print the last row from the remaining rows
     if (k < m) {
       for (let i = n - 1; i >= l; --i) {
-        result.push(arr[m - 1][i]);
+        result.push(arr[m - 1][i])
       }
-      m--;
+      m--
     }
 
     // print the first column from the remaining columns
     if (l < n) {
       for (let i = m - 1; i >= k; --i) {
-        result.push(arr[i][l]);
+        result.push(arr[i][l])
       }
-      l++;
+      l++
     }
   }
 
-  return result;
+  return result
 }

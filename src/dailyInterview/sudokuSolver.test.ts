@@ -1,7 +1,7 @@
-import { sudokuSolver } from './sudokuSolver';
+import { sudokuSolver } from "./sudokuSolver"
 
-describe('sudokuSolver function', () => {
-  it('should work', () => {
+describe("sudokuSolver function", () => {
+  it("should work", () => {
     const board = [
       [3, 0, 6, 5, 0, 8, 4, 0, 0],
       [5, 2, 0, 0, 0, 0, 0, 0, 0],
@@ -12,9 +12,9 @@ describe('sudokuSolver function', () => {
       [1, 3, 0, 0, 0, 0, 2, 5, 0],
       [0, 0, 0, 0, 0, 0, 0, 7, 4],
       [0, 0, 5, 2, 0, 6, 3, 0, 0],
-    ];
+    ]
 
-    sudokuSolver(board);
+    sudokuSolver(board)
     expect(board).toEqual([
       [3, 1, 6, 5, 7, 8, 4, 9, 2],
       [5, 2, 9, 1, 3, 4, 7, 6, 8],
@@ -25,6 +25,6 @@ describe('sudokuSolver function', () => {
       [1, 3, 8, 9, 4, 7, 2, 5, 6],
       [6, 9, 2, 3, 5, 1, 8, 7, 4],
       [7, 4, 5, 2, 8, 6, 3, 1, 9],
-    ]);
-  });
-});
+    ])
+  })
+})

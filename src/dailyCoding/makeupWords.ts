@@ -13,34 +13,34 @@ return either ['bed', 'bath', 'and', 'beyond] or ['bedbath', 'and', 'beyond'].
 */
 
 export function makeupWords(word: string, strs: string[]): string[] {
-  const strSet = new Set(strs);
+  const strSet = new Set(strs)
 
   function makeupWordsHelper(str: string, output: string[] = []): string[] {
     if (str === word) {
-      return output;
+      return output
     }
 
-    let leftOver = word.slice(str.length);
-    let i = 0;
-    let j = 0;
+    let leftOver = word.slice(str.length)
+    let i = 0
+    let j = 0
 
     while (j < leftOver.length) {
-      const currentWord = leftOver.slice(i, j + 1);
-      const found = strSet.has(currentWord);
+      const currentWord = leftOver.slice(i, j + 1)
+      const found = strSet.has(currentWord)
       if (found) {
         const gotIt = makeupWordsHelper(
           str + currentWord,
-          output.concat(currentWord)
-        );
+          output.concat(currentWord),
+        )
 
         if (gotIt) {
-          return gotIt;
+          return gotIt
         }
       }
-      j++;
+      j++
     }
   }
 
-  const result = makeupWordsHelper('');
-  return result;
+  const result = makeupWordsHelper("")
+  return result
 }

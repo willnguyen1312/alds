@@ -17,39 +17,39 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 function getLevelSum(nodes: BinaryTreeNode[]): number {
-  return nodes.reduce((acc, cur) => acc + cur.data, 0);
+  return nodes.reduce((acc, cur) => acc + cur.data, 0)
 }
 
 export function levelWithMaxSum(root: BinaryTreeNode): number {
-  const queue: BinaryTreeNode[] = [root];
-  let currentMax = root.data;
-  let currentLevel = 0;
-  let result = currentLevel;
+  const queue: BinaryTreeNode[] = [root]
+  let currentMax = root.data
+  let currentLevel = 0
+  let result = currentLevel
 
   while (queue.length) {
-    currentLevel++;
-    const toQueue: BinaryTreeNode[] = [];
+    currentLevel++
+    const toQueue: BinaryTreeNode[] = []
 
     while (queue.length) {
-      const node = queue.pop();
+      const node = queue.pop()
       if (node.left) {
-        toQueue.push(node.left);
+        toQueue.push(node.left)
       }
       if (node.right) {
-        toQueue.push(node.right);
+        toQueue.push(node.right)
       }
     }
 
-    const max = getLevelSum(toQueue);
-    result = max > currentMax ? currentLevel : result;
-    currentMax = Math.max(max, currentMax);
-    queue.push(...toQueue);
+    const max = getLevelSum(toQueue)
+    result = max > currentMax ? currentLevel : result
+    currentMax = Math.max(max, currentMax)
+    queue.push(...toQueue)
   }
 
-  return result;
+  return result
 }

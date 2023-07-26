@@ -13,17 +13,17 @@ s = "pizzaplanet", dictionary = ["plane", "pizza"], return false.
 */
 
 export function dictionaryWords(str: string, wordDict: string[]): boolean {
-  const table = new Array(str.length + 1).fill(false);
-  table[0] = true;
+  const table = new Array(str.length + 1).fill(false)
+  table[0] = true
 
   for (let i = 1; i <= str.length; i++) {
     for (let j = 0; j < i; j++) {
       if (table[j] && wordDict.includes(str.substring(j, i))) {
-        table[i] = true;
-        break;
+        table[i] = true
+        break
       }
     }
   }
 
-  return table[str.length];
+  return table[str.length]
 }

@@ -8,9 +8,9 @@
 // permitted = "ake", words = ["ail", "kea", "a"], return 2.
 
 export function validWords(permitted: string, words: string[]): number {
-  const permittedSet = new Set(permitted);
+  const permittedSet = new Set(permitted)
 
   return words.filter((word) =>
-    word.split('').every((char) => permittedSet.has(char))
-  ).length;
+    word.split("").every((char) => permittedSet.has(char)),
+  ).length
 }

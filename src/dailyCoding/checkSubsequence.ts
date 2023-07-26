@@ -17,8 +17,8 @@ s = "xyz", t = "axbyc", return false.
 */
 
 export function checkSubsequence(first: string, second: string): boolean {
-  const firstArr: string[] = first.split('');
-  const secondSet: Set<string> = new Set(second);
+  const firstArr: string[] = first.split("")
+  const secondSet: Set<string> = new Set(second)
 
-  return firstArr.every((char) => secondSet.has(char));
+  return firstArr.every((char) => secondSet.has(char))
 }

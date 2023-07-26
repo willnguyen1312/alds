@@ -1,7 +1,7 @@
-import { getPermutations } from './getPermutations';
+import { getPermutations } from "./getPermutations"
 
-describe('getPermutations function', () => {
-  it('should work', () => {
+describe("getPermutations function", () => {
+  it("should work", () => {
     expect(getPermutations([1, 2, 3])).toEqual([
       [1, 2, 3],
       [1, 3, 2],
@@ -9,6 +9,6 @@ describe('getPermutations function', () => {
       [2, 3, 1],
       [3, 1, 2],
       [3, 2, 1],
-    ]);
-  });
-});
+    ])
+  })
+})

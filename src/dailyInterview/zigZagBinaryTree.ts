@@ -14,52 +14,52 @@ Given a binary tree, return the list of node values in zigzag order traversal. H
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left?: BinaryTreeNode | null;
-  right?: BinaryTreeNode | null;
+  val: number
+  left?: BinaryTreeNode | null
+  right?: BinaryTreeNode | null
 
   constructor(val: number, left?: BinaryTreeNode, right?: BinaryTreeNode) {
-    this.val = val;
-    this.left = left;
-    this.right = right;
+    this.val = val
+    this.left = left
+    this.right = right
   }
 }
 
 export function zigZagBinaryTree(rootNode: BinaryTreeNode): number[] {
-  const result: number[] = [];
-  let currentLevel: BinaryTreeNode[] = [rootNode];
-  let nextLevel: BinaryTreeNode[] = [];
+  const result: number[] = []
+  let currentLevel: BinaryTreeNode[] = [rootNode]
+  let nextLevel: BinaryTreeNode[] = []
 
-  let leftToRight = true;
+  let leftToRight = true
 
   while (currentLevel.length) {
-    const node = currentLevel.pop();
+    const node = currentLevel.pop()
 
-    result.push(node.val);
+    result.push(node.val)
 
     if (leftToRight) {
       if (node.left) {
-        nextLevel.push(node.left);
+        nextLevel.push(node.left)
       }
 
       if (node.right) {
-        nextLevel.push(node.right);
+        nextLevel.push(node.right)
       }
     } else {
       if (node.right) {
-        nextLevel.push(node.right);
+        nextLevel.push(node.right)
       }
 
       if (node.left) {
-        nextLevel.push(node.left);
+        nextLevel.push(node.left)
       }
     }
 
     if (!currentLevel.length) {
-      leftToRight = !leftToRight;
-      [currentLevel, nextLevel] = [nextLevel, currentLevel];
+      leftToRight = !leftToRight
+      ;[currentLevel, nextLevel] = [nextLevel, currentLevel]
     }
   }
 
-  return result;
+  return result
 }

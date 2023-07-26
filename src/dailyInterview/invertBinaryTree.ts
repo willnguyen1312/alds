@@ -22,23 +22,23 @@ The inverted version of this tree is as follows:
 */
 
 export class BinaryTreeNode {
-  val: string;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: string
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: string) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function invertBinaryTree(
-  binaryTree: BinaryTreeNode | null | undefined
+  binaryTree: BinaryTreeNode | null | undefined,
 ) {
-  if (!binaryTree) return;
+  if (!binaryTree) return
 
-  invertBinaryTree(binaryTree.left);
-  invertBinaryTree(binaryTree.right);
+  invertBinaryTree(binaryTree.left)
+  invertBinaryTree(binaryTree.right)
 
-  [binaryTree.left, binaryTree.right] = [binaryTree.right, binaryTree.left];
-  return binaryTree;
+  ;[binaryTree.left, binaryTree.right] = [binaryTree.right, binaryTree.left]
+  return binaryTree
 }

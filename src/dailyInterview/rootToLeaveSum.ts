@@ -19,28 +19,28 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function rootToLeaveSum(root: BinaryTreeNode): number {
-  let result = 0;
+  let result = 0
 
-  function dfs(node: BinaryTreeNode, currentSum: string = '') {
+  function dfs(node: BinaryTreeNode, currentSum: string = "") {
     if (!node) {
-      return;
+      return
     }
 
     if (!node.left && !node.right) {
-      result += +(currentSum + node.data.toString());
+      result += +(currentSum + node.data.toString())
     }
 
-    dfs(node.left, currentSum + node.data);
+    dfs(node.left, currentSum + node.data)
 
-    dfs(node.right, currentSum + node.data);
+    dfs(node.right, currentSum + node.data)
   }
 
-  dfs(root);
+  dfs(root)
 
-  return result;
+  return result
 }

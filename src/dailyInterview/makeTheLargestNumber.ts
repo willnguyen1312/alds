@@ -9,13 +9,13 @@ Output:  77245217
 */
 
 export function makeTheLargestNumber(numbs: number[]): number {
-  const toStrNumbs = numbs.map(String);
+  const toStrNumbs = numbs.map(String)
   toStrNumbs.sort((a, b) => {
-    const ab = a + b;
-    const ba = b + a;
+    const ab = a + b
+    const ba = b + a
 
-    return +ab > +ba ? -1 : 1;
-  });
+    return +ab > +ba ? -1 : 1
+  })
 
-  return +toStrNumbs.join('');
+  return +toStrNumbs.join("")
 }

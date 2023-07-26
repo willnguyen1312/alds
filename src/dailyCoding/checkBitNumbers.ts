@@ -7,31 +7,31 @@ You can assume b can only be 1 or 0.
 */
 
 function powerFunction(x: number, y: number): number {
-  if (y === 0) return 1;
+  if (y === 0) return 1
 
-  const temp = powerFunction(x, Math.floor(y / 2));
+  const temp = powerFunction(x, Math.floor(y / 2))
 
-  if (y % 2 === 0) return temp * temp;
+  if (y % 2 === 0) return temp * temp
 
-  return x * temp * temp;
+  return x * temp * temp
 }
 
 function toDecimal(str: string): number {
-  const length = str.length;
-  let result = 0;
+  const length = str.length
+  let result = 0
 
   for (let index = length - 1; index >= 0; index--) {
-    const element = +str[index] * powerFunction(2, length - 1 - index);
-    result += element;
+    const element = +str[index] * powerFunction(2, length - 1 - index)
+    result += element
   }
 
-  return result;
+  return result
 }
 
 export function checkBitNumbers(x: string, y: string, b: string): number {
-  const decimalX = toDecimal(x);
-  const decimalY = toDecimal(y);
-  const decimalB = toDecimal(b);
+  const decimalX = toDecimal(x)
+  const decimalY = toDecimal(y)
+  const decimalB = toDecimal(b)
 
-  return decimalB ? decimalX : decimalY;
+  return decimalB ? decimalX : decimalY
 }

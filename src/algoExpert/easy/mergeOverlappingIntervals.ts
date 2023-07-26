@@ -12,22 +12,22 @@ This input should return [(1, 3), (4, 10), (20, 25)] since (5, 8) and (4, 10) ca
 */
 
 export function mergeOverlappingIntervals(input: number[][]): number[][] {
-  const sortedInput = input.slice().sort((a, b) => a[0] - b[0]);
-  const result: number[][] = [];
-  let current: number[] = sortedInput[0];
+  const sortedInput = input.slice().sort((a, b) => a[0] - b[0])
+  const result: number[][] = []
+  let current: number[] = sortedInput[0]
 
   for (let index = 1; index < sortedInput.length; index++) {
-    const element = sortedInput[index];
+    const element = sortedInput[index]
 
-    const canMerge = current[1] >= element[0];
+    const canMerge = current[1] >= element[0]
     if (canMerge) {
-      current[1] = Math.max(current[1], element[1]);
+      current[1] = Math.max(current[1], element[1])
     } else {
-      result.push(current);
-      current = element;
+      result.push(current)
+      current = element
     }
   }
 
-  result.push(current);
-  return result;
+  result.push(current)
+  return result
 }

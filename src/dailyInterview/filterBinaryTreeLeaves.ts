@@ -26,24 +26,24 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function filterBinaryTreeLeaves(
   root: BinaryTreeNode,
-  target: number
+  target: number,
 ): BinaryTreeNode {
   if (!root) {
-    return null;
+    return null
   }
 
-  root.left = filterBinaryTreeLeaves(root.left, target);
-  root.right = filterBinaryTreeLeaves(root.right, target);
+  root.left = filterBinaryTreeLeaves(root.left, target)
+  root.right = filterBinaryTreeLeaves(root.right, target)
 
   if (!root.left && !root.right && root.data === target) {
-    return null;
+    return null
   }
 
-  return root;
+  return root
 }

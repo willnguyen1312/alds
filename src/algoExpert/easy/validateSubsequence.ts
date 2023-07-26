@@ -1,16 +1,16 @@
 export function validateSubsequence(
   arr: number[],
-  sequence: number[]
+  sequence: number[],
 ): boolean {
-  let arrIndex = 0;
-  let seqIndex = 0;
+  let arrIndex = 0
+  let seqIndex = 0
 
   while (arrIndex < arr.length && seqIndex < sequence.length) {
     if (sequence[seqIndex] === arr[arrIndex]) {
-      seqIndex++;
+      seqIndex++
     }
-    arrIndex++;
+    arrIndex++
   }
 
-  return seqIndex === sequence.length;
+  return seqIndex === sequence.length
 }

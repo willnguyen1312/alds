@@ -1,8 +1,8 @@
-import { isomorphicString } from './isomorphicString';
+import { isomorphicString } from "./isomorphicString"
 
-describe('isomorphicString function', () => {
-  it('should work', () => {
-    expect(isomorphicString('egg', 'add')).toBe(true);
-    expect(isomorphicString('foo', 'bar')).toBe(false);
-  });
-});
+describe("isomorphicString function", () => {
+  it("should work", () => {
+    expect(isomorphicString("egg", "add")).toBe(true)
+    expect(isomorphicString("foo", "bar")).toBe(false)
+  })
+})

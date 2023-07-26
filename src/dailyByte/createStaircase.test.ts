@@ -1,7 +1,7 @@
-import { createStaircase } from './createStaircase';
+import { createStaircase } from "./createStaircase"
 
-describe('createStaircase function', () => {
-  it('should work', () => {
-    expect(createStaircase(3)).toBe(2);
-  });
-});
+describe("createStaircase function", () => {
+  it("should work", () => {
+    expect(createStaircase(3)).toBe(2)
+  })
+})

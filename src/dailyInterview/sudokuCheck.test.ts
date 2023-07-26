@@ -1,10 +1,10 @@
-import { sudokuCheck } from './sudokuCheck';
+import { sudokuCheck } from "./sudokuCheck"
 
-describe('sudokuCheck function', () => {
-  it('should work', () => {
+describe("sudokuCheck function", () => {
+  it("should work", () => {
     const board1 = [
-      [5, ' ', 4, 6, 7, 8, 9, 1, 2],
-      [6, ' ', 2, 1, 9, 5, 3, 4, 8],
+      [5, " ", 4, 6, 7, 8, 9, 1, 2],
+      [6, " ", 2, 1, 9, 5, 3, 4, 8],
       [1, 9, 8, 3, 4, 2, 5, 6, 7],
       [8, 5, 9, 7, 6, 1, 4, 2, 3],
       [4, 2, 6, 8, 5, 3, 7, 9, 1],
@@ -12,13 +12,13 @@ describe('sudokuCheck function', () => {
       [9, 6, 1, 5, 3, 7, 2, 8, 4],
       [2, 8, 7, 4, 1, 9, 6, 3, 5],
       [3, 4, 5, 2, 8, 6, 1, 7, 9],
-    ];
+    ]
 
-    expect(sudokuCheck(board1)).toBe(true);
+    expect(sudokuCheck(board1)).toBe(true)
 
     const board2 = [
-      [5, ' ', 5, 6, 7, 8, 9, 1, 2],
-      [6, ' ', 2, 1, 9, 5, 3, 4, 8],
+      [5, " ", 5, 6, 7, 8, 9, 1, 2],
+      [6, " ", 2, 1, 9, 5, 3, 4, 8],
       [1, 9, 8, 3, 4, 2, 5, 6, 7],
       [8, 5, 9, 7, 6, 1, 4, 2, 3],
       [4, 2, 6, 8, 5, 3, 7, 9, 1],
@@ -26,8 +26,8 @@ describe('sudokuCheck function', () => {
       [9, 6, 1, 5, 3, 7, 2, 8, 4],
       [2, 8, 7, 4, 1, 9, 6, 3, 5],
       [3, 4, 5, 2, 8, 6, 1, 7, 9],
-    ];
+    ]
 
-    expect(sudokuCheck(board2)).toBe(false);
-  });
-});
+    expect(sudokuCheck(board2)).toBe(false)
+  })
+})

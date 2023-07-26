@@ -1,9 +1,9 @@
-import { validateBalancedParentheses } from './validateBalancedParentheses';
+import { validateBalancedParentheses } from "./validateBalancedParentheses"
 
-describe('validateBalancedParentheses function', () => {
-  it('should work', () => {
-    expect(validateBalancedParentheses('((()))')).toBe(true);
+describe("validateBalancedParentheses function", () => {
+  it("should work", () => {
+    expect(validateBalancedParentheses("((()))")).toBe(true)
 
-    expect(validateBalancedParentheses('({[)]')).toBe(false);
-  });
-});
+    expect(validateBalancedParentheses("({[)]")).toBe(false)
+  })
+})

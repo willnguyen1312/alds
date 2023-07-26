@@ -11,20 +11,20 @@ Output: [3,7]
 */
 
 export function findMissingNumber(numbs: number[]): number[] {
-  const result = [];
+  const result = []
 
   for (const number of numbs) {
-    const index = Math.abs(number) - 1;
+    const index = Math.abs(number) - 1
     if (numbs[index] > 0) {
-      numbs[index] = -numbs[index];
+      numbs[index] = -numbs[index]
     }
   }
 
   for (let i = 0; i < numbs.length; i++) {
     if (numbs[i] > 0) {
-      result.push(i + 1);
+      result.push(i + 1)
     }
   }
 
-  return result;
+  return result
 }

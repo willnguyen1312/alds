@@ -1,8 +1,8 @@
 class AncestralTree {
-  name: string = '';
-  ancestor: any;
+  name: string = ""
+  ancestor: any
   constructor(name: string) {
-    this.name = name;
+    this.name = name
   }
 }
 
@@ -10,51 +10,51 @@ class AncestralTree {
 function getYoungestCommonAncestor(
   topAncestor: AncestralTree,
   descendantOne: AncestralTree,
-  descendantTwo: AncestralTree
+  descendantTwo: AncestralTree,
 ) {
-  const depthOne = getDescendantDepth(descendantOne, topAncestor);
-  const depthTwo = getDescendantDepth(descendantTwo, topAncestor);
+  const depthOne = getDescendantDepth(descendantOne, topAncestor)
+  const depthTwo = getDescendantDepth(descendantTwo, topAncestor)
   if (depthOne > depthTwo) {
     return backtrackAncestralTree(
       descendantOne,
       descendantTwo,
-      depthOne - depthTwo
-    );
+      depthOne - depthTwo,
+    )
   } else {
     return backtrackAncestralTree(
       descendantTwo,
       descendantOne,
-      depthTwo - depthOne
-    );
+      depthTwo - depthOne,
+    )
   }
 }
 
 function getDescendantDepth(
   descendant: AncestralTree,
-  topAncestor: AncestralTree
+  topAncestor: AncestralTree,
 ) {
-  let depth = 0;
+  let depth = 0
   while (descendant !== topAncestor) {
-    depth++;
-    descendant = descendant.ancestor;
+    depth++
+    descendant = descendant.ancestor
   }
-  return depth;
+  return depth
 }
 
 function backtrackAncestralTree(
   lowerDescendant: AncestralTree,
   higherDescendant: AncestralTree,
-  diff: number
+  diff: number,
 ) {
   while (diff > 0) {
-    lowerDescendant = lowerDescendant.ancestor;
-    diff--;
+    lowerDescendant = lowerDescendant.ancestor
+    diff--
   }
 
   while (lowerDescendant !== higherDescendant) {
-    lowerDescendant = lowerDescendant.ancestor;
-    higherDescendant = higherDescendant.ancestor;
+    lowerDescendant = lowerDescendant.ancestor
+    higherDescendant = higherDescendant.ancestor
   }
 
-  return lowerDescendant;
+  return lowerDescendant
 }

@@ -29,49 +29,49 @@ d.get(1, 0) # get key 1 at time 0 should be 2
 */
 
 export function getValueAtTime() {
-  const cacheMap: Map<number, [{ time: number; value: number }]> = new Map();
+  const cacheMap: Map<number, [{ time: number; value: number }]> = new Map()
   return {
     get: (key: number, time: number) => {
-      const items = cacheMap.get(key);
+      const items = cacheMap.get(key)
       if (items.length === 1) {
-        return items[0].value;
+        return items[0].value
       }
 
       for (let index = 0; index < items.length - 1; index++) {
-        const item = items[index];
+        const item = items[index]
         if (item.time === time) {
-          return item.value;
+          return item.value
         }
 
         const nextItem = items[index + 1] ?? {
           time: Number.MIN_VALUE,
           value: Number.MIN_VALUE,
-        };
+        }
 
         if (time > item.time && time < nextItem.time) {
-          const diff1 = time - item.time;
-          const diff2 = nextItem.time;
-          const resultItem = diff1 <= diff2 ? item : nextItem;
-          return resultItem.value;
+          const diff1 = time - item.time
+          const diff2 = nextItem.time
+          const resultItem = diff1 <= diff2 ? item : nextItem
+          return resultItem.value
         }
       }
 
-      return items[items.length - 1].value;
+      return items[items.length - 1].value
     },
     set: (key: number, value: number, time: number) => {
-      const items = cacheMap.get(key);
+      const items = cacheMap.get(key)
       if (!items) {
-        cacheMap.set(key, [{ value, time }]);
-        return;
+        cacheMap.set(key, [{ value, time }])
+        return
       }
 
-      const foundItem = items.find((item) => item.time === time);
+      const foundItem = items.find((item) => item.time === time)
       if (foundItem) {
-        foundItem.value = value;
-        return;
+        foundItem.value = value
+        return
       }
 
-      items.push({ time, value });
+      items.push({ time, value })
     },
-  };
+  }
 }

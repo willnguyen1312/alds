@@ -1,13 +1,13 @@
 // https://leetcode.com/problems/contains-duplicate/
 function containsDuplicate(nums: number[]): boolean {
-  const set = new Set();
+  const set = new Set()
 
   for (const num of nums) {
     if (set.has(num)) {
-      return true;
+      return true
     }
-    set.add(num);
+    set.add(num)
   }
 
-  return false;
+  return false
 }

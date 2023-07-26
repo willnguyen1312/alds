@@ -9,43 +9,43 @@
 function checkPossible(
   weights: number[],
   maxWeight: number,
-  days: number
+  days: number,
 ): boolean {
-  let reqDays = 1;
-  let capacity = maxWeight;
-  let i = 0;
-  let n = weights.length;
+  let reqDays = 1
+  let capacity = maxWeight
+  let i = 0
+  let n = weights.length
 
   while (i < n) {
     if (weights[i] <= capacity) {
-      capacity -= weights[i];
-      i += 1;
+      capacity -= weights[i]
+      i += 1
     } else {
-      reqDays += 1;
-      capacity = maxWeight;
+      reqDays += 1
+      capacity = maxWeight
     }
   }
-  return reqDays <= days;
+  return reqDays <= days
 }
 
 export function capacityToShipPackagesWithinDays(
   weights: number[],
-  day: number
+  day: number,
 ): number {
-  let left = Math.max(...weights);
-  let right = weights.reduce((acc, cur) => acc + cur);
-  let result = right;
+  let left = Math.max(...weights)
+  let right = weights.reduce((acc, cur) => acc + cur)
+  let result = right
 
   while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
+    const mid = Math.floor((left + right) / 2)
 
     if (checkPossible(weights, mid, day)) {
-      result = mid;
-      right = mid - 1;
+      result = mid
+      right = mid - 1
     } else {
-      left = mid + 1;
+      left = mid + 1
     }
   }
 
-  return result;
+  return result
 }

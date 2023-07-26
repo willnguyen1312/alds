@@ -11,24 +11,24 @@ so the return value should be 5 (profit = 10 - 5 = 5).
 */
 
 export function maximumProfitFromStocks(values: number[]): number {
-  let result = 0;
-  let currentMin = values[0];
-  let currentMax = values[0];
+  let result = 0
+  let currentMin = values[0]
+  let currentMax = values[0]
 
   for (let index = 1; index < values.length; index++) {
-    const value = values[index];
-    const prevValue = values[index - 1];
+    const value = values[index]
+    const prevValue = values[index - 1]
 
-    currentMax = Math.max(currentMax, value);
-    const diff = currentMax - currentMin;
-    result = Math.max(result, diff);
+    currentMax = Math.max(currentMax, value)
+    const diff = currentMax - currentMin
+    result = Math.max(result, diff)
 
     if (value < prevValue) {
-      currentMax = value;
+      currentMax = value
     }
 
-    currentMin = Math.min(currentMin, value);
+    currentMin = Math.min(currentMin, value)
   }
 
-  return result;
+  return result
 }

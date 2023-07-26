@@ -22,36 +22,39 @@ return...
 */
 
 export class LinkedListNode {
-  constructor(public data: number, public next?: LinkedListNode) {}
+  constructor(
+    public data: number,
+    public next?: LinkedListNode,
+  ) {}
 }
 
 export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function bst2LinkedList(node: BinaryTreeNode): LinkedListNode {
-  if (!node) return;
+  if (!node) return
 
-  if (!node.left && !node.right) return;
+  if (!node.left && !node.right) return
 
   if (node.left) {
-    bst2LinkedList(node.left);
+    bst2LinkedList(node.left)
 
-    let originalRight = node.right;
-    node.right = node.left;
-    node.left = null;
+    let originalRight = node.right
+    node.right = node.left
+    node.left = null
 
-    let curr = node.right;
+    let curr = node.right
     while (curr.right) {
-      curr = curr.right;
+      curr = curr.right
     }
 
-    curr.right = originalRight;
+    curr.right = originalRight
   }
 
-  bst2LinkedList(node.right);
+  bst2LinkedList(node.right)
 }

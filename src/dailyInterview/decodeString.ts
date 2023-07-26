@@ -7,64 +7,64 @@ should be expanded to abbcabbc.
 */
 
 export function decodeString(str: string): string {
-  const integerStack = [];
-  const stringStack = [];
+  const integerStack = []
+  const stringStack = []
 
-  let temp = '';
-  let result = '';
-  let i = 0;
+  let temp = ""
+  let result = ""
+  let i = 0
 
   while (i < str.length) {
-    let count = 0;
+    let count = 0
 
     if (Number.isFinite(+str[i])) {
       while (Number.isFinite(+str[i])) {
-        count = count * 10 + +str[i];
-        i++;
+        count = count * 10 + +str[i]
+        i++
       }
-      i--;
-      integerStack.push(count);
-    } else if (str[i] === ']') {
-      temp = '';
-      count = 0;
+      i--
+      integerStack.push(count)
+    } else if (str[i] === "]") {
+      temp = ""
+      count = 0
 
       if (integerStack.length) {
-        count = integerStack.pop();
+        count = integerStack.pop()
       }
 
       while (
         stringStack.length &&
-        stringStack[stringStack.length - 1] !== '['
+        stringStack[stringStack.length - 1] !== "["
       ) {
-        temp = stringStack.pop() + temp;
+        temp = stringStack.pop() + temp
       }
 
-      if (stringStack.length && stringStack[stringStack.length - 1] === '[') {
-        stringStack.pop();
+      if (stringStack.length && stringStack[stringStack.length - 1] === "[") {
+        stringStack.pop()
       }
 
-      result = temp.repeat(count);
-      stringStack.push(result);
+      result = temp.repeat(count)
+      stringStack.push(result)
 
-      result = '';
-    } else if (str[i] === '[') {
+      result = ""
+    } else if (str[i] === "[") {
       if (Number.isFinite(+str[i - 1])) {
-        stringStack.push(str[i]);
+        stringStack.push(str[i])
       } else {
-        stringStack.push(str[i]);
-        integerStack.push(1);
+        stringStack.push(str[i])
+        integerStack.push(1)
       }
     } else {
-      stringStack.push(str[i]);
+      stringStack.push(str[i])
     }
 
-    i++;
+    i++
   }
 
   while (stringStack.length) {
-    result = stringStack[stringStack.length - 1] + result;
-    stringStack.pop();
+    result = stringStack[stringStack.length - 1] + result
+    stringStack.pop()
   }
 
-  return result;
+  return result
 }

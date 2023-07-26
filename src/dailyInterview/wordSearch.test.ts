@@ -1,14 +1,14 @@
-import { wordSearch } from './wordSearch';
+import { wordSearch } from "./wordSearch"
 
-describe('wordSearch function', () => {
-  it('should work', () => {
+describe("wordSearch function", () => {
+  it("should work", () => {
     const input = [
-      ['F', 'A', 'C', 'I'],
-      ['O', 'B', 'Q', 'P'],
-      ['A', 'N', 'O', 'B'],
-      ['M', 'A', 'S', 'S'],
-    ];
+      ["F", "A", "C", "I"],
+      ["O", "B", "Q", "P"],
+      ["A", "N", "O", "B"],
+      ["M", "A", "S", "S"],
+    ]
 
-    expect(wordSearch(input, 'FOAM')).toBe(true);
-  });
-});
+    expect(wordSearch(input, "FOAM")).toBe(true)
+  })
+})

@@ -8,38 +8,38 @@ export function bitByBit(nums: number[]): number[] {
       return {
         decimal: num,
         ones: countNumOfOne(num),
-      };
-    }
-  );
+      }
+    },
+  )
 
   numsWithBinary.sort((first, second) => {
     if (first.ones < second.ones) {
-      return -1;
+      return -1
     }
 
     if (first.ones > second.ones) {
-      return 1;
+      return 1
     }
 
-    return first.decimal - second.decimal;
-  });
+    return first.decimal - second.decimal
+  })
 
-  return numsWithBinary.map((item) => item.decimal);
+  return numsWithBinary.map((item) => item.decimal)
 }
 
 function countNumOfOne(n: number) {
-  const result: number[] = [];
+  const result: number[] = []
 
   while (n > 0) {
-    result.push(n % 2);
-    n = Math.floor(n / 2);
+    result.push(n % 2)
+    n = Math.floor(n / 2)
   }
 
   return result.reduce((acc, curr) => {
     if (curr === 1) {
-      acc++;
+      acc++
     }
 
-    return acc;
-  }, 0);
+    return acc
+  }, 0)
 }

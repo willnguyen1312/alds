@@ -13,10 +13,10 @@
  */
 //  https://leetcode.com/problems/same-tree/
 function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
-  if (!q || !p) return p === q;
+  if (!q || !p) return p === q
 
   if (p.val === q.val)
-    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
 
-  return false;
+  return false
 }

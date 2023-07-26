@@ -9,19 +9,19 @@ nums = [3, 7, 0, 5, 0, 2], rearrange nums to look like the following [3,7,5,2,0,
 */
 
 export function rearrangeElement(numbs: number[]) {
-  let numbIndex = 0;
-  let zeroIndex = 0;
+  let numbIndex = 0
+  let zeroIndex = 0
 
   while (numbIndex < numbs.length) {
     if (numbs[numbIndex] !== 0) {
-      [numbs[zeroIndex], numbs[numbIndex]] = [
+      ;[numbs[zeroIndex], numbs[numbIndex]] = [
         numbs[numbIndex],
         numbs[zeroIndex],
-      ];
-      zeroIndex++;
+      ]
+      zeroIndex++
     }
-    numbIndex++;
+    numbIndex++
   }
 
-  return numbs;
+  return numbs
 }

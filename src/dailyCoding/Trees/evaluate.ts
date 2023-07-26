@@ -16,19 +16,19 @@ You should return 45, as it is (3 + 2) * (4 + 5).
 */
 
 export const enum Action {
-  DIVIDE = '/',
-  MINUS = '-',
-  PLUS = '+',
-  TIMES = '*',
+  DIVIDE = "/",
+  MINUS = "-",
+  PLUS = "+",
+  TIMES = "*",
 }
 
 export class BinaryTreeNode {
-  val: number | string;
-  left?: BinaryTreeNode;
-  right?: BinaryTreeNode;
+  val: number | string
+  left?: BinaryTreeNode
+  right?: BinaryTreeNode
 
   constructor(val: number | string) {
-    this.val = val;
+    this.val = val
   }
 }
 
@@ -42,9 +42,9 @@ export function evaluate(root: BinaryTreeNode): number {
       evaluate(first) + evaluate(second),
     [Action.MINUS]: (first: BinaryTreeNode, second: BinaryTreeNode) =>
       evaluate(first) - evaluate(second),
-  };
+  }
 
-  const handle = handlers[root.val];
+  const handle = handlers[root.val]
 
-  return handle ? handle(root.left, root.right) : root.val;
+  return handle ? handle(root.left, root.right) : root.val
 }

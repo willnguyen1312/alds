@@ -57,43 +57,43 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function leafSimilarTrees(
   first: BinaryTreeNode,
-  second: BinaryTreeNode
+  second: BinaryTreeNode,
 ): boolean {
   function dfsCollect(node: BinaryTreeNode, result: number[] = []) {
     if (!node.left && !node.right) {
-      result.push(node.data);
-      return result;
+      result.push(node.data)
+      return result
     }
 
     if (node.left) {
-      dfsCollect(node.left, result);
+      dfsCollect(node.left, result)
     }
 
     if (node.right) {
-      dfsCollect(node.right, result);
+      dfsCollect(node.right, result)
     }
 
-    return result;
+    return result
   }
 
-  const firstResult = dfsCollect(first);
-  const secondResult = dfsCollect(second);
+  const firstResult = dfsCollect(first)
+  const secondResult = dfsCollect(second)
 
   if (firstResult.length !== secondResult.length) {
-    return false;
+    return false
   }
 
   for (let index = 0; index < firstResult.length; index++) {
     if (firstResult[index] !== secondResult[index]) {
-      return false;
+      return false
     }
   }
 
-  return true;
+  return true
 }

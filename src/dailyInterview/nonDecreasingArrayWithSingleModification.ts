@@ -13,25 +13,25 @@ Example:
 */
 
 export function nonDecreasingArrayWithSingleModification(
-  numbs: number[]
+  numbs: number[],
 ): boolean {
-  let count = 0;
+  let count = 0
 
   for (let i = 0; i < numbs.length - 1; i++) {
     if (numbs[i] > numbs[i + 1]) {
       if (i - 1 >= 0) {
         if (numbs[i - 1] > numbs[i + 1]) {
-          numbs[i + 1] = numbs[i];
+          numbs[i + 1] = numbs[i]
         }
       }
 
-      count++;
+      count++
     }
 
     if (count >= 2) {
-      return false;
+      return false
     }
   }
 
-  return count < 2;
+  return count < 2
 }

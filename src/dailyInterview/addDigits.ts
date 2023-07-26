@@ -10,12 +10,12 @@ So the answer is 6.
 */
 
 export function addDigits(numb: number): number {
-  let queue = numb.toString().split('').map(Number);
+  let queue = numb.toString().split("").map(Number)
 
   while (queue.length > 1) {
-    const sum = queue.reduce((acc, cur) => acc + cur);
-    queue = sum.toString().split('').map(Number);
+    const sum = queue.reduce((acc, cur) => acc + cur)
+    queue = sum.toString().split("").map(Number)
   }
 
-  return queue.pop();
+  return queue.pop()
 }

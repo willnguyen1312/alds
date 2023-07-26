@@ -16,30 +16,30 @@ The following input should return 1.
 
 // method to remove invalid parenthesis
 export function minimumRemovalsForValidParenthesis(str: string) {
-  const stack = [];
-  const toRemove = new Set();
+  const stack = []
+  const toRemove = new Set()
 
   for (let i = 0; i < str.length; i++) {
-    if (str[i] == '(') {
-      stack.push(i);
-    } else if (str[i] == ')') {
+    if (str[i] == "(") {
+      stack.push(i)
+    } else if (str[i] == ")") {
       if (stack.length === 0) {
-        toRemove.add(i);
+        toRemove.add(i)
       } else {
-        stack.pop();
+        stack.pop()
       }
     }
   }
 
   while (stack.length) {
-    toRemove.add(stack.pop());
+    toRemove.add(stack.pop())
   }
 
-  let result = '';
+  let result = ""
   for (let i = 0; i < str.length; i++) {
     if (!toRemove.has(i)) {
-      result += str[i];
+      result += str[i]
     }
   }
-  return result;
+  return result
 }

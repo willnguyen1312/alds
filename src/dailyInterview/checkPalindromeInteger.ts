@@ -7,20 +7,20 @@ For this problem do not convert the integer to a string to check if it is a pali
 */
 
 export function checkPalindromeInteger(numb: number) {
-  const numbInStrs = numb.toString().split('');
-  const length = numbInStrs.length;
-  let middle = Math.floor(length / 2) - 1;
+  const numbInStrs = numb.toString().split("")
+  const length = numbInStrs.length
+  let middle = Math.floor(length / 2) - 1
 
   while (middle >= 0) {
-    const left = numbInStrs[middle];
-    const right = numbInStrs[length - middle - 1];
+    const left = numbInStrs[middle]
+    const right = numbInStrs[length - middle - 1]
 
     if (left !== right) {
-      return false;
+      return false
     }
 
-    middle--;
+    middle--
   }
 
-  return true;
+  return true
 }

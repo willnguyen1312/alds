@@ -1,18 +1,18 @@
 export function moveElementToEnd(arr: number[], target: number) {
-  let i = 0;
-  let j = arr.length - 1;
+  let i = 0
+  let j = arr.length - 1
 
   while (i < j) {
     while (i < j && arr[j] === target) {
-      j--;
+      j--
     }
 
     if (arr[i] === target) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      ;[arr[i], arr[j]] = [arr[j], arr[i]]
     }
 
-    i++;
+    i++
   }
 
-  return arr;
+  return arr
 }

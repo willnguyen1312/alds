@@ -9,25 +9,25 @@
 // s = "abcabbccabccc", return 3.
 
 export function longestSingleSubstr(str: string): number {
-  let result = 0;
+  let result = 0
 
-  let current = 0;
+  let current = 0
 
   while (current < str.length - result) {
-    let char = str[current];
-    let count = 1;
+    let char = str[current]
+    let count = 1
 
     while (current + 1 < str.length && str[current + 1] === char) {
-      count++;
-      current++;
+      count++
+      current++
     }
 
     if (count > result) {
-      result = count;
+      result = count
     }
 
-    current++;
+    current++
   }
 
-  return result;
+  return result
 }

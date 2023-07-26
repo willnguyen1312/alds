@@ -3,30 +3,30 @@
 // without changing the ordering of the characters.
 
 export function isomorphicString(first: string, second: string): boolean {
-  const charMap: Map<string, string> = new Map();
-  const usedFromSecond: Set<string> = new Set();
+  const charMap: Map<string, string> = new Map()
+  const usedFromSecond: Set<string> = new Set()
 
   if (first.length !== second.length) {
-    return false;
+    return false
   }
 
   for (let i = 0; i < first.length; i++) {
-    const firstChar = first[i];
-    const secondChar = second[i];
+    const firstChar = first[i]
+    const secondChar = second[i]
 
     if (charMap.has(firstChar)) {
       if (charMap.get(firstChar) !== secondChar) {
-        return false;
+        return false
       }
     } else {
       if (usedFromSecond.has(secondChar)) {
-        return false;
+        return false
       }
 
-      charMap.set(firstChar, secondChar);
-      usedFromSecond.add(secondChar);
+      charMap.set(firstChar, secondChar)
+      usedFromSecond.add(secondChar)
     }
   }
 
-  return true;
+  return true
 }

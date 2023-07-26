@@ -7,18 +7,18 @@ Your class should support the enqueue and dequeue methods like a standard queue.
 */
 
 export class Queue {
-  inStack: number[] = [];
-  outStack: number[] = [];
+  inStack: number[] = []
+  outStack: number[] = []
 
   enQueue(value: number) {
-    this.inStack.push(value);
+    this.inStack.push(value)
   }
 
   deQueue() {
     while (this.inStack.length) {
-      this.outStack.push(this.inStack.pop());
+      this.outStack.push(this.inStack.pop())
     }
 
-    return this.outStack.pop();
+    return this.outStack.pop()
   }
 }

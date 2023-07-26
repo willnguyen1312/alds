@@ -9,35 +9,35 @@ Output: true
 */
 
 export class LinkedListNode {
-  val: number;
-  next: LinkedListNode | null;
+  val: number
+  next: LinkedListNode | null
   constructor(val?: number, next?: LinkedListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
+    this.val = val === undefined ? 0 : val
+    this.next = next === undefined ? null : next
   }
 }
 
 export function detectLinkedListCycle(head: LinkedListNode): LinkedListNode {
-  let slow = head;
-  let fast = head;
+  let slow = head
+  let fast = head
 
-  if (head === null) return null;
+  if (head === null) return null
 
   do {
     if (fast.next && fast.next.next) {
-      slow = slow.next;
-      fast = fast.next.next;
+      slow = slow.next
+      fast = fast.next.next
     } else {
-      return null;
+      return null
     }
-  } while (fast !== slow);
+  } while (fast !== slow)
 
-  let currentNode = head;
+  let currentNode = head
 
   while (currentNode !== slow) {
-    currentNode = currentNode.next;
-    slow = slow.next;
+    currentNode = currentNode.next
+    slow = slow.next
   }
 
-  return currentNode;
+  return currentNode
 }

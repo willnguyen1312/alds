@@ -14,21 +14,21 @@ These are not the only ways of fixing the string, there are many other ways by a
 */
 
 export function fixBrackets(str: string): number {
-  const stack: string[] = [];
+  const stack: string[] = []
 
   for (const char of str) {
-    if (char === '(') {
-      stack.push(char);
-      continue;
+    if (char === "(") {
+      stack.push(char)
+      continue
     }
 
-    if (stack[stack.length - 1] === '(') {
-      stack.pop();
-      continue;
+    if (stack[stack.length - 1] === "(") {
+      stack.pop()
+      continue
     }
 
-    stack.push(char);
+    stack.push(char)
   }
 
-  return stack.length;
+  return stack.length
 }

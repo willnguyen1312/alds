@@ -1,16 +1,16 @@
-import { BinaryTreeNode, collectAllKeysBST } from './collectAllKeysBST';
+import { BinaryTreeNode, collectAllKeysBST } from "./collectAllKeysBST"
 
-describe('collectAllKeysBST', () => {
-  it('should work', () => {
-    const node = new BinaryTreeNode(5);
-    node.left = new BinaryTreeNode(3);
-    node.left.left = new BinaryTreeNode(1);
-    node.left.right = new BinaryTreeNode(2);
-    node.right = new BinaryTreeNode(7);
-    node.right.right = new BinaryTreeNode(2.5);
-    node.right.left = new BinaryTreeNode(1.5);
+describe("collectAllKeysBST", () => {
+  it("should work", () => {
+    const node = new BinaryTreeNode(5)
+    node.left = new BinaryTreeNode(3)
+    node.left.left = new BinaryTreeNode(1)
+    node.left.right = new BinaryTreeNode(2)
+    node.right = new BinaryTreeNode(7)
+    node.right.right = new BinaryTreeNode(2.5)
+    node.right.left = new BinaryTreeNode(1.5)
 
-    const actual = collectAllKeysBST(node, (value) => value < 3);
+    const actual = collectAllKeysBST(node, (value) => value < 3)
     expect(actual).toMatchInlineSnapshot(`
 Set {
   1,
@@ -21,6 +21,6 @@ Set {
   7,
   5,
 }
-`);
-  });
-});
+`)
+  })
+})

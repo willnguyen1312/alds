@@ -14,24 +14,24 @@ print(square_numbers([-5, -3, -1, 0, 1, 4, 5]))
 */
 
 export function sortSquareNumber(numbs: number[]): number[] {
-  const length = numbs.length;
-  const result: number[] = new Array(numbs.length);
-  let index = length - 1;
-  let left = 0;
-  let right = numbs.length - 1;
+  const length = numbs.length
+  const result: number[] = new Array(numbs.length)
+  let index = length - 1
+  let left = 0
+  let right = numbs.length - 1
 
   while (index >= 0) {
-    const squareLeft = Math.pow(numbs[left], 2);
-    const squareRight = Math.pow(numbs[right], 2);
+    const squareLeft = Math.pow(numbs[left], 2)
+    const squareRight = Math.pow(numbs[right], 2)
     if (squareLeft > squareRight) {
-      result[index] = squareLeft;
-      left++;
+      result[index] = squareLeft
+      left++
     } else {
-      result[index] = squareRight;
-      right--;
+      result[index] = squareRight
+      right--
     }
-    index--;
+    index--
   }
 
-  return result;
+  return result
 }

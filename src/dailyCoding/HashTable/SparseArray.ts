@@ -1,41 +1,41 @@
 class SparseArray {
-  private hash: Record<number, number> = {};
-  private size: number = 0;
+  private hash: Record<number, number> = {}
+  private size: number = 0
 
   constructor(arr: number[], size: number) {
-    this.size = size;
+    this.size = size
 
     for (let index = 0; index < arr.length; index++) {
-      const element = arr[index];
-      this.hash[index] = element;
+      const element = arr[index]
+      this.hash[index] = element
     }
   }
 
   private checkBound(index: number) {
     if (index < 0 || index >= this.size) {
-      return false;
+      return false
     }
-    return true;
+    return true
   }
 
   set(index: number, value: number) {
     if (!this.checkBound(index)) {
-      return;
+      return
     }
 
     if (value !== 0) {
-      this.hash[index] = value;
-      return;
+      this.hash[index] = value
+      return
     }
 
     if (index in this.hash) {
-      delete this.hash[index];
+      delete this.hash[index]
     }
   }
 
   get(index: number) {
     if (this.checkBound(index)) {
-      return this.hash[index];
+      return this.hash[index]
     }
   }
 }

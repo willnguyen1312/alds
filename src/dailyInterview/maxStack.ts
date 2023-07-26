@@ -8,32 +8,32 @@ Each method should run in constant time.
 */
 
 export class MaxStack {
-  maxStack: number[] = [];
-  valueStack: number[] = [];
+  maxStack: number[] = []
+  valueStack: number[] = []
 
   push(value: number) {
-    this.valueStack.push(value);
+    this.valueStack.push(value)
 
     if (this.maxStack.length === 0 || value >= this.max()) {
-      this.maxStack.push(value);
+      this.maxStack.push(value)
     }
   }
 
   pop() {
-    if (this.valueStack.length === 0) return;
+    if (this.valueStack.length === 0) return
 
-    const value = this.valueStack.pop();
+    const value = this.valueStack.pop()
 
     if (value === this.max()) {
-      this.maxStack.pop();
+      this.maxStack.pop()
     }
 
-    return value;
+    return value
   }
 
   max() {
-    if (this.maxStack.length === 0) return;
+    if (this.maxStack.length === 0) return
 
-    return this.maxStack[this.maxStack.length - 1];
+    return this.maxStack[this.maxStack.length - 1]
   }
 }

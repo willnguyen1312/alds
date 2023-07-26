@@ -8,21 +8,21 @@ For example, [2, 0, 1, 0] returns True while [1, 1, 0, 1] returns False.
 */
 
 export function hopToEnd(array: number[]): boolean {
-  let maxReach = array[0];
-  let steps = array[0];
+  let maxReach = array[0]
+  let steps = array[0]
 
   for (let i = 1; i < array.length - 1; i++) {
-    steps--;
+    steps--
 
     if (steps === 0 && maxReach === i + array[i]) {
-      return false;
+      return false
     }
 
-    maxReach = Math.max(maxReach, i + array[i]);
+    maxReach = Math.max(maxReach, i + array[i])
     if (steps === 0) {
-      steps = maxReach - i;
+      steps = maxReach - i
     }
   }
 
-  return maxReach >= array.length - 1;
+  return maxReach >= array.length - 1
 }

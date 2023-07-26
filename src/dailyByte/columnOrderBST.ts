@@ -24,41 +24,41 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function columnOrderBST(root: BinaryTreeNode): number[][] {
-  const cache: Map<number, number[]> = new Map();
+  const cache: Map<number, number[]> = new Map()
 
   function columnOrderBSTHelper(root: BinaryTreeNode, level = 0): number[][] {
     if (!root) {
-      return;
+      return
     }
 
-    let list: number[] = cache.get(level);
+    let list: number[] = cache.get(level)
 
     if (!list) {
-      list = [];
-      list.push(root.data);
+      list = []
+      list.push(root.data)
     } else {
-      list.push(root.data);
+      list.push(root.data)
     }
 
-    cache.set(level, list);
+    cache.set(level, list)
 
-    columnOrderBSTHelper(root.left, level - 1);
+    columnOrderBSTHelper(root.left, level - 1)
 
-    columnOrderBSTHelper(root.right, level + 1);
+    columnOrderBSTHelper(root.right, level + 1)
   }
 
-  columnOrderBSTHelper(root);
+  columnOrderBSTHelper(root)
 
-  const result: number[][] = [];
+  const result: number[][] = []
 
   for (const key of [...cache.keys()].sort()) {
-    result.push(cache.get(key));
+    result.push(cache.get(key))
   }
 
-  return result;
+  return result
 }

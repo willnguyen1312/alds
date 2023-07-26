@@ -18,36 +18,36 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function duplicateSubtrees(root: BinaryTreeNode): string[] {
-  const countMap: Map<string, number> = new Map();
+  const countMap: Map<string, number> = new Map()
 
-  inorderTraversal(root);
+  inorderTraversal(root)
 
   function inorderTraversal(node: BinaryTreeNode) {
-    if (!node) return '';
+    if (!node) return ""
 
-    let str = '(';
-    str += inorderTraversal(node.left);
-    str += node.data.toString();
-    str += inorderTraversal(node.right);
-    str += ')';
+    let str = "("
+    str += inorderTraversal(node.left)
+    str += node.data.toString()
+    str += inorderTraversal(node.right)
+    str += ")"
 
-    countMap.set(str, (countMap.get(str) || 0) + 1);
+    countMap.set(str, (countMap.get(str) || 0) + 1)
 
-    return str;
+    return str
   }
 
-  let result: string[] = [];
+  let result: string[] = []
 
   for (const [key, value] of countMap) {
     if (value >= 2) {
-      result.push(key);
+      result.push(key)
     }
   }
 
-  return result;
+  return result
 }

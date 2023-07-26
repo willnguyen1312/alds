@@ -14,30 +14,30 @@ export class BinaryTreeNode {
   constructor(
     public data: string,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function getDeepestNode(root: BinaryTreeNode): BinaryTreeNode {
-  let queue: BinaryTreeNode[] = [root];
-  let result: BinaryTreeNode;
+  let queue: BinaryTreeNode[] = [root]
+  let result: BinaryTreeNode
 
   while (queue.length) {
-    const toQueue: BinaryTreeNode[] = [];
+    const toQueue: BinaryTreeNode[] = []
 
     for (const node of queue) {
-      result = node;
+      result = node
       if (node.left) {
-        toQueue.push(node.left);
+        toQueue.push(node.left)
       }
 
       if (node.right) {
-        toQueue.push(node.right);
+        toQueue.push(node.right)
       }
     }
 
-    queue = toQueue;
+    queue = toQueue
   }
 
-  return result;
+  return result
 }

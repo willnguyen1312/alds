@@ -9,24 +9,24 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function createBalancedBST(
   numbs: number[],
   left = 0,
-  right = numbs.length - 1
+  right = numbs.length - 1,
 ): BinaryTreeNode {
   if (left > right) {
-    return null;
+    return null
   }
 
-  const middle = Math.floor((left + right) / 2);
-  const result = new BinaryTreeNode(numbs[middle]);
+  const middle = Math.floor((left + right) / 2)
+  const result = new BinaryTreeNode(numbs[middle])
 
-  result.left = createBalancedBST(numbs, left, middle - 1);
-  result.right = createBalancedBST(numbs, middle + 1, right);
+  result.left = createBalancedBST(numbs, left, middle - 1)
+  result.right = createBalancedBST(numbs, middle + 1, right)
 
-  return result;
+  return result
 }

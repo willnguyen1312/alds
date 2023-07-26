@@ -6,69 +6,69 @@ Merge the linked lists into a single sorted linked list and return it.
 */
 
 export class LinkedListNode {
-  val: number;
-  next: null | LinkedListNode = null;
+  val: number
+  next: null | LinkedListNode = null
   constructor(val: number, next: LinkedListNode | null = null) {
-    this.val = val;
-    this.next = next;
+    this.val = val
+    this.next = next
   }
 }
 
 export function mergeSortedLinkedListIter(
   first: LinkedListNode,
-  second: LinkedListNode
+  second: LinkedListNode,
 ) {
-  const dumpNode = new LinkedListNode(0);
-  let cur = dumpNode;
+  const dumpNode = new LinkedListNode(0)
+  let cur = dumpNode
 
   while (first || second) {
     if (!first) {
       while (second) {
-        cur.next = new LinkedListNode(second.val);
-        second = second.next;
-        cur = cur.next;
+        cur.next = new LinkedListNode(second.val)
+        second = second.next
+        cur = cur.next
       }
-      break;
+      break
     }
 
     if (!second) {
       while (first) {
-        cur.next = new LinkedListNode(first.val);
-        second = first.next;
-        cur = cur.next;
+        cur.next = new LinkedListNode(first.val)
+        second = first.next
+        cur = cur.next
       }
-      break;
+      break
     }
 
     if (first.val <= second.val) {
-      cur.next = new LinkedListNode(first.val);
-      first = first.next;
+      cur.next = new LinkedListNode(first.val)
+      first = first.next
     } else {
-      cur.next = new LinkedListNode(second.val);
-      second = second.next;
+      cur.next = new LinkedListNode(second.val)
+      second = second.next
     }
 
-    cur = cur.next;
+    cur = cur.next
   }
 
-  return dumpNode.next;
+  return dumpNode.next
 }
 
 export function mergeSortedLinkedListRecur(
   first: LinkedListNode,
-  second: LinkedListNode
+  second: LinkedListNode,
 ) {
-  if (!first) return second;
-  if (!second) return first;
-  let head = null;
+  if (!first) return second
+  if (!second) return first
+  let head = null
 
   if (first.val <= second.val) {
-    head = first;
-    head.next = mergeSortedLinkedListRecur(first.next, second);
+    head = first
+    head.next = mergeSortedLinkedListRecur(first.next, second)
   } else {
-    head = second;
-    head.next = mergeSortedLinkedListRecur(first, second.next);
+    head = second
+    head.next = mergeSortedLinkedListRecur(first, second.next)
   }
 
-  return head;
+  return head
 }

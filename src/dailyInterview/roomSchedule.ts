@@ -8,22 +8,22 @@ For example. [(30, 75), (0, 50), (60, 150)] should return 2.
 */
 
 export function roomSchedule(arr: number[][]): number {
-  const sortedArr = arr.sort((a, b) => a[0] - b[0]);
-  const mergedArr: number[][] = [];
+  const sortedArr = arr.sort((a, b) => a[0] - b[0])
+  const mergedArr: number[][] = []
 
-  let current = sortedArr[0];
+  let current = sortedArr[0]
 
   for (let index = 1; index < sortedArr.length; index++) {
-    const element = sortedArr[index];
+    const element = sortedArr[index]
 
     if (current[1] < element[0]) {
-      mergedArr.push(current);
-      current = element;
+      mergedArr.push(current)
+      current = element
     } else {
-      current[1] = Math.max(current[1], element[1]);
+      current[1] = Math.max(current[1], element[1])
     }
   }
 
-  mergedArr.push(current);
-  return mergedArr.length;
+  mergedArr.push(current)
+  return mergedArr.length
 }

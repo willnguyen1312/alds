@@ -10,13 +10,13 @@ Output: 7
 */
 
 export function findSmallestNoneSum(arr: number[]): number {
-  let result = 1;
+  let result = 1
 
   // Traverse the array and increment 'res' if arr[i] is
   // smaller than or equal to 'res'.
   for (let i = 0; i < arr.length && arr[i] <= result; i++) {
-    result = result + arr[i];
+    result = result + arr[i]
   }
 
-  return result;
+  return result
 }

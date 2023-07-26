@@ -1,1 +1,1 @@
-export * from './al';
+export * from "./al"

@@ -13,24 +13,24 @@ sentence1 = "copper coffee pot", sentence2 = "hot coffee pot", return ["copper",
 */
 
 export function uncommonWords(first: string, second: string): string[] {
-  const firstArr = first.split(' ');
-  const secondArr = second.split(' ');
+  const firstArr = first.split(" ")
+  const secondArr = second.split(" ")
 
-  const firstSet = new Set(firstArr);
-  const secondSet = new Set(secondArr);
-  const result: string[] = [];
+  const firstSet = new Set(firstArr)
+  const secondSet = new Set(secondArr)
+  const result: string[] = []
 
   for (const word of firstArr) {
     if (!secondSet.has(word)) {
-      result.push(word);
+      result.push(word)
     }
   }
 
   for (const word of secondArr) {
     if (!firstSet.has(word)) {
-      result.push(word);
+      result.push(word)
     }
   }
 
-  return result;
+  return result
 }

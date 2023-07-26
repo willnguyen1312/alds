@@ -7,22 +7,20 @@ Do not use any builtin base conversion functions like hex.
 */
 
 export function decimalToHex(n: number): string {
-  const hexResult: string[] = [];
+  const hexResult: string[] = []
 
   while (n > 0) {
-    const remainder = n % 16;
+    const remainder = n % 16
 
     // check if temp < 10
     if (remainder < 10) {
-      hexResult.unshift(String.fromCharCode(remainder + '0'.charCodeAt(0)));
+      hexResult.unshift(String.fromCharCode(remainder + "0".charCodeAt(0)))
     } else {
-      hexResult.unshift(
-        String.fromCharCode(remainder - 10 + 'A'.charCodeAt(0))
-      );
+      hexResult.unshift(String.fromCharCode(remainder - 10 + "A".charCodeAt(0)))
     }
 
-    n = Math.floor(n / 16);
+    n = Math.floor(n / 16)
   }
 
-  return hexResult.join('');
+  return hexResult.join("")
 }

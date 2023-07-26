@@ -17,34 +17,34 @@ Your task is, return the nth term of this sequence.
 */
 
 export function lookAndSaySequence(n: number): string {
-  if (n === 1) return '1';
-  if (n === 2) return '11';
+  if (n === 1) return "1"
+  if (n === 2) return "11"
 
-  let str = '11';
+  let str = "11"
 
   for (let i = 3; i <= n; i++) {
-    str += '$';
-    let len = str.length;
+    str += "$"
+    let len = str.length
 
-    let cnt = 1;
+    let cnt = 1
 
-    let tmp = '';
-    let arr = str.split('');
+    let tmp = ""
+    let arr = str.split("")
 
     for (let j = 1; j < len; j++) {
       if (arr[j] !== arr[j - 1]) {
-        tmp += cnt + 0;
+        tmp += cnt + 0
 
-        tmp += arr[j - 1];
+        tmp += arr[j - 1]
 
-        cnt = 1;
+        cnt = 1
       } else {
-        cnt++;
+        cnt++
       }
     }
 
-    str = tmp;
+    str = tmp
   }
 
-  return str;
+  return str
 }

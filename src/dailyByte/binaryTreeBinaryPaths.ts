@@ -4,37 +4,37 @@
 // Return the sum of all root to leaf paths using each path’s decimal value.
 
 export class TreeNode {
-  value: number;
-  left?: TreeNode;
-  right?: TreeNode;
+  value: number
+  left?: TreeNode
+  right?: TreeNode
 
   constructor(value: number, left?: TreeNode, right?: TreeNode) {
-    this.value = value;
-    this.left = left;
-    this.right = right;
+    this.value = value
+    this.left = left
+    this.right = right
   }
 }
 
 export function binaryTreeBinaryPaths(root: TreeNode): number {
-  const binaryPaths: number[][] = [];
-  const path: number[] = [];
-  const stack: TreeNode[] = [root];
+  const binaryPaths: number[][] = []
+  const path: number[] = []
+  const stack: TreeNode[] = [root]
 
   while (stack.length) {
-    const node = stack.pop();
-    path.push(node.value);
+    const node = stack.pop()
+    path.push(node.value)
 
     if (node.left) {
-      stack.push(node.left);
+      stack.push(node.left)
     }
 
     if (node.right) {
-      stack.push(node.right);
+      stack.push(node.right)
     }
 
     if (!node.left && !node.right) {
-      binaryPaths.push(path.slice());
-      path.pop();
+      binaryPaths.push(path.slice())
+      path.pop()
     }
   }
 
@@ -64,28 +64,28 @@ export function binaryTreeBinaryPaths(root: TreeNode): number {
 
   const result = binaryPaths
     .map(binaryToDecimal)
-    .reduce((acc, curr) => acc + curr);
+    .reduce((acc, curr) => acc + curr)
 
-  return result;
+  return result
 }
 
 export function binaryToDecimal(binary: number[]): number {
-  let result = 0;
+  let result = 0
 
   for (let i = 0; i < binary.length; i++) {
-    result += binary[i] * Math.pow(2, binary.length - i - 1);
+    result += binary[i] * Math.pow(2, binary.length - i - 1)
   }
 
-  return result;
+  return result
 }
 
 export function decimalToBinary(decimal: number): number[] {
-  let result: number[] = [];
+  let result: number[] = []
 
   while (decimal > 0) {
-    result.push(decimal % 2);
-    decimal = Math.floor(decimal / 2);
+    result.push(decimal % 2)
+    decimal = Math.floor(decimal / 2)
   }
 
-  return result.reverse();
+  return result.reverse()
 }

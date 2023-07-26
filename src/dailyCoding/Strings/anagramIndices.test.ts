@@ -1,8 +1,8 @@
-import { anagramIndices } from './anagramIndices';
+import { anagramIndices } from "./anagramIndices"
 
-describe('anagramIndices function', () => {
-  it('should work', () => {
-    const actual = anagramIndices('ab', 'abxaba');
-    expect(actual).toEqual([0, 3, 4]);
-  });
-});
+describe("anagramIndices function", () => {
+  it("should work", () => {
+    const actual = anagramIndices("ab", "abxaba")
+    expect(actual).toEqual([0, 3, 4])
+  })
+})

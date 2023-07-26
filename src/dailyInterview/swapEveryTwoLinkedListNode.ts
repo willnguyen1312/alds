@@ -6,33 +6,36 @@ then swap the position of the 3rd and 4th node etc.
 */
 
 export class LinkedListNode {
-  constructor(public data: number, public next?: LinkedListNode) {}
+  constructor(
+    public data: number,
+    public next?: LinkedListNode,
+  ) {}
 }
 
 export function swapEveryTwoLinkedListNode(
-  head: LinkedListNode
+  head: LinkedListNode,
 ): LinkedListNode {
   if (!head.next) {
-    return head;
+    return head
   }
 
-  let current = head;
-  let prev: LinkedListNode;
-  head = head.next;
+  let current = head
+  let prev: LinkedListNode
+  head = head.next
 
   while (current.next) {
-    let next = current.next;
+    let next = current.next
 
-    current.next = next.next;
-    next.next = current;
-    current = current.next;
+    current.next = next.next
+    next.next = current
+    current = current.next
 
     if (prev) {
-      prev.next = next;
+      prev.next = next
     }
 
-    prev = next.next;
+    prev = next.next
   }
 
-  return head;
+  return head
 }

@@ -19,19 +19,19 @@ This is a representation of the expression (3 + 2) * (4 + 5), and should return 
 */
 
 export const enum Action {
-  DIVIDE = '/',
-  MINUS = '-',
-  PLUS = '+',
-  TIMES = '*',
+  DIVIDE = "/",
+  MINUS = "-",
+  PLUS = "+",
+  TIMES = "*",
 }
 
 export class BinaryTreeNode {
-  val: number | string;
-  left?: BinaryTreeNode;
-  right?: BinaryTreeNode;
+  val: number | string
+  left?: BinaryTreeNode
+  right?: BinaryTreeNode
 
   constructor(val: number | string) {
-    this.val = val;
+    this.val = val
   }
 }
 
@@ -45,9 +45,9 @@ export function arithmeticBinaryTree(root: BinaryTreeNode): number {
       arithmeticBinaryTree(first) + arithmeticBinaryTree(second),
     [Action.MINUS]: (first: BinaryTreeNode, second: BinaryTreeNode) =>
       arithmeticBinaryTree(first) - arithmeticBinaryTree(second),
-  };
+  }
 
-  const handle = handlers[root.val];
+  const handle = handlers[root.val]
 
-  return handle ? handle(root.left, root.right) : root.val;
+  return handle ? handle(root.left, root.right) : root.val
 }

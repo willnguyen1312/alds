@@ -8,43 +8,43 @@ You can assume that the character c will appear at least once in the string.
 
 export function shortestDistanceToCharacter(
   str: string,
-  char: string
+  char: string,
 ): number[] {
-  const result: number[] = [];
-  const strArr: string[] = str.split('');
+  const result: number[] = []
+  const strArr: string[] = str.split("")
   const matches: number[] = strArr.reduce((acc, cur, index) => {
     if (cur === char) {
-      acc.push(index);
+      acc.push(index)
     }
-    return acc;
-  }, []);
+    return acc
+  }, [])
 
   if (matches.length === 0) {
-    return [];
+    return []
   }
 
-  let leftIndex = 0;
-  let rightIndex = matches[leftIndex + 1] ? leftIndex + 1 : leftIndex;
+  let leftIndex = 0
+  let rightIndex = matches[leftIndex + 1] ? leftIndex + 1 : leftIndex
 
   for (let index = 0; index < str.length; index++) {
-    const start = matches[leftIndex];
-    const end = matches[rightIndex];
+    const start = matches[leftIndex]
+    const end = matches[rightIndex]
 
     if (index < start) {
-      result.push(start - index);
-      continue;
+      result.push(start - index)
+      continue
     }
 
-    const inRange = index >= start && index <= end;
+    const inRange = index >= start && index <= end
     if (inRange) {
-      result.push(Math.min(index - start, end - index));
-      continue;
+      result.push(Math.min(index - start, end - index))
+      continue
     }
 
-    result.push(index - end);
-    leftIndex = rightIndex;
-    rightIndex = matches[leftIndex + 1] ? leftIndex + 1 : leftIndex;
+    result.push(index - end)
+    leftIndex = rightIndex
+    rightIndex = matches[leftIndex + 1] ? leftIndex + 1 : leftIndex
   }
 
-  return result;
+  return result
 }

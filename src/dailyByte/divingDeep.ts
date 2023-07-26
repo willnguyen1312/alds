@@ -13,16 +13,19 @@ return 3.
 */
 
 export class BinaryTreeNode {
-  constructor(public data: number, public children: BinaryTreeNode[] = []) {}
+  constructor(
+    public data: number,
+    public children: BinaryTreeNode[] = [],
+  ) {}
 }
 
 export function divingDeep(root: BinaryTreeNode): number {
-  const depths: number[] = [];
+  const depths: number[] = []
 
   for (const child of root.children) {
-    depths.push(divingDeep(child));
+    depths.push(divingDeep(child))
   }
 
-  const result = (depths.length ? Math.max(...depths) : 0) + 1;
-  return result;
+  const result = (depths.length ? Math.max(...depths) : 0) + 1
+  return result
 }

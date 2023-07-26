@@ -11,23 +11,23 @@ meaning a meeting of (0, 10) and (10, 20) will only require 1 meeting room.
 */
 
 export function numberOfMeetingRooms(meetings: number[][]): number {
-  const rooms = meetings.sort((a, b) => a[0] - b[0]);
-  const reservedRooms: number[][] = [];
+  const rooms = meetings.sort((a, b) => a[0] - b[0])
+  const reservedRooms: number[][] = []
 
-  let current = rooms[0];
+  let current = rooms[0]
 
   for (let index = 1; index < rooms.length; index++) {
-    const room = rooms[index];
+    const room = rooms[index]
 
     if (room[0] <= current[1]) {
-      current[1] = Math.max(current[1], room[1]);
+      current[1] = Math.max(current[1], room[1])
     } else {
-      reservedRooms.push(current);
-      current = room;
+      reservedRooms.push(current)
+      current = room
     }
   }
 
-  reservedRooms.push(current);
+  reservedRooms.push(current)
 
-  return reservedRooms.length;
+  return reservedRooms.length
 }

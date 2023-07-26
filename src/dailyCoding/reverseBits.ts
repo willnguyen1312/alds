@@ -14,6 +14,6 @@ num = -37, return -73
 */
 
 export function reverseBits(numb: number): number {
-  const numbStr = numb.toString(2).split('').reverse().join('');
-  return parseInt(numbStr, 2);
+  const numbStr = numb.toString(2).split("").reverse().join("")
+  return parseInt(numbStr, 2)
 }

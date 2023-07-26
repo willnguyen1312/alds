@@ -8,34 +8,33 @@ to climb the stairs.
 
 export function climbStairsRecur(
   n: number,
-  cache = new Map<number, number>()
+  cache = new Map<number, number>(),
 ): number {
   if (n <= 2) {
-    return n;
+    return n
   }
 
-  const cachedResult = cache.get(n);
+  const cachedResult = cache.get(n)
 
   if (cachedResult) {
-    return cachedResult;
+    return cachedResult
   }
 
-  const result =
-    climbStairsRecur(n - 1, cache) + climbStairsRecur(n - 2, cache);
+  const result = climbStairsRecur(n - 1, cache) + climbStairsRecur(n - 2, cache)
 
-  cache.set(n, result);
-  return result;
+  cache.set(n, result)
+  return result
 }
 
 export function climbStairsIter(n: number): number {
-  const res: number[] = [];
-  res[0] = 1;
-  res[1] = 1;
-  res[2] = 2;
+  const res: number[] = []
+  res[0] = 1
+  res[1] = 1
+  res[2] = 2
 
   for (let i = 3; i <= n; i++) {
-    res[i] = res[i - 1] + res[i - 2];
+    res[i] = res[i - 1] + res[i - 2]
   }
 
-  return res[n];
+  return res[n]
 }

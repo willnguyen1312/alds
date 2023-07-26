@@ -12,38 +12,38 @@ Output: False # a can't map to d and e
 */
 
 export function characterMap(first: string, second: string): boolean {
-  const l1 = first.length;
-  const l2 = second.length;
-  const MAX = 26;
+  const l1 = first.length
+  const l2 = second.length
+  const MAX = 26
 
-  if (l1 !== l2) return false;
+  if (l1 !== l2) return false
 
-  const freq1 = new Array(MAX).fill(0);
-  const freq2 = new Array(MAX).fill(0);
+  const freq1 = new Array(MAX).fill(0)
+  const freq2 = new Array(MAX).fill(0)
 
   for (let i = 0; i < l1; i++) {
-    freq1[first[i].charCodeAt(0) - 'a'.charCodeAt(0)]++;
+    freq1[first[i].charCodeAt(0) - "a".charCodeAt(0)]++
   }
 
   for (let i = 0; i < l2; i++) {
-    freq2[second[i].charCodeAt(0) - 'a'.charCodeAt(0)]++;
+    freq2[second[i].charCodeAt(0) - "a".charCodeAt(0)]++
   }
 
   for (let i = 0; i < MAX; i++) {
-    if (freq1[i] === 0) continue;
-    let found = false;
+    if (freq1[i] === 0) continue
+    let found = false
 
     for (let j = 0; j < MAX; j++) {
       if (freq1[i] === freq2[j]) {
-        freq2[j] = -1;
+        freq2[j] = -1
 
-        found = true;
-        break;
+        found = true
+        break
       }
     }
 
-    if (!found) return false;
+    if (!found) return false
   }
 
-  return true;
+  return true
 }

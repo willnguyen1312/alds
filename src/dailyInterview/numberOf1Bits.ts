@@ -5,12 +5,12 @@ Given an integer, find the number of 1 bits it has.
 */
 
 export function numberOf1Bits(numb: number): number {
-  const numbResult: number[] = [];
+  const numbResult: number[] = []
 
   while (numb > 0) {
-    numbResult.push(numb % 2);
-    numb = Math.floor(numb / 2);
+    numbResult.push(numb % 2)
+    numb = Math.floor(numb / 2)
   }
 
-  return numbResult.filter((numb) => numb === 1).length;
+  return numbResult.filter((numb) => numb === 1).length
 }

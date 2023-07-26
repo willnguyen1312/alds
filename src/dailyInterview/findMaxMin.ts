@@ -7,18 +7,18 @@ using less than 2 * (n - 1) comparisons.
 
 export function findMaxMin(numbs: number[]): number[] {
   if (numbs.length === 1) {
-    return [numbs[0], numbs[0]];
+    return [numbs[0], numbs[0]]
   }
-  let min = Math.min(numbs[0], numbs[1]);
-  let max = Math.max(numbs[0], numbs[1]);
+  let min = Math.min(numbs[0], numbs[1])
+  let max = Math.max(numbs[0], numbs[1])
 
   for (let i = 2; i < numbs.length; i++) {
     if (numbs[i] > max) {
-      max = numbs[i];
+      max = numbs[i]
     } else if (numbs[i] < min) {
-      min = numbs[i];
+      min = numbs[i]
     }
   }
 
-  return [min, max];
+  return [min, max]
 }

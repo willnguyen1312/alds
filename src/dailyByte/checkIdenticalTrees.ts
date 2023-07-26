@@ -38,66 +38,66 @@ return false.
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: number
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function checkIdenticalTreesIter(
   first: BinaryTreeNode,
-  second: BinaryTreeNode
+  second: BinaryTreeNode,
 ): boolean {
-  const stackA: BinaryTreeNode[] = [first];
-  const stackB: BinaryTreeNode[] = [second];
+  const stackA: BinaryTreeNode[] = [first]
+  const stackB: BinaryTreeNode[] = [second]
 
   while (stackA.length && stackB.length) {
-    const a = stackA.pop();
-    const b = stackB.pop();
+    const a = stackA.pop()
+    const b = stackB.pop()
 
     if (
       a.val !== b.val ||
       a.left?.val !== b.left?.val ||
       a.right?.val !== b.right?.val
     ) {
-      return false;
+      return false
     }
 
     if (a.left) {
-      stackA.push(a.left);
+      stackA.push(a.left)
     }
 
     if (a.right) {
-      stackA.push(a.right);
+      stackA.push(a.right)
     }
 
     if (b.left) {
-      stackA.push(b.left);
+      stackA.push(b.left)
     }
 
     if (b.right) {
-      stackA.push(b.right);
+      stackA.push(b.right)
     }
   }
 
-  return true;
+  return true
 }
 
 export function checkIdenticalTreesRecur(
   first: BinaryTreeNode,
-  second: BinaryTreeNode
+  second: BinaryTreeNode,
 ): boolean {
-  if (!first && !second) return true;
+  if (!first && !second) return true
 
   if (first && second)
     return (
       first.val === second.val &&
       checkIdenticalTreesRecur(first.left, second.left) &&
       checkIdenticalTreesRecur(first.right, second.right)
-    );
+    )
 
-  return false;
+  return false
 }

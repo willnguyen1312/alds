@@ -8,26 +8,26 @@ to the root, and all values in the right subtree are greater than or equal to th
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: number
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function validateBST(root: BinaryTreeNode | null): boolean {
   if (!root) {
-    return true;
+    return true
   }
 
   if (root.left?.val > root.val || root.right?.val < root.val) {
-    return false;
+    return false
   }
 
-  const isValidLeft = validateBST(root.left);
-  const isValidRight = validateBST(root.right);
+  const isValidLeft = validateBST(root.left)
+  const isValidRight = validateBST(root.right)
 
-  return isValidLeft && isValidRight;
+  return isValidLeft && isValidRight
 }

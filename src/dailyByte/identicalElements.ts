@@ -13,20 +13,20 @@ nums = [2, 3, 2], k = 2, return true.
 */
 
 export function identicalElements(numbs: number[], distance: number): boolean {
-  const hash: Record<string, number> = {};
+  const hash: Record<string, number> = {}
 
   for (let index = 0; index < numbs.length; index++) {
-    const element = numbs[index];
+    const element = numbs[index]
 
     if (hash[element] !== undefined) {
-      const diff = index - hash[element];
+      const diff = index - hash[element]
       if (diff <= distance) {
-        return true;
+        return true
       }
     }
 
-    hash[element] = index;
+    hash[element] = index
   }
 
-  return false;
+  return false
 }

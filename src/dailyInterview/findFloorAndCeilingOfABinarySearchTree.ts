@@ -7,73 +7,73 @@ Here is the definition of a node for the tree.
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: number
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function findFloorAndCeilingOfABinarySearchTree(
   root: BinaryTreeNode,
-  target: number
+  target: number,
 ): number[] {
-  let floor = -1;
-  let ceil = -1;
+  let floor = -1
+  let ceil = -1
 
   while (root) {
     if (root.val === target) {
-      ceil = root.val;
-      floor = root.val;
-      return [floor, ceil];
+      ceil = root.val
+      floor = root.val
+      return [floor, ceil]
     }
 
     if (target > root.val) {
-      floor = root.val;
-      root = root.right;
+      floor = root.val
+      root = root.right
     } else {
-      ceil = root.val;
-      root = root.left;
+      ceil = root.val
+      root = root.left
     }
   }
 
-  return [floor, ceil];
+  return [floor, ceil]
 }
 
 export function findCeil(node: BinaryTreeNode, target: number) {
   if (!node) {
-    return -1;
+    return -1
   }
 
   if (node.val === target) {
-    return node.val;
+    return node.val
   }
 
   if (node.val < target) {
-    return findCeil(node.right, target);
+    return findCeil(node.right, target)
   }
 
-  let ceil = findCeil(node.left, target);
+  let ceil = findCeil(node.left, target)
 
-  return ceil !== -1 ? ceil : node.val;
+  return ceil !== -1 ? ceil : node.val
 }
 
 export function findFloor(node: BinaryTreeNode, target: number) {
   if (!node) {
-    return -1;
+    return -1
   }
 
   if (node.val === target) {
-    return node.val;
+    return node.val
   }
 
   if (node.val > target) {
-    return findFloor(node.left, target);
+    return findFloor(node.left, target)
   }
 
-  let floor = findFloor(node.right, target);
+  let floor = findFloor(node.right, target)
 
-  return floor !== -1 ? floor : node.val;
+  return floor !== -1 ? floor : node.val
 }

@@ -14,26 +14,26 @@ therefore the number of positions in which the bits differ is two.
 */
 
 export function hammingDistance(first: number, second: number) {
-  const firstBinary = first.toString(2).split('');
-  const secondBinary = second.toString(2).split('');
-  const length = Math.max(firstBinary.length, secondBinary.length);
+  const firstBinary = first.toString(2).split("")
+  const secondBinary = second.toString(2).split("")
+  const length = Math.max(firstBinary.length, secondBinary.length)
   const longer =
-    secondBinary.length > firstBinary.length ? secondBinary : firstBinary;
+    secondBinary.length > firstBinary.length ? secondBinary : firstBinary
   let shorter =
-    secondBinary.length < firstBinary.length ? secondBinary : firstBinary;
+    secondBinary.length < firstBinary.length ? secondBinary : firstBinary
 
-  const diff = longer.length - shorter.length;
-  const filledArr: string[] = new Array(diff).fill('0');
+  const diff = longer.length - shorter.length
+  const filledArr: string[] = new Array(diff).fill("0")
 
-  shorter = filledArr.concat(shorter);
+  shorter = filledArr.concat(shorter)
 
-  let result = 0;
+  let result = 0
 
   for (let index = 0; index < length; index++) {
     if (shorter[index] !== longer[index]) {
-      result++;
+      result++
     }
   }
 
-  return result;
+  return result
 }

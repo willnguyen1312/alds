@@ -16,35 +16,35 @@ return [
 
 export function uniqueCombinationChange(
   candidates: number[],
-  target: number
+  target: number,
 ): number[][] {
-  const res: number[][] = [];
+  const res: number[][] = []
 
   function collect(
     arr: number[],
     index: number,
     target: number,
-    list: number[] = []
+    list: number[] = [],
   ) {
     if (target < 0 || index >= arr.length) {
-      return;
+      return
     }
 
     if (target === 0) {
-      res.push(list.slice());
-      return;
+      res.push(list.slice())
+      return
     }
 
     for (let i = index; i < arr.length; i++) {
       if (target >= arr[i]) {
-        list.push(arr[i]);
-        collect(arr, i, target - arr[i], list);
-        list.pop();
+        list.push(arr[i])
+        collect(arr, i, target - arr[i], list)
+        list.pop()
       }
     }
   }
 
-  collect(candidates, 0, target);
+  collect(candidates, 0, target)
 
-  return res;
+  return res
 }

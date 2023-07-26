@@ -6,9 +6,9 @@ function updateMatrix(matrix: number[][]): number[][] {
   // As we're looking for the initial set of zeroes, mark the others, mark as infinity
   // because we don't want to get confused with future 1s we want to write down.
 
-  let i, l, j, m;
+  let i, l, j, m
 
-  let q = [];
+  let q = []
 
   // Find all zeroes in the matrix
   for (i = 0, l = matrix.length; i < l; i++) {
@@ -17,9 +17,9 @@ function updateMatrix(matrix: number[][]): number[][] {
         // Note the third param here, a zero to keep track of which "level" we're at.
         // The zeroes are obviously at zero.
         // Later in the bfs we will increase this for each unvisited neighbor
-        q.push([i, j, 0]);
+        q.push([i, j, 0])
       } else {
-        matrix[i][j] = Infinity;
+        matrix[i][j] = Infinity
       }
     }
   }
@@ -30,22 +30,22 @@ function updateMatrix(matrix: number[][]): number[][] {
     [0, 1],
     [-1, 0],
     [0, -1],
-  ];
+  ]
 
   // Start BFS. BFS is the right choice so we minimize attempted double visits
   // BFS is like a stain that spreads, while DFS is like tendrils reaching out.
   while (q.length) {
-    let pos = q.shift() as number[];
+    let pos = q.shift() as number[]
 
     // write value if we find it's lower than current (like those infinities)
     if (matrix[pos[0]][pos[1]] > pos[2]) {
-      matrix[pos[0]][pos[1]] = pos[2];
+      matrix[pos[0]][pos[1]] = pos[2]
     }
 
     // Look at all neighbor positions. Are they on the board? Are they not yet visited?
     // If yes to both, add to the q, with an increased "level" param at pos [2]
     dir.forEach(function (d) {
-      let next = [pos[0] + d[0], pos[1] + d[1], pos[2] + 1];
+      let next = [pos[0] + d[0], pos[1] + d[1], pos[2] + 1]
       // valid next coordinates?
       if (
         next[0] > -1 &&
@@ -56,12 +56,12 @@ function updateMatrix(matrix: number[][]): number[][] {
         // not yet marked?
         if (matrix[next[0]][next[1]] === Infinity) {
           // add to q, but with increased index, which we stored at pos[2]
-          q.push(next);
+          q.push(next)
         }
       }
-    });
+    })
   }
-  return matrix;
+  return matrix
 }
 
 // Input: mat = [

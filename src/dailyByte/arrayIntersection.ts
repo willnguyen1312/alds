@@ -10,14 +10,14 @@ nums1 = [2, 4, 6, 8], nums2 = [1, 3, 5, 7], return []
 */
 
 export function arrayIntersection(first: number[], second: number[]): number[] {
-  const firstSet = new Set(first);
-  const result: number[] = [];
+  const firstSet = new Set(first)
+  const result: number[] = []
 
   for (const numb of second) {
     if (firstSet.has(numb)) {
-      result.push(numb);
+      result.push(numb)
     }
   }
 
-  return result;
+  return result
 }

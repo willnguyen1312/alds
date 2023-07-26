@@ -11,40 +11,40 @@ Output:
 */
 
 export function concatenatedWords(words: string[]): string[] {
-  const wordCache = new Map();
-  const concatCache = new Map();
-  const res: string[] = [];
+  const wordCache = new Map()
+  const concatCache = new Map()
+  const res: string[] = []
 
   for (let i = 0; i < words.length; i++) {
-    wordCache.set(words[i], 1);
+    wordCache.set(words[i], 1)
   }
 
   for (let i = 0; i < words.length; i++) {
-    if (checkCanConcat(words[i], wordCache, concatCache)) res.push(words[i]);
+    if (checkCanConcat(words[i], wordCache, concatCache)) res.push(words[i])
   }
 
-  return res;
+  return res
 }
 
 function checkCanConcat(
   word: string,
   wordCache: Map<string, number>,
-  concatCache: Map<string, boolean>
+  concatCache: Map<string, boolean>,
 ) {
-  if (concatCache.has(word)) return concatCache.get(word);
+  if (concatCache.has(word)) return concatCache.get(word)
 
   for (let i = 1; i < word.length; i++) {
-    let prefix = word.slice(0, i);
-    let suffix = word.slice(i);
+    let prefix = word.slice(0, i)
+    let suffix = word.slice(i)
     if (
       wordCache.has(prefix) &&
       (wordCache.has(suffix) || checkCanConcat(suffix, wordCache, concatCache))
     ) {
-      concatCache.set(word, true);
-      return true;
+      concatCache.set(word, true)
+      return true
     }
   }
 
-  concatCache.set(word, false);
-  return false;
+  concatCache.set(word, false)
+  return false
 }

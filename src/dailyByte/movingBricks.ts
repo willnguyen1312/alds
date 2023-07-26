@@ -14,17 +14,17 @@ bricks = [1000, 200, 150, 200], return 4.
 */
 
 export function movingBricks(arr: number[], limit: number): number {
-  let result = 0;
-  let sum = 0;
+  let result = 0
+  let sum = 0
 
-  arr.sort((a, b) => a - b);
+  arr.sort((a, b) => a - b)
 
   for (let i = 0; i < arr.length; i++) {
     if (sum + arr[i] < limit) {
-      sum = sum + arr[i];
-      result++;
+      sum = sum + arr[i]
+      result++
     }
   }
 
-  return result;
+  return result
 }

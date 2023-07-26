@@ -6,23 +6,23 @@ Return the subarray which sums to K. You can assume that a solution will always 
 */
 
 export function subArrayWithTarget(numbs: number[], target: number): number[] {
-  const sumHash: Record<number, number> = {};
-  let result: number[] = [];
-  let acc = 0;
+  const sumHash: Record<number, number> = {}
+  let result: number[] = []
+  let acc = 0
 
   for (let index = 0; index < numbs.length; index++) {
-    const element = numbs[index];
+    const element = numbs[index]
 
-    acc += element;
+    acc += element
 
-    sumHash[acc] = index;
-    const diff = acc - target;
+    sumHash[acc] = index
+    const diff = acc - target
 
     if (sumHash[diff]) {
-      result = numbs.slice(sumHash[diff] + 1, index + 1);
-      break;
+      result = numbs.slice(sumHash[diff] + 1, index + 1)
+      break
     }
   }
 
-  return result;
+  return result
 }

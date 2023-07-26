@@ -8,25 +8,25 @@ If the number does not exist in the list, return (-1, -1)).
 
 export function rangeSearchingInSortedList(
   numbs: number[],
-  target: number
+  target: number,
 ): number[] {
-  let start = -1;
-  let end = -1;
+  let start = -1
+  let end = -1
 
   while (start < numbs.length) {
-    const found = target === numbs[start];
+    const found = target === numbs[start]
 
     if (found) {
-      end = start + 1;
+      end = start + 1
       while (end < numbs.length && numbs[start] === numbs[end]) {
-        end++;
+        end++
       }
 
-      return [start, end - 1];
+      return [start, end - 1]
     }
 
-    start++;
+    start++
   }
 
-  return [-1, -1];
+  return [-1, -1]
 }

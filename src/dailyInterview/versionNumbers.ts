@@ -41,30 +41,30 @@ defaults to "0"
 */
 
 export function versionNumbers(first: string, second: string): number {
-  const firstArr = first.split('.');
-  const secondArr = second.split('.');
+  const firstArr = first.split(".")
+  const secondArr = second.split(".")
 
   for (let index = 0; index < Math.max(firstArr.length); index++) {
-    firstArr[index] = firstArr[index] ?? '0';
-    secondArr[index] = secondArr[index] ?? '0';
+    firstArr[index] = firstArr[index] ?? "0"
+    secondArr[index] = secondArr[index] ?? "0"
   }
 
   for (let index = 0; index < firstArr.length; index++) {
-    const firstNum = +firstArr[index];
-    const secondNum = +secondArr[index];
+    const firstNum = +firstArr[index]
+    const secondNum = +secondArr[index]
 
     if (firstNum === secondNum) {
-      continue;
+      continue
     }
 
     if (firstNum > secondNum) {
-      return 1;
+      return 1
     }
 
     if (firstNum < secondNum) {
-      return -1;
+      return -1
     }
   }
 
-  return 0;
+  return 0
 }

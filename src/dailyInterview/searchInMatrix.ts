@@ -8,17 +8,17 @@ and return whether it exists.
 */
 
 export function searchInMatrix(matrix: number[][], target: number): boolean {
-  let row = 0;
-  let col = matrix[0].length - 1;
+  let row = 0
+  let col = matrix[0].length - 1
 
   while (row < matrix.length && col >= 0) {
     if (matrix[row][col] > target) {
-      col--;
+      col--
     } else if (matrix[row][col] < target) {
-      row++;
+      row++
     } else {
-      return true;
+      return true
     }
   }
-  return false;
+  return false
 }

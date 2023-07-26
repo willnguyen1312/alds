@@ -14,17 +14,17 @@ thus the answer for that input would be ().
 */
 
 export function removeOneLayerOfParenThesis(str: string): string {
-  let result = '';
-  let depth = 0;
-  let start = 0;
+  let result = ""
+  let depth = 0
+  let start = 0
 
   for (let i = 0; i < str.length; i++) {
-    depth += str[i] === '(' ? 1 : -1;
+    depth += str[i] === "(" ? 1 : -1
     if (depth === 0) {
-      result += str.slice(start + 1, i);
-      start = i + 1;
+      result += str.slice(start + 1, i)
+      start = i + 1
     }
   }
 
-  return result;
+  return result
 }

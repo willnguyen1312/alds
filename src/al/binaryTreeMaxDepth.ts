@@ -14,11 +14,11 @@
 
 function maxDepth(root: TreeNode | null): number {
   if (root === null) {
-    return 0;
+    return 0
   }
 
-  const maxLeftLength = maxDepth(root.left);
-  const maxRightLength = maxDepth(root.right);
+  const maxLeftLength = maxDepth(root.left)
+  const maxRightLength = maxDepth(root.right)
 
-  return Math.max(maxLeftLength, maxRightLength) + 1;
+  return Math.max(maxLeftLength, maxRightLength) + 1
 }

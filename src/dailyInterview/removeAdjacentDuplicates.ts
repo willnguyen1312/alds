@@ -6,25 +6,25 @@ and repeat the process with the new string until we can no longer perform the op
 */
 
 export function removeAdjacentDuplicates(str: string): string {
-  const strArr = str.split('');
-  let index = 0;
+  const strArr = str.split("")
+  let index = 0
 
   while (index < strArr.length) {
-    let jndex = index;
+    let jndex = index
 
     while (jndex < strArr.length && strArr[index] === strArr[jndex + 1]) {
-      jndex++;
+      jndex++
     }
 
-    const range = jndex - index;
+    const range = jndex - index
 
     if (range > 0) {
-      strArr.splice(index, range + 1);
-      index--;
+      strArr.splice(index, range + 1)
+      index--
     } else {
-      index++;
+      index++
     }
   }
 
-  return strArr.join('');
+  return strArr.join("")
 }

@@ -10,25 +10,28 @@ Ex: Given the following linked lists...
 */
 
 export class LinkedListNode {
-  constructor(public data: number, public next?: LinkedListNode) {}
+  constructor(
+    public data: number,
+    public next?: LinkedListNode,
+  ) {}
 }
 
 export function findMiddleElement(head: LinkedListNode) {
-  let length = 0;
-  let current = head;
+  let length = 0
+  let current = head
 
   while (current) {
-    length++;
-    current = current.next;
+    length++
+    current = current.next
   }
 
-  let middle = Math.floor(length / 2);
-  current = head;
+  let middle = Math.floor(length / 2)
+  current = head
 
   while (middle > 0) {
-    current = current.next;
-    middle--;
+    current = current.next
+    middle--
   }
 
-  return current.data;
+  return current.data
 }

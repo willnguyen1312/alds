@@ -1,10 +1,10 @@
-import { PrefixMapSum } from './prefixMapSum';
+import { PrefixMapSum } from "./prefixMapSum"
 
-describe('PrefixMapSum class', () => {
-  it('should work', () => {
-    const prefixMapSum = new PrefixMapSum();
-    prefixMapSum.insert('bag', 4);
-    prefixMapSum.insert('bath', 5);
+describe("PrefixMapSum class", () => {
+  it("should work", () => {
+    const prefixMapSum = new PrefixMapSum()
+    prefixMapSum.insert("bag", 4)
+    prefixMapSum.insert("bath", 5)
 
     expect(prefixMapSum).toMatchInlineSnapshot(`
       PrefixMapSum {
@@ -43,6 +43,6 @@ describe('PrefixMapSum class', () => {
           "total": 0,
         },
       }
-    `);
-  });
-});
+    `)
+  })
+})

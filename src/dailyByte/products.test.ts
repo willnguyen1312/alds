@@ -12,11 +12,11 @@ nums = [1, 2, 3], return [6,3,2].
 2 = 2 * 1 (we exclude 3)
 */
 
-import { products } from './products';
+import { products } from "./products"
 
-describe('products function', () => {
-  it('should work', () => {
-    const actual = products([1, 2, 3]);
-    expect(actual).toEqual([6, 3, 2]);
-  });
-});
+describe("products function", () => {
+  it("should work", () => {
+    const actual = products([1, 2, 3])
+    expect(actual).toEqual([6, 3, 2])
+  })
+})

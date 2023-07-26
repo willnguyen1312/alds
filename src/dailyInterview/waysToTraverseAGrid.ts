@@ -12,17 +12,14 @@ Down, right.
 */
 
 export function waysToTraverseAGrid(row: number, column: number): number {
-  const count: number[][] = Array.from(
-    { length: row },
-    () => new Array(column)
-  );
+  const count: number[][] = Array.from({ length: row }, () => new Array(column))
 
   for (let index = 0; index < row; index++) {
-    count[0][index] = 1;
+    count[0][index] = 1
   }
 
   for (let index = 0; index < row; index++) {
-    count[index][0] = 1;
+    count[index][0] = 1
   }
 
   for (let i = 1; i < row; i++) {
@@ -31,8 +28,8 @@ export function waysToTraverseAGrid(row: number, column: number): number {
       // code calculates the total possible paths
       // if the diagonal Movements are allowed
       // + count[i-1][j-1]
-      count[i][j] = count[i - 1][j] + count[i][j - 1];
+      count[i][j] = count[i - 1][j] + count[i][j - 1]
   }
 
-  return count[row - 1][column - 1];
+  return count[row - 1][column - 1]
 }

@@ -8,50 +8,50 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function inOrderTraversalTreeRecur(root: BinaryTreeNode): number[] {
-  const result: number[] = [];
+  const result: number[] = []
 
   function collect(node: BinaryTreeNode) {
     if (!node) {
-      return;
+      return
     }
 
-    collect(node.left);
-    result.push(node.data);
-    collect(node.right);
+    collect(node.left)
+    result.push(node.data)
+    collect(node.right)
   }
 
-  collect(root);
+  collect(root)
 
-  return result;
+  return result
 }
 
 export function inOrderTraversalTreeIter(root: BinaryTreeNode): number[] {
   if (!root) {
-    return;
+    return
   }
 
-  const result: number[] = [];
+  const result: number[] = []
 
-  const stack: BinaryTreeNode[] = [];
-  let curr = root;
+  const stack: BinaryTreeNode[] = []
+  let curr = root
 
   while (curr || stack.length) {
     while (curr) {
-      stack.push(curr);
-      curr = curr.left;
+      stack.push(curr)
+      curr = curr.left
     }
 
-    curr = stack.pop();
+    curr = stack.pop()
 
-    result.push(curr.data);
+    result.push(curr.data)
 
-    curr = curr.right;
+    curr = curr.right
   }
 
-  return result;
+  return result
 }

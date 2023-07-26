@@ -2,19 +2,19 @@ import {
   BinaryTreeNode,
   lowestCommonAncestor,
   lowestCommonAncestor2,
-} from './lowestCommonAncestor';
+} from "./lowestCommonAncestor"
 
-describe('lowestCommonAncestor function', () => {
-  it('should work', () => {
-    const root = new BinaryTreeNode('a');
-    root.left = new BinaryTreeNode('b');
-    root.left.parent = root;
-    root.right = new BinaryTreeNode('c');
-    root.right.parent = root;
-    const a = (root.right.left = new BinaryTreeNode('d'));
-    root.right.left.parent = root.right;
-    const b = (root.right.right = new BinaryTreeNode('e'));
-    root.right.right.parent = root.right;
+describe("lowestCommonAncestor function", () => {
+  it("should work", () => {
+    const root = new BinaryTreeNode("a")
+    root.left = new BinaryTreeNode("b")
+    root.left.parent = root
+    root.right = new BinaryTreeNode("c")
+    root.right.parent = root
+    const a = (root.right.left = new BinaryTreeNode("d"))
+    root.right.left.parent = root.right
+    const b = (root.right.right = new BinaryTreeNode("e"))
+    root.right.right.parent = root.right
 
     expect(lowestCommonAncestor(root, a, b)).toMatchInlineSnapshot(`
 BinaryTreeNode {
@@ -36,7 +36,7 @@ BinaryTreeNode {
   },
   "val": "c",
 }
-`);
+`)
 
     expect(lowestCommonAncestor2(a, b)).toMatchInlineSnapshot(`
 BinaryTreeNode {
@@ -58,6 +58,6 @@ BinaryTreeNode {
   },
   "val": "c",
 }
-`);
-  });
-});
+`)
+  })
+})

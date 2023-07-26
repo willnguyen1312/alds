@@ -1,33 +1,33 @@
 export function maxSlidingWindow(nums: number[], k: number): number[] {
-  let result: number[] = [];
-  const queue: number[] = [];
+  let result: number[] = []
+  const queue: number[] = []
   //   Used to remove max value at the beginning of queue when out of range
-  let i = 0;
+  let i = 0
   //   Index of looping nums
-  let j = 0;
+  let j = 0
   //   Index of result
-  let x = 0;
+  let x = 0
 
   while (j < nums.length) {
     //   Remove smaller numbers our of queue
-    while (queue.length > 0 && queue[queue.length - 1] < nums[j]) queue.pop();
+    while (queue.length > 0 && queue[queue.length - 1] < nums[j]) queue.pop()
 
     // Add number to queue
-    queue.push(nums[j]);
+    queue.push(nums[j])
 
     if (j - i + 1 === k) {
-      result[x] = queue[0];
-      ++x;
+      result[x] = queue[0]
+      ++x
 
       //   Remove max at the beginning if equal to i
-      if (queue[0] === nums[i]) queue.shift();
+      if (queue[0] === nums[i]) queue.shift()
 
-      ++i;
+      ++i
     }
-    ++j;
+    ++j
   }
 
-  return result;
+  return result
 }
 
 // Input: nums = [1,3,-1,-3,5,3,6,7], k = 3

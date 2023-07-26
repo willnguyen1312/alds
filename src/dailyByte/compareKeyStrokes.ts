@@ -12,18 +12,18 @@ s = "cof#dim#ng", t = "code", return false
 
 export function compareKeyStrokes(first: string, second: string): boolean {
   function processSequence(str: string): string {
-    const stack: string[] = [];
+    const stack: string[] = []
 
     for (const char of str) {
-      if (char === '#') {
-        stack.pop();
+      if (char === "#") {
+        stack.pop()
       } else {
-        stack.push(char);
+        stack.push(char)
       }
     }
 
-    return stack.join('');
+    return stack.join("")
   }
 
-  return processSequence(first) === processSequence(second);
+  return processSequence(first) === processSequence(second)
 }

@@ -6,16 +6,16 @@ find all the duplicates.
 */
 
 export function findDuplicates(numbs: number[]): number[] {
-  const result: number[] = [];
-  const numbsMap: Map<number, number> = new Map();
+  const result: number[] = []
+  const numbsMap: Map<number, number> = new Map()
 
   for (const numb of numbs) {
-    numbsMap.set(numb, (numbsMap.get(numb) || 0) + 1);
+    numbsMap.set(numb, (numbsMap.get(numb) || 0) + 1)
 
     if (numbsMap.get(numb) > 1) {
-      result.push(numb);
+      result.push(numb)
     }
   }
 
-  return result;
+  return result
 }

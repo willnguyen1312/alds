@@ -12,13 +12,13 @@ N = 8, return false
 */
 
 export function flipFloppingBits(numb: number): boolean {
-  const binaryNumb = numb.toString(2);
+  const binaryNumb = numb.toString(2)
 
   for (let index = 1; index < binaryNumb.length; index++) {
     if (binaryNumb[index] === binaryNumb[index - 1]) {
-      return false;
+      return false
     }
   }
 
-  return true;
+  return true
 }

@@ -10,22 +10,21 @@ Here, 52 + 122 = 132.
 */
 
 export function checkPythagoreanTriplets(numbs: number[]) {
-  const squaredNumbs = numbs.map((numb) => Math.pow(numb, 2));
-  squaredNumbs.sort((a, b) => a - b);
+  const squaredNumbs = numbs.map((numb) => Math.pow(numb, 2))
+  squaredNumbs.sort((a, b) => a - b)
 
   for (let index = squaredNumbs.length - 1; index > 1; index--) {
-    let left = 0;
-    let right = index - 1;
+    let left = 0
+    let right = index - 1
 
     while (left < right) {
       if (squaredNumbs[left] + squaredNumbs[right] == squaredNumbs[index])
-        return true;
+        return true
 
-      if (squaredNumbs[left] + squaredNumbs[right] < squaredNumbs[index])
-        left++;
-      else right--;
+      if (squaredNumbs[left] + squaredNumbs[right] < squaredNumbs[index]) left++
+      else right--
     }
   }
 
-  return false;
+  return false
 }

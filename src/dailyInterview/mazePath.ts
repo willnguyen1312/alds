@@ -18,42 +18,42 @@ and down -> down -> right -> right.
 */
 
 export function mazePath(maze: number[][]): number {
-  const rowCount = maze.length;
-  const columnCount = maze[0].length;
+  const rowCount = maze.length
+  const columnCount = maze[0].length
 
   for (let index = 0; index < rowCount; index++) {
     for (let jndex = 0; jndex < columnCount; jndex++) {
       if (maze[index][jndex] === 1) {
-        maze[index][jndex] = -1;
+        maze[index][jndex] = -1
       }
     }
   }
 
-  if (maze[0][0] === 1) return 0;
+  if (maze[0][0] === 1) return 0
 
   //   Initialize ways for left-most column
   for (let i = 0; i < rowCount; i++) {
-    if (maze[i][0] === 0) maze[i][0] = 1;
-    else break;
+    if (maze[i][0] === 0) maze[i][0] = 1
+    else break
   }
 
   //   Initialize ways for top-most row
   for (let i = 1; i < columnCount; i++) {
-    if (maze[0][i] === 0) maze[0][i] = 1;
-    else break;
+    if (maze[0][i] === 0) maze[0][i] = 1
+    else break
   }
 
   for (let i = 1; i < rowCount; i++) {
     for (let j = 1; j < columnCount; j++) {
-      if (maze[i][j] === -1) continue;
+      if (maze[i][j] === -1) continue
 
-      if (maze[i - 1][j] > 0) maze[i][j] = maze[i][j] + maze[i - 1][j];
+      if (maze[i - 1][j] > 0) maze[i][j] = maze[i][j] + maze[i - 1][j]
 
-      if (maze[i][j - 1] > 0) maze[i][j] = maze[i][j] + maze[i][j - 1];
+      if (maze[i][j - 1] > 0) maze[i][j] = maze[i][j] + maze[i][j - 1]
     }
   }
 
   return maze[rowCount - 1][columnCount - 1] > 0
     ? maze[rowCount - 1][columnCount - 1]
-    : 0;
+    : 0
 }

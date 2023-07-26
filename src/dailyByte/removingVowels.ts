@@ -15,5 +15,5 @@ s = "xyz", return "xyz"
 */
 
 export function removingVowels(str: string): string {
-  return str.replace(/[aeiou]/g, '');
+  return str.replace(/[aeiou]/g, "")
 }

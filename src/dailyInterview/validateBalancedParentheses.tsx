@@ -19,25 +19,25 @@ Input: "({[)]"
 Output: False
 */
 export function validateBalancedParentheses(str: string): boolean {
-  const closeBraces = new Set([')', ']', '}']);
+  const closeBraces = new Set([")", "]", "}"])
   const bracesLookup: Record<string, string> = {
-    ']': '[',
-    '}': '{',
-    ')': '(',
-  };
+    "]": "[",
+    "}": "{",
+    ")": "(",
+  }
 
-  const stack: string[] = [];
+  const stack: string[] = []
 
   for (const char of str) {
     if (closeBraces.has(char)) {
-      const openBrace = stack.pop() as string;
+      const openBrace = stack.pop() as string
       if (bracesLookup[char] !== openBrace) {
-        return false;
+        return false
       }
     } else {
-      stack.push(char);
+      stack.push(char)
     }
   }
 
-  return stack.length === 0;
+  return stack.length === 0
 }

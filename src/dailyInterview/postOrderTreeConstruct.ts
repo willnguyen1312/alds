@@ -7,19 +7,19 @@ and the right child always comes before the parent for all nodes.
 */
 
 export class BinaryTreeNode {
-  data: number;
-  left?: BinaryTreeNode;
-  right?: BinaryTreeNode;
+  data: number
+  left?: BinaryTreeNode
+  right?: BinaryTreeNode
   constructor(data: number) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
+    this.data = data
+    this.left = null
+    this.right = null
   }
 }
 class Index {
-  postindex: number = 0;
+  postindex: number = 0
   constructor() {
-    this.postindex = 0;
+    this.postindex = 0
   }
 }
 
@@ -29,15 +29,15 @@ function constructTreeUtil(
   data: number,
   min: number,
   max: number,
-  size: number
+  size: number,
 ) {
-  if (postIndex.postindex < 0) return null;
+  if (postIndex.postindex < 0) return null
 
-  let root = null;
+  let root = null
 
   if (data > min && data < max) {
-    root = new BinaryTreeNode(data);
-    postIndex.postindex = postIndex.postindex - 1;
+    root = new BinaryTreeNode(data)
+    postIndex.postindex = postIndex.postindex - 1
 
     if (postIndex.postindex > 0) {
       root.right = constructTreeUtil(
@@ -46,8 +46,8 @@ function constructTreeUtil(
         numbs[postIndex.postindex],
         data,
         max,
-        size
-      );
+        size,
+      )
 
       root.left = constructTreeUtil(
         numbs,
@@ -55,23 +55,23 @@ function constructTreeUtil(
         numbs[postIndex.postindex],
         min,
         data,
-        size
-      );
+        size,
+      )
     }
   }
 
-  return root;
+  return root
 }
 
 export function postOrderTreeConstruct(numbs: number[], size = numbs.length) {
-  const index = new Index();
-  index.postindex = size - 1;
+  const index = new Index()
+  index.postindex = size - 1
   return constructTreeUtil(
     numbs,
     index,
     numbs[index.postindex],
     Number.MIN_VALUE,
     Number.MAX_VALUE,
-    size
-  );
+    size,
+  )
 }

@@ -12,20 +12,20 @@ Ex: Given the following strings...
 "coding", return true
 */
 export function correctCapitalization(word: string): boolean {
-  let capWord = word.toUpperCase();
-  let nonCapWord = word.toLowerCase();
+  let capWord = word.toUpperCase()
+  let nonCapWord = word.toLowerCase()
 
-  if (capWord == word || nonCapWord == word) return true;
+  if (capWord == word || nonCapWord == word) return true
 
-  let capCount = 0;
+  let capCount = 0
 
   for (let i = 0; i < word.length; i++) {
-    if (word[i] == word[i].toUpperCase()) capCount++;
+    if (word[i] == word[i].toUpperCase()) capCount++
 
-    if (capCount > 1) return false;
+    if (capCount > 1) return false
   }
 
-  if (word[0] != word[0].toUpperCase()) return false;
+  if (word[0] != word[0].toUpperCase()) return false
 
-  return true;
+  return true
 }

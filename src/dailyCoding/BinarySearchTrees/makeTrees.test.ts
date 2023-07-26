@@ -1,8 +1,8 @@
-import { makeTrees } from './makeTrees';
+import { makeTrees } from "./makeTrees"
 
-describe('makeTrees function', () => {
-  it('should work', () => {
-    const actual = makeTrees(1, 3);
+describe("makeTrees function", () => {
+  it("should work", () => {
+    const actual = makeTrees(1, 3)
     expect(actual).toMatchInlineSnapshot(`
       [
         BinaryTreeNode {
@@ -71,6 +71,6 @@ describe('makeTrees function', () => {
           "right": null,
         },
       ]
-    `);
-  });
-});
+    `)
+  })
+})

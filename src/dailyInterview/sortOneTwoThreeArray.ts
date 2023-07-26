@@ -9,49 +9,49 @@ Output: [1, 1, 2, 2, 3, 3, 3]
 */
 
 export function sortNums(numbs: number[]): number[] {
-  const result = numbs.slice();
-  const mid = 2;
-  let i = 0;
-  let j = 0;
-  let n = result.length - 1;
+  const result = numbs.slice()
+  const mid = 2
+  let i = 0
+  let j = 0
+  let n = result.length - 1
 
   while (j <= n) {
     if (result[j] < mid) {
-      [result[i], result[j]] = [result[j], result[i]];
-      i++;
-      j++;
+      ;[result[i], result[j]] = [result[j], result[i]]
+      i++
+      j++
     } else if (result[j] > mid) {
-      [result[n], result[j]] = [result[j], result[n]];
-      n--;
+      ;[result[n], result[j]] = [result[j], result[n]]
+      n--
     } else {
-      j++;
+      j++
     }
   }
 
-  return result;
+  return result
 }
 
 export function sortNumbsCount(numbs: number[]): number[] {
-  const counts: number[] = [];
+  const counts: number[] = []
   for (const item of numbs) {
-    counts[item] = counts[item] ? counts[item] + 1 : 1;
+    counts[item] = counts[item] ? counts[item] + 1 : 1
   }
 
-  let numItemsBefore = 0;
+  let numItemsBefore = 0
   for (let i = 0; i < counts.length; i++) {
-    const count = counts[i];
+    const count = counts[i]
     if (count) {
-      counts[i] = numItemsBefore;
-      numItemsBefore += count;
+      counts[i] = numItemsBefore
+      numItemsBefore += count
     }
   }
 
-  const result = new Array(numbs.length);
+  const result = new Array(numbs.length)
 
   for (const item of numbs) {
-    result[counts[item]] = item;
-    counts[item] += 1;
+    result[counts[item]] = item
+    counts[item] += 1
   }
 
-  return result;
+  return result
 }

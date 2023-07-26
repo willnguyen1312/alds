@@ -1,12 +1,12 @@
-import { reconstructTree } from './reconstructTree';
+import { reconstructTree } from "./reconstructTree"
 
-describe('reconstructTree function', () => {
-  it('should work', () => {
+describe("reconstructTree function", () => {
+  it("should work", () => {
     expect(
       reconstructTree(
-        ['a', 'b', 'd', 'e', 'c', 'f', 'g'],
-        ['d', 'b', 'e', 'a', 'f', 'c', 'g']
-      )
+        ["a", "b", "d", "e", "c", "f", "g"],
+        ["d", "b", "e", "a", "f", "c", "g"],
+      ),
     ).toMatchInlineSnapshot(`
 BinaryTreeNode {
   "left": BinaryTreeNode {
@@ -29,6 +29,6 @@ BinaryTreeNode {
   },
   "val": "a",
 }
-`);
-  });
-});
+`)
+  })
+})

@@ -24,34 +24,34 @@ So leaf nodes with no children should be kept, and nodes with 2 children should 
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left: BinaryTreeNode | null = null;
-  right: BinaryTreeNode | null = null;
+  val: number
+  left: BinaryTreeNode | null = null
+  right: BinaryTreeNode | null = null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function fullBinaryTree(node: BinaryTreeNode): BinaryTreeNode {
   if (!node) {
-    return null;
+    return null
   }
 
-  node.left = fullBinaryTree(node.left);
-  node.right = fullBinaryTree(node.right);
+  node.left = fullBinaryTree(node.left)
+  node.right = fullBinaryTree(node.right)
 
   if (!node.left && !node.right) {
-    return node;
+    return node
   }
 
   if (!node.left) {
-    return node.right;
+    return node.right
   }
 
   if (!node.right) {
-    return node.left;
+    return node.left
   }
 
-  return node;
+  return node
 }

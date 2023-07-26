@@ -1,9 +1,9 @@
-import { TreeNode, findAllRootToLeafPaths } from './findAllRootToLeafPaths';
+import { TreeNode, findAllRootToLeafPaths } from "./findAllRootToLeafPaths"
 
-describe('findAllRootToLeafPaths function', () => {
-  it('should work', () => {
-    const root = new TreeNode(1);
-    root.children = [new TreeNode(3), new TreeNode(5), new TreeNode(7)];
+describe("findAllRootToLeafPaths function", () => {
+  it("should work", () => {
+    const root = new TreeNode(1)
+    root.children = [new TreeNode(3), new TreeNode(5), new TreeNode(7)]
 
     expect(findAllRootToLeafPaths(root)).toMatchInlineSnapshot(`
       [
@@ -11,6 +11,6 @@ describe('findAllRootToLeafPaths function', () => {
         "1->5",
         "1->7",
       ]
-    `);
-  });
-});
+    `)
+  })
+})

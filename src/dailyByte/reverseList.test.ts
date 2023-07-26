@@ -1,13 +1,13 @@
-import { LinkedListNode, reverseList } from './reverseList';
+import { LinkedListNode, reverseList } from "./reverseList"
 
-describe('reverseList function', () => {
-  it('should work', () => {
+describe("reverseList function", () => {
+  it("should work", () => {
     const node = new LinkedListNode(
       1,
-      new LinkedListNode(2, new LinkedListNode(3))
-    );
+      new LinkedListNode(2, new LinkedListNode(3)),
+    )
 
-    const actual = reverseList(node);
+    const actual = reverseList(node)
     expect(actual).toMatchInlineSnapshot(`
 LinkedListNode {
   "data": 3,
@@ -19,6 +19,6 @@ LinkedListNode {
     },
   },
 }
-`);
-  });
-});
+`)
+  })
+})

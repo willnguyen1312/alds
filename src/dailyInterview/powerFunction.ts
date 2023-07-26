@@ -8,11 +8,11 @@ You can assume that n will be a non-negative integer.
 */
 
 export function powerFunction(x: number, y: number): number {
-  if (y === 0) return 1;
+  if (y === 0) return 1
 
-  const temp = powerFunction(x, Math.floor(y / 2));
+  const temp = powerFunction(x, Math.floor(y / 2))
 
-  if (y % 2 === 0) return temp * temp;
+  if (y % 2 === 0) return temp * temp
 
-  return x * temp * temp;
+  return x * temp * temp
 }

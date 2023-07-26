@@ -6,22 +6,22 @@ This includes the empty set as well.
 */
 
 export function generateAllSubSets(numbs: number[]): number[][] {
-  const length = numbs.length;
-  const result: number[][] = [];
+  const length = numbs.length
+  const result: number[][] = []
 
   function generateAllSubSetsUtil(subset: number[], index = 0) {
-    result.push(subset.slice());
+    result.push(subset.slice())
     for (let i = index; i < length; i++) {
-      const element = numbs[i];
-      subset.push(element);
-      generateAllSubSetsUtil(subset, i + 1);
-      subset.pop();
+      const element = numbs[i]
+      subset.push(element)
+      generateAllSubSetsUtil(subset, i + 1)
+      subset.pop()
     }
   }
 
-  generateAllSubSetsUtil([]);
+  generateAllSubSetsUtil([])
 
-  return result;
+  return result
 }
 
 // # In the array A at every step we have two

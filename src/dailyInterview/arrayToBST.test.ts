@@ -1,8 +1,8 @@
-import { arrayToBSTRecur, arrayToBSTIter } from './arrayToBST';
+import { arrayToBSTRecur, arrayToBSTIter } from "./arrayToBST"
 
-describe('arrayToBST function', () => {
-  it('should work', () => {
-    const actual = arrayToBSTRecur([-10, -3, 0, 5, 9]);
+describe("arrayToBST function", () => {
+  it("should work", () => {
+    const actual = arrayToBSTRecur([-10, -3, 0, 5, 9])
     expect(actual).toMatchInlineSnapshot(`
 BinaryTreeNode {
   "data": 0,
@@ -41,9 +41,9 @@ BinaryTreeNode {
     },
   },
 }
-`);
+`)
 
-    const actual2 = arrayToBSTIter([-10, -3, 0, 5, 9]);
+    const actual2 = arrayToBSTIter([-10, -3, 0, 5, 9])
     expect(actual2).toMatchInlineSnapshot(`
 BinaryTreeNode {
   "data": 0,
@@ -82,6 +82,6 @@ BinaryTreeNode {
     },
   },
 }
-`);
-  });
-});
+`)
+  })
+})

@@ -11,22 +11,22 @@ The following input should return 6 since the longest increasing subsequence is 
 */
 
 export function longestIncreasingSequence(numbs: number[]): number {
-  const length = numbs.length;
-  const memoizedList = Array(length).fill(0);
+  const length = numbs.length
+  const memoizedList = Array(length).fill(0)
 
   // Initialize values for all indexes
   for (let i = 0; i < length; i++) {
-    memoizedList[i] = 1;
+    memoizedList[i] = 1
   }
 
   // Compute optimized LIS values
   for (let i = 1; i < length; i++) {
     for (let j = 0; j < i; j++) {
       if (numbs[i] > numbs[j] && memoizedList[i] < memoizedList[j] + 1) {
-        memoizedList[i] = memoizedList[j] + 1;
+        memoizedList[i] = memoizedList[j] + 1
       }
     }
   }
 
-  return Math.max(...memoizedList);
+  return Math.max(...memoizedList)
 }

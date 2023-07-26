@@ -21,26 +21,26 @@ message = "1234", return 3.
 */
 
 export function messageDecryption(str: string): number {
-  if (!str || str.length === 0 || str[0] === '0') {
-    return 0;
+  if (!str || str.length === 0 || str[0] === "0") {
+    return 0
   }
 
-  const table = new Array(str.length + 1).fill(0);
-  table[0] = 1;
-  table[1] = 1;
+  const table = new Array(str.length + 1).fill(0)
+  table[0] = 1
+  table[1] = 1
 
   for (let i = 1; i < str.length; i++) {
     if (Number(str.charAt(i)) >= 1) {
-      table[i + 1] += table[i];
+      table[i + 1] += table[i]
     }
     if (
       Number(str.substr(i - 1, 2)) <= 26 &&
       Number(str.substr(i - 1, 2)) >= 1 &&
       Number(str.charAt(i - 1)) >= 1
     ) {
-      table[i + 1] += table[i - 1];
+      table[i + 1] += table[i - 1]
     }
   }
 
-  return table[str.length];
+  return table[str.length]
 }

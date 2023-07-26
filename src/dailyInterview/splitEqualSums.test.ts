@@ -8,11 +8,11 @@ For instance,
 [0, 2, 1], [-6, 6, -7, 9, 1], [2, 0, 1] all of which sum to 3.
 */
 
-import { splitEqualSums } from './splitEqualSums';
+import { splitEqualSums } from "./splitEqualSums"
 
-describe('splitEqualSums function', () => {
-  it('should work', () => {
-    const actual = splitEqualSums([0, 2, 1, -6, 6, -7, 9, 1, 2, 0, 1]);
-    expect(actual).toBe(true);
-  });
-});
+describe("splitEqualSums function", () => {
+  it("should work", () => {
+    const actual = splitEqualSums([0, 2, 1, -6, 6, -7, 9, 1, 2, 0, 1])
+    expect(actual).toBe(true)
+  })
+})

@@ -1,8 +1,8 @@
-import { commonCharacters } from './commonCharacters';
+import { commonCharacters } from "./commonCharacters"
 
-describe('commonCharacters function', () => {
-  it('should work', () => {
-    const actual = commonCharacters(['google', 'facebook', 'youtube']);
-    expect(actual).toEqual(['e', 'o']);
-  });
-});
+describe("commonCharacters function", () => {
+  it("should work", () => {
+    const actual = commonCharacters(["google", "facebook", "youtube"])
+    expect(actual).toEqual(["e", "o"])
+  })
+})

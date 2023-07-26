@@ -1,13 +1,13 @@
-import { invertBinaryTree, BinaryTreeNode } from './invertBinaryTree';
+import { invertBinaryTree, BinaryTreeNode } from "./invertBinaryTree"
 
-describe('invertBinaryTree function', () => {
-  it('should work', () => {
-    const root = new BinaryTreeNode('a');
-    root.left = new BinaryTreeNode('b');
-    root.right = new BinaryTreeNode('c');
-    root.left.left = new BinaryTreeNode('d');
-    root.left.right = new BinaryTreeNode('e');
-    root.right.left = new BinaryTreeNode('f');
+describe("invertBinaryTree function", () => {
+  it("should work", () => {
+    const root = new BinaryTreeNode("a")
+    root.left = new BinaryTreeNode("b")
+    root.right = new BinaryTreeNode("c")
+    root.left.left = new BinaryTreeNode("d")
+    root.left.right = new BinaryTreeNode("e")
+    root.right.left = new BinaryTreeNode("f")
 
     expect(invertBinaryTree(root)).toMatchInlineSnapshot(`
 BinaryTreeNode {
@@ -35,6 +35,6 @@ BinaryTreeNode {
   },
   "val": "a",
 }
-`);
-  });
-});
+`)
+  })
+})

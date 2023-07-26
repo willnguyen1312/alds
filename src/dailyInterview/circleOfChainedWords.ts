@@ -14,22 +14,22 @@ The words in the order of ['apple', 'eggs', 'snack', 'karat', 'tuna'] creates a 
 */
 
 export function circleOfChainedWords(words: string[]): boolean {
-  const hashCount: Map<string, number> = new Map();
+  const hashCount: Map<string, number> = new Map()
 
   for (const word of words) {
-    const first = word[0];
-    const last = word[word.length - 1];
+    const first = word[0]
+    const last = word[word.length - 1]
 
-    hashCount.set(first, (hashCount.get(first) || 0) + 1);
-    hashCount.set(last, (hashCount.get(last) || 0) + 1);
+    hashCount.set(first, (hashCount.get(first) || 0) + 1)
+    hashCount.set(last, (hashCount.get(last) || 0) + 1)
   }
 
   for (const item of hashCount) {
-    const [_, count] = item;
+    const [_, count] = item
     if (count % 2) {
-      return false;
+      return false
     }
   }
 
-  return true;
+  return true
 }

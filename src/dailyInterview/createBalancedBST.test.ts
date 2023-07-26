@@ -1,8 +1,8 @@
-import { createBalancedBST } from './createBalancedBST';
+import { createBalancedBST } from "./createBalancedBST"
 
-describe('createBalancedBST function', () => {
-  it('should work', () => {
-    const input = [1, 2, 3, 4, 5, 6, 7];
+describe("createBalancedBST function", () => {
+  it("should work", () => {
+    const input = [1, 2, 3, 4, 5, 6, 7]
 
     expect(createBalancedBST(input)).toMatchInlineSnapshot(`
 BinaryTreeNode {
@@ -34,6 +34,6 @@ BinaryTreeNode {
     },
   },
 }
-`);
-  });
-});
+`)
+  })
+})

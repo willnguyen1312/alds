@@ -1,9 +1,9 @@
 export function depthFirstSearchGraph(node: GraphNode): number[] {
-  const result: number[] = [node.val];
+  const result: number[] = [node.val]
 
   for (const item of node.neighbors || []) {
-    depthFirstSearchGraph(item);
+    depthFirstSearchGraph(item)
   }
 
-  return result;
+  return result
 }

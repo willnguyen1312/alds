@@ -11,31 +11,31 @@ words = ["ufo", "xzy", "byte"], return [].
 */
 
 export function keyboardRow(strs: string[]): string[] {
-  const result: string[] = [];
+  const result: string[] = []
   const rowsMaps: Set<string>[] = [
-    new Set('qwertyuiop'),
-    new Set('asdfghjkl'),
-    new Set('zxcvbnm'),
-  ];
+    new Set("qwertyuiop"),
+    new Set("asdfghjkl"),
+    new Set("zxcvbnm"),
+  ]
 
   for (const str of strs) {
-    const firstChar = str[0];
-    const foundRow = rowsMaps.find((row) => row.has(firstChar));
+    const firstChar = str[0]
+    const foundRow = rowsMaps.find((row) => row.has(firstChar))
 
     if (foundRow) {
-      let valid = true;
+      let valid = true
       for (let index = 1; index < str.length; index++) {
-        const char = str[index];
+        const char = str[index]
         if (!foundRow.has(char)) {
-          valid = false;
-          break;
+          valid = false
+          break
         }
       }
       if (valid) {
-        result.push(str);
+        result.push(str)
       }
     }
   }
 
-  return result;
+  return result
 }

@@ -1,9 +1,7 @@
-import { longestSubstringWithoutRepeatingCharacters } from './longestSubstringWithoutRepeatingCharacters';
+import { longestSubstringWithoutRepeatingCharacters } from "./longestSubstringWithoutRepeatingCharacters"
 
-describe('longestSubstringWithoutRepeatingCharacters function', () => {
-  it('should work', () => {
-    expect(longestSubstringWithoutRepeatingCharacters('abccabcabcc')).toEqual(
-      3
-    );
-  });
-});
+describe("longestSubstringWithoutRepeatingCharacters function", () => {
+  it("should work", () => {
+    expect(longestSubstringWithoutRepeatingCharacters("abccabcabcc")).toEqual(3)
+  })
+})

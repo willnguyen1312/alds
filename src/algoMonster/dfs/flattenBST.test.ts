@@ -1,12 +1,12 @@
-import { TreeNode, flattenBST } from './flattenBST';
+import { TreeNode, flattenBST } from "./flattenBST"
 
-describe('flattenBST function', () => {
-  it('should work', () => {
+describe("flattenBST function", () => {
+  it("should work", () => {
     const root = new TreeNode(
       1,
       new TreeNode(2, new TreeNode(4), new TreeNode(5)),
-      new TreeNode(3)
-    );
+      new TreeNode(3),
+    )
 
     expect(flattenBST(root)).toMatchInlineSnapshot(`
       TreeNode {
@@ -30,6 +30,6 @@ describe('flattenBST function', () => {
         },
         "val": 1,
       }
-    `);
-  });
-});
+    `)
+  })
+})

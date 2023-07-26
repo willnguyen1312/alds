@@ -25,53 +25,53 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 function checkValid(numbs: (number | undefined)[]): boolean {
   if (numbs.length % 2) {
-    return false;
+    return false
   }
 
-  const mid = Math.floor(numbs.length / 2);
+  const mid = Math.floor(numbs.length / 2)
 
   for (let index = 0; index < mid; index++) {
-    const element = numbs[index];
-    const compared = numbs[numbs.length - 1 - index];
+    const element = numbs[index]
+    const compared = numbs[numbs.length - 1 - index]
     if (element !== compared) {
-      return false;
+      return false
     }
   }
 
-  return true;
+  return true
 }
 
 export function checkTreeReflect(root: BinaryTreeNode): boolean {
-  let queue: BinaryTreeNode[] = [root];
+  let queue: BinaryTreeNode[] = [root]
 
   while (queue.length) {
-    const toQueue: BinaryTreeNode[] = [];
-    const numbs: number[] = [];
+    const toQueue: BinaryTreeNode[] = []
+    const numbs: number[] = []
 
     for (const item of queue) {
-      numbs.push(item.left?.data);
+      numbs.push(item.left?.data)
       if (item.left) {
-        toQueue.push(item.left);
+        toQueue.push(item.left)
       }
 
-      numbs.push(item.right?.data);
+      numbs.push(item.right?.data)
       if (item.right) {
-        toQueue.push(item.right);
+        toQueue.push(item.right)
       }
     }
 
     if (!checkValid(numbs)) {
-      return false;
+      return false
     }
 
-    queue = toQueue;
+    queue = toQueue
   }
 
-  return true;
+  return true
 }

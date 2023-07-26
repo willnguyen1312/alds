@@ -1,16 +1,16 @@
 export function checkIfExist(arr: number[]): boolean {
-  const numSet = new Set<number>();
+  const numSet = new Set<number>()
 
   for (const num of arr) {
     if (numSet.has(num / 2)) {
-      return true;
+      return true
     }
 
     if (numSet.has(num * 2)) {
-      return true;
+      return true
     }
-    numSet.add(num);
+    numSet.add(num)
   }
 
-  return false;
+  return false
 }

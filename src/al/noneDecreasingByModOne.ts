@@ -12,20 +12,20 @@ since we can't modify any one element to get a non-decreasing array.
 */
 
 export function noneDecreasingByModOne(numbs: number[]): boolean {
-  let count = 0;
+  let count = 0
 
   for (let index = 0; index < numbs.length - 1; index++) {
-    const currentElement = numbs[index];
-    const nextElement = numbs[index + 1];
+    const currentElement = numbs[index]
+    const nextElement = numbs[index + 1]
 
     if (nextElement < currentElement) {
-      count++;
+      count++
     }
 
     if (count > 1) {
-      return false;
+      return false
     }
   }
 
-  return true;
+  return true
 }

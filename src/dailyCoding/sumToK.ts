@@ -11,13 +11,13 @@ return [12, 9, 2, 1] since it sums up to 24.
 */
 
 export function sumToK(candidates: number[], target: number): number[] {
-  const result: number[][] = [];
-  const path: number[] = [];
+  const result: number[][] = []
+  const path: number[] = []
 
   function sumToKHelper(sum: number, startIndex: number) {
     if (sum === target) {
-      result.push([...path]);
-      return;
+      result.push([...path])
+      return
     }
 
     for (
@@ -25,14 +25,14 @@ export function sumToK(candidates: number[], target: number): number[] {
       i < candidates.length && candidates[i] + sum <= target;
       i++
     ) {
-      path.push(candidates[i]);
-      sumToKHelper(sum + candidates[i], i + 1);
-      path.pop();
+      path.push(candidates[i])
+      sumToKHelper(sum + candidates[i], i + 1)
+      path.pop()
     }
   }
 
-  candidates.sort((a, b) => a - b);
-  sumToKHelper(0, 0);
+  candidates.sort((a, b) => a - b)
+  sumToKHelper(0, 0)
 
-  return result[0];
+  return result[0]
 }

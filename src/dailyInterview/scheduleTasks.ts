@@ -9,39 +9,39 @@ and a positive integer n representing the time it takes to run the same task aga
 */
 
 export function scheduleTasks(tasks: string[], coolDown: number) {
-  const tasksCount: Map<string, number> = new Map();
-  let maxTask: string;
-  let maxTaskCount: number = 0;
+  const tasksCount: Map<string, number> = new Map()
+  let maxTask: string
+  let maxTaskCount: number = 0
 
   for (const task of tasks) {
-    tasksCount.set(task, (tasksCount.get(task) || 0) + 1);
+    tasksCount.set(task, (tasksCount.get(task) || 0) + 1)
 
-    const currentTaskCount = tasksCount.get(task);
+    const currentTaskCount = tasksCount.get(task)
 
     if (currentTaskCount > maxTaskCount) {
-      maxTask = task;
-      maxTaskCount = currentTaskCount;
+      maxTask = task
+      maxTaskCount = currentTaskCount
     }
   }
 
-  let idle = (maxTaskCount - 1) * coolDown;
+  let idle = (maxTaskCount - 1) * coolDown
 
   for (const [taskName, taskCount] of tasksCount) {
     if (taskName === maxTask) {
-      continue;
+      continue
     }
 
     if (taskCount === maxTaskCount) {
-      idle -= taskCount - 1;
-      continue;
+      idle -= taskCount - 1
+      continue
     }
 
-    idle -= taskCount;
+    idle -= taskCount
   }
 
   if (idle <= 0) {
-    return tasks.length;
+    return tasks.length
   }
 
-  return tasks.length + idle;
+  return tasks.length + idle
 }

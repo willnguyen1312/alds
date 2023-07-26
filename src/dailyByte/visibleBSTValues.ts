@@ -25,33 +25,33 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function visibleBSTValues(root: BinaryTreeNode): number[] {
-  const result: number[] = [root.data];
-  let queue: BinaryTreeNode[] = [root];
+  const result: number[] = [root.data]
+  let queue: BinaryTreeNode[] = [root]
 
   while (queue.length) {
-    const toQueue: BinaryTreeNode[] = [];
+    const toQueue: BinaryTreeNode[] = []
 
     for (const node of queue) {
       if (node.left) {
-        toQueue.push(node.left);
+        toQueue.push(node.left)
       }
 
       if (node.right) {
-        toQueue.push(node.right);
+        toQueue.push(node.right)
       }
     }
 
     if (toQueue.length) {
-      result.push(toQueue[0].data);
+      result.push(toQueue[0].data)
     }
 
-    queue = toQueue;
+    queue = toQueue
   }
 
-  return result;
+  return result
 }

@@ -17,31 +17,31 @@ input = [1, 2, 3, 4, 5, 6, 7, 8]
 */
 
 class BinaryTreeNode {
-  val: number;
-  left?: BinaryTreeNode | null;
-  right?: BinaryTreeNode | null;
+  val: number
+  left?: BinaryTreeNode | null
+  right?: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function createHeightBalancedBST(
   numbs: number[],
-  middle = Math.floor(numbs.length / 2)
+  middle = Math.floor(numbs.length / 2),
 ): BinaryTreeNode {
   if (numbs.length === 1) {
-    return new BinaryTreeNode(numbs[0]);
+    return new BinaryTreeNode(numbs[0])
   }
 
   if (numbs.length === 0) {
-    return null;
+    return null
   }
 
-  const result = new BinaryTreeNode(numbs[middle]);
+  const result = new BinaryTreeNode(numbs[middle])
 
-  result.left = createHeightBalancedBST(numbs.slice(0, middle));
-  result.right = createHeightBalancedBST(numbs.slice(middle + 1));
+  result.left = createHeightBalancedBST(numbs.slice(0, middle))
+  result.right = createHeightBalancedBST(numbs.slice(middle + 1))
 
-  return result;
+  return result
 }

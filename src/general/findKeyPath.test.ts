@@ -1,39 +1,39 @@
-import { findKeyPath1, findKeyPath2, findKeyPath3 } from './findKeyPath';
+import { findKeyPath1, findKeyPath2, findKeyPath3 } from "./findKeyPath"
 
 const objectMock = {
-  propA: 'foo',
-  propB: 'bar',
+  propA: "foo",
+  propB: "bar",
   propC: [
-    'foo',
+    "foo",
     {
-      abcd: 'bar',
-      bar: 'foo',
+      abcd: "bar",
+      bar: "foo",
     },
     {
-      abc: 'bar',
-      bar: 'foo',
+      abc: "bar",
+      bar: "foo",
       propE: [
         {
-          abc: 'bar',
+          abc: "bar",
         },
-        'foo',
+        "foo",
         {
-          propE: 'foo',
+          propE: "foo",
         },
       ],
       propF: {
-        bar: 'foo',
-        abc: 'bar',
+        bar: "foo",
+        abc: "bar",
       },
     },
   ],
-};
+}
 
-test('the data is empty', () => {
+test("the data is empty", () => {
   const data = {
     obj: objectMock,
-    valueMatch: 'foo',
-  };
+    valueMatch: "foo",
+  }
   expect(findKeyPath1(data)).toMatchInlineSnapshot(`
     [
       "propA",
@@ -44,7 +44,7 @@ test('the data is empty', () => {
       "propC.2.propE.2.propE",
       "propC.2.propF.bar",
     ]
-  `);
+  `)
   expect(findKeyPath2(data)).toMatchInlineSnapshot(`
     [
       "propA",
@@ -55,7 +55,7 @@ test('the data is empty', () => {
       "propC.2.propE.2.propE",
       "propC.1.bar",
     ]
-  `);
+  `)
 
   expect(findKeyPath3(data)).toMatchInlineSnapshot(`
     [
@@ -67,5 +67,5 @@ test('the data is empty', () => {
       "propC.2.propE.2.propE",
       "propC.2.propF.bar",
     ]
-  `);
-});
+  `)
+})

@@ -1,8 +1,8 @@
-import { uncommonWords } from './uncommonWords';
+import { uncommonWords } from "./uncommonWords"
 
-describe('uncommonWords function', () => {
-  it('should work', () => {
-    const actual = uncommonWords('the quick', 'brown fox');
-    expect(actual).toEqual(['the', 'quick', 'brown', 'fox']);
-  });
-});
+describe("uncommonWords function", () => {
+  it("should work", () => {
+    const actual = uncommonWords("the quick", "brown fox")
+    expect(actual).toEqual(["the", "quick", "brown", "fox"])
+  })
+})

@@ -7,38 +7,38 @@ Otherwise return None.
 */
 
 export function checkStringPalindrome(str: string): string {
-  const counting: Record<string, number> = {};
+  const counting: Record<string, number> = {}
   for (const ch of str) {
-    counting[ch] = (counting[ch] || 0) + 1;
+    counting[ch] = (counting[ch] || 0) + 1
   }
 
-  let oddCount = 0;
-  let oddChar = '';
+  let oddCount = 0
+  let oddChar = ""
 
   for (const [key, value] of Object.entries(counting)) {
     if (value % 2) {
-      oddCount++;
-      oddChar = key;
+      oddCount++
+      oddChar = key
     }
   }
 
   if (oddCount > 1) {
-    return '';
+    return ""
   }
 
-  let firstHalf = '';
-  let secondHalf = '';
+  let firstHalf = ""
+  let secondHalf = ""
   for (const [key, value] of Object.entries(counting)) {
-    let tempStr = '';
+    let tempStr = ""
     for (let i = 0; i < Math.floor(value / 2); i++) {
-      tempStr += key;
+      tempStr += key
     }
 
-    firstHalf = firstHalf + tempStr;
-    secondHalf = tempStr + secondHalf;
+    firstHalf = firstHalf + tempStr
+    secondHalf = tempStr + secondHalf
   }
 
   return oddCount === 1
     ? firstHalf + oddChar + secondHalf
-    : firstHalf + secondHalf;
+    : firstHalf + secondHalf
 }

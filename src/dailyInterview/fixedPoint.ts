@@ -10,15 +10,15 @@ in a sorted list of distinct elements, or return None if it doesn't exist.
 export function fixedPoint(
   arr: number[],
   low: number = 0,
-  high: number = arr.length - 1
+  high: number = arr.length - 1,
 ): number {
   if (high >= low) {
-    const mid = Math.floor((low + high) / 2);
+    const mid = Math.floor((low + high) / 2)
 
-    if (mid === arr[mid]) return mid;
-    if (mid > arr[mid]) return fixedPoint(arr, mid + 1, high);
-    else return fixedPoint(arr, low, mid - 1);
+    if (mid === arr[mid]) return mid
+    if (mid > arr[mid]) return fixedPoint(arr, mid + 1, high)
+    else return fixedPoint(arr, low, mid - 1)
   }
 
-  return -1;
+  return -1
 }

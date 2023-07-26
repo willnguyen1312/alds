@@ -18,32 +18,32 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function sumWithinBounds(
   root: BinaryTreeNode,
   low: number,
-  high: number
+  high: number,
 ): number {
-  const collectedNumbers: number[] = [];
+  const collectedNumbers: number[] = []
 
   function collect(node: BinaryTreeNode) {
     if (node.data >= low && node.data <= high) {
-      collectedNumbers.push(node.data);
+      collectedNumbers.push(node.data)
     }
 
     if (node.left) {
-      collect(node.left);
+      collect(node.left)
     }
 
     if (node.right) {
-      collect(node.right);
+      collect(node.right)
     }
   }
 
-  collect(root);
+  collect(root)
 
-  return collectedNumbers.reduce((acc, cur) => acc + cur);
+  return collectedNumbers.reduce((acc, cur) => acc + cur)
 }

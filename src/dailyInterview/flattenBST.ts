@@ -32,29 +32,29 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function flattenBST(node: BinaryTreeNode) {
-  if (!node) return;
+  if (!node) return
 
-  if (!node.left && !node.right) return;
+  if (!node.left && !node.right) return
 
   if (node.left) {
-    flattenBST(node.left);
+    flattenBST(node.left)
 
-    const originalRightNode = node.right;
-    node.right = node.left;
-    node.left = null;
+    const originalRightNode = node.right
+    node.right = node.left
+    node.left = null
 
-    let curr = node.right;
+    let curr = node.right
     while (curr.right) {
-      curr = curr.right;
+      curr = curr.right
     }
 
-    curr.right = originalRightNode;
+    curr.right = originalRightNode
   }
 
-  flattenBST(node.right);
+  flattenBST(node.right)
 }

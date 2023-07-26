@@ -17,34 +17,34 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function averageLevelBST(root: BinaryTreeNode): number[] {
-  const result: number[] = [];
-  let queue: BinaryTreeNode[] = [root];
+  const result: number[] = []
+  let queue: BinaryTreeNode[] = [root]
 
   while (queue.length) {
-    const toQueue: BinaryTreeNode[] = [];
+    const toQueue: BinaryTreeNode[] = []
 
-    let total = 0;
+    let total = 0
 
     for (const item of queue) {
-      total += item.data;
+      total += item.data
 
       if (item.left) {
-        toQueue.push(item.left);
+        toQueue.push(item.left)
       }
 
       if (item.right) {
-        toQueue.push(item.right);
+        toQueue.push(item.right)
       }
     }
 
-    result.push(total / queue.length);
-    queue = toQueue;
+    result.push(total / queue.length)
+    queue = toQueue
   }
 
-  return result;
+  return result
 }

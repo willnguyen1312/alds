@@ -1,13 +1,13 @@
 export function findPair(numbs: number[], k: number) {
-  const visited = {};
+  const visited = {}
 
   for (const numb of numbs) {
     if (visited[k - numb]) {
-      return true;
+      return true
     }
 
-    visited[numb] = true;
+    visited[numb] = true
   }
 
-  return false;
+  return false
 }

@@ -12,50 +12,50 @@ Note: be sure that pop() and top() handle being called on an empty stack.
 */
 
 export class MinStack {
-  stack = [];
-  minStack = [];
+  stack = []
+  minStack = []
 
   push(x: number) {
     if (this.stack.length === 0) {
-      this.stack.push(x);
-      this.minStack.push(x);
+      this.stack.push(x)
+      this.minStack.push(x)
     } else {
-      this.stack.push(x);
+      this.stack.push(x)
       if (this.getMin() > x) {
-        this.minStack.push(x);
+        this.minStack.push(x)
       } else {
-        this.minStack.push(this.minStack[this.minStack.length - 1]);
+        this.minStack.push(this.minStack[this.minStack.length - 1])
       }
     }
   }
 
   pop() {
     if (this.stack.length === 0) {
-      return;
+      return
     } else {
-      const value = this.stack.pop();
+      const value = this.stack.pop()
 
       if (value === this.getMin()) {
-        this.minStack.pop();
+        this.minStack.pop()
       }
 
-      return value;
+      return value
     }
   }
 
   top() {
     if (this.stack.length === 0) {
-      return;
+      return
     } else {
-      return this.stack[this.stack.length - 1];
+      return this.stack[this.stack.length - 1]
     }
   }
 
   getMin() {
     if (this.minStack.length === 0) {
-      return;
+      return
     } else {
-      return this.minStack[this.minStack.length - 1];
+      return this.minStack[this.minStack.length - 1]
     }
   }
 }

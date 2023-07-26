@@ -17,16 +17,16 @@ Fly the fourth person to office A.
 */
 
 export function flightPrices(costs: number[][]): number {
-  costs = costs.sort((a, b) => b[0] - b[1] - (a[0] - a[1]));
-  let result = 0;
+  costs = costs.sort((a, b) => b[0] - b[1] - (a[0] - a[1]))
+  let result = 0
 
   for (let i = 0; i < costs.length / 2; i++) {
-    result += costs[i][1];
+    result += costs[i][1]
   }
 
   for (let i = costs.length / 2; i < costs.length; i++) {
-    result += costs[i][0];
+    result += costs[i][0]
   }
 
-  return result;
+  return result
 }

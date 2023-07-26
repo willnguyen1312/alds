@@ -6,77 +6,77 @@ and then a single word prefix, find all words that it can complete to.
 */
 
 export class TrieNode {
-  children: Map<string, TrieNode> = new Map();
-  isWord: boolean;
+  children: Map<string, TrieNode> = new Map()
+  isWord: boolean
 
   constructor(public char?: string) {}
 
   insert(word: string) {
-    const firstChar = word[0];
-    let child = this.children.get(firstChar);
+    const firstChar = word[0]
+    let child = this.children.get(firstChar)
 
     if (!child) {
-      child = new TrieNode(firstChar);
-      this.children.set(firstChar, child);
+      child = new TrieNode(firstChar)
+      this.children.set(firstChar, child)
     }
 
     if (word.length > 1) {
-      child.insert(word.slice(1));
+      child.insert(word.slice(1))
     } else {
-      child.isWord = true;
+      child.isWord = true
     }
   }
 }
 
 export class Trie {
-  root: TrieNode = new TrieNode();
+  root: TrieNode = new TrieNode()
   constructor(public words: string[]) {
     for (const word of words) {
-      this.root.insert(word);
+      this.root.insert(word)
     }
   }
 
   find(prefix: string, exact: boolean = false) {
-    let lastNode = this.root;
+    let lastNode = this.root
 
     for (const char of prefix) {
-      lastNode = lastNode.children.get(char);
+      lastNode = lastNode.children.get(char)
       if (!lastNode) {
-        return false;
+        return false
       }
     }
 
-    return !exact || lastNode.isWord;
+    return !exact || lastNode.isWord
   }
 
   suggestHelper(root: TrieNode, list: string[], str: string) {
     if (root.isWord) {
-      list.push(str);
+      list.push(str)
     }
 
     if (!root.children.size) {
-      return;
+      return
     }
 
     for (const child of root.children.values()) {
-      this.suggestHelper(child, list, str + child.char);
+      this.suggestHelper(child, list, str + child.char)
     }
   }
 
   suggest(prefix: string) {
-    const result: string[] = [];
-    let lastNode = this.root;
-    let str = '';
+    const result: string[] = []
+    let lastNode = this.root
+    let str = ""
 
     for (const char of prefix) {
-      lastNode = lastNode.children.get(char);
+      lastNode = lastNode.children.get(char)
       if (!lastNode) {
-        return [];
+        return []
       }
-      str += char;
+      str += char
     }
 
-    this.suggestHelper(lastNode, result, str);
-    return result;
+    this.suggestHelper(lastNode, result, str)
+    return result
   }
 }

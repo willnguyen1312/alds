@@ -27,25 +27,25 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function splitTree(
   root: BinaryTreeNode,
-  target: number
+  target: number,
 ): BinaryTreeNode[] {
   if (!root) {
-    return [];
+    return []
   }
 
   if (target < root.data) {
-    const left = splitTree(root.left, target);
-    root.left = left[1];
-    return [left[0], root];
+    const left = splitTree(root.left, target)
+    root.left = left[1]
+    return [left[0], root]
   } else {
-    const right = splitTree(root.right, target);
-    root.right = right[0];
-    return [root, right[1]];
+    const right = splitTree(root.right, target)
+    root.right = right[0]
+    return [root, right[1]]
   }
 }

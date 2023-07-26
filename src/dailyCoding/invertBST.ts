@@ -23,16 +23,16 @@ export class BinaryTreeNode {
   constructor(
     public data: string,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function invertBST(root: BinaryTreeNode): BinaryTreeNode {
-  if (!root) return;
+  if (!root) return
 
-  invertBST(root.left);
-  invertBST(root.right);
+  invertBST(root.left)
+  invertBST(root.right)
 
-  [root.left, root.right] = [root.right, root.left];
-  return root;
+  ;[root.left, root.right] = [root.right, root.left]
+  return root
 }

@@ -33,20 +33,20 @@ Your function should return 3, since we would need to remove all the columns to 
 */
 
 export function columnOrderInGrid(grid: string[][]): number {
-  let result = 0;
+  let result = 0
 
   if (grid.length < 2) {
-    return result;
+    return result
   }
 
   for (let j = 0; j < grid[0].length; j++) {
     for (let i = 0; i < grid[0].length - 1; i++) {
       if (grid[i][j] > grid[i + 1][j]) {
-        result++;
-        break;
+        result++
+        break
       }
     }
   }
 
-  return result;
+  return result
 }

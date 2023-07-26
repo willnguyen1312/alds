@@ -13,52 +13,52 @@ Given a k-ary tree, figure out if the tree is symmetrical.
 */
 
 export class KAryTreeNode {
-  val: number;
-  children: KAryTreeNode[] = [];
+  val: number
+  children: KAryTreeNode[] = []
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function symmetricKAryTree(root: KAryTreeNode): boolean {
-  const queue: KAryTreeNode[] = root.children;
+  const queue: KAryTreeNode[] = root.children
 
   function checkValid(nodes: KAryTreeNode[]) {
     if (nodes.length % 2) {
-      return false;
+      return false
     }
 
-    const length = nodes.length;
-    const mid = Math.floor(length / 2);
+    const length = nodes.length
+    const mid = Math.floor(length / 2)
 
     for (let index = 0; index < mid; index++) {
-      const left = nodes[index];
-      const right = nodes[length - 1 - index];
+      const left = nodes[index]
+      const right = nodes[length - 1 - index]
 
       if (left.val !== right.val) {
-        return false;
+        return false
       }
     }
 
-    return true;
+    return true
   }
 
   while (queue.length) {
-    const toCompare: KAryTreeNode[] = [];
+    const toCompare: KAryTreeNode[] = []
 
     while (queue.length) {
-      toCompare.push(queue.pop());
+      toCompare.push(queue.pop())
     }
 
     if (!checkValid(toCompare)) {
-      return false;
+      return false
     }
 
     for (const item of toCompare) {
-      queue.push(...item.children);
+      queue.push(...item.children)
     }
   }
 
-  return true;
+  return true
 }

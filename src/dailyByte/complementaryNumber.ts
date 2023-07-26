@@ -12,25 +12,25 @@ Therefore, the complementary binary is 00100 which is 4.
 */
 
 function toBinary(numb: number): number[] {
-  const result: number[] = [];
+  const result: number[] = []
 
   while (numb > 0) {
-    const remainder = numb % 2;
-    result.unshift(remainder);
-    numb = Math.floor(numb / 2);
+    const remainder = numb % 2
+    result.unshift(remainder)
+    numb = Math.floor(numb / 2)
   }
 
-  return result;
+  return result
 }
 
 export function complementaryNumber(numb: number): number {
-  const binaryNumb = toBinary(numb);
-  const flippingNumb = binaryNumb.map((numb) => (numb === 0 ? 1 : 0)).reverse();
+  const binaryNumb = toBinary(numb)
+  const flippingNumb = binaryNumb.map((numb) => (numb === 0 ? 1 : 0)).reverse()
 
   return flippingNumb.reduce((acc: number, cur, index) => {
     if (cur) {
-      acc += Math.pow(2, index);
+      acc += Math.pow(2, index)
     }
-    return acc;
-  }, 0);
+    return acc
+  }, 0)
 }

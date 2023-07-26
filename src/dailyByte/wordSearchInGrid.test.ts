@@ -1,14 +1,14 @@
-import { wordSearchInGrid } from './wordSearchInGrid';
+import { wordSearchInGrid } from "./wordSearchInGrid"
 
-describe('wordSearchInGrid function', () => {
-  it('should work', () => {
+describe("wordSearchInGrid function", () => {
+  it("should work", () => {
     const grid = [
-      ['C', 'A', 'T', 'F'],
-      ['B', 'G', 'E', 'S'],
-      ['I', 'T', 'A', 'E'],
-    ];
+      ["C", "A", "T", "F"],
+      ["B", "G", "E", "S"],
+      ["I", "T", "A", "E"],
+    ]
 
-    const actual = wordSearchInGrid(grid, 'CAT');
-    expect(actual).toBe(true);
-  });
-});
+    const actual = wordSearchInGrid(grid, "CAT")
+    expect(actual).toBe(true)
+  })
+})

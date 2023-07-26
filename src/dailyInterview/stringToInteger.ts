@@ -9,23 +9,23 @@ return None.
 */
 
 export function stringToInteger(str: string): number {
-  let result = 0;
-  let factor = 0;
+  let result = 0
+  let factor = 0
 
   for (let index = str.length - 1; index >= 0; index--) {
-    const element = str[index];
+    const element = str[index]
 
-    if (element === '-') {
-      return -result;
+    if (element === "-") {
+      return -result
     }
 
-    result += convertToNumber(element) * Math.pow(10, factor);
-    factor++;
+    result += convertToNumber(element) * Math.pow(10, factor)
+    factor++
   }
 
-  return result;
+  return result
 }
 
 function convertToNumber(char: string): number {
-  return char.charCodeAt(0) - '1'.charCodeAt(0) + 1;
+  return char.charCodeAt(0) - "1".charCodeAt(0) + 1
 }

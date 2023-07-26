@@ -9,7 +9,7 @@ determine whether he can construct the word.
 */
 
 export function randomNote(chars: string[], note: string) {
-  const charsSet = new Set(chars);
+  const charsSet = new Set(chars)
 
-  return note.split('').every((letter) => charsSet.has(letter));
+  return note.split("").every((letter) => charsSet.has(letter))
 }

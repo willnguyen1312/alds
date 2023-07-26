@@ -18,28 +18,28 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function getMaxPathSumFromRoot(root: BinaryTreeNode): number[] {
   function getMaxPathSumFromRootUtil(node: BinaryTreeNode): [number, number[]] {
     if (!node) {
-      return [0, []];
+      return [0, []]
     }
 
-    const [maxLeft, leftPath] = getMaxPathSumFromRootUtil(node.left);
-    const [maxRight, rightPath] = getMaxPathSumFromRootUtil(node.right);
+    const [maxLeft, leftPath] = getMaxPathSumFromRootUtil(node.left)
+    const [maxRight, rightPath] = getMaxPathSumFromRootUtil(node.right)
 
     return maxLeft > maxRight
       ? [maxLeft + node.data, [node.data, ...leftPath]]
-      : [maxRight + node.data, [node.data, ...rightPath]];
+      : [maxRight + node.data, [node.data, ...rightPath]]
   }
 
-  const [maxLeft, leftPath] = getMaxPathSumFromRootUtil(root.left);
-  const [maxRight, rightPath] = getMaxPathSumFromRootUtil(root.right);
+  const [maxLeft, leftPath] = getMaxPathSumFromRootUtil(root.left)
+  const [maxRight, rightPath] = getMaxPathSumFromRootUtil(root.right)
 
   return maxLeft > maxRight
     ? [root.data, ...leftPath]
-    : [root.data, ...rightPath];
+    : [root.data, ...rightPath]
 }

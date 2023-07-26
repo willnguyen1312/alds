@@ -26,33 +26,33 @@ To represent 900, we should use CM instead of DCCCC.
 */
 
 export function decimalToRoman(number: number): string {
-  const num = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+  const num = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
   const sym = [
-    'I',
-    'IV',
-    'V',
-    'IX',
-    'X',
-    'XL',
-    'L',
-    'XC',
-    'C',
-    'CD',
-    'D',
-    'CM',
-    'M',
-  ];
-  let i = 12;
-  let result = '';
+    "I",
+    "IV",
+    "V",
+    "IX",
+    "X",
+    "XL",
+    "L",
+    "XC",
+    "C",
+    "CD",
+    "D",
+    "CM",
+    "M",
+  ]
+  let i = 12
+  let result = ""
 
   while (number > 0) {
-    let div = Math.floor(number / num[i]);
-    number = number % num[i];
+    let div = Math.floor(number / num[i])
+    number = number % num[i]
     while (div--) {
-      result += sym[i];
+      result += sym[i]
     }
-    i--;
+    i--
   }
 
-  return result;
+  return result
 }

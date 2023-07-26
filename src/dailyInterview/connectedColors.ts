@@ -5,22 +5,22 @@ Find the maximum number of connected colors in a grid.
 */
 
 export function connectedColors(grid: number[][]): number {
-  if (grid.length === 0) return 0;
+  if (grid.length === 0) return 0
 
-  let result = 0;
-  const rowsCount = grid.length;
-  const columnsCount = grid[0].length;
+  let result = 0
+  const rowsCount = grid.length
+  const columnsCount = grid[0].length
   for (let i = 0; i < rowsCount; i++) {
     for (let j = 0; j < columnsCount; j++) {
       if (grid[i][j] === 1) {
-        const count = { value: 0 };
-        traverseGrid(grid, i, j, rowsCount, columnsCount, count);
-        result = Math.max(count.value, result);
+        const count = { value: 0 }
+        traverseGrid(grid, i, j, rowsCount, columnsCount, count)
+        result = Math.max(count.value, result)
       }
     }
   }
 
-  return result;
+  return result
 }
 
 function traverseGrid(
@@ -29,7 +29,7 @@ function traverseGrid(
   j: number,
   rowsCount: number,
   columnsCount: number,
-  count: { value: number }
+  count: { value: number },
 ) {
   if (
     i < 0 ||
@@ -38,14 +38,14 @@ function traverseGrid(
     j >= columnsCount ||
     grid[i][j] === 0
   ) {
-    return;
+    return
   }
 
-  count.value += 1;
-  grid[i][j] = 0;
+  count.value += 1
+  grid[i][j] = 0
 
-  traverseGrid(grid, i - 1, j, rowsCount, columnsCount, count);
-  traverseGrid(grid, i + 1, j, rowsCount, columnsCount, count);
-  traverseGrid(grid, i, j - 1, rowsCount, columnsCount, count);
-  traverseGrid(grid, i, j + 1, rowsCount, columnsCount, count);
+  traverseGrid(grid, i - 1, j, rowsCount, columnsCount, count)
+  traverseGrid(grid, i + 1, j, rowsCount, columnsCount, count)
+  traverseGrid(grid, i, j - 1, rowsCount, columnsCount, count)
+  traverseGrid(grid, i, j + 1, rowsCount, columnsCount, count)
 }

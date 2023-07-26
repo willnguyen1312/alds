@@ -23,25 +23,25 @@ Output: false
 
 export function buddyStrings(first: string, second: string): boolean {
   if (first.length !== second.length) {
-    return false;
+    return false
   }
 
   if (first === second && first.length !== new Set(second).size) {
-    return true;
+    return true
   }
 
-  const diff: number[] = [];
+  const diff: number[] = []
 
   for (let index = 0; index < first.length; index++) {
-    const firstEle = first[index];
-    const secondEle = second[index];
+    const firstEle = first[index]
+    const secondEle = second[index]
 
     if (firstEle !== secondEle) {
-      diff.push(index);
+      diff.push(index)
     }
 
     if (diff.length > 2) {
-      return false;
+      return false
     }
   }
 
@@ -49,5 +49,5 @@ export function buddyStrings(first: string, second: string): boolean {
     diff.length === 2 &&
     first[diff[0]] === second[diff[1]] &&
     first[diff[1]] === second[diff[0]]
-  );
+  )
 }

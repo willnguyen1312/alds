@@ -1,7 +1,7 @@
-import { minimumRemovalsForValidParenthesis } from './minimumRemovalsForValidParenthesis';
+import { minimumRemovalsForValidParenthesis } from "./minimumRemovalsForValidParenthesis"
 
-describe('minimumRemovalsForValidParenthesis function', () => {
-  it('should work', () => {
-    expect(minimumRemovalsForValidParenthesis('()())()')).toBe('()()()');
-  });
-});
+describe("minimumRemovalsForValidParenthesis function", () => {
+  it("should work", () => {
+    expect(minimumRemovalsForValidParenthesis("()())()")).toBe("()()()")
+  })
+})

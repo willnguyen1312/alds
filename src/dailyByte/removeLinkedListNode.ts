@@ -10,29 +10,32 @@ Ex: Given the following linked lists and values...
 */
 
 export class LinkedListNode {
-  constructor(public data: number, public next?: LinkedListNode) {}
+  constructor(
+    public data: number,
+    public next?: LinkedListNode,
+  ) {}
 }
 
 export function removeLinkedListNode(
   head: LinkedListNode,
-  target: number
+  target: number,
 ): LinkedListNode {
   while (head.data === target) {
-    head = head.next;
+    head = head.next
   }
 
-  let current = head.next;
-  let previous = current;
+  let current = head.next
+  let previous = current
 
   while (current) {
     if (current.data === target) {
-      previous.next = current.next;
-      current = current.next;
+      previous.next = current.next
+      current = current.next
     } else {
-      previous = current;
-      current = current.next;
+      previous = current
+      current = current.next
     }
   }
 
-  return head;
+  return head
 }

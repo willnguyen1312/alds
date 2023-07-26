@@ -9,26 +9,26 @@ Output: '/Users/John/'
 */
 
 export function getShortPath(str: string): string {
-  const paths = str.split('/').filter((char) => char !== '' && char !== '.');
+  const paths = str.split("/").filter((char) => char !== "" && char !== ".")
 
-  const stack: string[] = [];
+  const stack: string[] = []
 
   for (let index = 0; index < paths.length; index++) {
-    const element = paths[index];
+    const element = paths[index]
 
-    if (element === '..') {
-      stack.pop();
-      continue;
+    if (element === "..") {
+      stack.pop()
+      continue
     }
 
-    stack.push(element);
+    stack.push(element)
   }
 
-  let result = '';
+  let result = ""
 
   while (stack.length) {
-    result = stack.pop() + '/' + result;
+    result = stack.pop() + "/" + result
   }
 
-  return '/' + result;
+  return "/" + result
 }

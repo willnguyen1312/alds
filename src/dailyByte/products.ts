@@ -13,18 +13,18 @@ nums = [1, 2, 3], return [6,3,2].
 */
 
 export function products(numbs: number[]): number[] {
-  const result = [];
+  const result = []
 
-  result[0] = 1;
+  result[0] = 1
   for (let i = 1; i < numbs.length; ++i) {
-    result[i] = result[i - 1] * numbs[i - 1];
+    result[i] = result[i - 1] * numbs[i - 1]
   }
 
-  let right = 1;
+  let right = 1
   for (let i = numbs.length - 1; i >= 0; --i) {
-    result[i] = right * result[i];
-    right *= numbs[i];
+    result[i] = right * result[i]
+    right *= numbs[i]
   }
 
-  return result;
+  return result
 }

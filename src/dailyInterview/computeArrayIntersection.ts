@@ -17,19 +17,19 @@ The result can be in any order.
 
 export function computeArrayIntersection(
   first: number[],
-  second: number[]
+  second: number[],
 ): number[] {
-  const firstSet = new Set(first);
-  const foundSet: Set<number> = new Set();
+  const firstSet = new Set(first)
+  const foundSet: Set<number> = new Set()
 
   const result = second.reduce((acc: number[], cur) => {
     if (!foundSet.has(cur) && firstSet.has(cur)) {
-      acc.push(cur);
-      foundSet.add(cur);
+      acc.push(cur)
+      foundSet.add(cur)
     }
 
-    return acc;
-  }, []);
+    return acc
+  }, [])
 
-  return result;
+  return result
 }

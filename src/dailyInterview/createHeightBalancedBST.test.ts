@@ -1,7 +1,7 @@
-import { createHeightBalancedBST } from './createHeightBalancedBST';
+import { createHeightBalancedBST } from "./createHeightBalancedBST"
 
-describe('createHeightBalancedBST function', () => {
-  it('should work', () => {
+describe("createHeightBalancedBST function", () => {
+  it("should work", () => {
     expect(createHeightBalancedBST([1, 2, 3, 4, 5, 6, 7, 8]))
       .toMatchInlineSnapshot(`
 BinaryTreeNode {
@@ -29,6 +29,6 @@ BinaryTreeNode {
   },
   "val": 5,
 }
-`);
-  });
-});
+`)
+  })
+})

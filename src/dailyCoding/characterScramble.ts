@@ -16,8 +16,8 @@ passage = "dog" text = "didnotgo", return true.
 */
 
 export function characterScramble(passage: string, text: string): boolean {
-  const passageArr: string[] = passage.split('');
-  const textCharSet: Set<string> = new Set(text);
+  const passageArr: string[] = passage.split("")
+  const textCharSet: Set<string> = new Set(text)
 
-  return passageArr.every((char) => textCharSet.has(char));
+  return passageArr.every((char) => textCharSet.has(char))
 }

@@ -1,8 +1,8 @@
-import { makeBST } from './makeBST';
+import { makeBST } from "./makeBST"
 
-describe('makeBST function', () => {
-  it('should work', () => {
-    const actual = makeBST([1, 2, 3, 4, 5]);
+describe("makeBST function", () => {
+  it("should work", () => {
+    const actual = makeBST([1, 2, 3, 4, 5])
     expect(actual).toMatchInlineSnapshot(`
 BinaryTreeNode {
   "data": 3,
@@ -29,6 +29,6 @@ BinaryTreeNode {
     },
   },
 }
-`);
-  });
-});
+`)
+  })
+})

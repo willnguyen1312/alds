@@ -19,35 +19,35 @@ Output: false
 */
 
 export function dropIntoThreeEqualParts(numbs: number[]): boolean {
-  let leftPointer = 1;
-  let rightPointer = numbs.length - 2;
-  let leftPartSum: number, middlePartSum: number, rightPartSum: number;
-  const sumArray: number[] = [];
-  sumArray[0] = numbs[0];
+  let leftPointer = 1
+  let rightPointer = numbs.length - 2
+  let leftPartSum: number, middlePartSum: number, rightPartSum: number
+  const sumArray: number[] = []
+  sumArray[0] = numbs[0]
 
   for (let index = 1; index < numbs.length; index++) {
-    sumArray[index] = sumArray[index - 1] + numbs[index];
+    sumArray[index] = sumArray[index - 1] + numbs[index]
   }
 
   while (leftPointer < rightPointer) {
-    leftPartSum = sumArray[leftPointer] - numbs[leftPointer];
+    leftPartSum = sumArray[leftPointer] - numbs[leftPointer]
     middlePartSum =
-      sumArray[rightPointer] - sumArray[leftPointer] - numbs[rightPointer];
-    rightPartSum = sumArray[numbs.length - 1] - sumArray[rightPointer];
+      sumArray[rightPointer] - sumArray[leftPointer] - numbs[rightPointer]
+    rightPartSum = sumArray[numbs.length - 1] - sumArray[rightPointer]
 
     if (leftPartSum === middlePartSum && middlePartSum === rightPartSum) {
-      return true;
+      return true
     }
 
     if (leftPartSum < rightPartSum) {
-      leftPointer++;
+      leftPointer++
     } else if (leftPartSum > rightPartSum) {
-      rightPointer--;
+      rightPointer--
     } else {
-      leftPointer++;
-      rightPointer--;
+      leftPointer++
+      rightPointer--
     }
   }
 
-  return false;
+  return false
 }

@@ -16,41 +16,41 @@ Output: [-1, -1]
 
 export function getFirstAndLastIndicesSortedArray(
   nums: number[],
-  target: number
+  target: number,
 ): number[] {
-  let left = 0;
-  let right = nums.length - 1;
+  let left = 0
+  let right = nums.length - 1
 
   while (left <= right) {
-    const middle = Math.floor((right + left) / 2);
-    const current = nums[middle];
+    const middle = Math.floor((right + left) / 2)
+    const current = nums[middle]
 
     if (current === target) {
-      return getRange(nums, middle);
+      return getRange(nums, middle)
     }
 
     if (current > target) {
-      right = middle - 1;
+      right = middle - 1
     } else {
-      left = middle + 1;
+      left = middle + 1
     }
   }
 
-  return [-1, -1];
+  return [-1, -1]
 }
 
 function getRange(nums: number[], index: number) {
-  const target = nums[index];
-  let left = index;
-  let right = index;
+  const target = nums[index]
+  let left = index
+  let right = index
 
   while (nums[left] === target) {
-    left--;
+    left--
   }
 
   while (nums[right] === target) {
-    right++;
+    right++
   }
 
-  return [left + 1, right - 1];
+  return [left + 1, right - 1]
 }

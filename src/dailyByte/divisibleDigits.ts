@@ -9,26 +9,26 @@ N = 17, return 12 because 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15 are all self div
 */
 
 export function divisibleDigits(numb: number): number {
-  let result = 0;
+  let result = 0
 
   function checkValid(n: number) {
-    const digits = n.toString().split('').map(Number);
+    const digits = n.toString().split("").map(Number)
 
     for (const digit of digits) {
-      const factor = n / digit;
+      const factor = n / digit
       if (digit === 0 || factor !== Math.ceil(factor)) {
-        return false;
+        return false
       }
     }
 
-    return true;
+    return true
   }
 
   for (let index = 1; index < numb; index++) {
     if (checkValid(index)) {
-      result++;
+      result++
     }
   }
 
-  return result;
+  return result
 }

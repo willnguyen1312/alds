@@ -20,23 +20,23 @@ print(meeting_rooms([(20, 30), (10, 21), (0, 50)]))
 # 1 (all meetings overlap at time 20)
 */
 
-import { numberOfMeetingRooms } from './numberOfMeetingRooms';
+import { numberOfMeetingRooms } from "./numberOfMeetingRooms"
 
-describe('numberOfMeetingRooms function', () => {
-  it('should work', () => {
+describe("numberOfMeetingRooms function", () => {
+  it("should work", () => {
     expect(
       numberOfMeetingRooms([
         [0, 10],
         [10, 20],
-      ])
-    ).toBe(1);
+      ]),
+    ).toBe(1)
 
     expect(
       numberOfMeetingRooms([
         [20, 30],
         [10, 21],
         [0, 50],
-      ])
-    ).toBe(1);
-  });
-});
+      ]),
+    ).toBe(1)
+  })
+})

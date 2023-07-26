@@ -1,14 +1,14 @@
-import { checkWordExistInGrid } from './checkWordExistInGrid';
+import { checkWordExistInGrid } from "./checkWordExistInGrid"
 
-describe('checkWordExistInGrid function', () => {
-  it('should work', () => {
+describe("checkWordExistInGrid function", () => {
+  it("should work", () => {
     const grid = [
-      ['A', 'B', 'C', 'E'],
-      ['S', 'F', 'C', 'S'],
-      ['A', 'D', 'E', 'E'],
-    ];
+      ["A", "B", "C", "E"],
+      ["S", "F", "C", "S"],
+      ["A", "D", "E", "E"],
+    ]
 
-    const actual = checkWordExistInGrid(grid, 'ABCCED');
-    expect(actual).toBe(true);
-  });
-});
+    const actual = checkWordExistInGrid(grid, "ABCCED")
+    expect(actual).toBe(true)
+  })
+})

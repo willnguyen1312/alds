@@ -15,11 +15,11 @@ print(remove_adjacent_dup("cabba"))
 # print c
 */
 
-import { removeAdjacentDuplicates } from './removeAdjacentDuplicates';
+import { removeAdjacentDuplicates } from "./removeAdjacentDuplicates"
 
-describe('removeAdjacentDuplicates function', () => {
-  it('should work', () => {
-    const actual = removeAdjacentDuplicates('cabbaba');
-    expect(actual).toBe('cba');
-  });
-});
+describe("removeAdjacentDuplicates function", () => {
+  it("should work", () => {
+    const actual = removeAdjacentDuplicates("cabbaba")
+    expect(actual).toBe("cba")
+  })
+})

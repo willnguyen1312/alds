@@ -17,40 +17,40 @@ The path that minimizes our cost is 1->1->3->1->1 which sums to 7.
 */
 
 function sum(numbs: number[]) {
-  return numbs.reduce((acc, cur) => acc + cur, 0);
+  return numbs.reduce((acc, cur) => acc + cur, 0)
 }
 
 export function minimizePaths(grid: number[][]): number {
-  const row = grid.length;
+  const row = grid.length
 
   if (row === 0) {
-    return 0;
+    return 0
   }
 
-  const column = grid[0].length;
+  const column = grid[0].length
   if (row === 1) {
-    return sum(grid[0]);
+    return sum(grid[0])
   }
 
   if (column === 1) {
-    return sum(grid.map((item) => item[0]));
+    return sum(grid.map((item) => item[0]))
   }
 
   for (let index = 1; index < column; index++) {
-    const prevElement = grid[0][index - 1];
-    grid[0][index] = prevElement + grid[0][index];
+    const prevElement = grid[0][index - 1]
+    grid[0][index] = prevElement + grid[0][index]
   }
 
   for (let index = 1; index < row; index++) {
-    const prevElement = grid[index - 1][0];
-    grid[index][0] = prevElement + grid[index][0];
+    const prevElement = grid[index - 1][0]
+    grid[index][0] = prevElement + grid[index][0]
   }
 
   for (let i = 1; i < row; i++) {
     for (let j = 1; j < column; j++) {
-      grid[i][j] = Math.min(grid[i - 1][j], grid[i][j - 1]) + grid[i][j];
+      grid[i][j] = Math.min(grid[i - 1][j], grid[i][j - 1]) + grid[i][j]
     }
   }
 
-  return grid[row - 1][column - 1];
+  return grid[row - 1][column - 1]
 }

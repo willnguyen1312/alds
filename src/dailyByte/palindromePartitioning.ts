@@ -14,43 +14,43 @@ return [
 
 function isPalindrome(s: string): boolean {
   if (s.length === 0) {
-    return true;
+    return true
   }
 
-  const n = s.length;
-  let p1 = 0;
-  let p2 = n - 1;
+  const n = s.length
+  let p1 = 0
+  let p2 = n - 1
   while (p1 < p2) {
     if (s[p1] !== s[p2]) {
-      return false;
+      return false
     }
-    p1++;
-    p2--;
+    p1++
+    p2--
   }
-  return true;
+  return true
 }
 
 export function palindromePartitioning(str: string): string[][] {
   if (str.length === 0) {
-    return [];
+    return []
   }
 
-  const results: string[][] = [];
-  const length = str.length;
+  const results: string[][] = []
+  const length = str.length
 
   function backtrack(result: string[] = [], curr = 0) {
     if (curr === length) {
-      results.push(result);
+      results.push(result)
     } else {
       for (let i = curr; i < length; i++) {
-        const segment = str.slice(curr, i + 1);
+        const segment = str.slice(curr, i + 1)
         if (isPalindrome(segment)) {
-          backtrack([...result, segment], i + 1);
+          backtrack([...result, segment], i + 1)
         }
       }
     }
   }
 
-  backtrack();
-  return results;
+  backtrack()
+  return results
 }

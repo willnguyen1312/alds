@@ -16,60 +16,60 @@ has ten inversions: every distinct pair forms an inversion.
 
 function mergeAndCount(arr: number[], l: number, m: number, r: number): number {
   // Left subarray
-  let left: number[] = [];
+  let left: number[] = []
   for (let i = l; i < m + 1; i++) {
-    left.push(arr[i]);
+    left.push(arr[i])
   }
 
   // Right subarray
-  let right = [];
+  let right = []
   for (let i = m + 1; i < r + 1; i++) {
-    right.push(arr[i]);
+    right.push(arr[i])
   }
 
-  let i = 0;
-  let j = 0;
-  let k = l;
-  let result = 0;
+  let i = 0
+  let j = 0
+  let k = l
+  let result = 0
 
   while (i < left.length && j < right.length) {
     if (left[i] <= right[j]) {
-      arr[k++] = left[i++];
+      arr[k++] = left[i++]
     } else {
-      arr[k++] = right[j++];
-      result += m + 1 - (l + i);
+      arr[k++] = right[j++]
+      result += m + 1 - (l + i)
     }
   }
 
   while (i < left.length) {
-    arr[k++] = left[i++];
+    arr[k++] = left[i++]
   }
 
   while (j < right.length) {
-    arr[k++] = right[j++];
+    arr[k++] = right[j++]
   }
 
-  return result;
+  return result
 }
 
 export function countInversion(
   arr: number[],
   l = 0,
-  r = arr.length - 1
+  r = arr.length - 1,
 ): number {
-  let count = 0;
+  let count = 0
   if (l < r) {
-    let m = Math.floor((l + r) / 2);
+    let m = Math.floor((l + r) / 2)
 
     // Left subarray count
-    count += countInversion(arr, l, m);
+    count += countInversion(arr, l, m)
 
     // Right subarray count
-    count += countInversion(arr, m + 1, r);
+    count += countInversion(arr, m + 1, r)
 
     // Merge count
-    count += mergeAndCount(arr, l, m, r);
+    count += mergeAndCount(arr, l, m, r)
   }
 
-  return count;
+  return count
 }

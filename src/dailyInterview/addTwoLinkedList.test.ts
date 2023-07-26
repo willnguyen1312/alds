@@ -3,15 +3,15 @@ import {
   reverseLinkedList,
   reverseLinkedListIter,
   LinkedListNode,
-} from './addTwoLinkedList';
+} from "./addTwoLinkedList"
 
-describe('addTwoLinkedList', () => {
-  it('should reverseLinkedList correctly', () => {
-    const headNode = new LinkedListNode(1);
-    headNode.next = new LinkedListNode(2);
-    headNode.next.next = new LinkedListNode(3);
+describe("addTwoLinkedList", () => {
+  it("should reverseLinkedList correctly", () => {
+    const headNode = new LinkedListNode(1)
+    headNode.next = new LinkedListNode(2)
+    headNode.next.next = new LinkedListNode(3)
 
-    const result = reverseLinkedList(headNode);
+    const result = reverseLinkedList(headNode)
     expect(result).toMatchInlineSnapshot(`
       LinkedListNode {
         "next": LinkedListNode {
@@ -23,15 +23,15 @@ describe('addTwoLinkedList', () => {
         },
         "val": 3,
       }
-    `);
-  });
+    `)
+  })
 
-  it('should reverseLinkedList correctly', () => {
-    const headNode = new LinkedListNode(4);
-    headNode.next = new LinkedListNode(5);
-    headNode.next.next = new LinkedListNode(6);
+  it("should reverseLinkedList correctly", () => {
+    const headNode = new LinkedListNode(4)
+    headNode.next = new LinkedListNode(5)
+    headNode.next.next = new LinkedListNode(6)
 
-    const result = reverseLinkedListIter(headNode);
+    const result = reverseLinkedListIter(headNode)
     expect(result).toMatchInlineSnapshot(`
       LinkedListNode {
         "next": LinkedListNode {
@@ -43,19 +43,19 @@ describe('addTwoLinkedList', () => {
         },
         "val": 6,
       }
-    `);
-  });
+    `)
+  })
 
-  it('should addTwoLinkedList correctly', () => {
-    const first = new LinkedListNode(2);
-    first.next = new LinkedListNode(4);
-    first.next.next = new LinkedListNode(3);
+  it("should addTwoLinkedList correctly", () => {
+    const first = new LinkedListNode(2)
+    first.next = new LinkedListNode(4)
+    first.next.next = new LinkedListNode(3)
 
-    const second = new LinkedListNode(5);
-    second.next = new LinkedListNode(6);
-    second.next.next = new LinkedListNode(4);
+    const second = new LinkedListNode(5)
+    second.next = new LinkedListNode(6)
+    second.next.next = new LinkedListNode(4)
 
-    const result = addTwoLinkedList(first, second);
+    const result = addTwoLinkedList(first, second)
     expect(result).toMatchInlineSnapshot(`
       LinkedListNode {
         "next": LinkedListNode {
@@ -67,6 +67,6 @@ describe('addTwoLinkedList', () => {
         },
         "val": 7,
       }
-    `);
-  });
-});
+    `)
+  })
+})

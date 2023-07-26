@@ -28,20 +28,20 @@ export class BinaryTreeNode {
     public data: number,
     public left?: BinaryTreeNode,
     public right?: BinaryTreeNode,
-    public parent?: BinaryTreeNode
+    public parent?: BinaryTreeNode,
   ) {}
 }
 
 export function inorderSuccessor(node: BinaryTreeNode): number {
-  const isRoot = !node.parent;
-  const isOnRight = isRoot || node.data > node.parent.data;
-  const direction = isOnRight ? 'right' : 'parent';
+  const isRoot = !node.parent
+  const isOnRight = isRoot || node.data > node.parent.data
+  const direction = isOnRight ? "right" : "parent"
 
-  let current: BinaryTreeNode = node;
+  let current: BinaryTreeNode = node
 
   while (current[direction]) {
-    current = current[direction];
+    current = current[direction]
   }
 
-  return current.data;
+  return current.data
 }

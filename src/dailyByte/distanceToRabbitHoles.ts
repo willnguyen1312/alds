@@ -29,15 +29,15 @@ your grid should look like the following after running the function...
 */
 
 export function distanceToRabbitHoles(grid: number[][]) {
-  const rabbitPositions: number[][] = [];
+  const rabbitPositions: number[][] = []
 
-  const row = grid.length;
-  const column = grid[0].length;
+  const row = grid.length
+  const column = grid[0].length
 
   for (let i = 0; i < row; i++) {
     for (let j = 0; j < column; j++) {
       if (grid[i][j] === 1) {
-        rabbitPositions.push([i, j]);
+        rabbitPositions.push([i, j])
       }
     }
   }
@@ -47,34 +47,30 @@ export function distanceToRabbitHoles(grid: number[][]) {
     { x: -1, y: 0 },
     { x: 0, y: 1 },
     { x: 0, y: -1 },
-  ];
+  ]
 
   function travel(i: number, j: number, currentDistance = 0) {
     if (i < 0 || j < 0 || i >= row || j >= column || grid[i][j] === -1) {
-      return Number.MAX_VALUE;
+      return Number.MAX_VALUE
     }
 
     if (grid[i][j] === 0) {
-      return currentDistance;
+      return currentDistance
     }
 
     const travelSteps = directions.map((direction) => {
-      const original = grid[i][j];
-      grid[i][j] = -1;
-      const step = travel(
-        i + direction.x,
-        j + direction.y,
-        currentDistance + 1
-      );
-      grid[i][j] = original;
-      return step;
-    });
+      const original = grid[i][j]
+      grid[i][j] = -1
+      const step = travel(i + direction.x, j + direction.y, currentDistance + 1)
+      grid[i][j] = original
+      return step
+    })
 
-    return Math.min(...travelSteps);
+    return Math.min(...travelSteps)
   }
 
   for (const position of rabbitPositions) {
-    const [i, j] = position;
-    grid[i][j] = travel(i, j);
+    const [i, j] = position
+    grid[i][j] = travel(i, j)
   }
 }

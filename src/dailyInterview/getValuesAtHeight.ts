@@ -5,34 +5,34 @@ Given a binary tree, return all values given a certain height h
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: number
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function getValuesAtHeight(
   root: BinaryTreeNode,
-  height: number
+  height: number,
 ): number[] {
-  const result: number[] = [];
+  const result: number[] = []
 
   function collect(node: BinaryTreeNode | null, currentHeight: number = 0) {
     if (node) {
-      collect(node.left, ++currentHeight);
+      collect(node.left, ++currentHeight)
 
       if (currentHeight === height) {
-        result.push(node.val);
+        result.push(node.val)
       }
 
-      collect(node.right, currentHeight);
+      collect(node.right, currentHeight)
     }
   }
 
-  collect(root);
+  collect(root)
 
-  return result;
+  return result
 }

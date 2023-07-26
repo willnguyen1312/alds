@@ -12,17 +12,17 @@ Given an integer n, generate the n-th row of the Pascal's Triangle.
 */
 
 export function pascalTriangle(rowIndex: number): number[] {
-  const result: number[] = [1];
+  const result: number[] = [1]
 
-  if (rowIndex === 0) return [1];
-  if (rowIndex === 1) return [1, 1];
+  if (rowIndex === 0) return [1]
+  if (rowIndex === 1) return [1, 1]
 
-  const rowRecord = pascalTriangle(rowIndex - 1);
+  const rowRecord = pascalTriangle(rowIndex - 1)
 
   for (let i = 1; i < rowIndex; i++) {
-    result[i] = rowRecord[i - 1] + rowRecord[i];
+    result[i] = rowRecord[i - 1] + rowRecord[i]
   }
 
-  result.push(1);
-  return result;
+  result.push(1)
+  return result
 }

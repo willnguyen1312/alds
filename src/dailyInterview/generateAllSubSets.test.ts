@@ -1,8 +1,8 @@
-import { generateAllSubSets } from './generateAllSubSets';
+import { generateAllSubSets } from "./generateAllSubSets"
 
-describe('generateAllSubSets function', () => {
-  it('should work', () => {
-    const actual = generateAllSubSets([1, 2, 3]);
+describe("generateAllSubSets function", () => {
+  it("should work", () => {
+    const actual = generateAllSubSets([1, 2, 3])
     expect(actual).toEqual([
       [],
       [1],
@@ -12,6 +12,6 @@ describe('generateAllSubSets function', () => {
       [2],
       [2, 3],
       [3],
-    ]);
-  });
-});
+    ])
+  })
+})

@@ -13,15 +13,15 @@ s = "coding", t "ingcod", return ''
 */
 
 export function spotTheDifference(first: string, second: string): string {
-  const setChar = new Set(second);
+  const setChar = new Set(second)
 
   for (const char of first) {
-    setChar.delete(char);
+    setChar.delete(char)
   }
 
   for (const char of setChar) {
-    return char;
+    return char
   }
 
-  return '';
+  return ""
 }

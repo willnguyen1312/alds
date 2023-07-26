@@ -6,12 +6,12 @@ Do not use any built in base 2 conversion functions like bin.
 */
 
 export function convertToBase2(numb: number): string {
-  const queue: number[] = [];
+  const queue: number[] = []
 
   while (numb > 0) {
-    queue.unshift(numb % 2);
-    numb = Math.floor(numb / 2);
+    queue.unshift(numb % 2)
+    numb = Math.floor(numb / 2)
   }
 
-  return queue.map(String).join('');
+  return queue.map(String).join("")
 }

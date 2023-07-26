@@ -2,14 +2,14 @@ import {
   LinkedListNode,
   rotateCounterClockwise,
   rotateClockwise,
-} from './rotateLinkedList';
+} from "./rotateLinkedList"
 
-describe('rotateLinkedList function', () => {
-  it('should work', () => {
+describe("rotateLinkedList function", () => {
+  it("should work", () => {
     const node = new LinkedListNode(
       1,
-      new LinkedListNode(2, new LinkedListNode(3, new LinkedListNode(4)))
-    );
+      new LinkedListNode(2, new LinkedListNode(3, new LinkedListNode(4))),
+    )
 
     expect(rotateCounterClockwise(node, 3)).toMatchInlineSnapshot(`
 LinkedListNode {
@@ -25,12 +25,12 @@ LinkedListNode {
   },
   "val": 4,
 }
-`);
+`)
 
     const node2 = new LinkedListNode(
       1,
-      new LinkedListNode(2, new LinkedListNode(3, new LinkedListNode(4)))
-    );
+      new LinkedListNode(2, new LinkedListNode(3, new LinkedListNode(4))),
+    )
 
     expect(rotateClockwise(node2, 3)).toMatchInlineSnapshot(`
 LinkedListNode {
@@ -46,6 +46,6 @@ LinkedListNode {
   },
   "val": 2,
 }
-`);
-  });
-});
+`)
+  })
+})

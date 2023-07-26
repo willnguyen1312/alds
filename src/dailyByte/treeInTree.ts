@@ -41,24 +41,24 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function treeInTree(root: BinaryTreeNode, subRoot: BinaryTreeNode) {
   const areEqual = (node1: BinaryTreeNode, node2: BinaryTreeNode) => {
-    if (!node1 || !node2) return !node1 && !node2;
-    if (node1.data !== node2.data) return false;
+    if (!node1 || !node2) return !node1 && !node2
+    if (node1.data !== node2.data) return false
     return (
       areEqual(node1.left, node2.left) && areEqual(node1.right, node2.right)
-    );
-  };
+    )
+  }
 
   const dfs = (node: BinaryTreeNode) => {
-    if (!node) return false;
-    if (areEqual(node, subRoot)) return true;
-    return dfs(node.left) || dfs(node.right);
-  };
+    if (!node) return false
+    if (areEqual(node, subRoot)) return true
+    return dfs(node.left) || dfs(node.right)
+  }
 
-  return dfs(root);
+  return dfs(root)
 }

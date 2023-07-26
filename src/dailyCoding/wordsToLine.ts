@@ -16,23 +16,23 @@ No string in the list has a length of more than 10.
 */
 
 export function wordsToLine(str: string, target: number): string[] {
-  const strArr = str.split(' ');
+  const strArr = str.split(" ")
 
-  const result: string[] = [];
-  let current = strArr[0];
+  const result: string[] = []
+  let current = strArr[0]
 
   for (let index = 1; index < strArr.length; index++) {
-    const word = strArr[index];
-    let temp = current + ' ' + word;
+    const word = strArr[index]
+    let temp = current + " " + word
 
     if (temp.length > target) {
-      result.push(current.trimLeft());
-      current = word;
+      result.push(current.trimLeft())
+      current = word
     } else {
-      current = temp;
+      current = temp
     }
   }
 
-  result.push(current);
-  return result;
+  result.push(current)
+  return result
 }

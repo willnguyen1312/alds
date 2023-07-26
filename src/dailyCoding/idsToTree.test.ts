@@ -1,8 +1,8 @@
-import { idsToTree } from './idsToTree';
+import { idsToTree } from "./idsToTree"
 
-describe('idsToTree function', () => {
-  it('should work', () => {
-    const actual = idsToTree([2, 4, 3, 7], [0, 2, 2, 3]);
+describe("idsToTree function", () => {
+  it("should work", () => {
+    const actual = idsToTree([2, 4, 3, 7], [0, 2, 2, 3])
 
     expect(actual).toMatchInlineSnapshot(`
 BinaryTreeNode {
@@ -22,6 +22,6 @@ BinaryTreeNode {
     "right": undefined,
   },
 }
-`);
-  });
-});
+`)
+  })
+})

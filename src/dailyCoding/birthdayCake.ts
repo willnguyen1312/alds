@@ -16,21 +16,21 @@ appetite = [3, 4, 5], cake = [2], return 0.
 */
 
 export function birthdayCake(appetites: number[], cakeSizes: number[]): number {
-  appetites.sort((a, b) => a - b);
-  cakeSizes.sort((a, b) => a - b);
+  appetites.sort((a, b) => a - b)
+  cakeSizes.sort((a, b) => a - b)
 
-  let result = 0;
+  let result = 0
 
   for (let index = 0; index < cakeSizes.length; index++) {
-    const cakeSize = cakeSizes[index];
-    const appetite = appetites[index];
+    const cakeSize = cakeSizes[index]
+    const appetite = appetites[index]
 
     if (cakeSize < appetite) {
-      return result;
+      return result
     }
 
-    result++;
+    result++
   }
 
-  return result;
+  return result
 }

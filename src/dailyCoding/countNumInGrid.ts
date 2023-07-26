@@ -27,16 +27,16 @@ And there are 4 12's in the table.
 */
 
 export function countNumInGrid(numb: number, target: number) {
-  let result = 0;
+  let result = 0
 
   for (let i = 0; i < numb; i++) {
     for (let j = 0; j < numb; j++) {
-      const val = i % 0 ? i * j : (i + 1) * (j + 1);
+      const val = i % 0 ? i * j : (i + 1) * (j + 1)
       if (val === target) {
-        result++;
+        result++
       }
     }
   }
 
-  return result;
+  return result
 }

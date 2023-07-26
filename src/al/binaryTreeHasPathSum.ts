@@ -13,43 +13,42 @@
  */
 
 function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
-  if (root === null) return false;
+  if (root === null) return false
 
-  let nodes: any = [];
-  let values: any = [];
+  let nodes: any = []
+  let values: any = []
 
-  nodes.push(root);
-  values.push(root.val);
+  nodes.push(root)
+  values.push(root.val)
 
   while (nodes[0]) {
-    let curr = nodes.pop();
-    let sumValue = values.pop();
+    let curr = nodes.pop()
+    let sumValue = values.pop()
 
     if (curr.left === null && curr.right === null && sumValue === targetSum) {
-      return true;
+      return true
     }
 
     if (curr.left !== null) {
-      nodes.push(curr.left);
-      values.push(sumValue + curr.left.val);
+      nodes.push(curr.left)
+      values.push(sumValue + curr.left.val)
     }
 
     if (curr.right !== null) {
-      nodes.push(curr.right);
-      values.push(sumValue + curr.right.val);
+      nodes.push(curr.right)
+      values.push(sumValue + curr.right.val)
     }
   }
 
-  return false;
+  return false
 }
 
 function hasPathSumRecur(root: TreeNode, sum: number): boolean {
-  if (root === null) return false;
-  if (root.val === sum && root.left === null && root.right === null)
-    return true;
+  if (root === null) return false
+  if (root.val === sum && root.left === null && root.right === null) return true
 
   return (
     hasPathSum(root.left, sum - root.val) ||
     hasPathSum(root.right, sum - root.val)
-  );
+  )
 }

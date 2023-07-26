@@ -14,24 +14,24 @@ Output: [0,0,1,1,2,2]
 */
 
 export function sort012(numbs: number[]): number[] {
-  const result = numbs.slice();
+  const result = numbs.slice()
 
-  let low = 0;
-  let high = result.length - 1;
-  let mid = 0;
+  let low = 0
+  let high = result.length - 1
+  let mid = 0
 
   while (mid <= high) {
     if (result[mid] === 0) {
-      [result[low], result[mid]] = [result[mid], result[low]];
-      low++;
-      mid++;
+      ;[result[low], result[mid]] = [result[mid], result[low]]
+      low++
+      mid++
     } else if (result[mid] === 1) {
-      mid++;
+      mid++
     } else {
-      [result[high], result[mid]] = [result[mid], result[high]];
-      high--;
+      ;[result[high], result[mid]] = [result[mid], result[high]]
+      high--
     }
   }
 
-  return result;
+  return result
 }

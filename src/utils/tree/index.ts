@@ -1,60 +1,60 @@
 export class BinaryTreeNode {
-  val: any;
-  left?: BinaryTreeNode | null;
-  right?: BinaryTreeNode | null;
+  val: any
+  left?: BinaryTreeNode | null
+  right?: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function preOrderTraversal(root: BinaryTreeNode): any[] {
-  let result = [];
+  let result = []
 
   function traverse(root: BinaryTreeNode) {
     if (!root) {
-      return;
+      return
     }
-    result.push(root.val);
-    traverse(root.left);
-    traverse(root.right);
+    result.push(root.val)
+    traverse(root.left)
+    traverse(root.right)
   }
 
-  traverse(root);
+  traverse(root)
 
-  return result;
+  return result
 }
 
 export function inOrderTraversal(root: BinaryTreeNode): any[] {
-  let result = [];
+  let result = []
 
   function traverse(root: BinaryTreeNode) {
     if (!root) {
-      return;
+      return
     }
-    traverse(root.left);
-    result.push(root.val);
-    traverse(root.right);
+    traverse(root.left)
+    result.push(root.val)
+    traverse(root.right)
   }
 
-  traverse(root);
+  traverse(root)
 
-  return result;
+  return result
 }
 
 export function postOrderTraversal(root: BinaryTreeNode): any[] {
-  let result = [];
+  let result = []
 
   function traverse(root: BinaryTreeNode) {
     if (!root) {
-      return;
+      return
     }
-    traverse(root.left);
-    traverse(root.right);
-    result.push(root.val);
+    traverse(root.left)
+    traverse(root.right)
+    result.push(root.val)
   }
 
-  traverse(root);
+  traverse(root)
 
-  return result;
+  return result
 }

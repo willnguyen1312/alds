@@ -22,19 +22,19 @@ In this case we chose not to compress chars.
 */
 
 export function stringCompression(strs: string[]): number {
-  const compressionResult: string[] = [];
-  let current = 0;
+  const compressionResult: string[] = []
+  let current = 0
 
   while (current < strs.length) {
-    let forward = current + 1;
+    let forward = current + 1
 
     while (forward < strs.length && strs[current] === strs[forward]) {
-      forward++;
+      forward++
     }
 
-    compressionResult.push(strs[current], `${forward - current}`);
-    current = forward;
+    compressionResult.push(strs[current], `${forward - current}`)
+    current = forward
   }
 
-  return compressionResult.length;
+  return compressionResult.length
 }

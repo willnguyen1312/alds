@@ -6,16 +6,16 @@ no elements are adjacent numbers of each other.
 */
 
 export function maxNoneAdjacentList(numbs: number[]): number {
-  const n = numbs.length;
-  let incl = numbs[0];
-  let excl = 0;
-  let exclNew: number;
+  const n = numbs.length
+  let incl = numbs[0]
+  let excl = 0
+  let exclNew: number
 
   for (let i = 1; i < n; i++) {
-    exclNew = Math.max(incl, excl);
-    incl = excl + numbs[i];
-    excl = exclNew;
+    exclNew = Math.max(incl, excl)
+    incl = excl + numbs[i]
+    excl = exclNew
   }
 
-  return Math.max(incl, excl);
+  return Math.max(incl, excl)
 }

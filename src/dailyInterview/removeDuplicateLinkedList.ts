@@ -6,23 +6,26 @@ so that all elements in the linked list are unique.
 */
 
 export class LinkedListNode {
-  constructor(public data: number, public next?: LinkedListNode) {}
+  constructor(
+    public data: number,
+    public next?: LinkedListNode,
+  ) {}
 }
 
 export function removeDuplicateLinkedList(
-  head: LinkedListNode
+  head: LinkedListNode,
 ): LinkedListNode {
-  let current = head;
+  let current = head
 
   while (current) {
-    let next = current.next;
+    let next = current.next
     while (next && next.next && next.data === next.next.data) {
-      next = next.next;
+      next = next.next
     }
 
-    current.next = next;
-    current = next;
+    current.next = next
+    current = next
   }
 
-  return head;
+  return head
 }

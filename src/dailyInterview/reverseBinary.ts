@@ -11,23 +11,23 @@ Output: 1260388352
 */
 
 function toBinary(numb: number): number[] {
-  const result: number[] = [];
+  const result: number[] = []
 
   while (numb > 0) {
-    result.unshift(numb % 2);
-    numb = Math.floor(numb / 2);
+    result.unshift(numb % 2)
+    numb = Math.floor(numb / 2)
   }
 
-  return result;
+  return result
 }
 
 export function reverseBinary(numb: number): number {
-  let binaryNumbs = toBinary(numb);
+  let binaryNumbs = toBinary(numb)
   binaryNumbs = Array(32 - binaryNumbs.length)
     .fill(0)
-    .concat(binaryNumbs);
+    .concat(binaryNumbs)
 
   return binaryNumbs.reduce((acc, cur, index) => {
-    return (acc += cur ? Math.pow(2, index) : 0);
-  }, 0);
+    return (acc += cur ? Math.pow(2, index) : 0)
+  }, 0)
 }

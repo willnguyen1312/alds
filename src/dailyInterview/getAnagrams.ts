@@ -11,28 +11,28 @@ Output: [['abc', 'cba'], ['bcd', 'cbd'], ['efg']]
 */
 
 export function getAnagrams(strs: string[]): string[][] {
-  const map = {};
+  const map = {}
 
   for (const str of strs) {
-    const hashedStr = hashCoder(str);
+    const hashedStr = hashCoder(str)
     if (!map[hashedStr]) {
-      map[hashedStr] = [];
+      map[hashedStr] = []
     }
-    map[hashedStr].push(str);
+    map[hashedStr].push(str)
   }
 
-  return Object.values(map);
+  return Object.values(map)
 }
 
 const hashCoder = (tableKey: string) => {
-  let hash = 1;
+  let hash = 1
 
   for (const char of tableKey) {
-    hash *= PRIMES[char];
+    hash *= PRIMES[char]
   }
 
-  return hash;
-};
+  return hash
+}
 
 const PRIMES = {
   a: 2,
@@ -61,4 +61,4 @@ const PRIMES = {
   x: 89,
   y: 97,
   z: 101,
-};
+}

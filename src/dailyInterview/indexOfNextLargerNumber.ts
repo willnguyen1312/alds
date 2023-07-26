@@ -7,24 +7,24 @@ then use -1 instead.
 */
 
 export function indexOfNextLargerNumber(numbs: number[]): number[] {
-  const result = new Array(numbs.length);
-  let i = 0;
-  let j = 1;
+  const result = new Array(numbs.length)
+  let i = 0
+  let j = 1
 
   while (j < numbs.length) {
     if (numbs[j] > numbs[i]) {
       while (i < j) {
-        result[i] = j;
-        i++;
+        result[i] = j
+        i++
       }
     }
-    j++;
+    j++
   }
 
   while (i < j) {
-    result[i] = -1;
-    i++;
+    result[i] = -1
+    i++
   }
 
-  return result;
+  return result
 }

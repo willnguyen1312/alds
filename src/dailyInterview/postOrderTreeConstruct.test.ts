@@ -1,7 +1,7 @@
-import { postOrderTreeConstruct } from './postOrderTreeConstruct';
+import { postOrderTreeConstruct } from "./postOrderTreeConstruct"
 
-describe('postOrderTreeConstruct function', () => {
-  it('should work', () => {
+describe("postOrderTreeConstruct function", () => {
+  it("should work", () => {
     expect(postOrderTreeConstruct([1, 3, 2])).toMatchInlineSnapshot(`
 BinaryTreeNode {
   "data": 2,
@@ -16,6 +16,6 @@ BinaryTreeNode {
     "right": null,
   },
 }
-`);
-  });
-});
+`)
+  })
+})

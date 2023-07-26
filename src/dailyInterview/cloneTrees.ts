@@ -23,34 +23,34 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function cloneTreesIter(
   first: BinaryTreeNode,
   second: BinaryTreeNode,
-  firstTarget: BinaryTreeNode
+  firstTarget: BinaryTreeNode,
 ) {
-  const firstStack = [first];
-  const secondStack = [second];
+  const firstStack = [first]
+  const secondStack = [second]
 
   while (firstStack.length && secondStack.length) {
-    const firstNode = firstStack.pop();
-    const secondNode = secondStack.pop();
+    const firstNode = firstStack.pop()
+    const secondNode = secondStack.pop()
 
     if (firstNode === firstTarget) {
-      return secondNode;
+      return secondNode
     }
 
     if (firstNode.left) {
-      firstStack.push(firstNode.left);
-      secondStack.push(secondNode.left);
+      firstStack.push(firstNode.left)
+      secondStack.push(secondNode.left)
     }
 
     if (firstNode.right) {
-      firstStack.push(firstNode.right);
-      secondStack.push(secondNode.right);
+      firstStack.push(firstNode.right)
+      secondStack.push(secondNode.right)
     }
   }
 }
@@ -58,23 +58,23 @@ export function cloneTreesIter(
 export function cloneTreesRecur(
   first: BinaryTreeNode,
   second: BinaryTreeNode,
-  firstTarget: BinaryTreeNode
+  firstTarget: BinaryTreeNode,
 ) {
   if (first === firstTarget) {
-    return second;
+    return second
   }
 
   if (first.left) {
-    const found = cloneTreesRecur(first.left, second.left, firstTarget);
+    const found = cloneTreesRecur(first.left, second.left, firstTarget)
     if (found) {
-      return found;
+      return found
     }
   }
 
   if (first.right) {
-    const found = cloneTreesRecur(first.right, second.right, firstTarget);
+    const found = cloneTreesRecur(first.right, second.right, firstTarget)
     if (found) {
-      return found;
+      return found
     }
   }
 }

@@ -20,22 +20,22 @@ The 5 trees are:
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: number
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function countNumberOfUnivalSubtrees(root: BinaryTreeNode): number {
-  let result = 0;
+  let result = 0
 
   function count(node: BinaryTreeNode) {
     if (!node.left && !node.right) {
-      result++;
-      return true;
+      result++
+      return true
     }
 
     if (
@@ -44,14 +44,14 @@ export function countNumberOfUnivalSubtrees(root: BinaryTreeNode): number {
       node.val === node.left?.val &&
       node.val === node.right?.val
     ) {
-      result++;
-      return true;
+      result++
+      return true
     }
 
-    return false;
+    return false
   }
 
-  count(root);
+  count(root)
 
-  return result;
+  return result
 }

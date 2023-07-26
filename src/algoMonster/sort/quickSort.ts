@@ -1,34 +1,34 @@
 function quickSortInternal(arr: number[], start: number, end: number) {
   if (start >= end) {
-    return;
+    return
   }
 
-  let pivot = arr[end - 1];
-  let startPointer = start;
-  let endPointer = end - 1;
+  let pivot = arr[end - 1]
+  let startPointer = start
+  let endPointer = end - 1
 
   while (startPointer < endPointer) {
     while (arr[startPointer] < pivot && startPointer < endPointer) {
-      startPointer++;
+      startPointer++
     }
 
     while (arr[endPointer] >= pivot && startPointer < endPointer) {
-      endPointer--;
+      endPointer--
     }
 
     if (startPointer === endPointer) {
-      break;
+      break
     }
 
-    [arr[startPointer], arr[endPointer]] = [arr[endPointer], arr[startPointer]];
+    ;[arr[startPointer], arr[endPointer]] = [arr[endPointer], arr[startPointer]]
   }
 
-  [arr[startPointer], arr[end - 1]] = [arr[end - 1], arr[startPointer]];
-  quickSortInternal(arr, start, startPointer);
-  quickSortInternal(arr, startPointer + 1, end);
+  ;[arr[startPointer], arr[end - 1]] = [arr[end - 1], arr[startPointer]]
+  quickSortInternal(arr, start, startPointer)
+  quickSortInternal(arr, startPointer + 1, end)
 }
 
 export function quickSort(arr: number[]): number[] {
-  quickSortInternal(arr, 0, arr.length);
-  return arr;
+  quickSortInternal(arr, 0, arr.length)
+  return arr
 }

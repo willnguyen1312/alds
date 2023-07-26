@@ -6,16 +6,16 @@
 // The output should be in alphabetical order by the first elements of each group of anagrams.
 
 export function groupAnagrams(input: string[]): string[][] {
-  const lookup: Map<string, string[]> = new Map();
+  const lookup: Map<string, string[]> = new Map()
 
   for (const str of input) {
-    const sorted = str.split('').sort().join('');
+    const sorted = str.split("").sort().join("")
     if (lookup.has(sorted)) {
-      lookup.set(sorted, lookup.get(sorted).concat(str));
+      lookup.set(sorted, lookup.get(sorted).concat(str))
     } else {
-      lookup.set(sorted, [str]);
+      lookup.set(sorted, [str])
     }
   }
 
-  return Array.from(lookup.values());
+  return Array.from(lookup.values())
 }

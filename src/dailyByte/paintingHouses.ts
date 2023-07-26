@@ -12,20 +12,20 @@ Paint the first house red, paint the second house blue, and paint the third hous
 */
 
 export function paintingHouses(costs: number[][]): number {
-  costs = costs.sort((a, b) => b[0] - b[1] - b[2] - (a[0] - a[1] - a[2]));
-  let result = 0;
+  costs = costs.sort((a, b) => b[0] - b[1] - b[2] - (a[0] - a[1] - a[2]))
+  let result = 0
 
   for (let i = 0; i < costs.length / 3; i++) {
-    result += costs[i][2];
+    result += costs[i][2]
   }
 
   for (let i = Math.floor(costs.length / 3); i < (costs.length / 3) * 2; i++) {
-    result += costs[i][1];
+    result += costs[i][1]
   }
 
   for (let i = Math.floor((costs.length / 3) * 2); i < costs.length; i++) {
-    result += costs[i][0];
+    result += costs[i][0]
   }
 
-  return result;
+  return result
 }

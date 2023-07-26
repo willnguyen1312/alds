@@ -13,24 +13,24 @@ output: 7 (order is 1 _ _ 1 2 _ 1)
 
 export function multiTasking(tasks: number[], cooldown: number): number {
   if (cooldown <= 0) {
-    return tasks.length;
+    return tasks.length
   }
 
-  const lastTimeTrack: Record<number, number> = {};
-  let result = 0;
-  let taskIndex = 0;
+  const lastTimeTrack: Record<number, number> = {}
+  let result = 0
+  let taskIndex = 0
 
   while (taskIndex < tasks.length) {
-    const task = tasks[taskIndex];
-    const last = lastTimeTrack[task];
+    const task = tasks[taskIndex]
+    const last = lastTimeTrack[task]
 
     if (last === undefined || result - last > cooldown) {
-      lastTimeTrack[task] = result;
-      taskIndex++;
+      lastTimeTrack[task] = result
+      taskIndex++
     }
 
-    result++;
+    result++
   }
 
-  return result;
+  return result
 }

@@ -25,60 +25,60 @@ const directions = [
   { x: -1, y: 0 },
   { x: 0, y: 1 },
   { x: 0, y: -1 },
-];
+]
 
 export function checkWordExistInGrid(grid: string[][], word: string): boolean {
-  const rowCount = grid.length;
-  const colCount = grid[0].length;
+  const rowCount = grid.length
+  const colCount = grid[0].length
 
   function checkWordExistInGridHelper(
     row: number,
     column: number,
-    currentWord: string
+    currentWord: string,
   ): boolean {
     if (
       row < 0 ||
       column < 0 ||
       row >= rowCount ||
       column >= colCount ||
-      grid[row][column] === '*'
+      grid[row][column] === "*"
     ) {
-      return false;
+      return false
     }
 
-    const updatedWord = currentWord + grid[row][column];
+    const updatedWord = currentWord + grid[row][column]
 
     if (updatedWord === word) {
-      return true;
+      return true
     }
 
     for (const direction of directions) {
-      const original = grid[row][column];
-      grid[row][column] = '*';
+      const original = grid[row][column]
+      grid[row][column] = "*"
 
       if (
         checkWordExistInGridHelper(
           row + direction.x,
           column + direction.y,
-          updatedWord
+          updatedWord,
         )
       ) {
-        return true;
+        return true
       }
 
-      grid[row][column] = original;
+      grid[row][column] = original
     }
 
-    return false;
+    return false
   }
 
   for (let i = 0; i < rowCount; i++) {
     for (let j = 0; j < colCount; j++) {
-      if (checkWordExistInGridHelper(i, j, '')) {
-        return true;
+      if (checkWordExistInGridHelper(i, j, "")) {
+        return true
       }
     }
   }
 
-  return false;
+  return false
 }

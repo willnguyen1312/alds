@@ -22,19 +22,19 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function sumLeftLeaves(node: BinaryTreeNode): number {
-  let result = 0;
+  let result = 0
   if (!node) {
-    return result;
+    return result
   }
 
   if (node.left && !node.left.left) {
-    result = node.left.data;
+    result = node.left.data
   }
 
-  return result + sumLeftLeaves(node.left) + sumLeftLeaves(node.right);
+  return result + sumLeftLeaves(node.left) + sumLeftLeaves(node.right)
 }

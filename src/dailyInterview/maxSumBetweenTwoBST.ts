@@ -8,29 +8,29 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function maxSumBetweenTwoBST(root: BinaryTreeNode): number {
-  let result = Number.MIN_VALUE;
+  let result = Number.MIN_VALUE
 
   function traverse(node: BinaryTreeNode) {
     if (!node) {
-      return;
+      return
     }
 
     if (node.left) {
-      result = Math.max(result, node.data + node.left.data);
-      traverse(node.left);
+      result = Math.max(result, node.data + node.left.data)
+      traverse(node.left)
     }
 
     if (node.right) {
-      result = Math.max(result, node.data + node.right.data);
-      traverse(node.right);
+      result = Math.max(result, node.data + node.right.data)
+      traverse(node.right)
     }
   }
 
-  traverse(root);
-  return result;
+  traverse(root)
+  return result
 }

@@ -6,32 +6,32 @@
 
 export function courseSchedule(
   numCourses: number,
-  prerequisites: number[][]
+  prerequisites: number[][],
 ): number[] {
-  const seen: Set<number> = new Set();
-  const seeing: Set<number> = new Set();
+  const seen: Set<number> = new Set()
+  const seeing: Set<number> = new Set()
 
-  const adj = [...Array(numCourses)].map((_) => []);
+  const adj = [...Array(numCourses)].map((_) => [])
 
   for (const [a, b] of prerequisites) {
-    adj[a].push(b);
+    adj[a].push(b)
   }
 
   for (let v = 0; v < numCourses; v++) {
-    if (!dfs(v)) return [];
+    if (!dfs(v)) return []
   }
 
-  return [...seen];
+  return [...seen]
 
   function dfs(v: number) {
-    if (seen.has(v)) return true;
-    if (seeing.has(v)) return false;
-    seeing.add(v);
+    if (seen.has(v)) return true
+    if (seeing.has(v)) return false
+    seeing.add(v)
     for (const neighbour of adj[v]) {
-      if (!dfs(neighbour)) return false;
+      if (!dfs(neighbour)) return false
     }
-    seeing.delete(v);
-    seen.add(v);
-    return true;
+    seeing.delete(v)
+    seen.add(v)
+    return true
   }
 }

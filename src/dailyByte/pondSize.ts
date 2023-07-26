@@ -25,21 +25,21 @@ land = [
 */
 
 export function pondSize(grid: number[][]): number {
-  let result = 0;
-  if (grid.length === 0) return result;
+  let result = 0
+  if (grid.length === 0) return result
 
-  const rowsCount = grid.length;
-  const columnsCount = grid[0].length;
+  const rowsCount = grid.length
+  const columnsCount = grid[0].length
   for (let i = 0; i < rowsCount; i++) {
     for (let j = 0; j < columnsCount; j++) {
       if (grid[i][j] === 1) {
-        result++;
-        travelIsland(grid, i, j, rowsCount, columnsCount);
+        result++
+        travelIsland(grid, i, j, rowsCount, columnsCount)
       }
     }
   }
 
-  return result;
+  return result
 }
 
 const directions = [
@@ -47,14 +47,14 @@ const directions = [
   { x: -1, y: 0 },
   { x: 0, y: 1 },
   { x: 0, y: -1 },
-];
+]
 
 function travelIsland(
   grid: any,
   i: number,
   j: number,
   rowsCount: number,
-  columnsCount: number
+  columnsCount: number,
 ) {
   if (
     i < 0 ||
@@ -63,10 +63,10 @@ function travelIsland(
     j >= columnsCount ||
     grid[i][j] === 0
   ) {
-    return;
+    return
   }
 
-  grid[i][j] = 0;
+  grid[i][j] = 0
 
   for (const direction of directions) {
     travelIsland(
@@ -74,7 +74,7 @@ function travelIsland(
       i + direction.x,
       j + direction.y,
       rowsCount,
-      columnsCount
-    );
+      columnsCount,
+    )
   }
 }

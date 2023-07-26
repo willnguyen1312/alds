@@ -15,9 +15,9 @@ export function threeInRow(numbs: number[]): boolean {
       numbs[i + 1] % 2 === 1 &&
       numbs[i + 2] % 2 === 1
     ) {
-      return true;
+      return true
     }
   }
 
-  return false;
+  return false
 }

@@ -1,8 +1,8 @@
-import { TreeNode, invertBST } from './invertBST';
+import { TreeNode, invertBST } from "./invertBST"
 
-describe('invertBST function', () => {
-  it('should work', () => {
-    const root = new TreeNode(3, new TreeNode(-5), new TreeNode(10));
+describe("invertBST function", () => {
+  it("should work", () => {
+    const root = new TreeNode(3, new TreeNode(-5), new TreeNode(10))
 
     expect(invertBST(root)).toMatchInlineSnapshot(`
       TreeNode {
@@ -18,6 +18,6 @@ describe('invertBST function', () => {
         },
         "val": 3,
       }
-    `);
-  });
-});
+    `)
+  })
+})

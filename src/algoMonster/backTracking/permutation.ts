@@ -1,27 +1,27 @@
 export function permutation(letters: string): string[] {
-  const result: string[] = [];
-  const used: boolean[] = [];
+  const result: string[] = []
+  const used: boolean[] = []
 
   function dfs(path: string[] = []) {
     if (path.length === letters.length) {
-      result.push(path.join(''));
-      return;
+      result.push(path.join(""))
+      return
     }
 
     for (let index = 0; index < letters.length; index++) {
-      const letter = letters[index];
+      const letter = letters[index]
       if (used[index]) {
-        continue;
+        continue
       }
 
-      path.push(letter);
-      used[index] = true;
-      dfs(path);
-      path.pop();
-      used[index] = false;
+      path.push(letter)
+      used[index] = true
+      dfs(path)
+      path.pop()
+      used[index] = false
     }
   }
 
-  dfs();
-  return result;
+  dfs()
+  return result
 }

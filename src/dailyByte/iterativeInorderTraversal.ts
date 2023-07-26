@@ -21,25 +21,25 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function iterativeInorderTraversal(root: BinaryTreeNode): number[] {
-  const result: number[] = [];
-  let current = root;
-  const stack: BinaryTreeNode[] = [];
+  const result: number[] = []
+  let current = root
+  const stack: BinaryTreeNode[] = []
 
   while (current || stack.length) {
     while (current) {
-      stack.push(current);
-      current = current.left;
+      stack.push(current)
+      current = current.left
     }
 
-    const node = stack.pop();
-    result.push(node.data);
-    current = node.right;
+    const node = stack.pop()
+    result.push(node.data)
+    current = node.right
   }
 
-  return result;
+  return result
 }

@@ -10,20 +10,20 @@ Assume that all numbers will be greater than or equal to 0, and each element can
 */
 
 export function mergeListOfNumberIntoRanges(numbs: number[]): string[] {
-  const result: string[] = [];
-  let start: number = numbs[0];
-  let end: number = numbs[0];
+  const result: string[] = []
+  let start: number = numbs[0]
+  let end: number = numbs[0]
 
   for (let index = 0; index < numbs.length; index++) {
-    const element = numbs[index];
-    const diff = element - end;
+    const element = numbs[index]
+    const diff = element - end
     if (diff > 1) {
-      result.push(`${start}->${end}`);
-      start = element;
+      result.push(`${start}->${end}`)
+      start = element
     }
-    end = element;
+    end = element
   }
 
-  result.push(`${start}->${end}`);
-  return result;
+  result.push(`${start}->${end}`)
+  return result
 }

@@ -1,29 +1,29 @@
 export type TreeNodeWithoutParentLink = {
-  label: string;
-  children?: TreeNodeWithoutParentLink[];
-};
+  label: string
+  children?: TreeNodeWithoutParentLink[]
+}
 
 export type TreeNodeWithParentLink = {
-  label: string;
-  children?: TreeNodeWithParentLink[];
-  parent?: TreeNodeWithParentLink;
-};
+  label: string
+  children?: TreeNodeWithParentLink[]
+  parent?: TreeNodeWithParentLink
+}
 
 export const addParentLinkToTreeNode = (
-  tree: TreeNodeWithParentLink[]
+  tree: TreeNodeWithParentLink[],
 ): TreeNodeWithParentLink[] => {
-  const clonedTree = JSON.parse(JSON.stringify(tree));
-  clonedTree.forEach((node) => dfs(node));
+  const clonedTree = JSON.parse(JSON.stringify(tree))
+  clonedTree.forEach((node) => dfs(node))
 
-  return clonedTree;
-};
+  return clonedTree
+}
 
 const dfs = (
   treeNode?: TreeNodeWithParentLink,
-  parent?: TreeNodeWithParentLink
+  parent?: TreeNodeWithParentLink,
 ) => {
-  if (!treeNode) return;
+  if (!treeNode) return
 
-  treeNode.children?.forEach((node) => dfs(node, treeNode));
-  treeNode.parent = parent;
-};
+  treeNode.children?.forEach((node) => dfs(node, treeNode))
+  treeNode.parent = parent
+}

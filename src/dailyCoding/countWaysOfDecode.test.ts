@@ -1,8 +1,8 @@
-import { countWaysOfDecode } from './countWaysOfDecode';
+import { countWaysOfDecode } from "./countWaysOfDecode"
 
-describe('countWaysOfDecode function', () => {
-  it('should work', () => {
-    const actual = countWaysOfDecode('111');
-    expect(actual).toBe(3);
-  });
-});
+describe("countWaysOfDecode function", () => {
+  it("should work", () => {
+    const actual = countWaysOfDecode("111")
+    expect(actual).toBe(3)
+  })
+})

@@ -16,37 +16,37 @@ Similarly, given the target word 'MASS', you should return true, since it's the 
 */
 
 export function findWordInGrid(grid: string[][], target: string): boolean {
-  const maxRow = grid.length;
-  const maxColumn = grid[0].length;
+  const maxRow = grid.length
+  const maxColumn = grid[0].length
 
   function checkValid(row: number, column: number) {
-    let result = '';
+    let result = ""
     for (let i = row; i < maxRow; i++) {
-      result += grid[i][column];
+      result += grid[i][column]
       if (result === target) {
-        return true;
+        return true
       }
     }
 
-    result = '';
+    result = ""
 
     for (let i = column; i < maxColumn; i++) {
-      result += grid[row][i];
+      result += grid[row][i]
       if (result === target) {
-        return true;
+        return true
       }
     }
 
-    return false;
+    return false
   }
 
   for (let i = 0; i < maxRow; i++) {
     for (let j = 0; j < maxColumn; j++) {
       if (checkValid(i, j)) {
-        return true;
+        return true
       }
     }
   }
 
-  return false;
+  return false
 }

@@ -10,12 +10,12 @@ three read7() returns “Hello w”, “orld” and then “”.
 
 export function readFile(numb: number) {
   return function (content: string) {
-    let current = 0;
+    let current = 0
 
     return function () {
-      const result = content.slice(current, current + numb);
-      current = Math.min(content.length, current + numb);
-      return result;
-    };
-  };
+      const result = content.slice(current, current + numb)
+      current = Math.min(content.length, current + numb)
+      return result
+    }
+  }
 }

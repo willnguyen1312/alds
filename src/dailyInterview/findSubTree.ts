@@ -28,49 +28,49 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function findSubTree(
   first: BinaryTreeNode,
-  second: BinaryTreeNode
+  second: BinaryTreeNode,
 ): boolean {
   function findInTree(node: BinaryTreeNode, target: number): BinaryTreeNode {
     if (!node) {
-      return null;
+      return null
     }
 
     if (node.data === target) {
-      return node;
+      return node
     }
 
-    return findInTree(node.left, target) || findInTree(node.right, target);
+    return findInTree(node.left, target) || findInTree(node.right, target)
   }
 
-  const foundInSecond = findInTree(second, first.data);
+  const foundInSecond = findInTree(second, first.data)
 
   if (!foundInSecond) {
-    return false;
+    return false
   }
 
   function checkTreesEqual(
     first: BinaryTreeNode,
-    second: BinaryTreeNode
+    second: BinaryTreeNode,
   ): boolean {
     if (!first && !second) {
-      return true;
+      return true
     }
 
     if (first.data !== second.data) {
-      return false;
+      return false
     }
 
     return (
       checkTreesEqual(first.left, second.left) &&
       checkTreesEqual(first.right, second.right)
-    );
+    )
   }
 
-  return checkTreesEqual(first, foundInSecond);
+  return checkTreesEqual(first, foundInSecond)
 }

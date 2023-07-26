@@ -12,20 +12,20 @@ Output: ["pro", "daily"]
 
 export function topKFrequentWords(words: string[], target: number): string[] {
   const wordCount = words.reduce((acc, word) => {
-    acc[word] = acc[word] + 1 || 1;
-    return acc;
-  }, {});
+    acc[word] = acc[word] + 1 || 1
+    return acc
+  }, {})
 
   const orderedWords = Object.keys(wordCount).sort((a, b) => {
-    const count1 = wordCount[a];
-    const count2 = wordCount[b];
+    const count1 = wordCount[a]
+    const count2 = wordCount[b]
 
     if (count1 === count2) {
-      return a > b ? 1 : -1;
+      return a > b ? 1 : -1
     } else {
-      return count2 - count1;
+      return count2 - count1
     }
-  });
+  })
 
-  return orderedWords.slice(0, target);
+  return orderedWords.slice(0, target)
 }

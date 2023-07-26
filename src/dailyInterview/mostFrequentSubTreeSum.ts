@@ -17,32 +17,32 @@ If there is a tie between the most frequent sum, you can return any one of them.
 */
 
 export class BinaryTreeNode {
-  val: number;
-  left?: BinaryTreeNode | null;
-  right?: BinaryTreeNode | null;
+  val: number
+  left?: BinaryTreeNode | null
+  right?: BinaryTreeNode | null
 
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function mostFrequentSubTreeSum(root: BinaryTreeNode): number {
-  let result = 0;
-  const cache: Record<number, number> = {};
+  let result = 0
+  const cache: Record<number, number> = {}
 
   function dfsCount(node: BinaryTreeNode) {
     if (!node) {
-      return 0;
+      return 0
     }
 
-    const total = node.val + dfsCount(node.left) + dfsCount(node.right);
-    cache[total] = cache[total] || 0 + 1;
-    result = Math.max(cache[total], result);
+    const total = node.val + dfsCount(node.left) + dfsCount(node.right)
+    cache[total] = cache[total] || 0 + 1
+    result = Math.max(cache[total], result)
 
-    return total;
+    return total
   }
 
-  dfsCount(root);
+  dfsCount(root)
 
-  return result;
+  return result
 }

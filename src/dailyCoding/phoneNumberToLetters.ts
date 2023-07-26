@@ -10,36 +10,36 @@ then “23” should return [“ad”, “ae”, “af”, “bd”, “be”, �
 */
 
 export function phoneNumberToLetters(digits: string): string[] {
-  if (!digits || digits.length === 0) return [];
+  if (!digits || digits.length === 0) return []
 
-  const map = new Map();
-  map.set('0', []);
-  map.set('1', []);
-  map.set('2', ['a', 'b', 'c']);
-  map.set('3', ['d', 'e', 'f']);
-  map.set('4', ['g', 'h', 'i']);
-  map.set('5', ['j', 'k', 'l']);
-  map.set('6', ['m', 'n', 'o']);
-  map.set('7', ['p', 'q', 'r', 's']);
-  map.set('8', ['t', 'u', 'v']);
-  map.set('9', ['w', 'x', 'y', 'z']);
+  const map = new Map()
+  map.set("0", [])
+  map.set("1", [])
+  map.set("2", ["a", "b", "c"])
+  map.set("3", ["d", "e", "f"])
+  map.set("4", ["g", "h", "i"])
+  map.set("5", ["j", "k", "l"])
+  map.set("6", ["m", "n", "o"])
+  map.set("7", ["p", "q", "r", "s"])
+  map.set("8", ["t", "u", "v"])
+  map.set("9", ["w", "x", "y", "z"])
 
-  const result: string[] = [];
+  const result: string[] = []
 
   function helper(digits: string, permutedArr: string[]) {
     if (permutedArr.length === digits.length) {
-      result.push(permutedArr.join(''));
-      return;
+      result.push(permutedArr.join(""))
+      return
     }
 
     for (const item of map.get(digits[permutedArr.length])) {
-      permutedArr.push(item);
-      helper(digits, permutedArr);
-      permutedArr.pop();
+      permutedArr.push(item)
+      helper(digits, permutedArr)
+      permutedArr.pop()
     }
   }
 
-  helper(digits, []);
+  helper(digits, [])
 
-  return result;
+  return result
 }

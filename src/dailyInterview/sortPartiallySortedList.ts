@@ -12,32 +12,32 @@ As seen above, every number is at most 2 indexes away from its proper sorted ind
 */
 
 export function sortPartiallySortedList(numbs: number[], k: number): number[] {
-  const length = numbs.length;
-  const minHeap = [];
+  const length = numbs.length
+  const minHeap = []
 
   // add first k + 1 items to the min heap
   for (let i = 0; i < k + 1; i++) {
-    minHeap.push(numbs[i]);
+    minHeap.push(numbs[i])
   }
 
   minHeap.sort(function (a, b) {
-    return a - b;
-  });
+    return a - b
+  })
 
-  let index = 0;
+  let index = 0
   for (let i = k + 1; i < length; i++) {
-    numbs[index++] = minHeap[0];
-    minHeap.shift();
-    minHeap.push(numbs[i]);
+    numbs[index++] = minHeap[0]
+    minHeap.shift()
+    minHeap.push(numbs[i])
     minHeap.sort(function (a, b) {
-      return a - b;
-    });
+      return a - b
+    })
   }
 
   while (minHeap.length) {
-    numbs[index++] = minHeap[0];
-    minHeap.shift();
+    numbs[index++] = minHeap[0]
+    minHeap.shift()
   }
 
-  return numbs;
+  return numbs
 }

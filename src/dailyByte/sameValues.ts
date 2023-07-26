@@ -10,22 +10,22 @@
 // nums1 = [4, 5, 6], nums2 = [7, 8, 9], nums3 = [10], return [].
 
 export function sameValues(numbs: number[][]): number[] {
-  const length = numbs.length;
-  const result: number[] = [];
-  const mergedNumbs = numbs.reduce((acc, curr) => acc.concat(curr), []).sort();
+  const length = numbs.length
+  const result: number[] = []
+  const mergedNumbs = numbs.reduce((acc, curr) => acc.concat(curr), []).sort()
 
-  let i = 0;
+  let i = 0
 
   while (i < mergedNumbs.length) {
     if (
       mergedNumbs[i] === mergedNumbs[i + 1] &&
       mergedNumbs[i] === mergedNumbs[i + 2]
     ) {
-      result.push(mergedNumbs[i]);
+      result.push(mergedNumbs[i])
     }
 
-    i += 2;
+    i += 2
   }
 
-  return result;
+  return result
 }

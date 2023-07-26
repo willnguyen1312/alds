@@ -5,20 +5,20 @@ Given a positive integer n, find all primes less than n.
 */
 
 export function findPrimes(numb: number): number[] {
-  const result: number[] = [];
+  const result: number[] = []
   for (let i = 2; i < numb; i++) {
     if (checkPrime(i)) {
-      result.push(i);
+      result.push(i)
     }
   }
 
-  return result;
+  return result
 }
 
 function checkPrime(n: number) {
-  if (n <= 1) return false;
+  if (n <= 1) return false
 
-  for (let i = 2; i < n; i++) if (n % i === 0) return false;
+  for (let i = 2; i < n; i++) if (n % i === 0) return false
 
-  return true;
+  return true
 }

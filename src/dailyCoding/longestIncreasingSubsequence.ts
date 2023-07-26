@@ -9,16 +9,16 @@ the longest increasing subsequence has length 6: it is 0, 2, 6, 9, 11, 15.
 */
 
 export function longestIncreasingSubsequence(numbs: number[]): number {
-  const length = numbs.length;
-  const table = new Array(numbs.length).fill(1);
+  const length = numbs.length
+  const table = new Array(numbs.length).fill(1)
 
   for (let i = 0; i < length; i++) {
     for (let j = 0; j < i; j++) {
       if (numbs[i] > numbs[j] && table[i] < table[j] + 1) {
-        table[i] = table[j] + 1;
+        table[i] = table[j] + 1
       }
     }
   }
 
-  return table[length - 1];
+  return table[length - 1]
 }

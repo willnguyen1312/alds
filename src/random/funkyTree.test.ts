@@ -5,10 +5,10 @@ import {
   dfsIter,
   dfsRecur,
   sampleTree,
-} from './funkyTree';
+} from "./funkyTree"
 
-describe('funkyTree functions', () => {
-  it('should work', () => {
+describe("funkyTree functions", () => {
+  it("should work", () => {
     expect(bfs(sampleTree[0])).toMatchInlineSnapshot(`
       [
         "1",
@@ -18,7 +18,7 @@ describe('funkyTree functions', () => {
         "1.1.1",
         "1.3.1",
       ]
-    `);
+    `)
 
     expect(dfsIter(sampleTree[0])).toMatchInlineSnapshot(`
       [
@@ -29,7 +29,7 @@ describe('funkyTree functions', () => {
         "1.3",
         "1.3.1",
       ]
-    `);
+    `)
 
     expect(dfsRecur(sampleTree[0])).toMatchInlineSnapshot(`
       [
@@ -40,6 +40,6 @@ describe('funkyTree functions', () => {
         "1.3",
         "1.3.1",
       ]
-    `);
-  });
-});
+    `)
+  })
+})

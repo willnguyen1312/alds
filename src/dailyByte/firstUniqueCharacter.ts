@@ -10,34 +10,34 @@ Ex: Given the following strings...
 */
 
 export function firstUniqueCharacter(str: string): number {
-  const countMap: Record<string, number> = str.split('').reduce((acc, cur) => {
-    acc[cur] = (acc[cur] || 0) + 1;
-    return acc;
-  }, {});
+  const countMap: Record<string, number> = str.split("").reduce((acc, cur) => {
+    acc[cur] = (acc[cur] || 0) + 1
+    return acc
+  }, {})
 
   for (let index = 0; index < str.length; index++) {
-    const char = str[index];
+    const char = str[index]
     if (countMap[char] === 1) {
-      return index;
+      return index
     }
   }
 
-  return -1;
+  return -1
 }
 
 export function firstUniqueCharacter2(str: string): number {
   const countMap: Map<string, [number, number]> = str
-    .split('')
+    .split("")
     .reduce((acc, cur, index) => {
-      acc.set(cur, [(acc.get(cur) || 0) + 1, index]);
-      return acc;
-    }, new Map());
+      acc.set(cur, [(acc.get(cur) || 0) + 1, index])
+      return acc
+    }, new Map())
 
   for (const [key, value] of countMap) {
     if (value[0] === 1) {
-      return value[1];
+      return value[1]
     }
   }
 
-  return -1;
+  return -1
 }

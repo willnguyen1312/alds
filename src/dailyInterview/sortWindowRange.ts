@@ -11,26 +11,26 @@ Explanation: Sorting the window (2, 4) which is [7, 5, 6] will also means that t
 */
 
 export function sortWindowRange(numbs: number[]): number[] {
-  let firstPeak;
-  let maxPeak = Number.MIN_VALUE;
+  let firstPeak
+  let maxPeak = Number.MIN_VALUE
 
   for (let index = 1; index < numbs.length - 1; index++) {
-    const prev = numbs[index - 1];
-    const cur = numbs[index];
-    const next = numbs[index + 1];
+    const prev = numbs[index - 1]
+    const cur = numbs[index]
+    const next = numbs[index + 1]
 
     if (cur > prev && cur > next) {
-      firstPeak = firstPeak || index;
-      maxPeak = Math.max(maxPeak, cur);
+      firstPeak = firstPeak || index
+      maxPeak = Math.max(maxPeak, cur)
     }
   }
 
   for (let index = numbs.length - 1; index > 0; index--) {
-    const element = numbs[index];
+    const element = numbs[index]
     if (element < maxPeak) {
-      return [firstPeak, index];
+      return [firstPeak, index]
     }
   }
 
-  return [];
+  return []
 }

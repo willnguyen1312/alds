@@ -9,17 +9,17 @@ return true since 4 + 1 = 5.
 */
 
 export function twoSum(numbs: number[], target: number): boolean {
-  const cache: Set<number> = new Set();
+  const cache: Set<number> = new Set()
 
   for (const numb of numbs) {
-    const remainder = target - numb;
+    const remainder = target - numb
 
     if (cache.has(remainder)) {
-      return true;
+      return true
     }
 
-    cache.add(numb);
+    cache.add(numb)
   }
 
-  return false;
+  return false
 }

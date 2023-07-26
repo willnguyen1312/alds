@@ -11,20 +11,23 @@ Ex: Given the following linked lists...
 */
 
 export class LinkedListNode {
-  constructor(public data: number, public next?: LinkedListNode) {}
+  constructor(
+    public data: number,
+    public next?: LinkedListNode,
+  ) {}
 }
 
 export function detectCycle(head: LinkedListNode): boolean {
-  let current = head;
-  const nodeSet: Set<number> = new Set();
+  let current = head
+  const nodeSet: Set<number> = new Set()
 
   while (current) {
     if (nodeSet.has(current.data)) {
-      return true;
+      return true
     }
-    nodeSet.add(current.data);
-    current = current.next;
+    nodeSet.add(current.data)
+    current = current.next
   }
 
-  return false;
+  return false
 }

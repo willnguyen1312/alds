@@ -1,7 +1,7 @@
-import { subset } from './subset';
+import { subset } from "./subset"
 
-describe('subset function', () => {
-  it('should work', () => {
+describe("subset function", () => {
+  it("should work", () => {
     expect(subset([1, 2, 3])).toEqual([
       [1],
       [1, 2],
@@ -10,6 +10,6 @@ describe('subset function', () => {
       [2],
       [2, 3],
       [3],
-    ]);
-  });
-});
+    ])
+  })
+})

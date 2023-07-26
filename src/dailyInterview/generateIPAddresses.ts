@@ -14,44 +14,44 @@ Output: ['159.255.101.3', '159.255.10.13']
 */
 
 export function generateIPAddresses(str: string): string[] {
-  const result: string[] = [];
-  const length = str.length;
+  const result: string[] = []
+  const length = str.length
 
   for (let i = 1; i < length && i < 4; i++) {
-    const first = str.slice(0, i);
+    const first = str.slice(0, i)
     if (!checkValidPart(first)) {
-      continue;
+      continue
     }
 
     for (let j = 1; i + j < length && j < 4; j++) {
-      const second = str.slice(i, i + j);
+      const second = str.slice(i, i + j)
       if (!checkValidPart(second)) {
-        continue;
+        continue
       }
 
       for (let k = 1; i + j + k < length && k < 4; k++) {
-        const third = str.slice(i + j, i + j + k);
-        const fourth = str.slice(i + j + k);
+        const third = str.slice(i + j, i + j + k)
+        const fourth = str.slice(i + j + k)
         if (!checkValidPart(third) || !checkValidPart(fourth)) {
-          continue;
+          continue
         }
 
-        result.push(`${first}.${second}.${third}.${fourth}`);
+        result.push(`${first}.${second}.${third}.${fourth}`)
       }
     }
   }
 
-  return result;
+  return result
 }
 
 function checkValidPart(str: string) {
   if (str.length > 3) {
-    return false;
+    return false
   }
 
-  if (str[0] === '0' && str.length > 1) {
-    return false;
+  if (str[0] === "0" && str.length > 1) {
+    return false
   }
 
-  return +str >= 0 && +str <= 255;
+  return +str >= 0 && +str <= 255
 }

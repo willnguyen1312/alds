@@ -9,11 +9,11 @@
 // nums = [1, 32, 3492, 23], return 3.
 
 export function evenDigitIntegers(numbs: number[]): number {
-  let count = 0;
+  let count = 0
   for (let i = 0; i < numbs.length; i++) {
     if (numbs[i].toString().length % 2 === 0) {
-      count++;
+      count++
     }
   }
-  return count;
+  return count
 }

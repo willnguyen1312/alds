@@ -7,30 +7,30 @@ creating the sum closest to the target number, you can return any combination in
 */
 
 export function closestSum(numbs: number[], target: number): number[] {
-  const sortedNumbs = numbs.slice().sort((a, b) => a - b);
+  const sortedNumbs = numbs.slice().sort((a, b) => a - b)
 
-  let result: number[] = [];
-  let closestSum = Number.MAX_VALUE;
+  let result: number[] = []
+  let closestSum = Number.MAX_VALUE
 
   for (let i = 0; i < sortedNumbs.length - 2; i++) {
-    let ptr1 = i + 1;
-    let ptr2 = sortedNumbs.length - 1;
+    let ptr1 = i + 1
+    let ptr2 = sortedNumbs.length - 1
 
     while (ptr1 < ptr2) {
-      const currentSum = sortedNumbs[i] + sortedNumbs[ptr1] + sortedNumbs[ptr2];
+      const currentSum = sortedNumbs[i] + sortedNumbs[ptr1] + sortedNumbs[ptr2]
 
       if (Math.abs(target - currentSum) < Math.abs(target - closestSum)) {
-        closestSum = currentSum;
-        result = [sortedNumbs[i], sortedNumbs[ptr1], sortedNumbs[ptr2]];
+        closestSum = currentSum
+        result = [sortedNumbs[i], sortedNumbs[ptr1], sortedNumbs[ptr2]]
       }
 
       if (currentSum > target) {
-        ptr2--;
+        ptr2--
       } else {
-        ptr1++;
+        ptr1++
       }
     }
   }
 
-  return result;
+  return result
 }

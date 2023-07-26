@@ -9,41 +9,41 @@ Output: 0 -> 1 -> 2 -> 3 -> 4 -> NULL
 */
 
 export class LinkedListNode {
-  val: number;
-  next: null | LinkedListNode = null;
+  val: number
+  next: null | LinkedListNode = null
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function reverseLinkedListIter(node: LinkedListNode) {
-  let current = node;
-  let previous = null;
+  let current = node
+  let previous = null
 
   while (current) {
-    const nextNode = current.next;
-    current.next = previous;
-    previous = current;
-    current = nextNode;
+    const nextNode = current.next
+    current.next = previous
+    previous = current
+    current = nextNode
   }
 
-  return previous;
+  return previous
 }
 
 export function reverseLinkedListRecur(node: LinkedListNode) {
-  return reverseLinkedListFromHead(node, null);
+  return reverseLinkedListFromHead(node, null)
 }
 
 function reverseLinkedListFromHead(
   head: LinkedListNode | null,
-  tail: LinkedListNode | null
+  tail: LinkedListNode | null,
 ) {
   if (head === null) {
-    return tail;
+    return tail
   }
 
-  const nextNode = head.next;
-  head.next = tail;
+  const nextNode = head.next
+  head.next = tail
 
-  return reverseLinkedListFromHead(nextNode, head);
+  return reverseLinkedListFromHead(nextNode, head)
 }

@@ -20,57 +20,57 @@ Here's a start:
 */
 
 export class BinaryTreeNode {
-  val: string;
-  left: BinaryTreeNode | null;
-  right: BinaryTreeNode | null;
+  val: string
+  left: BinaryTreeNode | null
+  right: BinaryTreeNode | null
 
   constructor(val: string) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function reconstructTree(
   preorder: string[],
-  inorder: string[]
+  inorder: string[],
 ): BinaryTreeNode {
-  let root: BinaryTreeNode = null;
-  const set = new Set();
-  const stack = [];
+  let root: BinaryTreeNode = null
+  const set = new Set()
+  const stack = []
 
   for (let pre = 0, In = 0; pre < preorder.length; ) {
-    let node = null;
+    let node = null
 
     do {
-      node = new BinaryTreeNode(preorder[pre]);
+      node = new BinaryTreeNode(preorder[pre])
       if (!root) {
-        root = node;
+        root = node
       }
       if (stack.length !== 0) {
         if (set.has(stack[stack.length - 1])) {
-          set.delete(stack[stack.length - 1]);
-          stack.pop().right = node;
+          set.delete(stack[stack.length - 1])
+          stack.pop().right = node
         } else {
-          stack[stack.length - 1].left = node;
+          stack[stack.length - 1].left = node
         }
       }
-      stack.push(node);
-    } while (preorder[pre++] !== inorder[In] && pre < preorder.length);
+      stack.push(node)
+    } while (preorder[pre++] !== inorder[In] && pre < preorder.length)
 
-    node = null;
+    node = null
     while (
       stack.length !== 0 &&
       In < inorder.length &&
       stack[stack.length - 1].val === inorder[In]
     ) {
-      node = stack.pop();
-      In++;
+      node = stack.pop()
+      In++
     }
 
     if (node) {
-      set.add(node);
-      stack.push(node);
+      set.add(node)
+      stack.push(node)
     }
   }
 
-  return root;
+  return root
 }

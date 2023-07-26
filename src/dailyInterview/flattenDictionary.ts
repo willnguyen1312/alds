@@ -23,27 +23,27 @@ You can assume there will be no arrays, and all keys will be strings.
 */
 
 type FlattenDictionaryArg = {
-  [key: string]: number | FlattenDictionaryArg;
-};
+  [key: string]: number | FlattenDictionaryArg
+}
 
 export function flattenDictionary(obj: FlattenDictionaryArg) {
-  const result: Record<string, any> = {};
+  const result: Record<string, any> = {}
 
-  function collect(thing: any, currentPath = '') {
+  function collect(thing: any, currentPath = "") {
     if (thing !== Object(thing) && currentPath) {
-      result[currentPath] = thing;
-      return;
+      result[currentPath] = thing
+      return
     }
 
     for (const key in thing) {
       if (Object.prototype.hasOwnProperty.call(thing, key)) {
-        const element = thing[key];
-        collect(element, currentPath ? currentPath + '.' + key : key);
+        const element = thing[key]
+        collect(element, currentPath ? currentPath + "." + key : key)
       }
     }
   }
 
-  collect(obj);
+  collect(obj)
 
-  return result;
+  return result
 }

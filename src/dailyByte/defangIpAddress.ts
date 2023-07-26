@@ -8,5 +8,5 @@ address = "127.0.0.1", return "127[.]0[.]0[.]1"
 */
 
 export function defangIpAddress(str: string): string {
-  return str.replace(/\./g, '[.]');
+  return str.replace(/\./g, "[.]")
 }

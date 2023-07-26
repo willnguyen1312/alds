@@ -1,21 +1,21 @@
 export function sortArrayByParity(nums: number[]): number[] {
-  const result: number[] = [];
-  let i = 0;
-  let j = nums.length - 1;
-  let k = 0;
+  const result: number[] = []
+  let i = 0
+  let j = nums.length - 1
+  let k = 0
 
   while (k < nums.length) {
-    const element = nums[k];
+    const element = nums[k]
     if (element % 2 === 0) {
-      result[i] = element;
-      i++;
+      result[i] = element
+      i++
     } else {
-      result[j] = element;
-      j--;
+      result[j] = element
+      j--
     }
 
-    k++;
+    k++
   }
 
-  return result;
+  return result
 }

@@ -1,18 +1,18 @@
-import { phoneNumberToLetters } from './phoneNumberToLetters';
+import { phoneNumberToLetters } from "./phoneNumberToLetters"
 
-describe('phoneNumberToLetters function', () => {
-  it('should work', () => {
-    const actual = phoneNumberToLetters('23');
+describe("phoneNumberToLetters function", () => {
+  it("should work", () => {
+    const actual = phoneNumberToLetters("23")
     expect(actual).toEqual([
-      'ad',
-      'ae',
-      'af',
-      'bd',
-      'be',
-      'bf',
-      'cd',
-      'ce',
-      'cf',
-    ]);
-  });
-});
+      "ad",
+      "ae",
+      "af",
+      "bd",
+      "be",
+      "bf",
+      "cd",
+      "ce",
+      "cf",
+    ])
+  })
+})

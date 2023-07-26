@@ -17,29 +17,29 @@ If a < c OR a==c AND b < d.
 */
 
 function sieveOfEratosthenes(n: number, isPrime: boolean[]): void {
-  isPrime[0] = isPrime[1] = false;
-  for (let i = 2; i <= n; i++) isPrime[i] = true;
+  isPrime[0] = isPrime[1] = false
+  for (let i = 2; i <= n; i++) isPrime[i] = true
 
   for (let p = 2; p * p <= n; p++) {
     if (isPrime[p] === true) {
-      for (let i = p * p; i <= n; i += p) isPrime[i] = false;
+      for (let i = p * p; i <= n; i += p) isPrime[i] = false
     }
   }
 }
 
 export function sumPrimes(n: number): number[] {
-  const isPrimeArr = new Array(n + 1);
+  const isPrimeArr = new Array(n + 1)
   for (let i = 0; i < n + 1; i++) {
-    isPrimeArr[i] = false;
+    isPrimeArr[i] = false
   }
 
-  sieveOfEratosthenes(n, isPrimeArr);
+  sieveOfEratosthenes(n, isPrimeArr)
 
   for (let i = 0; i < n; i++) {
     if (isPrimeArr[i] && isPrimeArr[n - i]) {
-      return [i, n - i];
+      return [i, n - i]
     }
   }
 
-  return [];
+  return []
 }

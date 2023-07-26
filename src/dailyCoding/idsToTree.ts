@@ -23,43 +23,43 @@ export class BinaryTreeNode {
   constructor(
     public data: number,
     public left?: BinaryTreeNode,
-    public right?: BinaryTreeNode
+    public right?: BinaryTreeNode,
   ) {}
 }
 
 export function idsToTree(
   childIds: number[],
-  parentIds: number[]
+  parentIds: number[],
 ): BinaryTreeNode {
   const graph: Record<string, number[]> = parentIds.reduce(
     (acc, cur, index) => {
       if (acc[cur]) {
-        acc[cur].push(childIds[index]);
+        acc[cur].push(childIds[index])
       } else {
-        acc[cur] = [childIds[index]];
+        acc[cur] = [childIds[index]]
       }
-      return acc;
+      return acc
     },
-    {}
-  );
+    {},
+  )
 
-  const rootNode = new BinaryTreeNode(graph['0'][0]);
+  const rootNode = new BinaryTreeNode(graph["0"][0])
 
   function buildTree(root: BinaryTreeNode) {
-    const [left, right] = graph[root.data] || [];
+    const [left, right] = graph[root.data] || []
 
     if (left) {
-      root.left = new BinaryTreeNode(left);
-      buildTree(root.left);
+      root.left = new BinaryTreeNode(left)
+      buildTree(root.left)
     }
 
     if (right) {
-      root.right = new BinaryTreeNode(right);
-      buildTree(root.right);
+      root.right = new BinaryTreeNode(right)
+      buildTree(root.right)
     }
   }
 
-  buildTree(rootNode);
+  buildTree(rootNode)
 
-  return rootNode;
+  return rootNode
 }

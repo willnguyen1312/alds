@@ -14,65 +14,65 @@ const colorMap = {
   R: 0,
   G: 1,
   B: 2,
-  0: 'R',
-  1: 'G',
-  2: 'B',
-};
+  0: "R",
+  1: "G",
+  2: "B",
+}
 
 function compare(first: string, second: string): number {
-  return colorMap[first] - colorMap[second];
+  return colorMap[first] - colorMap[second]
 }
 
 export function redGreenBlue(strs: string[]): string[] {
-  const result = strs.slice();
-  const mid = 'G';
+  const result = strs.slice()
+  const mid = "G"
   //   red index
-  let i = 0;
+  let i = 0
   //   green index
-  let j = 0;
+  let j = 0
   //   blue index
-  let n = result.length - 1;
+  let n = result.length - 1
 
   while (j <= n) {
-    const comparedResult = compare(result[j], mid);
+    const comparedResult = compare(result[j], mid)
     if (comparedResult < 0) {
-      [result[i], result[j]] = [result[j], result[i]];
-      i++;
-      j++;
+      ;[result[i], result[j]] = [result[j], result[i]]
+      i++
+      j++
     } else if (comparedResult > 0) {
-      [result[n], result[j]] = [result[j], result[n]];
-      n--;
+      ;[result[n], result[j]] = [result[j], result[n]]
+      n--
     } else {
-      j++;
+      j++
     }
   }
 
-  return result;
+  return result
 }
 
 export function redGreenBlueCountingSort(str: string[]): string[] {
-  const counts: number[] = [];
+  const counts: number[] = []
   for (const item of str) {
     counts[colorMap[item]] = counts[colorMap[item]]
       ? counts[colorMap[item]] + 1
-      : 1;
+      : 1
   }
 
-  let numItemsBefore = 0;
+  let numItemsBefore = 0
   for (let i = 0; i < counts.length; i++) {
-    const count = counts[i];
+    const count = counts[i]
     if (count) {
-      counts[i] = numItemsBefore;
-      numItemsBefore += count;
+      counts[i] = numItemsBefore
+      numItemsBefore += count
     }
   }
 
-  const result = new Array(str.length);
+  const result = new Array(str.length)
 
   for (const item of str) {
-    result[counts[colorMap[item]]] = item;
-    counts[colorMap[item]] += 1;
+    result[counts[colorMap[item]]] = item
+    counts[colorMap[item]] += 1
   }
 
-  return result;
+  return result
 }

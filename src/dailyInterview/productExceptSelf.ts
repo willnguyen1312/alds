@@ -11,21 +11,21 @@ You cannot use division in this problem.
 */
 
 export function productExceptSelf(numbs: number[]): number[] {
-  const result = [];
+  const result = []
 
   // result is the resultant array
   // in this traversal, we initialize with the product of nums on the left of a num
-  result[0] = 1;
+  result[0] = 1
   for (let i = 1; i < numbs.length; ++i) {
-    result[i] = result[i - 1] * numbs[i - 1];
+    result[i] = result[i - 1] * numbs[i - 1]
   }
 
   // in this traversal, we multiply the product of nums on the right of a num
-  let right = 1;
+  let right = 1
   for (let i = numbs.length - 1; i >= 0; --i) {
-    result[i] = right * result[i];
-    right *= numbs[i];
+    result[i] = right * result[i]
+    right *= numbs[i]
   }
 
-  return result;
+  return result
 }

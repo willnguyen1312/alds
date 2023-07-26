@@ -1,8 +1,8 @@
-import { findKthLargest } from './findKLargest';
+import { findKthLargest } from "./findKLargest"
 
-describe('findKLargest', () => {
-  it('should work for the first case', () => {
-    expect(findKthLargest([1, 4, 3, 2, 5, 6, 7], 2)).toBe(6);
-    expect(findKthLargest([3, 5, 2, 4, 6, 8], 3)).toBe(5);
-  });
-});
+describe("findKLargest", () => {
+  it("should work for the first case", () => {
+    expect(findKthLargest([1, 4, 3, 2, 5, 6, 7], 2)).toBe(6)
+    expect(findKthLargest([3, 5, 2, 4, 6, 8], 3)).toBe(5)
+  })
+})

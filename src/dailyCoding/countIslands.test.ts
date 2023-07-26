@@ -1,7 +1,7 @@
-import { countIslands } from './countIslands';
+import { countIslands } from "./countIslands"
 
-describe('countIslands function', () => {
-  it('should work', () => {
+describe("countIslands function", () => {
+  it("should work", () => {
     const actual = countIslands([
       [1, 0, 0, 0, 0],
       [0, 0, 1, 1, 0],
@@ -9,8 +9,8 @@ describe('countIslands function', () => {
       [0, 0, 0, 0, 0],
       [1, 1, 0, 0, 1],
       [1, 1, 0, 0, 1],
-    ]);
+    ])
 
-    expect(actual).toBe(4);
-  });
-});
+    expect(actual).toBe(4)
+  })
+})

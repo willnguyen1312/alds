@@ -7,42 +7,42 @@ Output: 5
 */
 
 function getKth(k: number, nums: number[], start: number, end: number): number {
-  let pivot = nums[end];
+  let pivot = nums[end]
 
-  let left = start;
-  let right = end;
+  let left = start
+  let right = end
 
   while (true) {
     while (nums[left] < pivot && left < right) {
-      left++;
+      left++
     }
 
     while (nums[right] >= pivot && right > left) {
-      right--;
+      right--
     }
 
     if (left === right) {
-      break;
+      break
     }
 
-    [nums[left], nums[right]] = [nums[right], nums[left]];
+    ;[nums[left], nums[right]] = [nums[right], nums[left]]
   }
 
-  [nums[end], nums[left]] = [nums[left], nums[end]];
+  ;[nums[end], nums[left]] = [nums[left], nums[end]]
 
   if (k === left + 1) {
-    return pivot;
+    return pivot
   } else if (k < left + 1) {
-    return getKth(k, nums, start, left - 1);
+    return getKth(k, nums, start, left - 1)
   } else {
-    return getKth(k, nums, left + 1, end);
+    return getKth(k, nums, left + 1, end)
   }
 }
 
 export function findKNumber(nums: number[], k: number) {
   if (k < 1 || nums === null) {
-    return 0;
+    return 0
   }
 
-  return getKth(nums.length - k + 1, nums, 0, nums.length - 1);
+  return getKth(nums.length - k + 1, nums, 0, nums.length - 1)
 }

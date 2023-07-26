@@ -4,58 +4,58 @@
  * @return {number}
  */
 export function calculate(s: string): number {
-  s = s.replace(/\s/g, '');
-  let l1 = 0;
-  let o1 = 1;
-  let l2 = 1;
-  let o2 = 1;
-  const stack: number[] = [];
+  s = s.replace(/\s/g, "")
+  let l1 = 0
+  let o1 = 1
+  let l2 = 1
+  let o2 = 1
+  const stack: number[] = []
 
   for (let i = 0; i < s.length; i++) {
-    const char = s[i];
+    const char = s[i]
 
     if (!Number.isNaN(+char)) {
-      let num = +char;
+      let num = +char
 
       while (i + 1 < s.length && !Number.isNaN(+s[i + 1])) {
-        num = num * 10 + +s[++i];
+        num = num * 10 + +s[++i]
       }
 
-      l2 = o2 === 1 ? l2 * num : l2 / num;
-    } else if (char === '(') {
+      l2 = o2 === 1 ? l2 * num : l2 / num
+    } else if (char === "(") {
       // First preserve current calculation status
-      stack.push(l1);
-      stack.push(o1);
-      stack.push(l2);
-      stack.push(o2);
+      stack.push(l1)
+      stack.push(o1)
+      stack.push(l2)
+      stack.push(o2)
 
       // Reset them for the next calculation
-      l1 = 0;
-      o1 = 1;
-      l2 = 1;
-      o2 = 1;
-    } else if (char === ')') {
+      l1 = 0
+      o1 = 1
+      l2 = 1
+      o2 = 1
+    } else if (char === ")") {
       // First preserve the result of current calculation
-      let num = l1 + o1 * l2;
+      let num = l1 + o1 * l2
 
       // Then restore previous calculation status
-      o2 = stack.pop();
-      l2 = stack.pop();
-      o1 = stack.pop();
-      l1 = stack.pop();
+      o2 = stack.pop()
+      l2 = stack.pop()
+      o1 = stack.pop()
+      l1 = stack.pop()
       // Previous calculation status is now in effect
-      l2 = o2 === 1 ? l2 * num : l2 / num;
-    } else if (char === '*' || char === '/') {
-      o2 = char === '*' ? 1 : -1;
-    } else if (char === '+' || char === '-') {
-      l1 = l1 + o1 * l2;
-      o1 = char === '+' ? 1 : -1;
-      l2 = 1;
-      o2 = 1;
+      l2 = o2 === 1 ? l2 * num : l2 / num
+    } else if (char === "*" || char === "/") {
+      o2 = char === "*" ? 1 : -1
+    } else if (char === "+" || char === "-") {
+      l1 = l1 + o1 * l2
+      o1 = char === "+" ? 1 : -1
+      l2 = 1
+      o2 = 1
     }
   }
 
-  return l1 + o1 * l2;
+  return l1 + o1 * l2
 }
 
 // /**

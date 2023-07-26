@@ -22,36 +22,36 @@ return [3, 7] as killing process 3 will also require killing its child (i.e. pro
 export function reapChildren(
   childIds: number[],
   parentIds: number[],
-  target: number
+  target: number,
 ): number[] {
-  const result: number[] = [];
+  const result: number[] = []
   const graph: Record<string, number[]> = parentIds.reduce(
     (acc, cur, index) => {
       if (acc[cur]) {
-        acc[cur].push(childIds[index]);
+        acc[cur].push(childIds[index])
       } else {
-        acc[cur] = [childIds[index]];
+        acc[cur] = [childIds[index]]
       }
-      return acc;
+      return acc
     },
-    {}
-  );
+    {},
+  )
 
-  let queue: number[] = [target];
+  let queue: number[] = [target]
 
   while (queue.length) {
-    const toQueue: number[] = [];
+    const toQueue: number[] = []
 
     for (const numb of queue) {
-      result.push(numb);
+      result.push(numb)
 
       if (graph[numb]) {
-        toQueue.push(...graph[numb]);
+        toQueue.push(...graph[numb])
       }
     }
 
-    queue = toQueue;
+    queue = toQueue
   }
 
-  return result;
+  return result
 }

@@ -8,13 +8,13 @@
 // nums = [9, 2, 3, 5], return false.
 
 export function doubleValue(numbs: number[]): boolean {
-  const numbSet = new Set<number>(numbs);
+  const numbSet = new Set<number>(numbs)
 
   for (const numb of numbs) {
     if (numbSet.has(numb * 2)) {
-      return true;
+      return true
     }
   }
 
-  return false;
+  return false
 }

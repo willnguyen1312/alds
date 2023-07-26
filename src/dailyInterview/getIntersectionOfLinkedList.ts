@@ -12,24 +12,24 @@ This should return 3 (you may assume that any nodes with the same value are the 
 */
 
 export class LinkedListNode {
-  val: number;
-  next: null | LinkedListNode = null;
+  val: number
+  next: null | LinkedListNode = null
   constructor(val: number) {
-    this.val = val;
+    this.val = val
   }
 }
 
 export function getIntersectionOfLinkedList(
   nodeA: LinkedListNode,
-  nodeB: LinkedListNode
+  nodeB: LinkedListNode,
 ) {
-  let headA = nodeA;
-  let headB = nodeB;
+  let headA = nodeA
+  let headB = nodeB
 
   while (headA !== headB) {
-    headA = headA ? headA.next : nodeB;
-    headB = headB ? headB.next : nodeA;
+    headA = headA ? headA.next : nodeB
+    headB = headB ? headB.next : nodeA
   }
 
-  return headA;
+  return headA
 }
