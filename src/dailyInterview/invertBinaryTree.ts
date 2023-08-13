@@ -38,7 +38,6 @@ export function invertBinaryTree(
 
   invertBinaryTree(binaryTree.left)
   invertBinaryTree(binaryTree.right)
-
   ;[binaryTree.left, binaryTree.right] = [binaryTree.right, binaryTree.left]
   return binaryTree
 }

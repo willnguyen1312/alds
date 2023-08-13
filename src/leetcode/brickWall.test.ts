@@ -17,9 +17,8 @@ export function leastBricks(wall: number[][]): number {
   return rows - maxEdge
 }
 
-
-describe('leastBricks function', () => {
-  it('should work', () => {
+describe("leastBricks function", () => {
+  it("should work", () => {
     const actual = leastBricks([
       [1, 2, 2, 1],
       [3, 1, 2],

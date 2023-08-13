@@ -32,7 +32,6 @@ export function invertBST(root: BinaryTreeNode): BinaryTreeNode {
 
   invertBST(root.left)
   invertBST(root.right)
-
   ;[root.left, root.right] = [root.right, root.left]
   return root
 }
