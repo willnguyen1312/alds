@@ -1,4 +1,4 @@
-function subarraySum(arr: number[], target: number): number {
+function subArraySum(arr: number[], target: number): number {
     const prefixSums = new Map()
     prefixSums.set(0, 1)
     let curSum = 0
@@ -21,9 +21,9 @@ function subarraySum(arr: number[], target: number): number {
     return count
 };
 
-describe("subarraySum", () => {
+describe("subArraySum", () => {
     it("should work", () => {
-        const actual = subarraySum([1, 1, 1], 2)
+        const actual = subArraySum([1, 1, 1], 2)
         expect(actual).toBe(2)
     })
 })
