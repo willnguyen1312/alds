@@ -1,11 +1,8 @@
-// Function to count such triplets
-function countTriplets(arr: number[], target) {
+export function countTriplets(arr: number[], target) {
   arr.sort((a, b) => a - b) // Sort the array
   const length = arr.length
   let count = 0
 
-  // Fix one number and use two pointers to find
-  // the other two numbers whose product is equal to m
   for (let i = 0; i < length - 2; i++) {
     let left = i + 1,
       right = length - 1
