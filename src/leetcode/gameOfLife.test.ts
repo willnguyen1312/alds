@@ -78,8 +78,49 @@ function gameOfLife(board: number[][]): void {
   nextState()
 }
 
+function gameOfLife2(board: number[][]): number[][] {
+  const directions = makeDirections()
+  const n = board.length
+  const m = board[0].length
+
+  const result = Array.from({ length: n }, () =>
+    Array.from({ length: m }, () => -1),
+  )
+
+  for (let x = 0; x < n; x++) {
+    for (let y = 0; y < m; y++) {
+      let count = 0
+
+      for (const [dx, dy] of directions) {
+        const nx = x + dx
+        const ny = y + dy
+
+        const inValid = nx < 0 || ny < 0 || nx >= n || ny >= m
+        if (inValid) continue
+
+        const isLiveCell = board[nx][ny] === 1
+        if (isLiveCell) count++
+        if (count > MAX_NEEDED_NEIGHBORS) break
+      }
+
+      if (board[x][y]) {
+        const underPopulation = count <= 1
+        const overPopulation = count > 3
+        if (underPopulation || overPopulation) result[x][y] = 0
+        else result[x][y] = 1
+      } else {
+        const reproduction = count === 3
+        if (reproduction) result[x][y] = 1
+        else result[x][y] = 0
+      }
+    }
+  }
+
+  return result
+}
+
 describe("game of life", () => {
-  it("should work", () => {
+  it("should work once", () => {
     const board = [
       [0, 1, 0],
       [0, 0, 1],
@@ -88,6 +129,22 @@ describe("game of life", () => {
     ]
     gameOfLife(board)
     expect(board).toEqual([
+      [0, 0, 0],
+      [1, 0, 1],
+      [0, 1, 1],
+      [0, 1, 0],
+    ])
+  })
+
+  it("should work twice", () => {
+    const board = [
+      [0, 1, 0],
+      [0, 0, 1],
+      [1, 1, 1],
+      [0, 0, 0],
+    ]
+    const output = gameOfLife2(board)
+    expect(output).toEqual([
       [0, 0, 0],
       [1, 0, 1],
       [0, 1, 1],
