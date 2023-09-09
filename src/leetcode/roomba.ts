@@ -55,7 +55,7 @@ class Solution {
       // Checks if the next cell is visited and
       // whether the robot can move to the next cell or not.
       // If true, backtrack and find an alternative path
-      if (!this.visited.has(`${x},${y}`) && this.robot.move()) {
+      if (!this.visited.has(`${newX},${newY}`) && this.robot.move()) {
         // Recursively backtracking to find a new path for the robot
         this.backtrack(newX, newY, newDir)
 
