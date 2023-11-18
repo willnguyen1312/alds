@@ -7,6 +7,6 @@ import { defineConfig } from "vite"
 export default defineConfig({
   test: {
     globals: true,
-    threads: false,
+    reporters: "dot",
   },
 })
