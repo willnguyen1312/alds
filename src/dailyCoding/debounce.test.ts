@@ -8,7 +8,7 @@ describe("debounce function", () => {
       value++
     }
 
-    const debouncedIncrement = debounce(increment, 300)
+    const debouncedIncrement = debounce(increment, 1_000_000)
     debouncedIncrement()
     debouncedIncrement()
     debouncedIncrement()
