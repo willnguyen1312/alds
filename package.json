@@ -17,6 +17,6 @@
     "netlify-cli": "^17.34.3",
     "prettier": "^3.3.3",
     "vite": "^5.4.2",
-    "vitest": "1.6.0"
+    "vitest": "^2.0.5"
   }
 }
